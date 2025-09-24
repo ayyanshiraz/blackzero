@@ -160,8 +160,9 @@ const ContactPage: FC = () => {
                             <h1 className={`text-7xl md:text-9xl font-extrabold tracking-tighter leading-none ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
                                 CONTACT<br />US!
                             </h1>
+                            {/* ✅ AMENDED CODE: Fixed unescaped apostrophe */}
                             <p className={`text-xl md:text-2xl mt-4 max-w-md mx-auto md:mx-0 text-gray-200 ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-                                Have a query? Don't hesitate to reach out. We'd love to hear from you!
+                                Have a query? Don&apos;t hesitate to reach out. We&apos;d love to hear from you!
                             </p>
                         </div>
                         
@@ -187,7 +188,8 @@ const ContactPage: FC = () => {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">Get In Touch</h2>
-                        <p className="text-gray-300 text-lg">Have a project in mind? We'd love to hear about it.</p>
+                        {/* ✅ AMENDED CODE: Fixed unescaped apostrophe */}
+                        <p className="text-gray-300 text-lg">Have a project in mind? We&apos;d love to hear about it.</p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
                         <div className="bg-white p-8 rounded-lg shadow-lg">

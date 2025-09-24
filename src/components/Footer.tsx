@@ -18,8 +18,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-start md:items-center text-center md:text-left">
           {/* Left Section */}
           <div className="md:col-span-1">
+            {/* ✅ AMENDED CODE: Fixed unescaped apostrophe */}
             <h2 className="text-4xl lg:text-5xl font-extrabold uppercase leading-tight">
-              Let's Turn Your Niche into Your Net Worth.
+              Let&apos;s Turn Your Niche into Your Net Worth.
             </h2>
           </div>
 
@@ -51,4 +52,3 @@ export default function Footer() {
     </footer>
   );
 }
-

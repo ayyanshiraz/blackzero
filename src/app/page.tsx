@@ -1,10 +1,20 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
-// MODIFIED: Removed ArrowDown icon as it's no longer used
 import { ArrowRight, Megaphone, BarChartBig, Film, TerminalSquare, Palette, Camera } from 'lucide-react';
+import Link from 'next/link'; // Import the Link component
+import Image from 'next/image'; // Import the Image component
 
-// --- DATA DEFINITION (Moved from external file to resolve import error) ---
-const servicesData = [
+// Define a specific type for a service to replace 'any'
+interface ServiceType {
+    title: string;
+    slug: string;
+    icon: React.ElementType;
+    imageUrl: string;
+    description: string;
+}
+
+// --- DATA DEFINITION ---
+const servicesData: ServiceType[] = [
     { 
         title: "Marketing", 
         slug: "marketing",
@@ -53,8 +63,9 @@ const servicesData = [
 const ArrowRightIcon = () => (<ArrowRight className="w-6 h-6 ml-4 group-hover:translate-x-2 transition-transform" />);
 
 // --- Main Service Card Component ---
-const ServiceCard = ({ service, isVisible, index }: { service: any, isVisible: boolean, index: number }) => (
-    <a 
+// ✅ AMENDED CODE: Fixed prop type, replaced <a> with <Link>, and <img> with <Image>
+const ServiceCard = ({ service, isVisible, index }: { service: ServiceType, isVisible: boolean, index: number }) => (
+    <Link 
         href={`/services/${service.slug}`}
         className={`group p-6 rounded-2xl h-full flex flex-col items-start 
                   bg-black hover:bg-white 
@@ -64,15 +75,16 @@ const ServiceCard = ({ service, isVisible, index }: { service: any, isVisible: b
         style={{ transitionDelay: `${index * 150}ms` }}
     >
         <div className="relative w-full aspect-video mb-6 overflow-hidden rounded-lg">
-            <img
+            <Image
                 src={service.imageUrl}
                 alt={`${service.title} service`}
-                className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-105"
+                fill
+                className="object-cover transition-all duration-500 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-105"
             />
         </div>
         <h3 className="text-2xl font-bold text-white mb-3 transition-colors duration-500 ease-in-out group-hover:text-black">{service.title}</h3>
         <p className="text-gray-400 leading-relaxed transition-colors duration-500 ease-in-out group-hover:text-gray-600">{service.description}</p>
-    </a>
+    </Link>
 );
 
 
@@ -102,10 +114,11 @@ const EcommerceGraphic: React.FC<EcommerceGraphicProps> = ({ isVisible }) => (
 );
 
 interface TeamMemberProps { imgSrc: string; name: string; role: string; }
+// ✅ AMENDED CODE: Replaced <img> with <Image>
 const TeamMember: React.FC<TeamMemberProps> = ({ imgSrc, name, role }) => (
   <div className="flex flex-col items-center text-center group cursor-pointer">
     <div className="w-full h-64 aspect-square mb-4 relative overflow-hidden"> 
-      <img src={imgSrc} alt={name} width={300} height={400} className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"/>
+      <Image src={imgSrc} alt={name} width={300} height={400} className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"/>
     </div>
     <h3 className="text-xl font-bold text-black">{name}</h3>
     <p className="text-black">{role}</p>
@@ -179,7 +192,6 @@ export default function HomePage() {
               `}</style>
               
               <div className="relative min-h-screen w-full text-white overflow-hidden flex flex-col bg-black">
-                  {/* MODIFIED: Replaced <img> with <video> tag */}
                   <video 
                     autoPlay 
                     loop 
@@ -195,13 +207,11 @@ export default function HomePage() {
                           <p className="text-2xl md:text-3xl font-light mb-2">Your Partner In</p>
                           <h2 className="text-5xl md-text-7xl lg:text-8xl font-extrabold tracking-tighter leading-none">CREATING and GROWING</h2>
                           <h2 className="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter">BRANDS !</h2>
-                          {/* MODIFIED: Decreased top margin and increased text size */}
                           <div className="mt-8 max-w-xs mx-auto">
                               <p className="text-lg font-light leading-relaxed">We Help Businesses Thrive and grow by crafting the post <span className="font-semibold">Human-Centric</span> solutions</p>
                           </div>
                       </div>
                   </main>
-                  {/* MODIFIED: Bouncing arrow removed from here */}
               </div>
 
               <section ref={servicesRef} className="bg-white pt-12 pb-24">
@@ -232,10 +242,10 @@ export default function HomePage() {
                       <div className="flex flex-col md:flex-row items-center justify-center gap-16">
                           <div className={`md:w-1/2 flex flex-col gap-6 text-center md:text-left ${isEcommerceVisible ? 'animate-text' : ''}`}>
                               <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-wide leading-tight">
-                                {headingWords.map((word, i) => (<span key={i} className="word-wrapper mr-2" style={{ animationDelay: `${i * 0.08}s` }} dangerouslySetInnerHTML={{ __html: word }} />))}
+                                  {headingWords.map((word, i) => (<span key={i} className="word-wrapper mr-2" style={{ animationDelay: `${i * 0.08}s` }} dangerouslySetInnerHTML={{ __html: word }} />))}
                               </h2>
                               <p className="text-gray-300 text-lg leading-relaxed">
-                                {paragraphWords.map((word, i) => (<span key={i} className="word-wrapper mr-1.5" style={{ animationDelay: `${(headingWords.length * 0.08) + (i * 0.04)}s` }} dangerouslySetInnerHTML={{ __html: word }} />))}
+                                  {paragraphWords.map((word, i) => (<span key={i} className="word-wrapper mr-1.5" style={{ animationDelay: `${(headingWords.length * 0.08) + (i * 0.04)}s` }} dangerouslySetInnerHTML={{ __html: word }} />))}
                               </p>
                           </div>
                           <div className="md:w-1/3">
@@ -245,10 +255,11 @@ export default function HomePage() {
                   </div>
                   <div style={bannerBackgroundStyle} className="mt-20 py-8 text-black">
                       <div className="container mx-auto px-10 md:px-20">
-                          <a href="/ecommerce-success" className="group flex items-center justify-center text-2xl font-bold uppercase tracking-widest hover:underline">
+                          {/* ✅ AMENDED CODE: Replaced <a> with <Link> */}
+                          <Link href="/ecommerce-success" className="group flex items-center justify-center text-2xl font-bold uppercase tracking-widest hover:underline">
                               Get to the ladder of ecommerce success!
                               <ArrowRightIcon />
-                          </a>
+                          </Link>
                       </div>
                   </div>
               </section>
@@ -264,4 +275,3 @@ export default function HomePage() {
         </div>
     );
 }
-

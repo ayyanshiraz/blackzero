@@ -1,11 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link'; // Import the Link component
 
 // --- Dropdown Menu Component ---
 const Dropdown = ({ title, items, mainHref }: { title: string; items: { name: string; href: string }[]; mainHref: string; }) => {
     return (
         <div className="relative group">
-            <a
+            <Link
                 href={mainHref}
                 className="px-5 py-2 rounded-md flex items-center transition-colors duration-300 text-white hover:bg-white hover:text-black"
             >
@@ -13,18 +14,18 @@ const Dropdown = ({ title, items, mainHref }: { title: string; items: { name: st
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
-            </a>
+            </Link>
 
             <div className="absolute top-full left-0 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 invisible group-hover:visible z-50">
                 <div className="w-56 bg-black border border-gray-700 rounded-md shadow-lg py-1">
                     {items.map((item) => (
-                        <a
+                        <Link
                             key={item.name}
                             href={item.href}
                             className="block px-4 py-2 text-sm text-gray-300 hover:bg-white hover:text-black"
                         >
                             {item.name}
-                        </a>
+                        </Link>
                     ))}
                 </div>
             </div>
@@ -91,7 +92,7 @@ export default function Navbar() {
             
             <div className="container mx-auto flex items-center justify-between px-10 md:px-20 py-4">
                 {/* Logo with looping animation */}
-                <a href="/" className="text-white flex items-center gap-3">
+                <Link href="/" className="text-white flex items-center gap-3">
                     <div className="w-15 h-18 overflow-hidden rounded-full flex items-center justify-center">
                         <video
                             className="w-full h-full object-cover"
@@ -115,15 +116,15 @@ export default function Navbar() {
                             ZERO
                         </p>
                     </div>
-                </a>
+                </Link>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-2 text-white">
-                    <a href="/" className="px-5 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:text-black">Home</a>
+                    <Link href="/" className="px-5 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:text-black">Home</Link>
                     <Dropdown title="About" items={aboutItems} mainHref="/about" />
                     <Dropdown title="Services" items={servicesItems} mainHref="/services" />
-                    <a href="/projects" className="px-5 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:text-black">Projects</a>
-                    <a href="/contact" className="px-5 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:text-black">Contact</a>
+                    <Link href="/projects" className="px-5 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:text-black">Projects</Link>
+                    <Link href="/contact" className="px-5 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:text-black">Contact</Link>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -139,19 +140,19 @@ export default function Navbar() {
             {/* Mobile Menu */}
             {mobileMenuOpen && (
                 <div className="md:hidden bg-black text-white py-4 absolute top-full left-0 w-full">
-                    <a href="/" className="block text-center py-2 text-lg">Home</a>
+                    <Link href="/" className="block text-center py-2 text-lg">Home</Link>
                     <p className="text-center py-2 text-lg font-bold mt-2">About</p>
-                    <a href="/about" className="block text-center py-1 text-gray-200 font-semibold">All About</a>
+                    <Link href="/about" className="block text-center py-1 text-gray-200 font-semibold">All About</Link>
                     {aboutItems.map(item => (
-                        <a key={item.name} href={item.href} className="block text-center py-1 text-gray-400">{item.name}</a>
+                        <Link key={item.name} href={item.href} className="block text-center py-1 text-gray-400">{item.name}</Link>
                     ))}
                     <p className="text-center py-2 text-lg font-bold mt-2">Services</p>
-                    <a href="/services" className="block text-center py-1 text-gray-200 font-semibold">All Services</a>
+                    <Link href="/services" className="block text-center py-1 text-gray-200 font-semibold">All Services</Link>
                     {servicesItems.map(item => (
-                        <a key={item.name} href={item.href} className="block text-center py-1 text-gray-400">{item.name}</a>
+                        <Link key={item.name} href={item.href} className="block text-center py-1 text-gray-400">{item.name}</Link>
                     ))}
-                    <a href="/projects" className="block text-center py-2 text-lg">Projects</a>
-                    <a href="/contact" className="block text-center py-2 text-lg">Contact</a>
+                    <Link href="/projects" className="block text-center py-2 text-lg">Projects</Link>
+                    <Link href="/contact" className="block text-center py-2 text-lg">Contact</Link>
                 </div>
             )}
         </nav>

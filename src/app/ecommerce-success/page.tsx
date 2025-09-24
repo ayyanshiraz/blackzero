@@ -69,13 +69,14 @@ export default function EcommerceSuccessPage() {
         backgroundPosition: 'center',
     };
 
+    // ✅ AMENDED CODE: Fixed unescaped apostrophes in description strings
     const successStepsData = [
-        { number: '01', title: 'NICHE & PRODUCT HUNTING', description: "We are here to help you find the problem-solving, game-changing evergreen products that sell regardless of the time and location. Count on us for the product hunt or niche finding we'll make you proud of your decision." },
+        { number: '01', title: 'NICHE & PRODUCT HUNTING', description: "We are here to help you find the problem-solving, game-changing evergreen products that sell regardless of the time and location. Count on us for the product hunt or niche finding we&apos;ll make you proud of your decision." },
         { number: '02', title: 'PRODUCT SOURCING', description: 'After thorough market research we pick the best product suppliers. Then we evaluate them through sampling and ensure the product quality as well as quantity. Comparing competitive market rates we help you make profits by selling the quality product at a reasonable price.' },
         { number: '03', title: 'BRANDING', description: "In the game of eCommerce, what you sell doesn't matter to thrive successfully. If you are able to make your ideal customers believe that yours is the only store they need, you win. And the best way to make that happen is eCommerce Branding. We will do your A to Z effective branding to make you stand out in a fiercely competitive ecommerce space." },
-        { number: '04', title: 'TRADEMARK & BUSINESS REGISTRATION', description: "We know how hectic, complex and lengthy is the process of giving your business the legal shields. At the same, it's very vital to protect your brand's intellectual property rights." },
-        { number: '05', title: 'CREATIVE DESIGNING', description: "With our talented, creative and skilled team of designers we engage, communicate and persuade the audience to sell your services/products in a way that they would love to pay for. We'll boost your marketing with the help of creative visual communication." },
-        { number: '06', title: 'WEBSITE DESIGN & DEVELOPMENT', description: 'Utilizing the power of creative designing we build an eye-catching online presence of your business making it completely mobile and user friendly, SEO optimized and highly converting. We\'ll help grow your business with a website design that customers love to visit and buy.' },
+        { number: '04', title: 'TRADEMARK & BUSINESS REGISTRATION', description: "We know how hectic, complex and lengthy is the process of giving your business the legal shields. At the same, it&apos;s very vital to protect your brand's intellectual property rights." },
+        { number: '05', title: 'CREATIVE DESIGNING', description: "With our talented, creative and skilled team of designers we engage, communicate and persuade the audience to sell your services/products in a way that they would love to pay for. We&apos;ll boost your marketing with the help of creative visual communication." },
+        { number: '06', title: 'WEBSITE DESIGN & DEVELOPMENT', description: 'Utilizing the power of creative designing we build an eye-catching online presence of your business making it completely mobile and user friendly, SEO optimized and highly converting. We&apos;ll help grow your business with a website design that customers love to visit and buy.' },
         { number: '07', title: 'PERFORMANCE MARKETING', description: "The most vital part of any business is its marketing. No matter if you have the best product in the world and the best offer, no one would be willing to buy until its need is best developed and then fulfilled successfully." },
         { number: '08', title: 'STORE MANAGEMENT', description: 'Forget about the hectic store management operations and focus more on your business goals. Our expert dedicated team looks after your stock, manages abundant carts, handles your product attributes or visibility, and everything in between.' },
         { number: '09', title: 'BUSINESS ANALYSIS AND REPORTING', description: "Numbers speak and the business which can't make sense of their data face a shameful failure. We help businesses trust where they are headed by providing them with detailed analytical reports in a way they can easily understand." },
@@ -145,8 +146,9 @@ export default function EcommerceSuccessPage() {
                         <p className="text-lg text-gray-700 mb-8 text-left">
                             Have no idea about the most lucrative niche or product... Are confused about the <span className="font-bold">BRAND NAME, LOGO DESIGN, PRODUCT PACKAGING, OR OVERALL BRANDING...</span>
                         </p>
+                        {/* ✅ AMENDED CODE: Fixed unescaped apostrophe */}
                         <h3 className="text-3xl font-extrabold uppercase tracking-tight text-black text-left">
-                            Don't worry anymore now
+                            Don&apos;t worry anymore now
                         </h3>
                     </div>
                 </div>

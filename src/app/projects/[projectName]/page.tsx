@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { notFound, useParams } from 'next/navigation';
 import { ArrowLeft, Star, X } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image'; // Import the Next.js Image component
 import { projectsData } from '@/data/projects';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import Navbar from '@/components/Navbar';
@@ -30,9 +31,12 @@ const ImageModal: React.FC<ImageModalProps> = ({ imageUrl, onClose }) => {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on the image itself
             >
-                <img
+                {/* ✅ AMENDED CODE: Replaced <img> with <Image> */}
+                <Image
                     src={imageUrl}
                     alt="Full screen project gallery"
+                    width={1920}
+                    height={1080}
                     className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
                 />
             </motion.div>
@@ -64,8 +68,9 @@ const TestimonialCard: React.FC<TestimonialProps> = ({ quote, author, rating }) 
                     <svg width="40" height="30" viewBox="0 0 40 30" fill="white"><path d="M0 30V15.2174C0 10.1522 1.44928 6.19565 4.34783 3.34783C7.24638 0.5 10.942 0 15.4348 0V7.17391C12.4348 7.17391 10.1304 7.91304 8.52174 9.3913C6.91304 10.8696 6.1087 12.8261 6.1087 15.2609V16.3043H16.5217V30H0ZM23.4783 30V15.2174C23.4783 10.1522 24.9275 6.19565 27.8261 3.34783C30.7246 0.5 34.4203 0 38.913 0V7.17391C35.913 7.17391 33.6087 7.91304 32 9.3913C30.3913 10.8696 29.587 12.8261 29.587 15.2609V16.3043H40V30H23.4783Z"/></svg>
                     <div className="h-0.5 w-12 bg-white"></div>
                 </div>
+                {/* ✅ AMENDED CODE: Fixed unescaped quotes */}
                 <div className="text-xl font-medium text-white leading-relaxed my-8 text-center">
-                    <p>"{quote}"</p>
+                    <p>&quot;{quote}&quot;</p>
                 </div>
                 <div className="flex justify-center items-center gap-1 mb-4">
                     {Array.from({ length: 5 }).map((_, index) => (
@@ -122,16 +127,18 @@ export default function ProjectDetailPage() {
                             variants={introContainerVariants}
                             initial="hidden"
                             animate="visible"
-                            viewport={{ once: true, amount: 0.5 }}
                         >
                             <motion.div variants={textItemVariants} className="text-left">
                                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">{project.title}</h1>
                                 <p className="text-base text-gray-600 leading-relaxed">{project.description}</p>
                             </motion.div>
                             <motion.div variants={imageItemVariants} className="flex items-center justify-center">
-                                <img 
+                                {/* ✅ AMENDED CODE: Replaced <img> with <Image> */}
+                                <Image 
                                     src={project.gallery[0]} 
-                                    alt={`${project.title} main image`} 
+                                    alt={`${project.title} main image`}
+                                    width={800}
+                                    height={600}
                                     className="rounded-lg shadow-xl w-full h-auto object-cover max-h-[500px]"
                                 />
                             </motion.div>

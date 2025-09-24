@@ -104,7 +104,6 @@ export default function ContactForm({ title, subtitle, serviceOptions }: Contact
         return Object.keys(newErrors).length === 0;
     };
 
-    // ================== THIS IS THE UPDATED SUBMIT FUNCTION ==================
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!validate()) {
@@ -130,13 +129,18 @@ export default function ContactForm({ title, subtitle, serviceOptions }: Contact
             setStatusMessage({ type: 'success', text: result.message });
             setFormData({ firstName: '', lastName: '', email: '', phone: '', service: '', message: '' });
 
-        } catch (error: any) {
-            setStatusMessage({ type: 'error', text: error.message });
+        // ✅ AMENDED CODE: Changed `catch (error: any)` to be type-safe
+        } catch (error) {
+            // Check if the caught object is an actual Error to safely access its message
+            if (error instanceof Error) {
+                setStatusMessage({ type: 'error', text: error.message });
+            } else {
+                setStatusMessage({ type: 'error', text: 'An unknown error occurred.' });
+            }
         } finally {
             setIsSubmitting(false);
         }
     };
-    // =======================================================================
 
     const finalServiceOptions = useMemo(() => {
         const defaultOptions = [
