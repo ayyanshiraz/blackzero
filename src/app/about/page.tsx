@@ -173,7 +173,6 @@ export default function AboutPage() {
 
     const mainDescription = "We provide all the nourishment that any business needs to grow and succeed. Hence we are your partner in building brands, creating experience and transforming business.";
     
-    // ✅ AMENDED CODE: Fixed unescaped apostrophes
     const credoItems = [
         { num: '01', title: 'NEVER STOP LEARNING', desc: 'With curiosity in our hearts & minds we constantly keep evolving & learning.' },
         { num: '02', title: 'NOT A PROBLEM', desc: 'We take the problem as a problem rather than a challenge to go out of the box for its solutions.' },
@@ -217,9 +216,8 @@ export default function AboutPage() {
                 }
             `}</style>
 
-            {/* ---------- HERO SECTION (Image Added, Graphic & Right Text Removed, Left Text Centered) ---------- */}
+            {/* ---------- HERO SECTION ---------- */}
             <div style={heroBackgroundStyle} className="relative text-white">
-                {/* Dark overlay with blur for text readability */}
                 <div className="absolute inset-0 bg-black/60 z-10 backdrop-filter backdrop-blur-[2px]"></div> 
                 
                 <main className="relative z-20 container mx-auto px-8 flex items-center justify-center min-h-screen">
@@ -239,11 +237,9 @@ export default function AboutPage() {
 
             <section ref={studioSectionRef} className="bg-white text-black py-20">
                 <div className="container mx-auto px-8 lg:px-48 text-center flex flex-col items-center">
-                    {/* ✅ AMENDED CODE: Fixed unescaped apostrophe */}
                     <h2 className={`text-3xl md:text-4xl font-extrabold text-black uppercase tracking-wider headline-shadow ${isStudioSectionVisible ? 'fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
                         We&apos;re a Multidisciplinary<br/>Creative & Digital Studio!
                     </h2>
-                    {/* ✅ AMENDED CODE: Fixed unescaped apostrophe */}
                     <p className={`mt-6 max-w-5xl text-gray-700 uppercase text-base md:text-lg ${isStudioSectionVisible ? 'fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
                         We are a team of out-of-the-box thinkers, creators & groundbreakers, ready to boost your brand&apos;s image and impression via new and inventive marketing techniques. We create novel yet actionable concepts across a variety of BUSINESS TYPES.
                     </p>
@@ -255,12 +251,12 @@ export default function AboutPage() {
                 <div className="container mx-auto px-8 sm:px-16 md:px-24 flex flex-col md:flex-row items-center justify-center gap-16">
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isCeoMessageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">CEO Message</h2>
+                        {/* ✅ AMENDED CODE: Fixed unescaped quotes */}
                         <p className="mt-4 text-gray-800 text-lg leading-relaxed max-w-2xl">
-                            "At Black Zero, we believe in the power of partnership. Our journey began with a simple vision: to create a multi domain company that not only delivers exceptional results but also builds lasting relationships based on trust and transparency. We are more than just a service provider; we are an extension of your team, dedicated to understanding your challenges and achieving your goals. Thank you for entrusting us with your vision. We look forward to growing together."
+                            &quot;At Black Zero, we believe in the power of partnership. Our journey began with a simple vision: to create a multi domain company that not only delivers exceptional results but also builds lasting relationships based on trust and transparency. We are more than just a service provider; we are an extension of your team, dedicated to understanding your challenges and achieving your goals. Thank you for entrusting us with your vision. We look forward to growing together.&quot;
                         </p>
                     </div>
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isCeoMessageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
-                        {/* ✅ AMENDED CODE: Replaced <img> with <Image> */}
                         <Image src="/Team/ceo1.png" alt="CEO of Black Zero" width={800} height={800} className="rounded-xl shadow-xl w-full max-w-md h-auto object-cover image-pop-on-hover "/>
                     </div>
                 </div>
@@ -288,11 +284,11 @@ export default function AboutPage() {
             <section ref={storySectionRef} className="bg-white py-24 overflow-hidden">
                 <div className="container mx-auto px-8 sm:px-16 md:px-24 flex flex-col md:flex-row items-center justify-center gap-16">
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isStorySectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-                        {/* ✅ AMENDED CODE: Replaced <img> with <Image> */}
                         <Image src="/ourstory.png" alt="Our Story" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover "/>
                     </div>
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isStorySectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
                         <h2 className="text-black text-4xl md:text-5xl font-extrabold leading-tight mb-6">Our Story</h2>
+                        {/* ✅ AMENDED CODE: Fixed unescaped apostrophe */}
                         <p className="mt-4 text-gray-800 text-lg leading-relaxed max-w-2xl">Black Zero was launched in Lahore with one clear purpose: to help businesses grow through effective digital marketing. Our team combines hands-on experience in content strategy, design, and technical skills to connect brands with their ideal audience online. Since day one, we&apos;ve collaborated with startups and businesses across Pakistan and all over the world to build a stronger digital presence. By understanding market needs and business goals, we develop data-driven strategies that enhance online visibility and earn lasting customer trust.</p>
                     </div>
                 </div>
@@ -307,7 +303,6 @@ export default function AboutPage() {
                         <p className="mt-4 text-gray-300 text-lg leading-relaxed max-w-2xl">At Black Zero, we envision reshaping the digital marketing landscape in Lahore and throughout Pakistan. We strive to become the most trusted agency by delivering high-impact strategies that fuel long-term growth and deep customer engagement for every business, from startups to large enterprises. Our purpose is to empower Pakistani brands, enabling them to build a strong online presence, compete effectively in global markets, and innovate with cutting-edge marketing techniques. We are the reliable partner businesses can count on to consistently provide measurable outcomes, overcome digital challenges, and achieve lasting success.</p>
                     </div>
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isVisionSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
-                        {/* ✅ AMENDED CODE: Replaced <img> with <Image> */}
                         <Image src="/ourvision.png" alt="Our Vision" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover border-2 border-gray-700 "/>
                     </div>
                 </div>
@@ -316,7 +311,6 @@ export default function AboutPage() {
             <section ref={missionSectionRef} className="bg-white text-black py-24 overflow-hidden">
                 <div className="container mx-auto px-8 sm:px-16 md:px-24 flex flex-col md:flex-row items-center justify-center gap-16">
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isMissionSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-                        {/* ✅ AMENDED CODE: Replaced <img> with <Image> */}
                         <Image src="/ourmission.png" alt="Our Mission" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover border-2 border-gray-300 "/>
                     </div>
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isMissionSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
@@ -330,10 +324,10 @@ export default function AboutPage() {
                 <div className="container mx-auto px-8 sm:px-16 md:px-24 flex flex-col md:flex-row items-center justify-center gap-16">
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isApproachSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                         <h2 className="text-white text-4xl md:text-5xl font-extrabold leading-tight mb-6">Our Approach</h2>
+                        {/* ✅ AMENDED CODE: Fixed unescaped apostrophe */}
                         <p className="mt-4 text-gray-300 text-lg leading-relaxed max-w-2xl">A leading digital marketing company in Lahore, we deliver exceptional digital marketing, PR, and brand activations. Our approach is driven by data-backed strategies that enhance brand visibility, foster customer engagement, and build a powerful online presence for businesses and public figures across Pakistan. Whether it&apos;s launching impactful social media campaigns, handling public relations for strong reputation management, or executing unique on-ground activations, our goal is to achieve measurable marketing results. We partner closely with clients to guarantee every strategy aligns with their brand objectives, helping them succeed in a competitive market and form lasting customer relationships.</p>
                     </div>
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isApproachSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
-                        {/* ✅ AMENDED CODE: Replaced <img> with <Image> */}
                         <Image src="/ourapproach.png" alt="Our Approach" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover "/>
                     </div>
                 </div>
@@ -342,7 +336,6 @@ export default function AboutPage() {
             <section ref={valuesSectionRef} className="bg-white text-black py-24 overflow-hidden">
                 <div className="container mx-auto px-8 sm:px-16 md:px-24 flex flex-col md:flex-row items-center justify-center gap-16">
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isValuesSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-                        {/* ✅ AMENDED CODE: Replaced <img> with <Image> */}
                         <Image src="/ourvalues.png" alt="Our Values" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover border-2 border-gray-200 "/>
                     </div>
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isValuesSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
