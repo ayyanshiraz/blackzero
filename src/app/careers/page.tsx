@@ -45,7 +45,7 @@ const jobOpenings = [
 
 // --- Benefits Data ---
 const benefits = [
-    { icon: BrainCircuit, title: "Creative Freedom", description: "We trust our team. You'll have the autonomy to innovate and bring your best ideas to the table without micromanagement." },
+    { icon: BrainCircuit, title: "Creative Freedom", description: "We trust our team. You&apos;ll have the autonomy to innovate and bring your best ideas to the table without micromanagement." },
     { icon: Rocket, title: "Career Growth", description: "Your development matters. We provide opportunities for learning, skill enhancement, and clear paths for advancement within the company." },
     { icon: Users, title: "Collaborative Culture", description: "Work alongside a diverse team of passionate experts in a supportive environment where great ideas can come from anywhere." },
     { icon: Sparkles, title: "Impactful Work", description: "The projects you work on will directly contribute to the success of top-tier brands, making a real and visible impact." }
@@ -173,7 +173,7 @@ export default function CareerPage() {
                         className="text-center mb-16"
                     >
                         <h2 className="text-4xl md:text-5xl font-extrabold">Why Join Black Zero?</h2>
-                        <p className="mt-4 text-lg text-gray-600">We're more than just a workplace. We're a launchpad.</p>
+                        <p className="mt-4 text-lg text-gray-600">We&apos;re more than just a workplace. We&apos;re a launchpad.</p>
                     </motion.div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {benefits.map((benefit, index) => (
@@ -198,24 +198,23 @@ export default function CareerPage() {
 
             <section className="bg-black py-20 text-white">
                 <div className="container mx-auto px-6 text-center max-w-4xl">
-                     <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.5 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <Mail className="w-12 h-12 mx-auto mb-6" />
-                        <h2 className="text-3xl md:text-4xl font-extrabold">Don't See a Fit?</h2>
-                        <p className="mt-4 text-lg text-gray-300 leading-relaxed">
-                            We're always looking for exceptional talent. If you believe you have what it takes to be a rebel at Black Zero, send us your resume and tell us why you'd be a great addition to our team.
-                        </p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOnV1439kkii-UmJeAGsp-mECdMDXQk2Bb2_IxMdZg6Bvn5g/viewform?usp=header" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block bg-white text-black font-bold py-4 px-10 rounded-lg hover:bg-gray-200 transition-colors text-lg">
-                            Send Us Your Resume
-                        </a>
-                    </motion.div>
+                       <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <Mail className="w-12 h-12 mx-auto mb-6" />
+                            <h2 className="text-3xl md:text-4xl font-extrabold">Don&apos;t See a Fit?</h2>
+                            <p className="mt-4 text-lg text-gray-300 leading-relaxed">
+                                We&apos;re always looking for exceptional talent. If you believe you have what it takes to be a rebel at Black Zero, send us your resume and tell us why you&apos;d be a great addition to our team.
+                            </p>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOnV1439kkii-UmJeAGsp-mECdMDXQk2Bb2_IxMdZg6Bvn5g/viewform?usp=header" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block bg-white text-black font-bold py-4 px-10 rounded-lg hover:bg-gray-200 transition-colors text-lg">
+                                Send Us Your Resume
+                            </a>
+                        </motion.div>
                 </div>
             </section>
         </div>
     );
 }
-

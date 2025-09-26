@@ -2,10 +2,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import { projectsData } from '@/data/projects'; 
+// ✅ FIXED: Imported the 'Project' type
+import { projectsData, type Project } from '@/data/projects'; 
 
 // --- PROJECT CARD COMPONENT ---
-const ProjectCard = ({ project }: { project: any }) => (
+// ✅ FIXED: Replaced 'any' with the specific 'Project' type
+const ProjectCard = ({ project }: { project: Project }) => (
     <div className="group block relative w-full h-full overflow-hidden rounded-xl shadow-lg animate-fade-in-up cursor-pointer">
         <img
             src={project.imageUrl}

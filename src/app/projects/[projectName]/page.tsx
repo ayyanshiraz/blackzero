@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link'; // Added for Next.js routing
 import { ArrowLeft, ArrowRight, Star, X } from 'lucide-react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 
@@ -393,25 +394,28 @@ interface ImageModalProps {
 const ImageModal: React.FC<ImageModalProps> = ({ images, initialIndex, onClose }) => {
     const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
-    const nextImage = (e: React.MouseEvent) => {
-        e.stopPropagation();
+    // ✅ FIXED: Updated function signature to handle mouse events or no event
+    const nextImage = (e?: React.MouseEvent) => {
+        e?.stopPropagation();
         setCurrentIndex(prev => (prev + 1) % images.length);
     };
 
-    const prevImage = (e: React.MouseEvent) => {
-        e.stopPropagation();
+    // ✅ FIXED: Updated function signature to handle mouse events or no event
+    const prevImage = (e?: React.MouseEvent) => {
+        e?.stopPropagation();
         setCurrentIndex(prev => (prev - 1 + images.length) % images.length);
     };
     
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.key === 'ArrowRight') nextImage(e as any);
-            if (e.key === 'ArrowLeft') prevImage(e as any);
+            // ✅ FIXED: Removed 'as any' cast by updating functions above
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
             if (e.key === 'Escape') onClose();
         };
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [images.length]);
+    }, [images.length, onClose]); // Note: exhaustive-deps warning ignored as requested
 
 
     return (
@@ -480,7 +484,8 @@ const TestimonialCard: React.FC<TestimonialProps> = ({ quote, author, rating }) 
                     <div className="h-0.5 w-12 bg-white"></div>
                 </div>
                 <div className="text-xl font-medium text-white leading-relaxed my-8 text-center">
-                    <p>"{quote}"</p>
+                    {/* ✅ FIXED: Replaced " with &quot; to escape the character */}
+                    <p>&quot;{quote}&quot;</p>
                 </div>
                 <div className="flex justify-center items-center gap-1 mb-4">
                     {Array.from({ length: 5 }).map((_, index) => (
@@ -744,10 +749,11 @@ export default function ProjectDetailPage() {
                         )}
                         
                         <div className="text-center mt-24">
-                            <a href="/projects" className="inline-flex items-center gap-2 bg-black text-white font-bold py-4 px-10 rounded-lg hover:bg-gray-800 transition-colors text-lg">
+                            {/* ✅ FIXED: Replaced <a> with <Link> for internal navigation */}
+                            <Link href="/projects" className="inline-flex items-center gap-2 bg-black text-white font-bold py-4 px-10 rounded-lg hover:bg-gray-800 transition-colors text-lg">
                                 <ArrowLeft size={20} />
                                 Back to All Projects
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </main>

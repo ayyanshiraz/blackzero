@@ -62,9 +62,9 @@ const faqData = [
     { question: "How can I get a quotation for my business?", answer: "To get a custom quotation, please fill out the contact form with as much detail about your project as possible. Our team will review your request and contact you to schedule a consultation to discuss your needs and provide a detailed proposal." },
     { question: "What are your services?", answer: "We offer a comprehensive suite of services including Marketing, Business Analytics, 2D/3D Animation, Web & App Development, Graphic Design, and professional Photography/Videography." },
     { question: "When did Black Zero form?", answer: "Black Zero was founded in 2024 by a team of passionate experts with a vision to create a multi-domain company that delivers exceptional results." },
-    { question: "Who is the owner of Black Zero?", answer: "Black Zero is led by our CEO, Mian Hashim Haroon, who oversees the company's vision and strategic direction." },
+    { question: "Who is the owner of Black Zero?", answer: "Black Zero is led by our CEO, Mian Hashim Haroon, who oversees the company&apos;s vision and strategic direction." },
     { question: "How do I contact the Black Zero team?", answer: "The most efficient way to reach our team is through the contact form on our website or by emailing us at info@blackzero.org. For urgent matters, you can call our office number." },
-    { question: "What are the costs?", answer: "Our costs are project-dependent. We don't offer one-size-fits-all packages because we believe every business has unique needs. We provide a custom quotation after an initial consultation to ensure our services are perfectly tailored to you." },
+    { question: "What are the costs?", answer: "Our costs are project-dependent. We don&apos;t offer one-size-fits-all packages because we believe every business has unique needs. We provide a custom quotation after an initial consultation to ensure our services are perfectly tailored to you." },
     // ✅ AMENDED CODE: Added the 10th question
     { question: "In which countries do you operate?", answer: "Our main office is physically located in Lahore, Pakistan. However, we operate globally and have proudly served clients in 9 different countries across the world." }
 ];
@@ -138,42 +138,42 @@ const FaqSection = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
             <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                className="rounded-lg overflow-hidden shadow-lg border border-gray-200"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="rounded-lg overflow-hidden shadow-lg border border-gray-200"
             >
-                {leftFaqs.map((faq, index) => (
-                    <FaqItem
-                        key={index}
-                        question={faq.question}
-                        answer={faq.answer}
-                        isOpen={openIndex === index}
-                        onClick={() => handleToggle(index)}
-                    />
-                ))}
+              {leftFaqs.map((faq, index) => (
+                <FaqItem
+                  key={index}
+                  question={faq.question}
+                  answer={faq.answer}
+                  isOpen={openIndex === index}
+                  onClick={() => handleToggle(index)}
+                />
+              ))}
             </motion.div>
 
             <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                className="rounded-lg overflow-hidden shadow-lg border border-gray-200"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="rounded-lg overflow-hidden shadow-lg border border-gray-200"
             >
-                {rightFaqs.map((faq, index) => {
-                    const originalIndex = index + midpoint;
-                    return (
-                        <FaqItem
-                            key={originalIndex}
-                            question={faq.question}
-                            answer={faq.answer}
-                            isOpen={openIndex === originalIndex}
-                            onClick={() => handleToggle(originalIndex)}
-                        />
-                    );
-                })}
+              {rightFaqs.map((faq, index) => {
+                const originalIndex = index + midpoint;
+                return (
+                  <FaqItem
+                    key={originalIndex}
+                    question={faq.question}
+                    answer={faq.answer}
+                    isOpen={openIndex === originalIndex}
+                    onClick={() => handleToggle(originalIndex)}
+                  />
+                );
+              })}
             </motion.div>
           </div>
         </div>
@@ -287,7 +287,7 @@ const ContactPage: FC = () => {
                                 CONTACT<br />US!
                             </h1>
                             <p className={`text-xl md:text-2xl mt-4 max-w-md mx-auto md:mx-0 text-gray-200 ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-                                Have a query? Don't hesitate to reach out. We'd love to hear from you!
+                                Have a query? Don&apos;t hesitate to reach out. We&apos;d love to hear from you!
                             </p>
                         </div>
                         
@@ -314,7 +314,7 @@ const ContactPage: FC = () => {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">Get In Touch</h2>
-                        <p className="text-gray-300 text-lg">Have a project in mind? We'd love to hear about it.</p>
+                        <p className="text-gray-300 text-lg">Have a project in mind? We&apos;d love to hear about it.</p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
                         <div className="bg-white p-8 rounded-lg shadow-lg">
