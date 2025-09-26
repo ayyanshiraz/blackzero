@@ -62,9 +62,9 @@ const faqData = [
     { question: "How can I get a quotation for my business?", answer: "To get a custom quotation, please fill out the contact form with as much detail about your project as possible. Our team will review your request and contact you to schedule a consultation to discuss your needs and provide a detailed proposal." },
     { question: "What are your services?", answer: "We offer a comprehensive suite of services including Marketing, Business Analytics, 2D/3D Animation, Web & App Development, Graphic Design, and professional Photography/Videography." },
     { question: "When did Black Zero form?", answer: "Black Zero was founded in 2024 by a team of passionate experts with a vision to create a multi-domain company that delivers exceptional results." },
-    { question: "Who is the owner of Black Zero?", answer: "Black Zero is led by our CEO, Mian Hashim Haroon, who oversees the company&apos;s vision and strategic direction." },
+    { question: "Who is the owner of Black Zero?", answer: "Black Zero is led by our CEO, Mian Hashim Haroon, who oversees the companys vision and strategic direction." },
     { question: "How do I contact the Black Zero team?", answer: "The most efficient way to reach our team is through the contact form on our website or by emailing us at info@blackzero.org. For urgent matters, you can call our office number." },
-    { question: "What are the costs?", answer: "Our costs are project-dependent. We don&apos;t offer one-size-fits-all packages because we believe every business has unique needs. We provide a custom quotation after an initial consultation to ensure our services are perfectly tailored to you." },
+    { question: "What are the costs?", answer: "Our costs are project-dependent. We dont offer one-size-fits-all packages because we believe every business has unique needs. We provide a custom quotation after an initial consultation to ensure our services are perfectly tailored to you." },
     // ✅ AMENDED CODE: Added the 10th question
     { question: "In which countries do you operate?", answer: "Our main office is physically located in Lahore, Pakistan. However, we operate globally and have proudly served clients in 9 different countries across the world." }
 ];
