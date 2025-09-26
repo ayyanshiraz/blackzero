@@ -34,16 +34,14 @@ const AnimatedSubSection = ({ subsection, isReversed, isClickable }: { subsectio
         <div ref={ref} className={`flex flex-col md:flex-row items-center gap-12 lg:gap-16 perspective-[1000px] ${isReversed ? 'md:flex-row-reverse' : ''}`}>
             <div className={`md:w-2/5 transition-opacity duration-1000 ${isVisible ? `opacity-100 ${imageAnimation}` : 'opacity-0'}`}>
                 <div className="relative group overflow-hidden rounded-lg shadow-2xl">
-                    {/* Hover effect now only on the image */}
                     <img src={subsection.imageUrl} alt={subsection.title} className="w-full h-auto object-cover transition-all duration-500 ease-in-out group-hover:scale-105" />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
                 </div>
             </div>
             <div className={`md:w-3/5 transition-opacity duration-1000 ${isVisible ? `opacity-100 ${textAnimation}` : 'opacity-0'}`} style={{ transitionDelay: '200ms' }}>
-                <div className="flex items-center gap-3 mb-4">
-                    <h2 className="text-3xl md:text-4xl font-bold text-black">{subsection.title}</h2>
-                    {isClickable && <ArrowUpRight className="w-7 h-7 text-gray-400" />}
-                </div>
+                
+                <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">{subsection.title}</h2>
+                
                 <p className="text-lg text-gray-700 leading-relaxed">{subsection.description}</p>
 
                 {isClickable && (
@@ -113,7 +111,7 @@ export default function ServiceDetailPage() {
                                 <Link 
                                     key={index}
                                     href={`/services/${service.slug}/${subsection.slug}`}
-                                    className="block focus:outline-none rounded-lg" // Removed hover scale from Link
+                                    className="block focus:outline-none rounded-lg"
                                 >
                                     <AnimatedSubSection 
                                         subsection={subsection} 
@@ -150,7 +148,7 @@ export default function ServiceDetailPage() {
                         <ArrowLeft size={20} />
                         Back to All Services
                     </Link>
-                </div>
+               </div>
             </section>
         </div>
     );

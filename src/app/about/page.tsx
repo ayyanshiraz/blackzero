@@ -257,7 +257,7 @@ export default function AboutPage() {
                         </p>
                     </div>
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isCeoMessageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
-                        <Image src="/Team/ceo1.png" alt="CEO of Black Zero" width={800} height={800} className="rounded-xl shadow-xl w-full max-w-md h-auto object-cover image-pop-on-hover "/>
+                        <Image src="/Team/CEO[1].png" alt="CEO of Black Zero" width={800} height={800} className="rounded-xl shadow-xl w-full max-w-md h-auto object-cover image-pop-on-hover "/>
                     </div>
                 </div>
             </section>

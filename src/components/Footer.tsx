@@ -4,7 +4,6 @@ const socialLinks = [
   { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61560559093444&mibextid=ZbWKwL' },
   { name: 'Instagram', href: 'https://www.instagram.com/blackzerofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D'},
   { name: 'LinkedIn', href: 'https://www.linkedin.com/company/black-zerofficial/posts/?feedView=all&viewAsMember=true' },
-  
 ];
 
 const ArrowIcon = () => (
@@ -18,14 +17,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-start md:items-center text-center md:text-left">
           {/* Left Section */}
           <div className="md:col-span-1">
-            {/* ✅ AMENDED CODE: Fixed unescaped apostrophe */}
             <h2 className="text-4xl lg:text-5xl font-extrabold uppercase leading-tight">
-              Let&apos;s Turn Your Niche into Your Net Worth.
+              Let's Turn Your Niche into Your Net Worth.
             </h2>
           </div>
 
-          {/* Pakistan Office */}
-          <div className="md:col-span-1">
+          {/* ✅ AMENDED CODE: Pakistan Office aligned to the right on medium screens and up */}
+          <div className="md:col-span-1 md:text-right">
             <h3 className="text-lg font-bold uppercase mb-4 tracking-wider">Pakistan Office</h3>
             <address className="not-italic space-y-3 text-gray-300">
               <p>+92 324 4333267</p>
@@ -33,7 +31,7 @@ export default function Footer() {
                 <p>info@blackzero.org</p>
                 <p>marketinghead@blackzero.org</p>
               </div>
-              <p>Hotel MayFair 4th floor, 50-52, E - III, Commercial Zone, Al Fateh Ln, behind Monal Restaurant, Commercial Area Gulberg III, Lahore, Punjab 54660.</p>
+              <p>Hotel MayFair 4th floor, <br></br>50-52, E - III, Commercial Zone,<br></br> Gulberg III, 54660, Lahore, Punjab.</p>
             </address>
           </div>
         </div>
@@ -46,7 +44,8 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <p className="opacity-70 text-center md:text-right">Copyright © 2025 Black Zero</p>
+          {/* ✅ AMENDED CODE: Updated copyright year */}
+          <p className="opacity-70 text-center md:text-right">Copyright © 2024 - 2025 Black Zero</p>
         </div>
       </div>
     </footer>

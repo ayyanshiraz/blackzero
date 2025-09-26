@@ -164,10 +164,9 @@ export default function SubSectionDetailPage() {
                 <div className="absolute inset-0 bg-black/60 z-10"></div>
                 <div className="container mx-auto px-6 relative z-20">
                     <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter">{subSection.title}</h1>
-                    {/* ======== THIS IS THE NEW LINE YOU'RE ADDING ======== */}
-        <p className="mt-4 text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-            Connecting your brand with the right audience at the perfect moment online, turning clicks into customers.
-        </p>
+                    <p className="mt-4 text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+                        Connecting your brand with the right audience at the perfect moment online, turning clicks into customers.
+                    </p>
                 </div>
             </section>
 
@@ -184,13 +183,6 @@ export default function SubSectionDetailPage() {
                            />
                         ))}
                     </div>
-
-                    <div className="text-center mt-24">
-                        <Link href={`/services/${service.slug}`} className="inline-flex items-center gap-2 bg-black text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-800 transition-colors">
-                            <ArrowLeft size={20} />
-                            Back to {service.title}
-                        </Link>
-                    </div>
                 </div>
             </section>
             
@@ -200,6 +192,16 @@ export default function SubSectionDetailPage() {
                     subtitle={`Let's talk about how our ${subSection.title} service can benefit your business.`}
                     serviceOptions={contactFormOptions}
                 />
+            </section>
+
+            {/* ✅ AMENDED CODE: Button is now in its own section after the contact form */}
+            <section className="py-20 bg-white">
+                <div className="text-center">
+                    <Link href={`/services/${service.slug}`} className="inline-flex items-center gap-2 bg-black text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-800 transition-colors">
+                        <ArrowLeft size={20} />
+                        Back to {service.title}
+                    </Link>
+                </div>
             </section>
         </div>
     );

@@ -63,7 +63,6 @@ const servicesData: ServiceType[] = [
 const ArrowRightIcon = () => (<ArrowRight className="w-6 h-6 ml-4 group-hover:translate-x-2 transition-transform" />);
 
 // --- Main Service Card Component ---
-// ✅ AMENDED CODE: Fixed prop type, replaced <a> with <Link>, and <img> with <Image>
 const ServiceCard = ({ service, isVisible, index }: { service: ServiceType, isVisible: boolean, index: number }) => (
     <Link 
         href={`/services/${service.slug}`}
@@ -114,7 +113,6 @@ const EcommerceGraphic: React.FC<EcommerceGraphicProps> = ({ isVisible }) => (
 );
 
 interface TeamMemberProps { imgSrc: string; name: string; role: string; }
-// ✅ AMENDED CODE: Replaced <img> with <Image>
 const TeamMember: React.FC<TeamMemberProps> = ({ imgSrc, name, role }) => (
   <div className="flex flex-col items-center text-center group cursor-pointer">
     <div className="w-full h-64 aspect-square mb-4 relative overflow-hidden"> 
@@ -164,7 +162,7 @@ export default function HomePage() {
     };
     
     const teamMembers = [
-        { imgSrc: '/Team/ceo2.png', name: 'MIAN HASHIM HAROON', role: 'CEO' }, 
+        { imgSrc: '/Team/CEO[1].png', name: 'MIAN HASHIM HAROON', role: 'CEO' }, 
         { imgSrc: '/Team/coo3.png', name: 'DR. ABDULLAH HAROON', role: 'COO' }, 
         { imgSrc: '/Team/ayyan.jpg', name: 'AYYAN SHIRAZ', role: 'Marketing Head' }, 
         { imgSrc: '/Team/yasir.jpg', name: 'YASIR IRSHAD', role: 'IT Manager' }, 
@@ -192,21 +190,24 @@ export default function HomePage() {
               `}</style>
               
               <div className="relative min-h-screen w-full text-white overflow-hidden flex flex-col bg-black">
-                  <video 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline 
-                    src="/intro.mp4" 
-                    className="absolute inset-0 z-0 w-full h-full object-cover"
-                  />
+                    {/* ✅ AMENDED CODE: Added controls={false} and disablePictureInPicture */}
+                    <video 
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline
+                        controls={false}
+                        disablePictureInPicture
+                        src="/intro.mp4" 
+                        className="absolute inset-0 z-0 w-full h-full object-cover"
+                    />
                   <div className="absolute inset-0 z-10 bg-black/60"></div>
                   <div className="absolute inset-0 z-20" style={{ backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`, backgroundSize: `25px 25px` }}></div>
                   <main className="relative flex-grow flex items-center justify-center text-center px-10 md:px-20 z-30">
                       <div>
                           <p className="text-2xl md:text-3xl font-light mb-2">Your Partner In</p>
                           <h2 className="text-5xl md-text-7xl lg:text-8xl font-extrabold tracking-tighter leading-none">CREATING and GROWING</h2>
-                          <h2 className="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter">BRANDS !</h2>
+                          <h2 className="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter">BRANDS!</h2>
                           <div className="mt-8 max-w-xs mx-auto">
                               <p className="text-lg font-light leading-relaxed">We Help Businesses Thrive and grow by crafting the post <span className="font-semibold">Human-Centric</span> solutions</p>
                           </div>
@@ -255,7 +256,6 @@ export default function HomePage() {
                   </div>
                   <div style={bannerBackgroundStyle} className="mt-20 py-8 text-black">
                       <div className="container mx-auto px-10 md:px-20">
-                          {/* ✅ AMENDED CODE: Replaced <a> with <Link> */}
                           <Link href="/ecommerce-success" className="group flex items-center justify-center text-2xl font-bold uppercase tracking-widest hover:underline">
                               Get to the ladder of ecommerce success!
                               <ArrowRightIcon />

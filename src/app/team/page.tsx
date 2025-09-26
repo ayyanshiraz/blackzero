@@ -108,7 +108,7 @@ export default function TeamPage() {
                                     id="org-ceo"
                                     name="MIAN HASHIM HAROON" 
                                     position="Chief Executive Officer" 
-                                    avatar="/Team/ceo2.png"
+                                    avatar="/Team/CEO[2].png"
                                     ringColor="border-black"
                                     size="w-52 h-52"
                                     startAnimation={isOrganogramVisible}

@@ -1,3 +1,9 @@
+export interface ProjectDetail {
+    title: string;
+    description: string;
+    imageUrl: string;
+}
+
 export interface Project {
     slug: string;
     title: string;
@@ -7,6 +13,7 @@ export interface Project {
     description: string;
     services: string[];
     gallery: string[];
+    details?: ProjectDetail[];
     testimonial?: {
         quote: string;
         author: string;
@@ -23,9 +30,36 @@ export const projectsData: Project[] = [
         category: "E-commerce",
         imageUrl: "/Projects/1.jpg",
         className: 'md:col-span-1 md:row-span-2',
-        description: "Ever Smart Emporium is a luxury retailer based in Lahore, Pakistan, specializing in international high-end brands. Their Instagram page, @eversmart_emporium, serves as their primary digital showroom and storefront. With a substantial following of over 27,500, they have cultivated a strong online community of luxury shoppers. The page functions as a \"one-stop shop,\" showcasing a diverse and curated selection of goods for both men and women. Their collection spans from new arrivals and fragrances to bespoke suits, designer shoes, and premium accessories. They emphasize a global sourcing strategy, bringing exclusive items from renowned brands to the local market. In addition to their robust digital presence, the business also operates a physical store at 77-A/C, Ghalib Road in Lahore, solidifying their position as a key destination for luxury retail in the region.",
+        description: `Ever Smart Emporium stands as a premier luxury retailer in Lahore, curating high-end international brands for a discerning clientele. Operating through their influential Instagram page, <a href="https://www.instagram.com/eversmart_emporium/" target="_blank" rel="noopener noreferrer" class="text-black font-semibold hover:underline">@eversmart_emporium</a>, they have cultivated a significant online community of over 27,000 followers. This digital showroom serves as a one-stop destination, showcasing an exquisite collection of goods for both men and women. Their offerings range from the latest arrivals and exclusive fragrances to bespoke suits and designer accessories. By sourcing exclusive items from renowned brands globally, they bring a unique taste of international luxury to the local market. Complementing their strong digital presence, their physical store on Ghalib Road cements their status as a key destination for luxury retail in the heart of Lahore.`,
         services: ['Branding & Design', 'Web Development', 'E-commerce Strategy'],
         gallery: [ "/Clients/1.png", "/Projects/2.jpg", "/Projects/3.jpg", "/Projects/4.jpg", "/Projects/5.jpg", "/Projects/6.jpg", "/Projects/11.jpg", "/Projects/8.jpg", "/Projects/9.jpg", "/Projects/10.jpg" ],
+        details: [
+            {
+                title: "Social Media Handling",
+                description: "We took complete ownership of the @eversmart_emporium Instagram account, ensuring a consistent and high-end digital presence. Our team managed daily content posting, story updates, and direct community engagement. By responding to inquiries and fostering conversations with their 27.6k followers, we cultivated a loyal community and solidified the brand's reputation as a responsive and prestigious luxury source.",
+                imageUrl: "/Projects/details/ese-handling.jpg"
+            },
+            {
+                title: "Social Media Marketing",
+                description: "Our strategy focused on transforming their Instagram page into a powerful sales funnel. We developed a content marketing plan that highlighted new arrivals and brand stories. Through targeted promotions, we expanded their reach to a qualified audience of luxury shoppers, driving significant traffic and converting followers into paying customers.",
+                imageUrl: "/Projects/details/ese-marketing.jpg"
+            },
+            {
+                title: "Photography",
+                description: "To capture the essence of the luxury products, we conducted professional photoshoots that emphasized quality and detail. Each image was carefully styled, lit, and edited to create a visually stunning and cohesive feed. Our high-quality photography established a premium aesthetic for the brand, making each product feel exclusive and desirable.",
+                imageUrl: "/Projects/details/ese-photo.jpg"
+            },
+            {
+                title: "Videography",
+                description: "We brought the products to life through dynamic videography, creating engaging Instagram Reels and Stories. Short-form video content allowed us to showcase the texture, craftsmanship, and real-world appeal of the luxury items. These videos captured user attention, increased engagement rates, and provided a more immersive shopping experience.",
+                imageUrl: "/Projects/details/ese-video.jpg"
+            },
+            {
+                title: "Campaigns",
+                description: "We designed and executed targeted campaigns for key moments like 'New Arrivals' and promotions for specific high-end brands. These campaigns combined compelling visuals, persuasive copy, and strategic ad placements to generate excitement and urgency, successfully boosting sales for featured collections.",
+                imageUrl: "/Projects/details/ese-campaigns.jpg"
+            }
+        ],
         testimonial: {
             quote: "Partnering with Black Zero was a game-changer, transforming our digital presence to perfectly capture our luxury brand's essence. Their strategic approach to social media and advertising dramatically increased our engagement and, most importantly, our sales. We couldn't be happier and highly recommend Black Zero for their professionalism, creativity, and incredible results.",
             author: "Habib Rafique",
@@ -37,14 +71,14 @@ export const projectsData: Project[] = [
         slug: 'bizvibez-property',
         title: 'BizVibez Property',
         category: "Media Coverage",
-        imageUrl: "/Clients/2.png",
+        imageUrl: "/Projects/59.jpg",
         className: 'md:col-span-1',
         description: "BizVibez Properties is a real estate platform focused on luxury homes in prestigious Dubai neighborhoods, such as Dubai Hills. The website, bizvibezproperties.com, immediately presents a powerful search tool, allowing users to find properties for rent, for sale, or off-plan. With the tagline \"Truly local, truly expert!\", the company positions itself as a knowledgeable authority in the Dubai real estate market. The user-friendly interface features a prominent search bar where potential buyers or renters can filter by property type and search by location, title, or property ID. The homepage's hero image showcases a stunning view of the Dubai skyline from a beach, effectively conveying the luxurious lifestyle associated with the properties they represent. The navigation bar provides easy access to different sections of the site, including buying, renting, selling, land for sale, and area guides, offering a comprehensive resource for clients.",
         services: ['Social Media', 'Web Development', 'Media Coverage'],
         gallery: [ "/Clients/2.png", "/Projects/BizVibez/1.jpg", "/Projects/BizVibez/2.jpg" ],
         testimonial: {
             quote: "Black Zero was pivotal in establishing our digital footprint, perfectly capturing the prestige of our luxury Dubai real estate portfolio. Their expertise drove unprecedented traffic to our website and generated a substantial increase in high-quality client inquiries. For any business seeking impactful marketing that delivers measurable results, we wholeheartedly recommend Black Zero.",
-            author: "Habib Rafique",
+            author: "Emran Ahmed",
             image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300",
             rating: 5,
         }
@@ -60,7 +94,7 @@ export const projectsData: Project[] = [
         gallery: [ "/Clients/10.png", "/Projects/31.jpg", "/Projects/32.jpg", "/Projects/33.jpg" ],
         testimonial: {
             quote: "Black Zero was instrumental in launching our guest house, creating a sophisticated brand identity that truly set us apart. Their targeted digital marketing campaigns filled our rooms faster than we ever imagined was possible. For any hospitality business looking for impactful marketing and real results, we give Black Zero our highest recommendation.",
-            author: "Habib Rafique",
+            author: "Fakhraa",
             image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300",
             rating: 5,
         }
@@ -77,7 +111,7 @@ export const projectsData: Project[] = [
         gallery: [ "/Clients/11.png", "/Projects/13.jpg", "/Projects/14.jpg", "/Projects/15.jpg", "/Projects/16.jpg", "/Projects/17.jpg", "/Projects/18.jpg", "/Projects/19.jpg", "/Projects/20.jpg","/Projects/14.jpg" ],
         testimonial: {
             quote: "Black Zero transformed our digital presence, expertly translating our architectural vision into a compelling online brand that truly resonates. Their strategic marketing amplified our portfolio, connecting us with a high-caliber clientele and driving significant growth in project inquiries. We couldn't be more impressed with their ability to blend creativity with measurable results.",
-            author: "Habib Rafique",
+            author: "Nauman",
             image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300",
             rating: 5,
         }
@@ -93,7 +127,7 @@ export const projectsData: Project[] = [
         gallery: [ "/Clients/6.png", "/Projects/35.jpg", "/Projects/36.jpg", "/Projects/37.jpg", "/Projects/38.jpg", "/Projects/39.jpg", "/Projects/40.jpg", "/Projects/41.jpg", "/Projects/42.jpg", "/Projects/46.jpg" ],
         testimonial: {
             quote: "Black Zero masterfully unified the digital presence for both our luxury lodging and our specialized kitchen, creating a cohesive brand story. Their targeted strategies significantly boosted our online visibility, leading to a direct increase in both room bookings and food orders. We are thrilled with the tangible results and highly recommend their expert marketing services.",
-            author: "Habib Rafique",
+            author: "Mian Asad",
             image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300",
             rating: 5,
         }
@@ -109,7 +143,7 @@ export const projectsData: Project[] = [
         gallery: [ "/Clients/7.png", "/Projects/22.jpg", "/Projects/23.jpg", "/Projects/24.jpg", "/Projects/25.jpg", "/Projects/26.jpg", "/Projects/27.jpg", "/Projects/28.jpg", "/Projects/29.jpg", "/Projects/30.jpg" ],
         testimonial: {
             quote: "Black Zero's targeted marketing strategies significantly boosted our online visibility, connecting us with students across Pakistan seeking quality education. Their team understood our mission and crafted a digital campaign that dramatically increased our student enrollment for both online and home tuition. We are incredibly pleased with the results and their professional, results-driven approach.",
-            author: "Habib Rafique",
+            author: "Zahid Bashir",
             image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300",
             rating: 5,
         }
