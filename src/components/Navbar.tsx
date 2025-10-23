@@ -1,6 +1,7 @@
 'use client';
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link'; // Import the Link component
+
+import * as React from 'react';
+import Link from 'next/link';
 
 // --- Dropdown Menu Component ---
 const Dropdown = ({ title, items, mainHref }: { title: string; items: { name: string; href: string }[]; mainHref: string; }) => {
@@ -15,7 +16,6 @@ const Dropdown = ({ title, items, mainHref }: { title: string; items: { name: st
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
             </Link>
-
             <div className="absolute top-full left-0 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 invisible group-hover:visible z-50">
                 <div className="w-56 bg-black border border-gray-700 rounded-md shadow-lg py-1">
                     {items.map((item) => (
@@ -33,22 +33,19 @@ const Dropdown = ({ title, items, mainHref }: { title: string; items: { name: st
     );
 };
 
-
 export default function Navbar() {
-    const [scrolled, setScrolled] = useState(false);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [hasMounted, setHasMounted] = useState(false);
+    const [scrolled, setScrolled] = React.useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+    const [hasMounted, setHasMounted] = React.useState(false);
 
-    useEffect(() => {
-        setHasMounted(true); // Keep for nav shadow logic
+    React.useEffect(() => {
+        setHasMounted(true);
         const handleScroll = () => {
             const isScrolled = window.scrollY > 10;
             setScrolled(isScrolled);
         };
-
         document.addEventListener('scroll', handleScroll);
         handleScroll();
-
         return () => {
             document.removeEventListener('scroll', handleScroll);
         };
@@ -64,6 +61,7 @@ export default function Navbar() {
     ];
 
     const aboutItems = [
+        { name: 'About Us', href: '/about' },
         { name: 'Our Team', href: '/team' },
     ];
 
@@ -71,7 +69,6 @@ export default function Navbar() {
 
     return (
         <nav className={navClassName}>
-            {/* New styles for looping animation */}
             <style jsx>{`
                 @keyframes slideInFromLeft {
                     0%, 100% { transform: translateX(-110%); opacity: 0; }
@@ -91,7 +88,6 @@ export default function Navbar() {
             `}</style>
             
             <div className="container mx-auto flex items-center justify-between px-10 md:px-20 py-4">
-                {/* Logo with looping animation */}
                 <Link href="/" className="text-white flex items-center gap-3">
                     <div className="w-15 h-18 overflow-hidden rounded-full flex items-center justify-center">
                         <video
@@ -101,33 +97,31 @@ export default function Navbar() {
                             loop
                             muted
                             playsInline
+                            disablePictureInPicture
+                            controls={false}
                             preload="auto"
                         />
                     </div>
-                    <div className="overflow-hidden relative h-17 w-32"> {/* Container to define animation area */}
-                        <h1
-                            className="absolute text-4xl font-extrabold tracking-tighter animate-black-loop"
-                        >
+                    <div className="overflow-hidden relative h-17 w-32">
+                        <h1 className="absolute text-4xl font-extrabold tracking-tighter animate-black-loop">
                             BLACK
                         </h1>
-                        <p
-                            className="absolute bottom-0 text-2xl font-light tracking-widest animate-zero-loop"
-                        >
+                        <p className="absolute bottom-0 text-2xl font-light tracking-widest animate-zero-loop">
                             ZERO
                         </p>
                     </div>
                 </Link>
 
-                {/* Desktop Menu */}
+                {/* ✅ AMENDED CODE: Added Career link */}
                 <div className="hidden md:flex items-center space-x-2 text-white">
                     <Link href="/" className="px-5 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:text-black">Home</Link>
-                    <Dropdown title="About" items={aboutItems} mainHref="/about" />
                     <Dropdown title="Services" items={servicesItems} mainHref="/services" />
+                    <Dropdown title="About" items={aboutItems} mainHref="/about" />
                     <Link href="/projects" className="px-5 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:text-black">Projects</Link>
+                    <Link href="/careers" className="px-5 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:text-black">Careers</Link>
                     <Link href="/contact" className="px-5 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:text-black">Contact</Link>
                 </div>
 
-                {/* Mobile Menu Button */}
                 <div className="md:hidden">
                     <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white">
                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -137,21 +131,25 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
+            {/* ✅ AMENDED CODE: Added Career link to mobile menu */}
             {mobileMenuOpen && (
                 <div className="md:hidden bg-black text-white py-4 absolute top-full left-0 w-full">
                     <Link href="/" className="block text-center py-2 text-lg">Home</Link>
-                    <p className="text-center py-2 text-lg font-bold mt-2">About</p>
-                    <Link href="/about" className="block text-center py-1 text-gray-200 font-semibold">All About</Link>
-                    {aboutItems.map(item => (
-                        <Link key={item.name} href={item.href} className="block text-center py-1 text-gray-400">{item.name}</Link>
-                    ))}
+                    
                     <p className="text-center py-2 text-lg font-bold mt-2">Services</p>
                     <Link href="/services" className="block text-center py-1 text-gray-200 font-semibold">All Services</Link>
                     {servicesItems.map(item => (
                         <Link key={item.name} href={item.href} className="block text-center py-1 text-gray-400">{item.name}</Link>
                     ))}
+                    
+                    <p className="text-center py-2 text-lg font-bold mt-2">About</p>
+                    <Link href="/about" className="block text-center py-1 text-gray-200 font-semibold">All About</Link>
+                    {aboutItems.map(item => (
+                        <Link key={item.name} href={item.href} className="block text-center py-1 text-gray-400">{item.name}</Link>
+                    ))}
+
                     <Link href="/projects" className="block text-center py-2 text-lg">Projects</Link>
+                    <Link href="/career" className="block text-center py-2 text-lg">Career</Link>
                     <Link href="/contact" className="block text-center py-2 text-lg">Contact</Link>
                 </div>
             )}

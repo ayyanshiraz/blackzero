@@ -1,5 +1,7 @@
 'use client';
-import React, { useState, useEffect, useRef, type ChangeEvent, type FC } from 'react';
+import React, { useState, useEffect, useRef, type FC } from 'react';
+import { Globe } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // --- Custom Hook for Typing Effect ---
 const useTypingEffect = (textToType: string, speed = 100, startCondition = false) => {
@@ -51,16 +53,142 @@ const WhatsApp = () => (
     </svg>
 );
 
+
+// --- FAQ Section Components ---
+const faqData = [
+    { question: "What is Black Zero?", answer: "Black Zero is a full-service creative and digital agency based in Lahore. We are a team of thinkers, creators, and strategists dedicated to helping businesses grow by building powerful brand identities and effective marketing solutions." },
+    { question: "Why should I choose Black Zero?", answer: "You should choose us because we become an extension of your team. We focus on building lasting relationships based on trust and transparency. Our strategies are data-driven, human-centric, and designed to deliver measurable results that align with your business goals." },
+    { question: "How to contact Black Zero?", answer: "You can contact us by filling out the form on this page, calling us at +92 324 4333267, or sending an email to info@blackzero.org. We are also available on WhatsApp." },
+    { question: "How can I get a quotation for my business?", answer: "To get a custom quotation, please fill out the contact form with as much detail about your project as possible. Our team will review your request and contact you to schedule a consultation to discuss your needs and provide a detailed proposal." },
+    { question: "What are your services?", answer: "We offer a comprehensive suite of services including Marketing, Business Analytics, 2D/3D Animation, Web & App Development, Graphic Design, and professional Photography/Videography." },
+    { question: "When did Black Zero form?", answer: "Black Zero was founded in 2024 by a team of passionate experts with a vision to create a multi-domain company that delivers exceptional results." },
+    { question: "Who is the owner of Black Zero?", answer: "Black Zero is led by our CEO, Mian Hashim Haroon, who oversees the company's vision and strategic direction." },
+    { question: "How do I contact the Black Zero team?", answer: "The most efficient way to reach our team is through the contact form on our website or by emailing us at info@blackzero.org. For urgent matters, you can call our office number." },
+    { question: "What are the costs?", answer: "Our costs are project-dependent. We don't offer one-size-fits-all packages because we believe every business has unique needs. We provide a custom quotation after an initial consultation to ensure our services are perfectly tailored to you." },
+    // ✅ AMENDED CODE: Added the 10th question
+    { question: "In which countries do you operate?", answer: "Our main office is physically located in Lahore, Pakistan. However, we operate globally and have proudly served clients in 9 different countries across the world." }
+];
+
+const FaqItem = ({ question, answer, isOpen, onClick }: { question: string; answer: string; isOpen: boolean; onClick: () => void; }) => {
+    return (
+        <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="border-b border-gray-200 last:border-b-0">
+            <button
+                onClick={onClick}
+                className="w-full group flex justify-between items-center text-left py-5 px-6 bg-black text-white font-semibold focus:outline-none transition-colors duration-300 hover:bg-white hover:text-black"
+            >
+                <span className="text-lg">{question}</span>
+                <span className="text-2xl font-light transition-transform duration-300 group-hover:scale-110">{isOpen ? '−' : '+'}</span>
+            </button>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.section
+                        key="answer"
+                        initial="collapsed"
+                        animate="open"
+                        exit="collapsed"
+                        variants={{
+                            open: { opacity: 1, height: 'auto' },
+                            collapsed: { opacity: 0, height: 0 }
+                        }}
+                        transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                        className="overflow-hidden"
+                    >
+                        <div className="p-6 bg-white text-gray-800 border-l border-r border-gray-200">
+                            <p className="leading-relaxed">{answer}</p>
+                        </div>
+                    </motion.section>
+                )}
+            </AnimatePresence>
+        </motion.div>
+    );
+};
+
+const FaqSection = () => {
+    const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+    const handleToggle = (index: number) => {
+      setOpenIndex(openIndex === index ? null : index);
+    };
+
+    const midpoint = Math.ceil(faqData.length / 2);
+    const leftFaqs = faqData.slice(0, midpoint);
+    const rightFaqs = faqData.slice(midpoint);
+
+    const containerVariants = {
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.1 } }
+    };
+
+    return (
+      <section className="bg-white text-black pt-12 pb-24">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <Globe className="w-12 h-12 mx-auto mb-4 text-black" />
+            <h2 className="text-4xl md:text-5xl font-extrabold text-black">FAQS</h2>
+            <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+              Our team fields common questions from people all over the globe. We believe in providing clear and straightforward answers to help you navigate the process of working with us.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="rounded-lg overflow-hidden shadow-lg border border-gray-200"
+            >
+                {leftFaqs.map((faq, index) => (
+                    <FaqItem
+                        key={index}
+                        question={faq.question}
+                        answer={faq.answer}
+                        isOpen={openIndex === index}
+                        onClick={() => handleToggle(index)}
+                    />
+                ))}
+            </motion.div>
+
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="rounded-lg overflow-hidden shadow-lg border border-gray-200"
+            >
+                {rightFaqs.map((faq, index) => {
+                    const originalIndex = index + midpoint;
+                    return (
+                        <FaqItem
+                            key={originalIndex}
+                            question={faq.question}
+                            answer={faq.answer}
+                            isOpen={openIndex === originalIndex}
+                            onClick={() => handleToggle(originalIndex)}
+                        />
+                    );
+                })}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    );
+};
+
+
 // --- Main Contact Page Component ---
 const ContactPage: FC = () => {
     const [isHeroVisible, setIsHeroVisible] = useState(false);
     const heroRef = useRef<HTMLElement>(null);
     
     const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        subject: '',
-        message: '',
+        fullName: '', email: '', subject: '', message: '',
     });
     const [loading, setLoading] = useState(false);
     const [statusMessage, setStatusMessage] = useState('');
@@ -72,8 +200,7 @@ const ContactPage: FC = () => {
                     setIsHeroVisible(true);
                     observer.unobserve(entry.target);
                 }
-            },
-            { threshold: 0.2 }
+            }, { threshold: 0.2 }
         );
 
         const currentHeroRef = heroRef.current;
@@ -145,7 +272,6 @@ const ContactPage: FC = () => {
                 .typing-cursor { display: inline-block; width: 0.5em; height: 1.1em; background-color: white; animation: blink 1s steps(1) infinite; vertical-align: middle; }
             `}</style>
 
-            {/* ---------- HERO SECTION (Highlight Removed) ---------- */}
             <section
                 ref={heroRef}
                 className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-cover bg-center"
@@ -160,9 +286,8 @@ const ContactPage: FC = () => {
                             <h1 className={`text-7xl md:text-9xl font-extrabold tracking-tighter leading-none ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
                                 CONTACT<br />US!
                             </h1>
-                            {/* ✅ AMENDED CODE: Fixed unescaped apostrophe */}
                             <p className={`text-xl md:text-2xl mt-4 max-w-md mx-auto md:mx-0 text-gray-200 ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-                                Have a query? Don&apos;t hesitate to reach out. We&apos;d love to hear from you!
+                                Have a query? Don't hesitate to reach out. We'd love to hear from you!
                             </p>
                         </div>
                         
@@ -183,13 +308,13 @@ const ContactPage: FC = () => {
                 </div>
             </section>
             
-            {/* ---------- CONTACT FORM & DETAILS SECTION ---------- */}
+            <FaqSection />
+
             <section style={formSectionBackgroundStyle} className="py-20">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">Get In Touch</h2>
-                        {/* ✅ AMENDED CODE: Fixed unescaped apostrophe */}
-                        <p className="text-gray-300 text-lg">Have a project in mind? We&apos;d love to hear about it.</p>
+                        <p className="text-gray-300 text-lg">Have a project in mind? We'd love to hear about it.</p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
                         <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -228,7 +353,7 @@ const ContactPage: FC = () => {
                                 <div className="p-4 rounded-lg flex flex-col bg-white border-2 border-transparent transition-all duration-300 hover:border-gray-200 hover:shadow-lg hover:-translate-y-1">
                                     <div className="flex justify-center mb-2"><MapPin /></div>
                                     <p className="text-black font-semibold">Our Address</p>
-                                    <p className="text-gray-700 text-sm break-words">Hotel MayFair 4th floor, 50-52, E - III, Commercial Zone, Al Fateh Ln, behind Monal Restaurant, Commercial Area Gulberg III, Lahore, Punjab 54660.</p>
+                                    <p className="text-gray-700 text-sm break-words">Hotel MayFair 4th floor,  50-52, E - III, Commercial Zone, Gulberg III, 54660, Lahore, Punjab..</p>
                                 </div>
                                 <div className="p-4 rounded-lg flex flex-col bg-white border-2 border-transparent transition-all duration-300 hover:border-gray-200 hover:shadow-lg hover:-translate-y-1">
                                     <div className="flex justify-center mb-2"><Phone /></div>
@@ -254,7 +379,7 @@ const ContactPage: FC = () => {
                                 <div className="absolute top-3 left-3 z-10 bg-white text-black p-3 rounded-md shadow-lg w-full max-w-[280px]">
                                     <h4 className="font-bold text-gray-900">BLACK ZERO</h4>
                                     <p className="text-xs text-gray-600 mt-1">
-                                        Hotel MayFair 4th floor, 50-52, E - III, Commercial Zone, Al Fateh Ln, behind Monal Restaurant, Commercial Area Gulberg III, Lahore, Punjab 54660.
+                                        Hotel MayFair 4th floor, 50-52, E - III, Commercial Zone, Gulberg III, 54660, Lahore, Punjab.
                                     </p>
                                     <a  
                                         href="https://www.google.com/maps/place/Hotel+MayFair/@31.5095172,74.3415963,16.91z/data=!4m9!3m8!1s0x39190466e1f6734f:0x8d762a4c914a7249!5m2!4m1!1i2!8m2!3d31.5094416!4d74.3416723!16s%2Fg%2F11gb3phkj3?entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D"

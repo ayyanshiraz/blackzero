@@ -6,37 +6,37 @@ const servicesData = [
     { 
         title: "Marketing", 
         slug: "marketing",
-        imageUrl: "/brand-strategy.png",
+        imageUrl: "/brand-strategy.jpg",
         description: "We create data-driven strategies that build brand awareness, drive traffic, and generate leads to elevate your digital footprint.",
     },
     { 
         title: "Business Analytics", 
         slug: "business-analytics",
-        imageUrl: "/business-analytics.png",
+        imageUrl: "/business-analytics.jpg",
         description: "Unlock the power of your data. We provide comprehensive analytics to help you make informed decisions for sustainable growth.",
     },
     { 
         title: "Animation", 
         slug: "animation",
-        imageUrl: "/animation.png",
+        imageUrl: "/animation.jpg",
         description: "Bring your brand to life with stunning 2D and 3D animations, from explainer videos to engaging social media content.",
     },
     { 
         title: "Development", 
         slug: "development",
-        imageUrl: "/development.png",
+        imageUrl: "/development.jpg",
         description: "Our team builds robust, scalable, and user-friendly websites and applications using modern frameworks and technologies.",
     },
     { 
         title: "Graphic Designing", 
         slug: "graphic-designing",
-        imageUrl: "/graphic designing.png",
+        imageUrl: "/graphic designing.jpg",
         description: "From logos to complete branding packages, we create a cohesive and memorable brand image through stunning visuals.",
     },
     { 
         title: "Photography / Videography", 
         slug: "photo-video",
-        imageUrl: "/photo-video.png",
+        imageUrl: "/photo-video.jpg",
         description: "High-quality visuals are essential. We capture your products, team, and story in the best light for all your marketing channels.",
     },
 ];
