@@ -44,27 +44,27 @@ export const projectsData: Project[] = [
             {
                 title: "Social Media Handling",
                 description: `We took complete ownership of the <a href="https://www.instagram.com/eversmart_emporium/" target="_blank" rel="noopener noreferrer" class="text-black font-semibold hover:underline">@eversmart_emporium</a> Instagram account, ensuring a consistent and high-end digital presence. Our team managed daily content posting, story updates, and direct community engagement. By responding to inquiries and fostering conversations with their 27.6k followers, we cultivated a loyal community and solidified the brand's reputation as a responsive and prestigious luxury source.`,
-                imageUrl: "/Projects/s1.png"
+                imageUrl: "/Projects/s1.jpg"
             },
             {
                 title: "Social Media Marketing",
                 description: "Our strategy focused on transforming their Instagram page into a powerful sales funnel. We developed a content marketing plan that highlighted new arrivals and brand stories. Through targeted promotions, we expanded their reach to a qualified audience of luxury shoppers, driving significant traffic and converting followers into paying customers.",
-                imageUrl: "/Projects/s2.png"
+                imageUrl: "/Projects/s2.jpg"
             },
             {
                 title: "Photography",
                 description: "To capture the essence of the luxury products, we conducted professional photoshoots that emphasized quality and detail. Each image was carefully styled, lit, and edited to create a visually stunning and cohesive feed. Our high-quality photography established a premium aesthetic for the brand, making each product feel exclusive and desirable.",
-                imageUrl: "/Projects/s3.png"
+                imageUrl: "/Projects/s3.jpg"
             },
             {
                 title: "Videography",
                 description: "We brought the products to life through dynamic videography, creating engaging Instagram Reels and Stories. Short-form video content allowed us to showcase the texture, craftsmanship, and real-world appeal of the luxury items. These videos captured user attention, increased engagement rates, and provided a more immersive shopping experience.",
-                imageUrl: "/Projects/s5.png"
+                imageUrl: "/Projects/s5.jpg"
             },
             {
                 title: "Campaigns",
                 description: "We designed and executed targeted campaigns for key moments like 'New Arrivals' and promotions for specific high-end brands. These campaigns combined compelling visuals, persuasive copy, and strategic ad placements to generate excitement and urgency, successfully boosting sales for featured collections.",
-                imageUrl: "/Projects/s4.png"
+                imageUrl: "/Projects/s4.jpg"
             }
         ],
         testimonial: {
@@ -91,42 +91,42 @@ export const projectsData: Project[] = [
             {
                 title: "Social Media Marketing",
                 description: "Our campaigns targeted high-net-worth individuals and investors interested in Dubai's luxury real estate market. We utilized sophisticated ad targeting on platforms like Instagram and LinkedIn to showcase premium properties, generating a consistent stream of qualified leads and inquiries for the BizVibez sales team.",
-                imageUrl: "/Projects/s6.png"
+                imageUrl: "/Projects/s6.jpg"
             },
             {
                 title: "Search Engine Optimization (SEO)",
                 description: "We implemented a comprehensive SEO strategy to increase organic visibility for high-value keywords such as 'luxury villas in Dubai Hills' and 'off-plan properties Dubai'. This involved on-page optimization for all property listings and creating authoritative content about Dubai's most exclusive neighborhoods, establishing BizVibez as a top result in search engines.",
-                imageUrl: "/Projects/s7.png"
+                imageUrl: "/Projects/s7.jpg"
             },
             {
                 title: "Website Development",
                 description: `We developed two core digital assets: the primary consultancy site at <a href="https://www.bizvibez.com/" target="_blank" rel="noopener noreferrer" class="text-black font-semibold hover:underline">bizvibez.com</a> and the specialized real estate portal at <a href="https://bizvibezproperties.com/" target="_blank" rel="noopener noreferrer" class="text-black font-semibold hover:underline">bizvibezproperties.com</a>. The property site features a powerful and intuitive search function, allowing users to effortlessly filter listings and explore the finest homes in Dubai.`,
-                imageUrl: "/Projects/s8.png"
+                imageUrl: "/Projects/s8.jpg"
             },
             {
                 title: "Social Media Handling",
                 description: "Our team managed the day-to-day operations of BizVibez's social media channels, curating a feed of stunning property photos and videos. We engaged with the community, answered questions promptly, and built a brand presence that reflected the luxury and professionalism of their real estate services, growing their following and fostering trust.",
-                imageUrl: "/Projects/s9.png"
+                imageUrl: "/Projects/s9.jpg"
             },
             {
                 title: "Campaigns",
                 description: "We launched targeted digital campaigns to promote exclusive listings and new off-plan projects. These campaigns utilized a mix of video tours, high-end photography, and compelling ad copy to create a sense of urgency and exclusivity, leading to successful property viewings and sales.",
-                imageUrl: "/Projects/s10.png"
+                imageUrl: "/Projects/s10.jpg"
             },
             {
                 title: "Scroll Stopper",
                 description: "To capture attention in busy social media feeds, we created 'Scroll Stopper' animations for BizVibez. These short, visually striking videos were designed to be thumb-stopping, using dynamic motion and quick cuts to highlight the most luxurious features of their properties, significantly boosting engagement rates.",
-                imageUrl: "/Projects/s11.png"
+                imageUrl: "/Projects/s11.jpg"
             },
             {
                 title: "Explanatory Videos",
                 description: "We produced a series of explanatory videos to simplify the property buying process in Dubai for international clients. These videos covered topics like legal requirements, financing options, and neighborhood guides, positioning BizVibez as a trusted and knowledgeable expert in the field.",
-                imageUrl: "/Projects/s12.png"
+                imageUrl: "/Projects/s12.jpg"
             },
             {
                 title: "Animation 2D / 3D",
                 description: "For off-plan properties, we created stunning 3D architectural visualizations and animated walkthroughs. These animations allowed potential buyers to experience the property before it was built, providing a powerful sales tool that showcased the design, layout, and lifestyle of future developments.",
-                imageUrl: "/Projects/s13.png"
+                imageUrl: "/Projects/s13.jpg"
             }
         ],
         testimonial: {
@@ -149,17 +149,17 @@ export const projectsData: Project[] = [
             {
                 title: "Social Media Marketing",
                 description: "Our marketing strategy centered on reaching potential travelers and local clients looking for premium accommodation in Lahore. We launched targeted ad campaigns on Instagram and Facebook, utilizing stunning visuals from our photoshoots to capture attention. By focusing on location-based and interest-based targeting, we successfully drove a consistent stream of booking inquiries and increased brand awareness among a relevant audience.",
-                imageUrl: "/Projects/s15.png"
+                imageUrl: "/Projects/s15.jpg"
             },
             {
                 title: "Social Media Handling",
                 description: `We took full control of the <a href="https://www.instagram.com/coronetgold" target="_blank" rel="noopener noreferrer" class="text-black font-semibold hover:underline">@coronetgold</a> Instagram page, managing all aspects of its daily operations. This included developing a content calendar, posting high-quality images and stories consistently, and engaging directly with the community. Our team handled all inquiries via comments and direct messages promptly, ensuring a professional and welcoming brand voice that converts followers into guests.`,
-                imageUrl: "/Projects/s16.png"
+                imageUrl: "/Projects/s16.jpg"
             },
             {
                 title: "Listing & Booking Platform Management",
                 description: "To maximize occupancy, we managed Coronet Gold's presence on major online travel agencies (OTAs) and hotel booking platforms. This service included creating and optimizing their listings with professional photos and compelling descriptions, managing room availability and pricing strategies, and actively monitoring and responding to guest reviews. This ensured high visibility and maintained a stellar reputation across all critical booking channels.",
-                imageUrl: "/Projects/s14.png"
+                imageUrl: "/Projects/s14.jpg"
             }
         ],
         testimonial: {
@@ -182,12 +182,12 @@ export const projectsData: Project[] = [
             {
                 title: "Campaigns",
                 description: "Our primary goal was to generate high-quality leads for their architectural and interior design services. We designed and executed targeted ad campaigns on Instagram and Facebook, showcasing their most visually stunning projects to a curated audience of high-net-worth individuals, real estate developers, and businesses in Lahore and surrounding areas. The campaigns focused on driving traffic to their social profiles and encouraging direct messages for consultations, resulting in a significant increase in qualified project inquiries.",
-                imageUrl: "/Projects/s17.png"
+                imageUrl: "/Projects/s17.jpg"
             },
             {
                 title: "Social Media Handling",
                 description: "We managed Unique Studio's social media channels to reflect their status as a premium design firm. This involved creating a cohesive and aesthetically pleasing feed, writing engaging captions that detailed the design process and material choices, and actively managing community engagement. By consistently showcasing their expertise and responding promptly to inquiries, we built their online brand authority and fostered a community of design admirers and potential clients.",
-                imageUrl: "/Projects/s18.png"
+                imageUrl: "/Projects/s18.jpg"
             }
         ],
         testimonial: {
@@ -210,32 +210,32 @@ export const projectsData: Project[] = [
             {
                 title: "Website Development",
                 description: "We designed and developed a comprehensive website for Hotel Mayfair, creating an elegant digital hub for both the hotel and its kitchen. The site features a seamless online booking engine, stunning galleries of the rooms and amenities, and integrated menus for the restaurant. The platform was built to be fully responsive, providing a premium user experience for guests booking a stay or ordering a meal.",
-                imageUrl: "/Projects/s25.png"
+                imageUrl: "/Projects/s25.jpg"
             },
             {
                 title: "Campaign Management",
                 description: "Our team managed distinct digital advertising campaigns for both the hotel and the kitchen. For lodging, we targeted travelers and business professionals searching for accommodation in Lahore. For the kitchen, we ran geo-targeted campaigns promoting their delivery service on Foodpanda, successfully driving food orders from the local community.",
-                imageUrl: "/Projects/s26.png"
+                imageUrl: "/Projects/s26.jpg"
             },
             {
                 title: "Website Handling",
                 description: "We provided continuous website handling and maintenance to ensure the digital presence of Hotel Mayfair remained current and effective. This included updating room rates and availability, refreshing the kitchen's menu with new items, posting special offers, and performing regular security and performance audits to guarantee a smooth and secure user experience.",
-                imageUrl: "/Projects/s27.png"
+                imageUrl: "/Projects/s27.jpg"
             },
             {
                 title: "Photography",
                 description: "Our visual strategy involved two separate professional photoshoots. For the hotel, we captured high-end interior photographs of the deluxe rooms, lobby, and other facilities to convey luxury and comfort. For the kitchen, we conducted professional food photography, styling each dish to look vibrant and appetizing for social media and delivery platforms.",
-                imageUrl: "/Projects/s28.png"
+                imageUrl: "/Projects/s28.jpg"
             },
             {
                 title: "Videography",
                 description: "We produced a suite of video content to engage audiences for both brands. This included elegant video tours of the hotel rooms and facilities, dynamic promotional videos for new dishes from the kitchen, and engaging short-form content for Instagram Reels to showcase the complete Mayfair experience.",
-                imageUrl: "/Projects/s29.png"
+                imageUrl: "/Projects/s29.jpg"
             },
             {
                 title: "Listing on Hotel Apps",
                 description: "To maximize bookings and reach a global audience, we managed Hotel Mayfair's listings on major hotel booking apps and Online Travel Agencies (OTAs). Our work involved optimizing their profile, managing dynamic pricing, ensuring calendar synchronization across platforms, and actively responding to guest reviews to maintain a high rating and attract more visitors.",
-                imageUrl: "/Projects/s30.png"
+                imageUrl: "/Projects/s30.jpg"
             }
         ],
         testimonial: {
@@ -258,27 +258,27 @@ export const projectsData: Project[] = [
             {
                 title: "Website Management",
                 description: "We provided ongoing management for the <a href='https://pakistanacademy.org/' target='_blank' rel='noopener noreferrer' class='text-black font-semibold hover:underline'>pakistanacademy.org</a> portal, ensuring all course information, tutor profiles, and schedules were kept up-to-date. Our role included regular security checks, performance optimization, and content updates to maintain a professional and reliable online resource for students and parents.",
-                imageUrl: "/Projects/s19.png"
+                imageUrl: "/Projects/s19.jpg"
             },
             {
                 title: "Website Development",
                 description: "Our team developed their educational website, <a href='https://pakistanacademy.org/' target='_blank' rel='noopener noreferrer' class='text-black font-semibold hover:underline'>pakistanacademy.org</a>, from the ground up, focusing on a clean, user-friendly interface. The site was built to be fully responsive and SEO-friendly, featuring easy navigation, a clear presentation of their course offerings, and a streamlined process for student inquiries and enrollment.",
-                imageUrl: "/Projects/s20.png"
+                imageUrl: "/Projects/s20.jpg"
             },
             {
                 title: "Social Media Marketing",
                 description: "We executed targeted social media marketing campaigns during key admission cycles. These campaigns on Facebook and Instagram were designed to reach parents and students searching for quality tutoring for O/A Levels and IELTS. By promoting success stories and highlighting their unique teaching methods, we generated a significant volume of qualified leads.",
-                imageUrl: "/Projects/s21.png"
+                imageUrl: "/Projects/s21.jpg"
             },
             {
                 title: "Social Media Handling",
                 description: "Our team managed the day-to-day operations of the Pakistan Academy social media profiles. This involved creating and scheduling a consistent stream of informative and engaging content, from educational tips to student testimonials. We also handled all community interactions, promptly responding to inquiries to build a supportive and trusted online presence.",
-                imageUrl: "/Projects/s22.png"
+                imageUrl: "/Projects/s22.jpg"
             },
             {
                 title: "Photography",
                 description: "To build a visual identity of trust and professionalism, we conducted photoshoots to create a bank of high-quality images. This included professional headshots of the tutors and branded graphics used across their website and social media, ensuring a cohesive and reputable brand image.",
-                imageUrl: "/Projects/s23.png"
+                imageUrl: "/Projects/s23.jpg"
             },
             {
                 title: "Videography",

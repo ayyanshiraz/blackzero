@@ -162,12 +162,12 @@ export default function HomePage() {
     };
     
     const teamMembers = [
-        { imgSrc: '/Team/CEO[1].png', name: 'MIAN HASHIM HAROON', role: 'CEO' }, 
-        { imgSrc: '/Team/coo3.png', name: 'DR. ABDULLAH HAROON', role: 'COO' }, 
+        { imgSrc: '/Team/CEO[1].jpg', name: 'MIAN HASHIM HAROON', role: 'CEO' }, 
+        { imgSrc: '/Team/coo3.jpg', name: 'DR. ABDULLAH HAROON', role: 'COO' }, 
         { imgSrc: '/Team/ayyan.jpg', name: 'AYYAN SHIRAZ', role: 'Marketing Head' }, 
         { imgSrc: '/Team/yasir.jpg', name: 'YASIR IRSHAD', role: 'IT Manager' }, 
-        { imgSrc: '/Team/ajwa4.png', name: 'AJWA ARSHAD', role: 'Social Media Manager' },
-        { imgSrc: '/Team/alishba2.png', name: 'ALISHBA ZIA', role: 'Project Manager' },
+        { imgSrc: '/Team/ajwa4.jpg', name: 'AJWA ARSHAD', role: 'Social Media Manager' },
+        { imgSrc: '/Team/alishba2.jpg', name: 'ALISHBA ZIA', role: 'Project Manager' },
     ];
 
     const headingWords = ["Break", "<span class='text-white'>Free</span>", "From", "All", "The", "<span class='text-white'>Hassle</span>", "of", "Starting", "Ecommerce", "Business"];
@@ -198,7 +198,7 @@ export default function HomePage() {
                         playsInline
                         controls={false}
                         disablePictureInPicture
-                        src="/intro.mp4" 
+                        src="/intro (1) (1).mp4" 
                         className="absolute inset-0 z-0 w-full h-full object-cover"
                     />
                   <div className="absolute inset-0 z-10 bg-black/60"></div>

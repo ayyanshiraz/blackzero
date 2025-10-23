@@ -108,7 +108,7 @@ export default function TeamPage() {
                                     id="org-ceo"
                                     name="MIAN HASHIM HAROON" 
                                     position="Chief Executive Officer" 
-                                    avatar="/Team/CEO[2].png"
+                                    avatar="/Team/CEO[2].jpg"
                                     ringColor="border-black"
                                     size="w-52 h-52"
                                     startAnimation={isOrganogramVisible}
@@ -118,7 +118,7 @@ export default function TeamPage() {
                                     id="org-cofounder"
                                     name="DR. ABDULLAH HAROON" 
                                     position="Chief Operating Officer" 
-                                    avatar="/Team/coo3.png"
+                                    avatar="/Team/coo3.jpg"
                                     ringColor="border-black"
                                     size="w-52 h-52"
                                     startAnimation={isOrganogramVisible}
@@ -156,7 +156,7 @@ export default function TeamPage() {
                                     id="org-lead2"
                                     name="AJWA ARSHAD" 
                                     position="Social Media Manager" 
-                                    avatar="/Team/ajwa4.png"
+                                    avatar="/Team/ajwa4.jpg"
                                     ringColor="border-gray-500"
                                     size="w-52 h-52"
                                     startAnimation={isOrganogramVisible}
@@ -166,7 +166,7 @@ export default function TeamPage() {
                                     id="org-lead3"
                                     name="ALISHBA ZIA" 
                                     position="Project Manager" 
-                                    avatar="/Team/alishba2.png"
+                                    avatar="/Team/alishba2.jpg"
                                     ringColor="border-gray-500"
                                     size="w-52 h-52"
                                     startAnimation={isOrganogramVisible}

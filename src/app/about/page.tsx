@@ -257,7 +257,7 @@ export default function AboutPage() {
                         </p>
                     </div>
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isCeoMessageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
-                        <Image src="/Team/CEO[1].png" alt="CEO of Black Zero" width={800} height={800} className="rounded-xl shadow-xl w-full max-w-md h-auto object-cover image-pop-on-hover "/>
+                        <Image src="/Team/CEO[1].jpg" alt="CEO of Black Zero" width={800} height={800} className="rounded-xl shadow-xl w-full max-w-md h-auto object-cover image-pop-on-hover "/>
                     </div>
                 </div>
             </section>
@@ -284,7 +284,7 @@ export default function AboutPage() {
             <section ref={storySectionRef} className="bg-white py-24 overflow-hidden">
                 <div className="container mx-auto px-8 sm:px-16 md:px-24 flex flex-col md:flex-row items-center justify-center gap-16">
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isStorySectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-                        <Image src="/ourstory.png" alt="Our Story" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover "/>
+                        <Image src="/ourstory.jpg" alt="Our Story" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover "/>
                     </div>
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isStorySectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
                         <h2 className="text-black text-4xl md:text-5xl font-extrabold leading-tight mb-6">Our Story</h2>
@@ -303,7 +303,7 @@ export default function AboutPage() {
                         <p className="mt-4 text-gray-300 text-lg leading-relaxed max-w-2xl">At Black Zero, we envision reshaping the digital marketing landscape in Lahore and throughout Pakistan. We strive to become the most trusted agency by delivering high-impact strategies that fuel long-term growth and deep customer engagement for every business, from startups to large enterprises. Our purpose is to empower Pakistani brands, enabling them to build a strong online presence, compete effectively in global markets, and innovate with cutting-edge marketing techniques. We are the reliable partner businesses can count on to consistently provide measurable outcomes, overcome digital challenges, and achieve lasting success.</p>
                     </div>
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isVisionSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
-                        <Image src="/ourvision.png" alt="Our Vision" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover border-2 border-gray-700 "/>
+                        <Image src="/ourvision.jpg" alt="Our Vision" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover border-2 border-gray-700 "/>
                     </div>
                 </div>
             </section>
@@ -311,7 +311,7 @@ export default function AboutPage() {
             <section ref={missionSectionRef} className="bg-white text-black py-24 overflow-hidden">
                 <div className="container mx-auto px-8 sm:px-16 md:px-24 flex flex-col md:flex-row items-center justify-center gap-16">
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isMissionSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-                        <Image src="/ourmission.png" alt="Our Mission" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover border-2 border-gray-300 "/>
+                        <Image src="/ourmission.jpg" alt="Our Mission" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover border-2 border-gray-300 "/>
                     </div>
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isMissionSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
                         <h2 className="text-black text-4xl md:text-5xl font-extrabold leading-tight mb-6">Our Mission</h2>
@@ -328,7 +328,7 @@ export default function AboutPage() {
                         <p className="mt-4 text-gray-300 text-lg leading-relaxed max-w-2xl">A leading digital marketing company in Lahore, we deliver exceptional digital marketing, PR, and brand activations. Our approach is driven by data-backed strategies that enhance brand visibility, foster customer engagement, and build a powerful online presence for businesses and public figures across Pakistan. Whether it&apos;s launching impactful social media campaigns, handling public relations for strong reputation management, or executing unique on-ground activations, our goal is to achieve measurable marketing results. We partner closely with clients to guarantee every strategy aligns with their brand objectives, helping them succeed in a competitive market and form lasting customer relationships.</p>
                     </div>
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isApproachSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
-                        <Image src="/ourapproach.png" alt="Our Approach" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover "/>
+                        <Image src="/ourapproach.jpg" alt="Our Approach" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover "/>
                     </div>
                 </div>
             </section>
@@ -336,7 +336,7 @@ export default function AboutPage() {
             <section ref={valuesSectionRef} className="bg-white text-black py-24 overflow-hidden">
                 <div className="container mx-auto px-8 sm:px-16 md:px-24 flex flex-col md:flex-row items-center justify-center gap-16">
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isValuesSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-                        <Image src="/ourvalues.png" alt="Our Values" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover border-2 border-gray-200 "/>
+                        <Image src="/ourvalues.jpg" alt="Our Values" width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover border-2 border-gray-200 "/>
                     </div>
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isValuesSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
                         <h2 className="text-black text-4xl md:text-5xl font-extrabold leading-tight mb-6">Our Values</h2>
