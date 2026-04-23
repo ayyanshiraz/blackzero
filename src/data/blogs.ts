@@ -492,7 +492,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong class="font-semibold text-gray-900">Behavior:</strong> Past purchases, website visits, and online activity.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        This level of targeting, backed by real-time <a href="https://www.blackzero.org/services/business-analytics" class="text-blue-600 hover:underline font-semibold">business analytics</a>, means your marketing budget is spent engaging people
+        This level of targeting, backed by real-time <a href="https://www.blackzero.org/services/data-analytics" class="text-blue-600 hover:underline font-semibold">business analytics</a>, means your marketing budget is spent engaging people
         who are actually interested in your services, dramatically increasing efficiency.
       </p>
 
