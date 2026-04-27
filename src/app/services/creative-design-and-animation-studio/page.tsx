@@ -11,7 +11,7 @@ const creativeDesignData = {
       { 
           title: `Bringing Ideas to Life in 2D and 3D`, 
           slug: `ideas-2d-3d`,
-          description: `We transform your concepts into tangible digital assets using advanced 2D and 3D techniques. Whether you need simple character designs or complex architectural visualizations, our team delivers high-quality models that accurately represent your vision. This comprehensive approach ensures every angle of your project is covered.`, 
+          description: `Our studio bridges the gap between imagination and reality, creating captivating visual experiences. We specialise in providing high-quality 2D and 3D animation for global brands that want to make an impact. From initial sketches to final renders, we ensure that every frame resonates with your audience. Our creative team creates each 3D character with high-fidelity detail and smooth motion. We combine cinematic lighting and advanced textures to create worlds that feel real. Whether you need technical explainers or artistic storytelling, we provide expert services in the US. \n\nOur workflow combines artistic insight with cutting-edge software to deliver high-end results. As a specialist 2D animation maker, we create lifelike motion graphics that strengthen digital identities. We focus on precise design and smooth transitions to keep the viewer engaged. Each project is a unique collaboration designed to elevate your business beyond the competition. Our team uses glass morphism and neon aesthetics to give your brand a futuristic look.`, 
           imageUrl: `/bit.webp` 
       },
       { 
