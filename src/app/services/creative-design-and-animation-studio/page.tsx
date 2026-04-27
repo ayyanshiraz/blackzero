@@ -6,7 +6,7 @@ const creativeDesignData = {
   slug: `creative-design-and-animation-studio`,
   imageUrl: `/animation.webp`,
   imgAltText: `Creative 2D and 3D animation character and motion graphics design`,
-  description: `Bringing Ideas to Life in 2D and 3D. Creative Designs. Stunning Animations. From Graphics to Motion We Create It All. Visual Stories, Perfectly Animated.`,
+  description: `We transform static concepts into cinematic experiences, where high-end aesthetics are combined with fluid motion. Our studio uses cutting-edge glass morphism and neon accents to create unique visual stories that define the future of digital branding.`,
   subSections: [
       { 
           title: `Bringing Ideas to Life in 2D and 3D`, 
