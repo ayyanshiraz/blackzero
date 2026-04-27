@@ -78,15 +78,15 @@ const creativeDesignData = {
 };
 
 export const metadata: Metadata = {
-  title: `Creative Design and Animation Studio | 2D and 3D Animation | Black Zero`,
-  description: `Bringing Ideas to Life in 2D and 3D. Creative Designs. Stunning Animations. From Graphics to Motion We Create It All. Visual Stories, Perfectly Animated.`,
+  title: `Cinematic 3D Animation and Creative Design Studio USA`,
+  description: `Forge elite brand identities via cinematic motion graphics and immersive 3D avatars. We engineer fluid visual narratives using neon aesthetics for USA firms now.`,
   keywords: [`3D animation`, `2D animation`, `explainer videos`, `scroll stoppers`, `motion graphics`, `photography`, `videography`, `creative design`],
   alternates: {
     canonical: `/services/creative-design-and-animation-studio`,
   },
   openGraph: {
-    title: `Creative Design and Animation Studio | 2D and 3D Animation | Black Zero`,
-    description: `Bringing Ideas to Life in 2D and 3D. Creative Designs. Stunning Animations. From Graphics to Motion We Create It All. Visual Stories, Perfectly Animated.`,
+    title: `Cinematic 3D Animation and Creative Design Studio USA`,
+    description: `Forge elite brand identities via cinematic motion graphics and immersive 3D avatars. We engineer fluid visual narratives using neon aesthetics for USA firms now.`,
     url: `/services/creative-design-and-animation-studio`,
     siteName: `Black Zero`,
     locale: `en_US`,
