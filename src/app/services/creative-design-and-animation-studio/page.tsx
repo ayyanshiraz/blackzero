@@ -23,7 +23,7 @@ const creativeDesignData = {
       { 
           title: `From Graphics to Motion We Create It All`, 
           slug: `graphics-to-motion`,
-          description: `Experience a seamless transition from static graphic design to full motion video. We provide a complete suite of creative services under one roof, managing your project from the initial sketch to the final animated sequence. This integrated workflow guarantees consistency across all your marketing materials.`, 
+          description: `We bridge the gap between static art and dynamic visual experiences. Our studio specialises in transforming raw ideas into high-end digital assets. We provide complete creative design and supply for modern enterprises. Every project begins with a strong foundation of sophisticated and minimal graphic design. We then bring these visuals to life with cutting-edge motion. Our team specialises in creating custom motion graphics that tell a unique story. We focus on smooth transitions and cinematic effects to engage viewers. \n\nOur experts deliver world-class digital solutions for clients across the US. From interactive 3D globes to glass-morphing UI\UX, we cover every aspect. We ensure that every frame is fully optimised for performance and visual clarity. Your brand message is transformed into a vibrant and connected journey. Partner with us and redefine the way you interact with your audience.`, 
           imageUrl: `/fgt1.webp` 
       },
       { 
