@@ -71,7 +71,7 @@ const creativeDesignData = {
       { 
           title: `Photography and Videography`, 
           slug: `photo-video`,
-          description: `High-quality visuals are essential for capturing your brand essence. We capture your products, team, and story in the best light for all your marketing channels. From professional photoshoots to cinematic video production, we handle everything from pre-production planning to final editing. Let us tell your visual story with stunning clarity and creativity, ensuring your corporate message is perfectly delivered.`, 
+          description: `Capturing the essence of your brand requires a combination of art and precision. We deliver high-definition visual content that tells powerful stories. Our studio serves as a premium commercial video production agency for elite brands. We use cinematic lighting and advanced camera techniques for every frame. From high-end product shots to large-scale event coverage, we specialize in every area. \n\nWe provide specialized corporate photoshoot services to elevate your professional image. Each image is polished to reflect the sophisticated standards of your business. We provide these comprehensive media solutions across the United States. We incorporate modern aesthetic elements like glass morphism in post-production. Your visual identity is further enhanced through expert editing and color grading. We transform ordinary footage into an engaging and immersive experience. Trust our experts to frame your vision with complete clarity and impact.`, 
           imageUrl: `/photo-video.webp`
       }
   ]
