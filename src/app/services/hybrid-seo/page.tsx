@@ -42,15 +42,15 @@ const hybridSeoData = {
 };
 
 export const metadata: Metadata = {
-  title: `Hybrid SEO Services | AI-Powered Growth & Traditional SEO | Black Zero`,
-  description: `Traditional SEO Meets AI-Powered Growth. Rank Higher with Smart SEO and AI. Experience Data-Driven SEO for the Modern Web with Smarter Rankings and Faster Results.`,
+  title: `Hybrid SEO Services Traditional and AI Agency Black Zero`,
+  description: `Dominate modern search results with our Hybrid SEO services. We combine traditional optimization with AI intelligence to drive traffic for US businesses.`,
   keywords: [`hybrid SEO services`, `AI SEO`, `traditional SEO`, `search engine optimization services`, `SEO audit services`, `modern web SEO`],
   alternates: {
     canonical: `/services/hybrid-seo`,
   },
   openGraph: {
-    title: `Hybrid SEO Services | AI-Powered Growth & Traditional SEO | Black Zero`,
-    description: `Traditional SEO Meets AI-Powered Growth. Rank Higher with Smart SEO and AI. Experience Data-Driven SEO for the Modern Web with Smarter Rankings and Faster Results.`,
+    title: `Hybrid SEO Services Traditional and AI Agency Black Zero`,
+    description: `Dominate modern search results with our Hybrid SEO services. We combine traditional optimization with AI intelligence to drive traffic for US businesses.`,
     url: `/services/hybrid-seo`,
     siteName: `Black Zero`,
     locale: `en_US`,
