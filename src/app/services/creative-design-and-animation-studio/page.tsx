@@ -17,7 +17,7 @@ const creativeDesignData = {
       { 
           title: `Creative Designs and Stunning Animations`, 
           slug: `creative-designs-animations`,
-          description: `Capture the imagination of your audience with visuals that leave a lasting impact. Our design process prioritizes creativity and precision, resulting in animations that are both beautiful and highly effective at delivering your message. We carefully craft every frame to ensure your brand stands out.`, 
+          description: `High-end visual solutions are the hallmark of our modern digital storytelling approach. We create immersive environments that combine artistic vision with technical precision. Our team specializes in developing creative models that push the boundaries of realism. Every project begins with a deep understanding of your brand identity and goals. We use fluid motion and cinematic lighting to maximize viewer impact. Experience the future of interaction through our exclusive Creative Designs website portal. We effortlessly bridge the gap between static images and dynamic user experiences. \n\nOur experts provide world-class design and animation services across the United States. From glass morphisms to neon accents, we focus on premium enterprise aesthetics. Each animation is designed to capture attention and create meaningful engagement. We transform complex data into beautiful visual sequences that connect with audiences. Let us take your digital presence to new heights with sophisticated and stunning visual assets.`, 
           imageUrl: `/cda.webp` 
       },
       { 
