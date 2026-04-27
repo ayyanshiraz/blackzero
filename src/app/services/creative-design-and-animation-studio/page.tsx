@@ -65,7 +65,7 @@ const creativeDesignData = {
       { 
           title: `Metaverse Characters`, 
           slug: `metaverse-characters`,
-          description: `Step into the virtual world with a unique digital identity. We specialize in creating immersive avatars for every platform. Start your custom VRChat avatar commission with our team today. \n\nStand out in the metaverse with high-fidelity 3D designs. Our artists focus on expressive features and fluid movement. We provide professional VRChat model commissions for serious users. Express your personality with unlimited customization options.`, 
+          description: `We create the digital identity of the future in the vast realm of the metaverse. Our team creates custom 3D avatars for businesses to enhance their virtual presence. Each model is optimized for seamless interaction across different digital realms. We focus on high-fidelity textures and fluid skeletal rigging to deliver a realistic experience. You can count on us for a professional custom VRChat avatar commission. \n\nWe create a high-end aesthetic by incorporating glass morphism and neon accents. Our designers ensure that your digital twin reflects your brand’s unique values. We provide world-class virtual character services across the United States. From corporate meetings to social gaming, we cover every virtual need. Each character is designed to perform optimally across multiple platforms. We bridge the gap between human expression and digital representation. Step into the next dimension with a character built for ultimate impact.`, 
           imageUrl: `/metaverse.webp`
       },
       { 
