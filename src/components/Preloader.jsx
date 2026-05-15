@@ -10,63 +10,76 @@ const Preloader = () => {
 
   // 1. The Asset Tracker
   useEffect(() => {
-    // Add all the heavy assets you want to ensure are ready before revealing the site
     const assets = [
       `/videos/rrr2.mp4`,
       `/images/circle-text.svg`,
       `/images/play.svg`,
-      // Add your 3D models here if loading via standard GLTFLoader, e.g., `/models/scene.glb`
     ];
 
     let loadedCount = 0;
+    let isForcedComplete = false;
 
     const updateProgress = () => {
+      // Prevent updating if the fallback timer already forced completion
+      if (isForcedComplete) return; 
+      
       loadedCount++;
       const currentProgress = Math.round((loadedCount / assets.length) * 100);
       setProgress(currentProgress);
     };
 
-    // If there are no assets, immediately complete
+    // FAIL-SAFE: Force complete after 4 seconds no matter what
+    const fallbackTimer = setTimeout(() => {
+      if (loadedCount < assets.length) {
+        isForcedComplete = true;
+        setProgress(100);
+      }
+    }, 4000);
+
     if (assets.length === 0) {
       setProgress(100);
       return;
     }
 
     assets.forEach((src) => {
-      // Handle Images
       if (src.match(/\.(png|jpe?g|svg|webp|gif)$/i)) {
         const img = new Image();
         img.src = src;
         img.onload = updateProgress;
-        img.onerror = updateProgress; // Continue even if one fails
+        img.onerror = updateProgress; 
       } 
-      // Handle Videos
       else if (src.match(/\.(mp4|webm|ogg)$/i)) {
         const video = document.createElement(`video`);
         video.src = src;
-        video.preload = `auto`;
-        video.oncanplaythrough = updateProgress;
+        video.muted = true;
+        video.playsInline = true;
+        
+        // Use loadeddata instead of canplaythrough for mobile compatibility
+        video.onloadeddata = updateProgress;
         video.onerror = updateProgress;
+        video.onstalled = updateProgress; // Fires if the browser throttles the download
+        
+        // Explicitly call load() to encourage mobile browsers to fetch metadata
+        video.load(); 
       }
-      // Handle anything else (just instantly resolve it so it doesn't hang)
       else {
         updateProgress();
       }
     });
+
+    // Cleanup the timer if the component unmounts early
+    return () => clearTimeout(fallbackTimer);
   }, []);
 
   // 2. The GSAP Animations
   useGSAP(() => {
-    // Animate the percentage number smoothly 
-    // This takes the "jumpy" progress state and tweens it visually
     gsap.to(counterRef.current, {
       innerHTML: progress + `%`,
       duration: 0.5,
-      snap: { innerHTML: 1 }, // Rounds to whole numbers
+      snap: { innerHTML: 1 }, 
       ease: `power2.out`,
     });
 
-    // When progress hits 100%, trigger the outro sequence
     if (progress === 100) {
       const tl = gsap.timeline({
         onComplete: () => setIsMounted(false),
@@ -80,12 +93,12 @@ const Preloader = () => {
           ease: `power3.inOut` 
         })
         .to(`.preloader-container`, {
-          yPercent: -100, // Slide the black curtain up
+          yPercent: -100, 
           duration: 1.2,
           ease: `power4.inOut`,
         }, `-=0.2`);
     }
-  }, [progress]); // Re-run this effect whenever the progress state changes
+  }, [progress]); 
 
   if (!isMounted) return null;
 
@@ -96,7 +109,6 @@ const Preloader = () => {
           BlackZero
         </h1>
         
-        {/* Progress Bar & Counter */}
         <div className={`w-48 md:w-64 col-center gap-3`}>
           <div className={`w-full h-[2px] bg-white/20 relative overflow-hidden rounded-full`}>
             <div 
