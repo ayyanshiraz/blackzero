@@ -4,53 +4,57 @@ import { Canvas } from "@react-three/fiber";
 import { Environment, Html } from "@react-three/drei";
 import RobotModel from "../components/RobotModel";
 
-// FIX: Hotspot is now a stateful component so it registers mobile taps!
 const Hotspot = ({ position, title, desc, align = `right` }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = (e) => {
-    e.stopPropagation(); // Prevents the click from passing through the canvas
+    e.stopPropagation(); 
     setIsOpen(!isOpen);
   };
 
   return (
     <Html position={position} center zIndexRange={[100, 0]}>
       <div 
-        className={`relative cursor-pointer flex items-center justify-center`}
+        className={`relative cursor-pointer flex flex-col md:flex-row items-center justify-center`}
         onClick={handleToggle}
         onPointerEnter={() => setIsOpen(true)}
         onPointerLeave={() => setIsOpen(false)}
       >
         
-        {/* The Glowing Dot */}
-        <div className={`relative flex items-center justify-center w-8 h-8`}>
-          <div className={`absolute w-full h-full bg-red-600 rounded-full animate-ping opacity-70`}></div>
-          <div className={`absolute w-3 h-3 bg-white rounded-full shadow-[0_0_10px_2px_rgba(220,38,38,0.8)]`}></div>
-          <div className={`absolute w-5 h-5 border border-red-500 rounded-full`}></div>
+        {/* The Glowing Dot with active state styles */}
+        <div className={`relative flex items-center justify-center w-8 h-8 z-10 transition-transform duration-300 ${isOpen ? `scale-125` : `scale-100`}`}>
+          {/* Outer Ping */}
+          <div className={`absolute w-full h-full rounded-full animate-ping opacity-70 ${isOpen ? `bg-red-500` : `bg-red-600`}`}></div>
+          
+          {/* Core Dot */}
+          <div className={`absolute w-3 h-3 rounded-full transition-all duration-300 ${isOpen ? `bg-red-500 shadow-[0_0_15px_4px_rgba(239,68,68,0.9)]` : `bg-white shadow-[0_0_10px_2px_rgba(220,38,38,0.8)]`}`}></div>
+          
+          {/* Outer Ring */}
+          <div className={`absolute rounded-full transition-all duration-300 ${isOpen ? `w-6 h-6 border-2 border-red-400` : `w-5 h-5 border border-red-500`}`}></div>
         </div>
 
-        {/* The Popup Box (Now controlled by isOpen state instead of group-hover) */}
         <div 
-          className={`absolute flex items-center transition-all duration-500 ease-out pointer-events-none
+          className={`absolute flex flex-col md:items-center transition-all duration-500 ease-out pointer-events-none
             ${isOpen ? `opacity-100` : `opacity-0`}
-            ${align === `right` ? `left-4 flex-row` : `right-4 flex-row-reverse`}
+            bottom-10 ${align === `right` ? `-left-4` : `-right-4`}
+            md:bottom-auto md:top-1/2 md:-translate-y-1/2
+            ${align === `right` ? `md:left-8 md:flex-row` : `md:right-8 md:flex-row-reverse`}
+            w-max z-20
           `}
         >
-          {/* Connector Line */}
           <div 
-            className={`h-[1px] from-red-600 to-transparent transition-all duration-500 delay-100
-              ${isOpen ? `w-8 md:w-16` : `w-0`}
+            className={`hidden md:block h-[1px] from-red-600 to-transparent transition-all duration-500 delay-100
+              ${isOpen ? `w-16` : `w-0`}
               ${align === `right` ? `bg-gradient-to-r` : `bg-gradient-to-l`}
             `}
           ></div>
           
-          {/* Text Container */}
-          <div className={`w-48 md:w-56 backdrop-blur-md bg-black/60 border border-white/10 p-3 md:p-4 rounded-lg shadow-2xl transform transition-transform duration-500 delay-150
+          <div className={`w-40 md:w-48 backdrop-blur-md bg-black/90 border border-white/20 p-3 md:p-4 rounded-lg shadow-[0_0_15px_rgba(0,0,0,0.8)] transform transition-transform duration-500 delay-150
             ${isOpen ? `scale-100` : `scale-95`}
-            ${align === `right` ? `ml-2 text-left` : `mr-2 text-right`}
+            ${align === `right` ? `text-left` : `text-right`}
           `}>
-            <h4 className={`text-red-500 font-bold text-xs md:text-sm tracking-widest uppercase mb-1`}>{title}</h4>
-            <p className={`text-white/80 text-[10px] md:text-xs font-mono leading-relaxed`}>{desc}</p>
+            <h4 className={`text-red-500 font-bold text-[10px] md:text-sm tracking-widest uppercase mb-1`}>{title}</h4>
+            <p className={`text-white/90 text-[9px] md:text-xs font-mono leading-relaxed whitespace-normal`}>{desc}</p>
           </div>
         </div>
 
@@ -63,8 +67,10 @@ const TechCoreSection = () => {
   const [time, setTime] = useState(`00:00:00:00`);
   const [hexData, setHexData] = useState(`0x0000`);
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener(`resize`, checkMobile);
@@ -84,9 +90,9 @@ const TechCoreSection = () => {
   }, []);
 
   return (
-    <section className={`nutrition-section bg-transparent h-full w-full relative z-10 overflow-hidden`}>
+    <section className={`nutrition-section bg-transparent h-[100dvh] w-full relative z-10 overflow-hidden`}>
 
-      <div className={`absolute inset-0 z-20 pointer-events-none p-6 md:p-12 flex flex-col justify-between font-mono text-white/50 text-xs md:text-sm select-none`}>
+      <div className={`absolute inset-0 z-20 pointer-events-none p-6 pb-24 md:p-12 flex flex-col justify-between font-mono text-white/50 text-xs md:text-sm select-none`}>
         
         <div className={`flex justify-between items-start w-full`}>
           <div className={`flex items-center gap-4`}>
@@ -147,37 +153,39 @@ const TechCoreSection = () => {
             <Environment preset={`city`} />
             
             <Suspense fallback={null}>
-              <group scale={isMobile ? 0.6 : 1} position={isMobile ? [0, -1.5, 0] : [0, 0, 0]}>
-                <RobotModel scale={15.5} position={[0, -11, 0]} />
+              {mounted && (
+                <group scale={isMobile ? 0.45 : 1} position={isMobile ? [0, -1.5, 0] : [0, 0, 0]}>
+                  <RobotModel scale={15.5} position={[0, -11, 0]} />
 
-                <Hotspot 
-                  position={[0.6, 4.0, 2.8]}
-                  title={`Cognitive Core`} 
-                  desc={`Advanced AI analytics integration for real time market adaptation.`}
-                  align={`right`}
-                />
+                  <Hotspot 
+                    position={[0.6, 4.0, 2.8]}
+                    title={`Cognitive Core`} 
+                    desc={`Advanced AI analytics integration for real time market adaptation.`}
+                    align={`right`}
+                  />
 
-                <Hotspot 
-                  position={[0, 1.0, 3.8]} 
-                  title={`Power Matrix`} 
-                  desc={`Centralized architecture delivering scalable web solutions.`}
-                  align={`left`}
-                />
+                  <Hotspot 
+                    position={[0, 1.0, 3.8]} 
+                    title={`Power Matrix`} 
+                    desc={`Centralized architecture delivering scalable web solutions.`}
+                    align={`left`}
+                  />
 
-                <Hotspot 
-                  position={[3.2, -0.8, 1.5]} 
-                  title={`Kinetic Drive`} 
-                  desc={`Immersive visual design engine powering next generation interfaces.`}
-                  align={`right`}
-                />
+                  <Hotspot 
+                    position={[3.2, -0.8, 1.5]} 
+                    title={`Kinetic Drive`} 
+                    desc={`Immersive visual design engine powering next generation interfaces.`}
+                    align={`right`}
+                  />
 
-                <Hotspot 
-                  position={[-3.2, -0.8, 1.5]} 
-                  title={`Data Router`} 
-                  desc={`High performance routing system for instant data delivery.`}
-                  align={`left`}
-                />
-              </group>
+                  <Hotspot 
+                    position={[-3.2, -0.8, 1.5]} 
+                    title={`Data Router`} 
+                    desc={`High performance routing system for instant data delivery.`}
+                    align={`left`}
+                  />
+                </group>
+              )}
             </Suspense>
           </Canvas>
         </div>

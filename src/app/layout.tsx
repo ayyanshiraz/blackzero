@@ -1,4 +1,5 @@
 import "./globals.css";
+import Preloader from "../components/Preloader";
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -66,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body>
+        <Preloader />
         {/* 1. Hide Navbar on Dashboard */}
         <HideOnDashboard>
           <Navbar />

@@ -1,15 +1,15 @@
 "use client";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useMediaQuery } from "react-responsive";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const VideoPinSection = () => {
-  const isMobile = useMediaQuery({
-    query: `(max-width: 768px)`,
-  });
-
   useGSAP(() => {
-    if (!isMobile) {
+    let mm = gsap.matchMedia();
+
+    mm.add(`(min-width: 769px)`, () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: `.vd-pin-section`,
@@ -20,21 +20,36 @@ const VideoPinSection = () => {
         },
       });
 
-      tl.to(`.video-box`, {
-        clipPath: `circle(100% at 50% 50%)`,
-        ease: `power1.inOut`,
+      tl.fromTo(`.video-box`,
+        { clipPath: `circle(6% at 50% 50%)` },
+        { clipPath: `circle(100% at 50% 50%)`, ease: `power1.inOut` }
+      );
+    });
+
+    mm.add(`(max-width: 768px)`, () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: `.vd-pin-section`,
+          start: `top top`,
+          end: `+=150%`, 
+          scrub: 1, 
+          pin: true,
+          anticipatePin: 1, 
+        },
       });
-    }
+
+      tl.fromTo(`.video-box`,
+        { clipPath: `circle(20% at 50% 50%)` },
+        { clipPath: `circle(100% at 50% 50%)`, ease: `none` }
+      );
+    });
+
+    return () => mm.revert();
   });
 
   return (
-    <section className={`vd-pin-section`}>
-      <div
-        style={{
-          clipPath: isMobile ? `circle(100% at 50% 50%)` : `circle(6% at 50% 50%)`,
-        }}
-        className={`size-full video-box`}
-      >
+    <section className={`vd-pin-section h-[100dvh] w-full relative`}>
+      <div className={`size-full video-box`}>
         <video src={`/videos/rrr2.mp4`} playsInline muted loop autoPlay />
         <div className={`abs-center md:scale-100 scale-200`}>
           <img src={`/images/circle-text.svg`} alt={``} className={`spin-circle`} />

@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
+import Link from "next/link";
 
 const HeroSection = () => {
   const isMobile = useMediaQuery({
@@ -65,12 +66,11 @@ const HeroSection = () => {
   });
 
   return (
-    <section className={`bg-transparent w-full h-screen overflow-hidden`}>
-      <div className={`hero-container relative w-full h-full bg-transparent`}>
+    <section className={`bg-transparent w-full min-h-[100dvh] relative pt-24 md:pt-32 pb-24 md:pb-0`}>
+      <div className={`hero-container relative w-full h-full bg-transparent flex flex-col justify-center`}>
         
-        <div className={`hero-content opacity-0 pointer-events-none relative z-10`}>
+        <div className={`hero-content opacity-0 relative z-10 flex flex-col items-center`}>
           <div className={`overflow-hidden px-2`}>
-            {/* FIX 1: Scaled mobile text using !text-[11.5vw] to perfectly fit any screen width */}
             <h1 className={`hero-title !text-white !mb-6 md:!mb-0 !leading-[1.1] md:!leading-[9vw] text-center !text-[11.5vw] sm:!text-[4rem] md:!text-[6.5rem] 2xl:!text-[8.5rem]`}>
               Building Intelligent Systems
             </h1>
@@ -83,18 +83,20 @@ const HeroSection = () => {
             className={`hero-text-scroll !border-white`}
           >
             <div className={`hero-subtitle !bg-[#111111]`}>
-              {/* FIX 2: Scaled the badge text to match */}
               <h1 className={`!text-white !text-[9vw] sm:!text-[3rem] md:!text-[6.5rem] 2xl:!text-[8.5rem]`}>AI + Software</h1>
             </div>
           </div>
 
-          <h2 className={`!text-gray-300 mt-4 md:mt-0 text-sm md:text-lg`}>
+          <h2 className={`!text-gray-300 mt-4 md:mt-0 text-sm md:text-lg text-center px-4`}>
             Unlock the power of your data with advanced web systems and scalable portals.
           </h2>
 
-          <div className={`hero-button pointer-events-auto !bg-white !text-black cursor-pointer`}>
-            <p className={`font-bold`}>Explore Services</p>
-          </div>
+          <Link 
+            href={`/services`}
+            className={`hero-button mt-8 px-8 py-3 rounded-full !bg-white !text-black cursor-pointer hover:scale-105 transition-transform flex items-center justify-center`}
+          >
+            <p className={`font-bold m-0`}>Explore Services</p>
+          </Link>
         </div>
       </div>
     </section>
