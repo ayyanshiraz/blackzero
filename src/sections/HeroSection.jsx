@@ -3,17 +3,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
-import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 
 const HeroSection = () => {
-  const isMobile = useMediaQuery({
-    query: `(max-width: 768px)`,
-  });
-
-  const isTablet = useMediaQuery({
-    query: `(max-width: 1024px)`,
-  });
 
   useGSAP(() => {
     const titleSplit = SplitText.create(`.hero-title`, {
@@ -48,25 +40,48 @@ const HeroSection = () => {
         `-0.5`
       );
 
-    const heroTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: `.hero-container`,
-        start: `1% top`,
-        end: `bottom top`,
-        scrub: true,
-      },
+    let mm = gsap.matchMedia();
+
+    mm.add(`(min-width: 769px)`, () => {
+      const heroTlDesktop = gsap.timeline({
+        scrollTrigger: {
+          trigger: `.hero-container`,
+          start: `1% top`,
+          end: `bottom top`,
+          scrub: true,
+        },
+      });
+
+      heroTlDesktop.to(`.hero-container`, {
+        rotate: 7,
+        scale: 0.9,
+        yPercent: 30,
+        ease: `power1.inOut`,
+      });
     });
-    
-    heroTl.to(`.hero-container`, {
-      rotate: 7,
-      scale: 0.9,
-      yPercent: 30,
-      ease: `power1.inOut`,
+
+    mm.add(`(max-width: 768px)`, () => {
+      const heroTlMobile = gsap.timeline({
+        scrollTrigger: {
+          trigger: `.hero-container`,
+          start: `1% top`,
+          end: `bottom top`,
+          scrub: true,
+        },
+      });
+
+      heroTlMobile.to(`.hero-container`, {
+        rotate: 0,
+        scale: 1,
+        yPercent: 0,
+        ease: `power1.inOut`,
+      });
     });
+
   });
 
   return (
-    <section className={`bg-transparent w-full min-h-[100dvh] relative pt-24 md:pt-32 pb-24 md:pb-0`}>
+    <section className={`bg-transparent w-full min-h-[100dvh] relative pt-0 md:pt-32 pb-24 md:pb-0`}>
       <div className={`hero-container relative w-full h-full bg-transparent flex flex-col justify-center`}>
         
         <div className={`hero-content opacity-0 relative z-10 flex flex-col items-center`}>
