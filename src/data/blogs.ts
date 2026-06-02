@@ -20,7 +20,7 @@ export const blogPostsData: BlogPost[] = [
     id: 21,
     slug: 'continuous-database-monitoring-dubai-ksa',
     title: 'How Continuous Database Monitoring in Dubai and KSA Prevents Costly Downtime',
-    date: 'May 24, 2026',
+    date: 'June 02, 2026',
     imageUrl: '/Blogs/blog21.webp',
     excerpt: 'The digital landscape across the region is changing at an unprecedented pace. Implementing continuous database monitoring in Dubai and KSA enables the timely identification and resolution of potential bottlenecks.',
     seoTitle: 'Prevent Downtime: Continuous Database Monitoring Dubai KSA',
