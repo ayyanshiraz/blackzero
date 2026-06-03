@@ -506,7 +506,7 @@ export const blogPostsData: BlogPost[] = [
   },
   {
     id: 17,
-    slug: 'ml-models-predict-market-trends',
+    slug: 'ml-models-predict-market-trends-uae',
     title: 'How Machine Learning Models Predict Market Trends for Modern Enterprises',
     date: 'May 16, 2026',
     imageUrl: '/Blogs/blog17.webp',
@@ -1129,7 +1129,7 @@ export const blogPostsData: BlogPost[] = [
   },
   {
     id: 10,
-    slug: 'high-performance-mobile-apps-enterprise',
+    slug: 'high-performance-mobile-apps-enterprise-dubai',
     title: 'Building High Performance Mobile Apps for Enterprise Growth',
     date: 'May 10, 2026',
     imageUrl: '/Blogs/blog10.webp',
@@ -1430,7 +1430,7 @@ export const blogPostsData: BlogPost[] = [
   },
   {
     id: 6,
-    slug: '3d-animated-web-design',
+    slug: '3d-animated-web-design-uae',
     title: 'How 3D Animated Websites Are Powering the Next Era of the Web',
     date: 'April 28, 2026',
     imageUrl: '/Blogs/blog6.webp',
@@ -1526,7 +1526,7 @@ export const blogPostsData: BlogPost[] = [
   },
   {
     id: 5,
-    slug: 'free-ai-plagiarism-checker-dubai-ksa',
+    slug: 'free-ai-plagiarism-checker-dubai',
     title: 'Free AI Plagiarism Checker in Dubai & Saudi Arabia: Why You Need One in 2026',
     date: 'April 16, 2026',
     imageUrl: '/Blogs/blog5.webp',
@@ -1598,7 +1598,7 @@ export const blogPostsData: BlogPost[] = [
   },
  {
     id: 4,
-    slug: 'evolution-of-ai-seo-uae-ksa',
+    slug: 'evolution-of-ai-seo-uae',
     title: 'The Evolution of SEO: How AI is Redefining Digital Visibility in UAE & KSA?',
     date: 'April 14, 2026',
     imageUrl: '/Blogs/blog4.webp',
@@ -1956,7 +1956,7 @@ export const blogPostsData: BlogPost[] = [
   },
   {
     id: 3,
-    slug: 'investing-in-digital-marketing-dubai-ksa-2025',
+    slug: 'investing-in-digital-marketing-dubai-2025',
     title: 'Is Investing in Digital Marketing a Smart Move in Dubai & Saudi Arabia in 2025?',
     date: 'October 22, 2025',
     imageUrl: '/Blogs/blog1.webp',
@@ -2049,7 +2049,7 @@ export const blogPostsData: BlogPost[] = [
   },
   {
     id: 2,
-    slug: 'international-marketing-roi-uae-ksa-brands',
+    slug: 'international-marketing-roi-uae-brands',
     title: 'International Marketing ROI: 5 Key Factors for UAE & KSA Brands',
     date: 'April 21, 2026',
     imageUrl: '/Blogs/blog2.webp',
@@ -2171,7 +2171,7 @@ export const blogPostsData: BlogPost[] = [
   },
   {
     id: 1,
-    slug: 'global-ecommerce-strategy-2026-uae-ksa-brands',
+    slug: 'global-ecommerce-strategy-2026-uae-brands',
     title: 'Global E-Commerce Strategy 2026: How UAE & KSA Brands Can Expand Internationally?',
     date: 'April 20, 2026',
     imageUrl: '/Blogs/blog3.webp',
