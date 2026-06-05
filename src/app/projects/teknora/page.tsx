@@ -18,15 +18,15 @@ const projectData = {
 };
 
 export const metadata: Metadata = {
-  title: 'Teknora | Industrial Web Development & Custom Software | Black Zero',
-  description: 'Case study: Digitizing industrial manufacturing for Teknora with a B2B website, 3D product visualization, and custom inventory management software.',
+  title: 'Teknora | Custom Industrial Software & Web | Black Zero',
+  description: 'Discover how Black Zero digitized Teknora\'s industrial manufacturing with a custom B2B website, 3D product visualization, and inventory management software.',
   keywords: ['industrial web design', 'manufacturing software', 'B2B website development', 'inventory management system', 'Teknora', '3D product visualization'],
   alternates: {
     canonical: '/projects/teknora',
   },
   openGraph: {
-    title: 'Teknora | Industrial Web Development & Custom Software | Black Zero',
-    description: 'Case study: Digitizing industrial manufacturing for Teknora with a B2B website, 3D product visualization, and custom inventory management software.',
+    title: 'Teknora | Custom Industrial Software & Web | Black Zero',
+    description: 'Discover how Black Zero digitized Teknora\'s industrial manufacturing with a custom B2B website, 3D product visualization, and inventory management software.',
     url: '/projects/teknora',
     siteName: 'Black Zero',
     locale: 'en_US',
