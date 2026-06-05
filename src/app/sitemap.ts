@@ -10,7 +10,6 @@ const servicesData = [
         { slug: 'digital-marketing' } 
     ] 
   },
-  
   { slug: 'ai-software-hub', subSections: [] },
   { slug: 'advanced-websites', subSections: [] },
   { slug: 'data-analytics', subSections: [] },
@@ -22,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const baseUrl = 'https://www.blackzero.org'; 
   
-  // Set a fixed date for stable pages so Google does not get confused
+ 
   const staticLastModified = new Date('2024-03-20');
  
   // 1. Static Pages
