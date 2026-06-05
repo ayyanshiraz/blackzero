@@ -11,10 +11,6 @@ const servicesData = [
     ] 
   },
   
-  
-  { slug: 'graphic-designing', subSections: [] },
-  { slug: 'photo-video', subSections: [] },
-  // Naye missing services yahan add kiye gaye hain
   { slug: 'ai-software-hub', subSections: [] },
   { slug: 'advanced-websites', subSections: [] },
   { slug: 'data-analytics', subSections: [] },
