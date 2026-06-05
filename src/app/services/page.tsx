@@ -47,14 +47,14 @@ const servicesData = [
 ];
 
 export const metadata: Metadata = {
-  title: `Our Services | AI, Digital Marketing, Analytics and Development | Black Zero`,
+  title: `AI, Development & Marketing Solutions | Black Zero`,
   description: `Explore Black Zeros comprehensive services: AI and Software Hub, Data Analytics, Advanced Websites, Hybrid SEO, Marketing, and Creative Design.`,
   keywords: [`AI and software hub`, `data analytics`, `advanced portal systems`, `hybrid SEO services`, `marketing`, `creative design animation`, `Black Zero services`],
   alternates: {
     canonical: `/services`,
   },
   openGraph: {
-    title: `Our Services | AI, Digital Marketing, Analytics and Development | Black Zero`,
+    title: `AI, Development & Marketing Solutions | Black Zero`,
     description: `Explore Black Zeros comprehensive services: AI and Software Hub, Data Analytics, Advanced Websites, Hybrid SEO, Marketing, and Creative Design.`,
     url: `/services`,
     type: `website`,
