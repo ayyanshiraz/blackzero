@@ -15,17 +15,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!product) return { title: 'Product Not Found | Black Zero' };
 
     return {
-        title: `${product.name} | ${product.category} Solutions | Black Zero`,
-        description: product.shortDescription,
-        keywords: [product.name, product.category, 'software tool', 'Black Zero product', ...product.name.split(' ')],
+        title: product.seoTitle,
+        description: product.metaDescription,
+        keywords: product.seoKeywords,
         alternates: {
-            canonical: `/products/${slug}`, // 👈 Automatic Canonical Link
+            canonical: `https://www.blackzero.org/products/${slug}`,
         },
         openGraph: {
-            title: `${product.name} - ${product.category} | Black Zero`,
-            description: product.shortDescription,
-            url: `/products/${slug}`, // 👈 Automatic OG URL
-            type: 'website',          // 👈 OG Type Added
+            title: product.seoTitle,
+            description: product.metaDescription,
+            url: `https://www.blackzero.org/products/${slug}`,
+            type: 'website',
             images: [
                 {
                     url: product.imageSrc,

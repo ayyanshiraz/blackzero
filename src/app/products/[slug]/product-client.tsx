@@ -2,10 +2,9 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { CheckCircle2, ChevronRight, ShoppingBag, Users, FileText, BarChart, Calculator, TrendingUp, Mail, Phone, Target } from 'lucide-react';
+import { CheckCircle2, ShoppingBag, Users, FileText, BarChart, Calculator, TrendingUp, Mail, Phone, Target } from 'lucide-react';
 import ProductInteraction from './product-interaction';
 
-// --- HELPER ICONS ---
 const getCategoryIcon = (cat: string) => {
     switch(cat) {
         case 'HR Tech': return <Users className="w-6 h-6" />;
@@ -37,6 +36,9 @@ interface ProductProps {
         features: string[];
         imageSrc: string;
         imgAltText?: string;
+        seoTitle: string;
+        metaDescription: string;
+        seoKeywords: string[];
     }
 }
 
@@ -48,7 +50,6 @@ export default function ProductDetailClient({ product }: ProductProps) {
                 
                 <div className="flex flex-col md:flex-row gap-8 md:gap-12 relative">
                     
-                    {/* --- LEFT COLUMN: IMAGE --- */}
                     <div className="w-full md:w-2/5">
                         <div className="group bg-black rounded-2xl aspect-square relative flex flex-col items-center justify-center shadow-2xl overflow-hidden md:sticky md:top-24 transition-all duration-500 ease-out hover:shadow-[0_30px_60px_rgba(0,0,0,0.5)] hover:scale-[1.02] z-10">
                             {product.imageSrc ? (
@@ -69,7 +70,6 @@ export default function ProductDetailClient({ product }: ProductProps) {
                         </div>
                     </div>
 
-                    {/* --- RIGHT COLUMN: DETAILS --- */}
                     <div className="w-full md:w-3/5 flex flex-col min-w-0">
                         <div className="mb-4">
                             <span className="bg-black text-white text-[10px] md:text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
