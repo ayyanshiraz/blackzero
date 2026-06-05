@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   title: {
     default: "Black Zero: IT Consulting and Digital Solutions UAE",
-    template: "%s | Black Zero",
+    template: "%s",
   },
   description: "Grow your business with Black Zero. We provide outstanding IT consulting, custom app development, and scalable digital solutions customized for the USA market.",
   verification: {
@@ -68,25 +68,15 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body>
         <Preloader />
-        {/* 1. Hide Navbar on Dashboard */}
         <HideOnDashboard>
           <Navbar />
         </HideOnDashboard>
-
-        {/* 2. ALWAYS show the main content (This is your actual page/dashboard) */}
         <main>{children}</main>
          <Footer />
-
-        {/* 3. Hide all these marketing/footer elements on Dashboard */}
         <HideOnDashboard>
-          
           <CookieBanner />
         </HideOnDashboard>  
-
-        {/* 4. Analytics run in the background everywhere */}
         <Analytics />
-        
-        {/* 5. Floating WhatsApp Button */}
         <WhatsAppButton />
       </body>
       <GoogleAnalytics gaId="G-V4V0EPZTPQ" />
