@@ -15,6 +15,12 @@ const servicesData = [
   { slug: 'development', subSections: [] },
   { slug: 'graphic-designing', subSections: [] },
   { slug: 'photo-video', subSections: [] },
+  // Naye missing services yahan add kiye gaye hain
+  { slug: 'ai-software-hub', subSections: [] },
+  { slug: 'advanced-websites', subSections: [] },
+  { slug: 'data-analytics', subSections: [] },
+  { slug: 'hybrid-seo', subSections: [] },
+  { slug: 'creative-design-and-animation-studio', subSections: [] },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -37,6 +43,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/privacy-policy', priority: 0.5 }, 
     { route: '/products', priority: 0.8 },
     { route: '/blogs', priority: 0.8 },
+    // Naye static pages yahan add kiye gaye hain
+    { route: '/customized-solutions', priority: 0.8 },
+    { route: '/turnitin', priority: 0.8 },
   ].map((item) => ({
     url: `${baseUrl}${item.route}`,
     lastModified: staticLastModified,
