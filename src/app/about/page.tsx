@@ -35,18 +35,16 @@ const aboutPageContent = {
 
 // --- SEO METADATA ---
 export const metadata: Metadata = {
-  title: "About Us | Multidisciplinary Creative & Digital Studio | Black Zero",
-  description: "Learn about Black Zero, a leading IT and Marketing company. Discover our story, vision, and mission to transform businesses through innovation and creativity.",
-  keywords: ["about Black Zero", "digital studio Lahore", "IT company profile", "marketing agency story", "CEO message", "company values", "creative team"],
-  
-  // Self-referencing canonical to resolve SEO report issue
+  title: "About Us | AI, Analytics & Custom Dev | Black Zero",
+  description: "Discover Black Zero's mission to transform UAE enterprises. We specialize in custom AI, app development, and data analytics for modern businesses.",
+  keywords: ["about Black Zero", "AI", "IT company profile", "marketing agency story", "CEO message", "company values", "creative team"],
   alternates: {
     canonical: "https://www.blackzero.org/about",
   },
 
   openGraph: {
-    title: "About Us | Multidisciplinary Creative & Digital Studio | Black Zero",
-    description: "We are your partner in building brands and transforming businesses. Read about our journey, doctrine, and the values that drive us.",
+    title: "About Us | AI, Analytics & Custom Dev | Black Zero",
+    description: "Discover Black Zero's mission to transform UAE enterprises. We specialize in custom AI, app development, and data analytics for modern businesses.",
     url: "https://www.blackzero.org/about",
     type: "website",
     images: [
