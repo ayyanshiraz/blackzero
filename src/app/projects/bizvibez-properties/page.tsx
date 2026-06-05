@@ -24,15 +24,15 @@ const projectData = {
 };
 
 export const metadata: Metadata = {
-  title: 'BizVibez Properties | Real Estate Web Development & SEO | Black Zero',
-  description: 'Discover how we built a premier real estate platform for BizVibez Properties in Dubai, utilizing SEO, web development, and targeted social media marketing.',
+  title: 'BizVibez | Custom Real Estate Web & SEO | Black Zero',
+  description: 'Discover how Black Zero built a premier real estate platform for BizVibez Dubai, utilizing custom web development, SEO, and targeted digital marketing.',
   keywords: ['real estate website', 'Dubai property marketing', 'real estate SEO', 'luxury homes marketing', 'BizVibez properties', 'web development'],
   alternates: {
     canonical: '/projects/bizvibez-properties',
   },
   openGraph: {
-    title: 'BizVibez Properties | Real Estate Web Development & SEO | Black Zero',
-    description: 'Discover how we built a premier real estate platform for BizVibez Properties in Dubai, utilizing SEO, web development, and targeted social media marketing.',
+    title: 'BizVibez | Custom Real Estate Web & SEO | Black Zero',
+    description: 'Discover how Black Zero built a premier real estate platform for BizVibez Dubai, utilizing custom web development, SEO, and targeted digital marketing.',
     url: '/projects/bizvibez-properties',
     siteName: 'Black Zero',
     locale: 'en_US',
