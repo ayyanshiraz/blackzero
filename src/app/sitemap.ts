@@ -10,7 +10,7 @@ const servicesData = [
         { slug: 'digital-marketing' } 
     ] 
   },
-  { slug: 'business-analytics', subSections: [] },
+  
   { slug: 'animation', subSections: [] },
   { slug: 'development', subSections: [] },
   { slug: 'graphic-designing', subSections: [] },
