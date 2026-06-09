@@ -19,15 +19,15 @@ const projectData = {
 };
 
 export const metadata: Metadata = {
-  title: 'Al Madina Hijama Center | Wellness Website & Local SEO | Black Zero',
-  description: 'How we helped Al Madina Hijama Center increase patient appointments through a calming website design and targeted Local SEO strategy.',
+  title: 'Al Madina Hijama Center | Web & Local SEO | Black Zero',
+  description: 'Discover how Black Zero helped Al Madina Hijama Center increase patient appointments through a calming website design and targeted Local SEO strategy.',
   keywords: ['wellness website design', 'local SEO for clinics', 'Hijama center marketing', 'healthcare web development', 'Al Madina Hijama'],
   alternates: {
     canonical: '/projects/al-madina-hijama-center',
   },
   openGraph: {
-    title: 'Al Madina Hijama Center | Wellness Website & Local SEO | Black Zero',
-    description: 'How we helped Al Madina Hijama Center increase patient appointments through a calming website design and targeted Local SEO strategy.',
+    title: 'Al Madina Hijama Center | Web & Local SEO | Black Zero',
+    description: 'Discover how Black Zero helped Al Madina Hijama Center increase patient appointments through a calming website design and targeted Local SEO strategy.',
     url: '/projects/al-madina-hijama-center',
     siteName: 'Black Zero',
     locale: 'en_US',
