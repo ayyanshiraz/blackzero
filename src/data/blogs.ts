@@ -868,7 +868,7 @@ export const blogPostsData: BlogPost[] = [
     imageUrl: '/Blogs/blog16.webp',
     excerpt: 'Do you know how your software makes critical decisions? Understanding how to meet regulatory standards with explainable AI is the only way to prove your business is operating fairly and transparently.',
     seoTitle: 'Meet Regulatory Standards with Explainable AI',
-    metaDescription: 'Eliminate legal risks by adopting transparent machine learning models. Learn to satisfy regulatory audit trails and secure business data compliance across global markets.',
+    metaDescription: 'Ensure regulatory compliance with Explainable AI. Learn to build transparent machine learning models, satisfy audit trails, and secure UAE business data.',
     focusKeyPhrase: 'How to meet regulatory standards with explainable AI',
     seoKeyPhrase: 'AI compliance requirements',
     imgAltText: 'Flowchart mapping algorithmic transparency and regulatory audit requirements',
