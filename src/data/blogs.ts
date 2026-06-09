@@ -1708,7 +1708,7 @@ export const blogPostsData: BlogPost[] = [
     imageUrl: '/Blogs/blog6.webp',
     excerpt: 'Flat, static web pages are quickly becoming a thing of the past. Discover how interactive 3D animated web design drives high engagement and conversions.',
     seoTitle: '3D Animated Web Design for Next-Gen Websites',
-    metaDescription: 'Build next-generation web experiences. Discover how interactive 3D animated web design drives high engagement and conversions for modern UAE & Saudi Arabian businesses.',
+    metaDescription: 'Discover how 3D animated web design drives engagement and conversions in the UAE & KSA. Build next-generation web experiences for your business today.',
     focusKeyPhrase: '3D animated web design',
     seoKeyPhrase: 'next-generation web experiences',
     imgAltText: 'Futuristic 3D animated web design interface displayed on a computer screen',
