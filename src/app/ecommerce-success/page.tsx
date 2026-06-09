@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import EcommerceSuccessClient from "@/components/EcommerceSuccessClient";
 
 export const metadata: Metadata = {
-  title: "Ecommerce Success Formula | Launch Your Business in 9 Steps",
-  description: "Discover the proven 9-step ecommerce success formula by Black Zero. From niche hunting and sourcing to branding and marketing, we build your business end-to-end.",
+  title: "Ecommerce Success Formula: 9-Step Launch | Black Zero",
+  description: "Discover how Black Zero builds profitable ecommerce businesses from scratch. From niche hunting to global sourcing and scaling brands across the UAE.",
   keywords: ["ecommerce success formula", "niche hunting service", "product sourcing", "ecommerce branding", "website development", "store management", "business analysis", "Black Zero ecommerce"],
   
   alternates: {
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Ecommerce Success Formula | Launch Your Business in 9 Steps",
-    description: "Discover the proven 9-step ecommerce success formula by Black Zero. From niche hunting and sourcing to branding and marketing, we build your business end-to-end.",
+    title: "Ecommerce Success Formula: 9-Step Launch | Black Zero",
+    description: "Discover how Black Zero builds profitable ecommerce businesses from scratch. From niche hunting to global sourcing and scaling brands across the UAE.",
     url: "https://www.blackzero.org/ecommerce-success",
     type: "website",
     images: [
