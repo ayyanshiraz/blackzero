@@ -78,15 +78,15 @@ const creativeDesignData = {
 };
 
 export const metadata: Metadata = {
-  title: `Cinematic 3D Animation and Creative Design Studio USA`,
-  description: `Forge elite brand identities via cinematic motion graphics and immersive 3D avatars. We engineer fluid visual narratives using neon aesthetics for USA firms now.`,
+  title: `Cinematic 3D Animation and Creative Design Studio UAE`,
+  description: `Transform your visual identity with Dubai's top animation studio. We forge elite brand identities using immersive 3D avatars and cinematic motion graphics.`,
   keywords: [`3D animation`, `2D animation`, `explainer videos`, `scroll stoppers`, `motion graphics`, `photography`, `videography`, `creative design`],
   alternates: {
     canonical: `/services/creative-design-and-animation-studio`,
   },
   openGraph: {
-    title: `Cinematic 3D Animation and Creative Design Studio USA`,
-    description: `Forge elite brand identities via cinematic motion graphics and immersive 3D avatars. We engineer fluid visual narratives using neon aesthetics for USA firms now.`,
+    title: `Cinematic 3D Animation and Creative Design Studio UAE`,
+    description: `Transform your visual identity with Dubai's top animation studio. We forge elite brand identities using immersive 3D avatars and cinematic motion graphics.`,
     url: `/services/creative-design-and-animation-studio`,
     siteName: `Black Zero`,
     locale: `en_US`,
