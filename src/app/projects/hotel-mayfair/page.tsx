@@ -22,14 +22,14 @@ const projectData = {
 };
 
 export const metadata: Metadata = {
-  title: 'Hotel Mayfair | Hotel Website & Food Marketing Case Study | Black Zero',
+  title: 'Hotel Mayfair | Hotel Web & Food Marketing | Black Zero',
   description: 'Explore how we unified Hotel Mayfair\'s digital presence, boosting room bookings and food delivery orders through web development and performance marketing.',
   keywords: ['hotel website development', 'hospitality digital marketing', 'food photography', 'booking engine integration', 'Hotel Mayfair Lahore', 'restaurant marketing'],
   alternates: {
     canonical: '/projects/hotel-mayfair',
   },
   openGraph: {
-    title: 'Hotel Mayfair | Hotel Website & Food Marketing Case Study | Black Zero',
+    title: 'Hotel Mayfair | Hotel Web & Food Marketing | Black Zero',
     description: 'Explore how we unified Hotel Mayfair\'s digital presence, boosting room bookings and food delivery orders through web development and performance marketing.',
     url: '/projects/hotel-mayfair',
     siteName: 'Black Zero',
