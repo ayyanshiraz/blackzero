@@ -18,15 +18,15 @@ const projectData = {
 };
 
 export const metadata: Metadata = {
-  title: 'Unique Studio | Architecture & Interior Design Marketing | Black Zero',
-  description: 'See how we helped Unique Studio showcase their architectural excellence and generate high-quality leads through targeted social media campaigns.',
+  title: 'Unique Studio | Arch & Interior Marketing | Black Zero',
+  description: 'Discover how Black Zero helped Unique Studio showcase architectural excellence and generate high-quality leads in Dubai via targeted social media.',
   keywords: ['architecture marketing', 'interior design branding', 'lead generation for architects', 'social media for designers', 'Unique Studio'],
   alternates: {
     canonical: '/projects/unique-studio',
   },
   openGraph: {
-    title: 'Unique Studio | Architecture & Interior Design Marketing | Black Zero',
-    description: 'See how we helped Unique Studio showcase their architectural excellence and generate high-quality leads through targeted social media campaigns.',
+    title: 'Unique Studio | Arch & Interior Marketing | Black Zero',
+    description: 'Discover how Black Zero helped Unique Studio showcase architectural excellence and generate high-quality leads in Dubai via targeted social media.',
     url: '/projects/unique-studio',
     siteName: 'Black Zero',
     locale: 'en_US',
