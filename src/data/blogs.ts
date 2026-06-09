@@ -2234,7 +2234,7 @@ export const blogPostsData: BlogPost[] = [
     imageUrl: '/Blogs/blog1.webp',
     excerpt: 'The digital marketing landscape is constantly evolving. As an investor or business owner, you might be wondering where the best opportunities lie.',
     seoTitle: 'Is Investing in Digital Marketing a Smart Move in Dubai & Saudi Arabia in 2025?',
-    metaDescription: 'Discover why investing in digital marketing in 2025 is essential for business growth in Dubai and Saudi Arabia. Learn about AI targeting, measurable ROI, and cost-effective strategies.',
+    metaDescription: 'Maximize business growth in Dubai & KSA with 2025 digital marketing trends. Explore how AI targeting and measurable ROI drive cost-effective success.',
     focusKeyPhrase: 'Investing in Digital Marketing 2025',
     seoKeyPhrase: 'Digital Marketing Investment',
     imgAltText: 'Futuristic digital marketing concept visualization with AI data nodes',
