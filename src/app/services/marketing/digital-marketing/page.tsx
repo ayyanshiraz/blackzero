@@ -67,8 +67,8 @@ const contactOptions = [
 ];
 
 export const metadata: Metadata = {
-  title: `Digital Marketing Company for Small Businesses in the USA`,
-  description: `Accelerate your growth with our digital marketing strategies for small businesses. We provide expert digital services in the US that help increase leads and maximize your return on investment (ROI).`,
+  title: `Digital Marketing Company for Small Businesses in the UAE`,
+  description: `Looking for top digital marketing services in the UAE? We provide expert growth strategies for small businesses to drive high-quality leads and ROI.`,
   keywords: [
     `Digital Marketing Company for Small Business`,
     `social media advertising`,
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: `Digital Marketing Company for Small Businesses in the USA`,
-    description: `Accelerate your growth with our digital marketing strategies for small businesses. We provide expert digital services in the US that help increase leads and maximize your return on investment (ROI).`,
+    description: `Looking for top digital marketing services in the UAE? We provide expert growth strategies for small businesses to drive high-quality leads and ROI.`,
     url: `/services/marketing/digital-marketing`,
     siteName: `Black Zero`,
     locale: `en_US`,
