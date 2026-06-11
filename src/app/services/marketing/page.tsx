@@ -47,8 +47,8 @@ const marketingData = {
 };
 
 export const metadata: Metadata = {
-  title: `Top Internet Marketing Strategies in the USA`,
-  description: `Accelerate your growth with our internet marketing strategies for small businesses. We provide expert digital services in the US that help increase leads and maximize your ROI.`,
+  title: `Top Internet Marketing Strategies in the UAE`,
+  description: `Grow your small business in Dubai & the UAE with Black Zero's internet marketing strategies. Our expert digital services drive leads and maximize ROI.`,
   keywords: [
     `Internet marketing strategies for small business`,
     `digital marketing services for small business`,
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: `Top Internet Marketing Strategies in the USA`,
-    description: `Accelerate your growth with our internet marketing strategies for small businesses. We provide expert digital services in the US that help increase leads and maximize your ROI.`,
+    description: `Grow your small business in Dubai & the UAE with Black Zero's internet marketing strategies. Our expert digital services drive leads and maximize ROI.`,
     url: `/services/marketing`,
     siteName: `Black Zero`,
     locale: `en_US`,

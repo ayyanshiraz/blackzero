@@ -28,15 +28,15 @@ export const metadata: Metadata = {
     },
   },
   title: {
-    default: "Black Zero: IT Consulting and Digital Solutions USA",
-    template: "%s | Black Zero",
+    default: "Black Zero: IT Consulting and Digital Solutions UAE",
+    template: "%s",
   },
   description: "Grow your business with Black Zero. We provide outstanding IT consulting, custom app development, and scalable digital solutions customized for the USA market.",
   verification: {
     google: "1HfyejT0xZl6FqT0DJLA59GxpsyCsDe5Ii3KFuvhDmg",
   },
   openGraph: {
-    title: "Black Zero: Strategic IT Consulting Solutions USA",
+    title: "Black Zero: Strategic IT Consulting Solutions UAE",
     description: "Grow your business with Black Zero. We provide outstanding IT consulting, custom app development, and scalable digital solutions customized for the USA market.",
     url: "https://www.blackzero.org/",
     siteName: "Black Zero",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Black Zero: Strategic IT Consulting Solutions USA",
+    title: "Black Zero: Strategic IT Consulting Solutions UAE",
     description: "Grow your business with Black Zero. We provide outstanding IT consulting, custom app development, and scalable digital solutions customized for the USA market.",
     images: ["/opengraph-image.png"],
   },
@@ -72,21 +72,14 @@ export default function RootLayout({
         <HideOnDashboard>
           <GlobalNavbar />
         </HideOnDashboard>
-
-        {/* 2. ALWAYS show the main content (This is your actual page/dashboard) */}
         <main>{children}</main>
          <FooterSection />
 
         {/* 3. Hide all these marketing/footer elements on Dashboard */}
         <HideOnDashboard>
-          
           <CookieBanner />
         </HideOnDashboard>  
-
-        {/* 4. Analytics run in the background everywhere */}
         <Analytics />
-        
-        {/* 5. Floating WhatsApp Button */}
         <WhatsAppButton />
       </body>
       <GoogleAnalytics gaId="G-V4V0EPZTPQ" />

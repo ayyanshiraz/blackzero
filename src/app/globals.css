@@ -29,7 +29,7 @@ body {
   box-sizing: border-box;
   background-color: #faeade;
   color: #523122;
-  font-family: "Antonio", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
@@ -257,8 +257,6 @@ body::-webkit-scrollbar {
     }
   }
 
-
-
 .spin-circle {
   animation: spin 20s linear infinite;
 }
@@ -346,4 +344,39 @@ body::-webkit-scrollbar {
     animation-duration: 15s; 
   } 
 }
+
+}
+
+/* ========================================================== */
+/* 1. GLOBAL ARIAL OVERRIDE FOR ALL PAGES (Blogs, Services, etc) */
+/* ========================================================== */
+body * {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* ========================================================== */
+/* 2. PROTECT & RESTORE HEADER, FOOTER, AND HOME PAGE FONTS   */
+/* ========================================================== */
+header, header *,
+nav, nav *,
+.navbar, .navbar *,
+.menu-bar, .menu-bar *,
+.hero-container, .hero-container *,
+.message-content, .message-content *,
+.flavor-section, .flavor-section *,
+.nutrition-section, .nutrition-section *,
+.benefit-section, .benefit-section *,
+.testimonials-section, .testimonials-section *,
+.footer-section, .footer-section * {
+  font-family: "Antonio", sans-serif !important;
+}
+
+/* ========================================================== */
+/* 3. RESTORE PROXIMA NOVA FOR SPECIFIC PARAGRAPHS IN HOME/FOOTER */
+/* ========================================================== */
+.hero-container h2,
+.message-content p,
+.benefit-section p,
+.footer-section p {
+  font-family: "ProximaNova, sans-serif" !important;
 }

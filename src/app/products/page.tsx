@@ -8,16 +8,16 @@ export const metadata: Metadata = {
   description: 'Explore Black Zero\'s suite of cutting-edge software products. From HR Tech and Finance tools to Marketing and Educational software, we accelerate business growth.',
   keywords: ['software products', 'HR technology', 'finance tools', 'marketing software', 'lead generation tool', 'SEO auditor', 'math solver', 'Black Zero products'],
   alternates: {
-    canonical: '/products',
+    canonical: 'https://www.blackzero.org/products',
   },
   openGraph: {
     title: 'Our Products | Innovative Software Solutions | Black Zero',
     description: 'Explore Black Zero\'s suite of cutting-edge software products. From HR Tech and Finance tools to Marketing and Educational software.',
-    url: '/products',
+    url: 'https://www.blackzero.org/products',
     type: 'website',
     images: [
       {
-        url: '/product.webp',
+        url: 'https://www.blackzero.org/product.webp',
         width: 1200,
         height: 630,
         alt: 'Black Zero Software Products Suite',

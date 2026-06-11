@@ -21,8 +21,8 @@ const projectData = {
 };
 
 export const metadata: Metadata = {
-  title: "Ever Smart Emporium | Luxury E-commerce & Social Media Case Study | Black Zero",
-  description: "See how Black Zero transformed Ever Smart Emporium into a premier luxury retailer in Lahore through expert social media marketing, photography, and e-commerce strategy.",
+  title: "Ever Smart Emporium | Luxury E-Commerce | Black Zero",
+  description: "Discover how Black Zero scaled Ever Smart Emporium into Lahore's top luxury retailer through expert e-commerce, social media, and product photography.",
   keywords: ["luxury e-commerce", "fashion marketing", "social media management", "product photography", "brand strategy Lahore", "Ever Smart Emporium"],
   
   alternates: {
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Ever Smart Emporium | Luxury E-commerce & Social Media Case Study | Black Zero",
-    description: "See how Black Zero transformed Ever Smart Emporium into a premier luxury retailer in Lahore through expert social media marketing and photography.",
+    title: "Ever Smart Emporium | Luxury E-Commerce | Black Zero",
+    description: "Discover how Black Zero scaled Ever Smart Emporium into Lahore's top luxury retailer through expert e-commerce, social media, and product photography.",
     url: "https://www.blackzero.org/projects/ever-smart-emporium",
     siteName: "Black Zero",
     locale: "en_US",

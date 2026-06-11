@@ -22,15 +22,15 @@ const projectData = {
 };
 
 export const metadata: Metadata = {
-  title: 'Pakistan Academy | EdTech Web Development & Marketing | Black Zero',
-  description: 'Case study: Developing a robust online portal and marketing strategy for Pakistan Academy to drive student enrollments for O/A Levels and IELTS.',
+  title: 'Pakistan Academy | EdTech Web & Marketing | Black Zero',
+  description: 'Discover how Black Zero built a custom online portal and marketing strategy for Pakistan Academy, boosting student enrollments for O/A Levels & IELTS.',
   keywords: ['education marketing', 'online academy website', 'EdTech development', 'SEO for schools', 'Pakistan Academy', 'tutor marketing'],
   alternates: {
     canonical: '/projects/pakistan-academy',
   },
   openGraph: {
-    title: 'Pakistan Academy | EdTech Web Development & Marketing | Black Zero',
-    description: 'Case study: Developing a robust online portal and marketing strategy for Pakistan Academy to drive student enrollments for O/A Levels and IELTS.',
+    title: 'Pakistan Academy | EdTech Web & Marketing | Black Zero',
+    description: 'Discover how Black Zero built a custom online portal and marketing strategy for Pakistan Academy, boosting student enrollments for O/A Levels & IELTS.',
     url: '/projects/pakistan-academy',
     siteName: 'Black Zero',
     locale: 'en_US',

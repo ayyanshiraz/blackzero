@@ -20,15 +20,15 @@ const projectData = {
 };
 
 export const metadata: Metadata = {
-  title: 'Starlight Linkers | Corporate IT Branding & Web Development | Black Zero',
-  description: 'See how we built a high-performance corporate website and brand identity for Starlight Linkers LLC, a leading IT solutions provider.',
+  title: 'Starlight Linkers | E-Commerce Web & Branding | Black Zero',
+  description: 'Discover how Black Zero built a high-performance e-commerce website and brand identity for Starlight Linkers LLC, a leading IT solutions provider.',
   keywords: ['IT company branding', 'corporate website design', 'web portal development', 'logo design', 'Starlight Linkers', 'tech branding'],
   alternates: {
     canonical: '/projects/starlight-linkers-llc',
   },
   openGraph: {
-    title: 'Starlight Linkers | Corporate IT Branding & Web Development | Black Zero',
-    description: 'See how we built a high-performance corporate website and brand identity for Starlight Linkers LLC, a leading IT solutions provider.',
+    title: 'Starlight Linkers | E-Commerce Web & Branding | Black Zero',
+    description: 'Discover how Black Zero built a high-performance e-commerce website and brand identity for Starlight Linkers LLC, a leading IT solutions provider.',
     url: '/projects/starlight-linkers-llc',
     siteName: 'Black Zero',
     locale: 'en_US',

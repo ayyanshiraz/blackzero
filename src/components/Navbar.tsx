@@ -1,4 +1,4 @@
-"use client";
+`use client`;
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -103,7 +103,8 @@ export default function Navbar() {
                 </div>
             )}
 
-            <style jsx>{`
+            {/* ERROR FIXED HERE: Replaced <style jsx> with dangerouslySetInnerHTML */}
+            <style dangerouslySetInnerHTML={{ __html: `
                 @keyframes slideInFromLeft {
                     0%, 100% { transform: translateX(-110%); opacity: 0; }
                     15%, 85% { transform: translateX(0); opacity: 1; }
@@ -119,7 +120,7 @@ export default function Navbar() {
                     animation: slideUpFromBottom 5s ease-in-out infinite;
                     animation-delay: 0.2s;
                 }
-            `}</style>
+            `}} />
             
             <div className={`container mx-auto flex items-center justify-between px-6 md:px-8 lg:px-10 h-14 md:h-16 relative z-[120]`}>
                 

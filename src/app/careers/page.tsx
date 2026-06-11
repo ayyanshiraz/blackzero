@@ -4,7 +4,7 @@ import CareersPageClient from "@/components/CareersPageClient";
 // --- SEO METADATA ---
 export const metadata: Metadata = {
   title: "Careers at Black Zero | Join Our Creative & Tech Team",
-  description: "Join Black Zero, a leading digital studio in Lahore. We are hiring talented Animators, App Developers, and creative minds to build the future of IT and Marketing.",
+  description: "Looking for IT jobs in Lahore? Join Black Zero! We are hiring App Developers, Animators, and creative minds to build the future of digital marketing.",
   keywords: ["jobs in Lahore", "creative agency careers", "animator jobs", "app developer jobs", "Black Zero careers", "IT jobs Pakistan", "software house recruitment"],
   
   alternates: {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Careers at Black Zero | Join Our Creative & Tech Team",
-    description: "Join Black Zero, a leading digital studio in Lahore. We are hiring talented Animators, App Developers, and creative minds.",
+    description: "Looking for IT jobs in Lahore? Join Black Zero! We are hiring App Developers, Animators, and creative minds to build the future of digital marketing.",
     url: "https://www.blackzero.org/careers",
     type: "website",
     images: [

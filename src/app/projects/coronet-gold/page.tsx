@@ -19,15 +19,15 @@ const projectData = {
 };
 
 export const metadata: Metadata = {
-  title: 'Coronet Gold | Hospitality Marketing & Branding Case Study | Black Zero',
-  description: 'Case study: How Black Zero established Coronet Gold as a premier guest house in Lahore through photography, social media marketing, and OTA management.',
+  title: 'Coronet Gold | Hospitality Brand Marketing | Black Zero',
+  description: 'Learn how Black Zero boosted Coronet Gold\'s bookings. We established this Lahore guest house using targeted social media, photography, and OTA management.',
   keywords: ['hospitality marketing', 'hotel social media', 'guest house branding', 'booking management', 'Coronet Gold', 'travel marketing'],
   alternates: {
     canonical: '/projects/coronet-gold', // Bina Slash ke
   },
   openGraph: {
-    title: 'Coronet Gold | Hospitality Marketing & Branding Case Study | Black Zero',
-    description: 'Case study: How Black Zero established Coronet Gold as a premier guest house in Lahore through photography, social media marketing, and OTA management.',
+    title: 'Coronet Gold | Hospitality Brand Marketing | Black Zero',
+    description: 'Learn how Black Zero boosted Coronet Gold\'s bookings. We established this Lahore guest house using targeted social media, photography, and OTA management.',
     url: '/projects/coronet-gold', // Bina Slash ke
     siteName: 'Black Zero',
     locale: 'en_US',

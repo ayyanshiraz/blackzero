@@ -3,8 +3,8 @@ import ContactPageClient from "@/components/ContactPageClient";
 
 
 export const metadata: Metadata = {
-  title: "Contact Us | Get in Touch with Black Zero | IT & Marketing Solutions",
-  description: "Contact Black Zero for expert IT and Marketing solutions. Reach us for web development, digital marketing, and business analytics services in Lahore and beyond.",
+  title: "Contact Us | AI, Analytics & Custom Development",
+  description: "Contact Black Zero for expert AI, custom development, and data analytics solutions. Reach out to build scalable tech for your enterprise in the UAE and GCC.",
   keywords: ["contact us", "digital marketing agency contact", "IT company Lahore", "web development inquiry", "business analytics consultation", "Black Zero support", "hire software developers"],
   
   alternates: {
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Contact Us | Get in Touch with Black Zero",
-    description: "Ready to transform your business? Contact Black Zero today for a custom quotation on IT and Marketing services.",
+    title: "Contact Us | AI, Analytics & Custom Development",
+    description: "Contact Black Zero for expert AI, custom development, and data analytics solutions. Reach out to build scalable tech for your enterprise in the UAE and GCC.",
     url: "https://www.blackzero.org/contact",
     type: "website",
     images: [
