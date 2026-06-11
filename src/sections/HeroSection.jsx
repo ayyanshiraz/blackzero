@@ -1,64 +1,52 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Inter } from "next/font/google";
-
 import { SplineSceneBasic } from "../components/ui/demo";
 import SplashCursor from "../components/ui/splash-cursor";
 
+// Fixed the font loader literals to use double quotes
 const inter = Inter({ subsets: ["latin"], weight: ["400", "900"] });
 
 export default function HeroSection() {
   const [isHeroVisible, setIsHeroVisible] = useState(true);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    const checkScrollPosition = () => {
-      if (typeof window !== "undefined") {
-        const vh = window.innerHeight;
-        if (window.scrollY < vh * 1.0) {
-          setIsHeroVisible(true);
-        } else {
-          setIsHeroVisible(false);
-        }
-      }
-    };
+    if (!sectionRef.current) return;
 
-    window.addEventListener("scroll", checkScrollPosition);
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsHeroVisible(entry.isIntersecting),
+      { threshold: 0.05 }
+    );
+    observer.observe(sectionRef.current);
     
-    checkScrollPosition();
-
-    return () => {
-      window.removeEventListener("scroll", checkScrollPosition);
-    };
+    // Disconnect the observer when the component unmounts
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <main className={`relative w-full overflow-clip bg-white ${inter.className}`}>
-      <title>Intelligent Systems Architecture</title>
-      <meta name="seo-title" content="Intelligent Systems Architecture" />
-      <meta name="slug" content="/" />
-      <meta name="description" content="Building Intelligent Systems AI and Software" />
-
-      {/* FIX: Removed items-center justify-center, added flex-col */}
-      <section className="relative min-h-screen w-full flex flex-col bg-black overflow-hidden">
-        
+    <main className="relative w-full overflow-clip bg-white">
+      <section
+        ref={sectionRef}
+        // Strict h-[100svh] to lock the layout height and prevent scrolling/stretching
+        className="relative h-[100svh] w-full flex flex-col bg-black overflow-hidden"
+      >
         {isHeroVisible && (
-          <div className="fixed inset-0 z-[110] pointer-events-none min-h-screen min-w-full">
-            <SplashCursor 
-              COLOR_UPDATE_SPEED={10} 
-              BACK_COLOR={{ r: 0, g: 0, b: 0 }} 
+          <div className="fixed inset-0 z-[110] pointer-events-none h-[100svh] min-w-full">
+            <SplashCursor
+              COLOR_UPDATE_SPEED={10}
+              BACK_COLOR={{ r: 0, g: 0, b: 0 }}
               SPLAT_RADIUS={0.2}
             />
           </div>
         )}
 
-        {/* FIX: Switched to flex-col and flex-1 so it takes up all available space and pushes content down naturally */}
-        <div className="relative z-10 w-full flex-1 pointer-events-none flex flex-col">
-          <div className="pointer-events-auto w-full flex-1 flex flex-col">
+        <div className="relative z-10 w-full h-full pointer-events-none flex flex-col">
+          <div className="pointer-events-auto w-full h-full flex flex-col">
             <SplineSceneBasic />
           </div>
         </div>
-        
       </section>
     </main>
   );

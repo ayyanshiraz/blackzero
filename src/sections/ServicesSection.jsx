@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useCallback, useState, useMemo, Suspense } from "react";
 import { useLenis } from "lenis/react";
-import SplashCursor from "../components/ui/splash-cursor";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -149,12 +148,14 @@ const ServicesSection = () => {
           const easeScale = Math.pow(voidProgress, 1.5);
           const currentZ = -easeScale * 3000;
           const currentScale = 1 - easeScale;
-          const currentOpacity = 1 - Math.pow(voidProgress, 2.5);
+          
+          // MODIFIED HERE: Accelerated fade out so cards disappear completely before the wheel
+          const currentOpacity = Math.max(0, 1 - (voidProgress * 3));
 
           voidContainer.style.transformOrigin = `50% ${originY}px`;
           voidContainer.style.transform = `translate3d(0, 0, ${currentZ}px) scale(${Math.max(0, currentScale).toFixed(4)})`;
-          voidContainer.style.opacity = Math.max(0, currentOpacity).toFixed(3);
-          voidContainer.style.visibility = voidProgress >= 1 ? `hidden` : `visible`;
+          voidContainer.style.opacity = currentOpacity.toFixed(3);
+          voidContainer.style.visibility = currentOpacity <= 0 ? `hidden` : `visible`;
         }
       } else {
         voidContainer.style.transformOrigin = ``;
@@ -274,25 +275,20 @@ const ServicesSection = () => {
         </Canvas>
       </div>
 
-      {/* Global Splash Cursor */}
-      <div className={`fixed inset-0 pointer-events-none z-10`}>
-        <div className={`hidden lg:block absolute inset-0 w-full h-full`}>
-          <SplashCursor />
-        </div>
-      </div>
-
       {/* =========================================
           SECTION 1: SERVICES
           ========================================= */}
       <section id={`services`} ref={sectionRef} className={`relative z-20 min-h-screen w-full -mt-[15vh] md:mt-0`}>
-        <div className={`w-full h-[12vh] md:h-[30vh] lg:h-[60vh] bg-[#f6f7f8] overflow-hidden flex items-center relative z-10 mb-4 md:mb-12`}>
+        
+        {/* MODIFIED SECTION HERE: Changed background to white and height to padding */}
+        <div className={`w-full py-8 md:py-12 bg-white overflow-hidden flex items-center relative z-10 mb-4 md:mb-12`}>
           <div className={`marquee-services`}>
             
             {/* Added animation duration and willChange here */}
             <div 
               className={`marquee-services__track`} 
               style={{ 
-                animationDuration: `45s`, 
+                animationDuration: `35s`, 
                 willChange: `transform` 
               }}
             >
@@ -347,7 +343,7 @@ const ServicesSection = () => {
             ))}
           </div>
           
-          <div className={`scroll-stack-end pointer-events-none w-full opacity-0`} style={{ height: isMobile ? `100vh` : `120vh` }} />
+          <div className={`scroll-stack-end pointer-events-none w-full opacity-0`} style={{ height: isMobile ? `80vh` : `100vh` }} />
         </div>
 
         {/* KINETIC WHEEL (SVG ONLY) */}

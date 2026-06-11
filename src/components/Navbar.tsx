@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { productsData } from "@/app/products/data";
-import SplashCursor from "../components/ui/splash-cursor";
+// SplashCursor removed from Navbar — the hero section owns the single shared instance
 
 const Dropdown = ({ title, items, mainHref }: { title: string; items: { name: string; href: string }[]; mainHref: string; }) => {
     return (
@@ -41,7 +41,7 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [hasMounted, setHasMounted] = useState(false);
-    const [isHoveringNav, setIsHoveringNav] = useState(false);
+
     
     useEffect(() => {
         setHasMounted(true);
@@ -83,28 +83,17 @@ export default function Navbar() {
 
     // Floating pill shape styles
     const navClassName = [
-        `fixed top-5 left-4 right-4 md:left-8 md:right-8 lg:left-12 lg:right-12 z-[100] bg-black rounded-full border border-white/10 transition-all duration-500 font-[Arial]`,
+        `fixed top-5 left-4 right-4 md:left-8 md:right-8 lg:left-12 lg:right-12 z-[100] bg-black rounded-full border border-white/10 transition-all duration-500 force-arial`,
         hasMounted && scrolled ? `shadow-2xl py-1` : `py-2`
     ].join(` `);
 
     return (
-        <nav 
-            className={navClassName}
-            onMouseEnter={() => setIsHoveringNav(true)}
-            onMouseLeave={() => setIsHoveringNav(false)}
-        >
-            {isHoveringNav && (
-                <div className={`fixed inset-0 z-[110] pointer-events-none rounded-full overflow-hidden`}>
-                    <SplashCursor 
-                        COLOR_UPDATE_SPEED={10} 
-                        BACK_COLOR={{ r: 0, g: 0, b: 0 }} 
-                        SPLAT_RADIUS={0.2}
-                    />
-                </div>
-            )}
-
-            {/* ERROR FIXED HERE: Replaced <style jsx> with dangerouslySetInnerHTML */}
+        <nav className={navClassName}>
+            {/* Added .force-arial rule to strictly override global link/button fonts */}
             <style dangerouslySetInnerHTML={{ __html: `
+                .force-arial, .force-arial * {
+                    font-family: Arial, Helvetica, sans-serif !important;
+                }
                 @keyframes slideInFromLeft {
                     0%, 100% { transform: translateX(-110%); opacity: 0; }
                     15%, 85% { transform: translateX(0); opacity: 1; }
@@ -128,12 +117,13 @@ export default function Navbar() {
                 <Link href={`/`} className={`text-white flex items-center gap-3 transition-transform duration-300 hover:scale-105`}>
                     <div className={`w-10 h-10 md:w-11 md:h-11 overflow-hidden rounded-full flex items-center justify-center`}>
                         <video
-                            className={`w-full h-full object-cover`}
+                            className={`w-full h-full object-cover pointer-events-none`}
                             src={`/logovideo3.mp4`}
                             autoPlay loop muted playsInline
                             disablePictureInPicture
                             controls={false}
                             preload={`auto`}
+                            tabIndex={-1}
                         />
                     </div>
                     

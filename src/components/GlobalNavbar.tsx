@@ -99,7 +99,7 @@ export default function GlobalNavbar() {
     ].join(` `);
     
     const navClassName = [
-        `bg-black rounded-full border border-white/10 transition-all duration-500 font-[Arial] max-w-[96%] md:max-w-[92%] lg:max-w-[88%] mx-auto w-full`,
+        `bg-black rounded-full border border-white/10 transition-all duration-500 max-w-[96%] md:max-w-[92%] lg:max-w-[88%] mx-auto w-full force-arial`,
         hasMounted && scrolled ? `shadow-2xl py-1` : `py-2`
     ].join(` `);
 
@@ -120,7 +120,11 @@ export default function GlobalNavbar() {
                     </div>
                 )}
 
+                {/* Added global rule for .force-arial to bypass styled-jsx scoping on children */}
                 <style jsx>{`
+                    :global(.force-arial), :global(.force-arial *) {
+                        font-family: Arial, Helvetica, sans-serif !important;
+                    }
                     @keyframes slideInFromLeft {
                         0%, 100% { transform: translateX(-110%); opacity: 0; }
                         15%, 85% { transform: translateX(0); opacity: 1; }
@@ -143,12 +147,13 @@ export default function GlobalNavbar() {
                     <Link href={`/`} className={`text-white flex items-center gap-3 transition-transform duration-300 hover:scale-105`}>
                         <div className={`w-10 h-10 md:w-11 md:h-11 overflow-hidden rounded-full flex items-center justify-center`}>
                             <video
-                                className={`w-full h-full object-cover`}
+                                className={`w-full h-full object-cover pointer-events-none`}
                                 src={`/logovideo3.mp4`}
                                 autoPlay loop muted playsInline
                                 disablePictureInPicture
                                 controls={false}
                                 preload={`auto`}
+                                tabIndex={-1}
                             />
                         </div>
                         
