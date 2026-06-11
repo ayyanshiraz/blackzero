@@ -62,15 +62,15 @@ const Preloader = ({ onComplete }) => {
       );
   }, [onComplete]);
 
-  // Forces a strict 60 second load time
+  // Forces a strict 15 second load time
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
     let rafId;
-    const duration = 60000; // 60 seconds in milliseconds
+    const duration = 15000; // 15 seconds in milliseconds
     const startTime = Date.now();
 
-    // Calculate progress smoothly over exactly one minute
+    // Calculate progress smoothly over exactly 15 seconds
     const tick = () => {
       const elapsed = Date.now() - startTime;
       let currentProgress = (elapsed / duration) * 100;
@@ -111,7 +111,6 @@ const Preloader = ({ onComplete }) => {
 
       <div className="cyber-header">
         <div className="brand-container">
-          {/* Replaced video with image element */}
           <img
             src="/videos/bz.png"
             alt="Logo"
