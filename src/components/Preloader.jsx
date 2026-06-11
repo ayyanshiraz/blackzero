@@ -2,123 +2,152 @@
 import { useState, useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import "./styles/Loading.css";
 
 const Preloader = () => {
   const [progress, setProgress] = useState(0);
   const [isMounted, setIsMounted] = useState(true);
+  const [loaded, setLoaded] = useState(false);
+  
   const counterRef = useRef(null);
+  const wrapperRef = useRef(null);
 
-  // 1. The Asset Tracker
   useEffect(() => {
-    const assets = [
-      `/videos/rrr2.mp4`,
-      `/images/circle-text.svg`,
-      `/images/play.svg`,
-    ];
-
-    let loadedCount = 0;
-    let isForcedComplete = false;
-
-    const updateProgress = () => {
-      // Prevent updating if the fallback timer already forced completion
-      if (isForcedComplete) return; 
-      
-      loadedCount++;
-      const currentProgress = Math.round((loadedCount / assets.length) * 100);
-      setProgress(currentProgress);
+    document.body.style.overflow = `hidden`;
+    return () => {
+      document.body.style.overflow = ``;
     };
-
-    // FAIL-SAFE: Force complete after 4 seconds no matter what
-    const fallbackTimer = setTimeout(() => {
-      if (loadedCount < assets.length) {
-        isForcedComplete = true;
-        setProgress(100);
-      }
-    }, 4000);
-
-    if (assets.length === 0) {
-      setProgress(100);
-      return;
-    }
-
-    assets.forEach((src) => {
-      if (src.match(/\.(png|jpe?g|svg|webp|gif)$/i)) {
-        const img = new Image();
-        img.src = src;
-        img.onload = updateProgress;
-        img.onerror = updateProgress; 
-      } 
-      else if (src.match(/\.(mp4|webm|ogg)$/i)) {
-        const video = document.createElement(`video`);
-        video.src = src;
-        video.muted = true;
-        video.playsInline = true;
-        
-        // Use loadeddata instead of canplaythrough for mobile compatibility
-        video.onloadeddata = updateProgress;
-        video.onerror = updateProgress;
-        video.onstalled = updateProgress; // Fires if the browser throttles the download
-        
-        // Explicitly call load() to encourage mobile browsers to fetch metadata
-        video.load(); 
-      }
-      else {
-        updateProgress();
-      }
-    });
-
-    // Cleanup the timer if the component unmounts early
-    return () => clearTimeout(fallbackTimer);
   }, []);
 
-  // 2. The GSAP Animations
+  useEffect(() => {
+    let percent = 0;
+    let activeInterval;
+
+    const startSlowPhase = () => {
+      activeInterval = setInterval(() => {
+        percent += Math.round(Math.random());
+        if (percent > 91) {
+          clearInterval(activeInterval);
+        } else {
+          setProgress(percent);
+        }
+      }, 400); 
+    };
+
+    activeInterval = setInterval(() => {
+      if (percent <= 50) {
+        percent += Math.round(Math.random() * 5);
+        setProgress(Math.min(percent, 50));
+      } else {
+        clearInterval(activeInterval);
+        startSlowPhase();
+      }
+    }, 100);
+
+    const forceComplete = setTimeout(() => {
+      clearInterval(activeInterval);
+      setProgress(100);
+    }, 4000);
+
+    return () => {
+      clearInterval(activeInterval);
+      clearTimeout(forceComplete);
+    };
+  }, []);
+
   useGSAP(() => {
-    gsap.to(counterRef.current, {
-      innerHTML: progress + `%`,
-      duration: 0.5,
-      snap: { innerHTML: 1 }, 
-      ease: `power2.out`,
-    });
+    if (counterRef.current) {
+      const proxy = { val: parseInt(counterRef.current.innerHTML, 10) || 0 };
+      gsap.to(proxy, {
+        val: progress,
+        duration: 0.2,
+        ease: `none`,
+        onUpdate: () => {
+          if (counterRef.current) {
+            counterRef.current.innerHTML = String(Math.round(proxy.val)).padStart(3, `0`);
+          }
+        }
+      });
+    }
 
     if (progress === 100) {
+      setLoaded(true); 
+
       const tl = gsap.timeline({
         onComplete: () => setIsMounted(false),
       });
 
-      tl.to(`.loader-content`, { 
+      tl.to([`.cyber-header`, `.quantum-core-container`, `.cyber-footer`], { 
           opacity: 0, 
           y: -30, 
-          duration: 0.8, 
-          delay: 0.4, 
-          ease: `power3.inOut` 
+          stagger: 0.15,
+          duration: 0.7, 
+          ease: `power3.inOut`,
+          delay: 0.6 
         })
-        .to(`.preloader-container`, {
+        .to(wrapperRef.current, {
           yPercent: -100, 
-          duration: 1.2,
+          duration: 1, 
           ease: `power4.inOut`,
-        }, `-=0.2`);
+        }, `-=0.2`); 
     }
   }, [progress]); 
 
   if (!isMounted) return null;
 
   return (
-    <div className={`preloader-container fixed inset-0 z-[9999] bg-[#111111] flex flex-col items-center justify-center`}>
-      <div className={`loader-content flex flex-col items-center gap-6`}>
-        <h1 className={`text-white text-4xl md:text-6xl font-bold tracking-widest uppercase`}>
-          BlackZero
-        </h1>
-        
-        <div className={`w-48 md:w-64 col-center gap-3`}>
-          <div className={`w-full h-[2px] bg-white/20 relative overflow-hidden rounded-full`}>
-            <div 
-              className={`absolute top-0 left-0 h-full bg-white transition-all duration-300 ease-out`}
-              style={{ width: progress + `%` }}
-            />
+    <div 
+      ref={wrapperRef}
+      className={`cyber-loader-wrapper fixed inset-0 z-[9999] bg-[#0A0A0A] ${loaded ? `warp-drive-exit` : ``}`}
+    >
+      <div className={`cyber-grid`}></div>
+      <div className={`cyber-vignette`}></div>
+
+      <div className={`cyber-header`}>
+        <div className={`brand-container`}>
+          {/* Swapped Image for Video Element */}
+          <video 
+            src={`/videos/logovideo3.mp4`} 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className={`cyber-logo`} 
+          />
+          <div className={`cyber-brand`}>BLACKZERO <span>//</span> SYSTEM</div>
+        </div>
+        <div className={`cyber-status`}>
+          INITIALIZING_CORE 
+          <span className={`blinking-cursor`}>_</span>
+        </div>
+      </div>
+
+      <div className={`quantum-core-container`}>
+        <div className={`quantum-scene`}>
+          <div className={`orbital-ring ring-1`}></div>
+          <div className={`orbital-ring ring-2`}></div>
+          <div className={`orbital-ring ring-3`}></div>
+          <div className={`orbital-ring ring-4`}></div>
+
+          <div className={`core-percentage`}>
+            <span ref={counterRef} className={`percent-number`}>
+              000
+            </span>
+            <span className={`percent-symbol`}>%</span>
           </div>
-          <span ref={counterRef} className={`text-white/70 text-sm font-mono`}>
-            0%
-          </span>
+        </div>
+      </div>
+
+      <div className={`cyber-footer`}>
+        <div className={`loading-bar-container`}>
+          <div 
+            className={`loading-bar-fill`} 
+            style={{ width: `${progress}%`, transition: `width 0.2s ease-out` }}
+          ></div>
+        </div>
+        <div className={`loading-data-stream`}>
+          <span className={`data-text`}>RENDERING_ASSETS</span>
+          <span className={`data-text`}>COMPILING_MODULES</span>
         </div>
       </div>
     </div>

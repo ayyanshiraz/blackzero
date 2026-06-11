@@ -37,11 +37,7 @@ const BenefitSection = () => {
       <div className={`container mx-auto pt-20`}>
         <div className={`col-center`}>
           
-          <p className={`text-white text-center text-sm md:text-base px-4`}>
-            Unlock The Future <br />
-            Explore The Key Benefits Of Partnering With BLACKZERO
-          </p>
-
+          {/* Animated Titles */}
           <div className={`mt-10 md:mt-20 col-center flex flex-col gap-2 md:gap-0 scale-[0.6] sm:scale-[0.8] md:scale-100 origin-top whitespace-nowrap`}>
             <ClipPathTitle title={`Scalable Systems`} color={`#ffffff`} bg={`#111111`} className={`first-title`} borderColor={`#ffffff`} />
             <ClipPathTitle title={`AI Driven Solutions`} color={`#ffffff`} bg={`#111111`} className={`second-title`} borderColor={`#ffffff`} />
@@ -49,9 +45,6 @@ const BenefitSection = () => {
             <ClipPathTitle title={`Next Gen Performance`} color={`#ffffff`} bg={`#111111`} className={`fourth-title`} borderColor={`#ffffff`} />
           </div>
 
-          <div className={`md:mt-0 mt-2 text-white`}>
-            <p>Plus infinite scalability</p>
-          </div>
         </div>
       </div>
 

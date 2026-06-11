@@ -1,121 +1,65 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { SplitText } from "gsap/all";
-import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { Inter } from "next/font/google";
 
-const HeroSection = () => {
+import { SplineSceneBasic } from "../components/ui/demo";
+import SplashCursor from "../components/ui/splash-cursor";
 
-  useGSAP(() => {
-    const titleSplit = SplitText.create(`.hero-title`, {
-      type: `chars`,
-    });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "900"] });
 
-    const tl = gsap.timeline({
-      delay: 1,
-    });
+export default function HeroSection() {
+  const [isHeroVisible, setIsHeroVisible] = useState(true);
 
-    tl.to(`.hero-content`, {
-      opacity: 1,
-      y: 0,
-      ease: `power1.inOut`,
-    })
-      .to(
-        `.hero-text-scroll`,
-        {
-          duration: 1,
-          clipPath: `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)`,
-          ease: `circ.out`,
-        },
-        `-0.5`
-      )
-      .from(
-        titleSplit.chars,
-        {
-          yPercent: 200,
-          stagger: 0.02,
-          ease: `power2.out`,
-        },
-        `-0.5`
-      );
+  useEffect(() => {
+    const checkScrollPosition = () => {
+      if (typeof window !== "undefined") {
+        const vh = window.innerHeight;
+        if (window.scrollY < vh * 1.0) {
+          setIsHeroVisible(true);
+        } else {
+          setIsHeroVisible(false);
+        }
+      }
+    };
 
-    let mm = gsap.matchMedia();
+    window.addEventListener("scroll", checkScrollPosition);
+    
+    checkScrollPosition();
 
-    mm.add(`(min-width: 769px)`, () => {
-      const heroTlDesktop = gsap.timeline({
-        scrollTrigger: {
-          trigger: `.hero-container`,
-          start: `1% top`,
-          end: `bottom top`,
-          scrub: true,
-        },
-      });
-
-      heroTlDesktop.to(`.hero-container`, {
-        rotate: 7,
-        scale: 0.9,
-        yPercent: 30,
-        ease: `power1.inOut`,
-      });
-    });
-
-    mm.add(`(max-width: 768px)`, () => {
-      const heroTlMobile = gsap.timeline({
-        scrollTrigger: {
-          trigger: `.hero-container`,
-          start: `1% top`,
-          end: `bottom top`,
-          scrub: true,
-        },
-      });
-
-      heroTlMobile.to(`.hero-container`, {
-        rotate: 0,
-        scale: 1,
-        yPercent: 0,
-        ease: `power1.inOut`,
-      });
-    });
-
-  });
+    return () => {
+      window.removeEventListener("scroll", checkScrollPosition);
+    };
+  }, []);
 
   return (
-    <section className={`bg-transparent w-full min-h-[100dvh] relative pt-0 md:pt-32 pb-24 md:pb-0`}>
-      <div className={`hero-container relative w-full h-full bg-transparent flex flex-col justify-center`}>
+    <main className={`relative w-full overflow-clip bg-white ${inter.className}`}>
+      <title>Intelligent Systems Architecture</title>
+      <meta name="seo-title" content="Intelligent Systems Architecture" />
+      <meta name="slug" content="/" />
+      <meta name="description" content="Building Intelligent Systems AI and Software" />
+
+      {/* FIX: Removed items-center justify-center, added flex-col */}
+      <section className="relative min-h-screen w-full flex flex-col bg-black overflow-hidden">
         
-        <div className={`hero-content opacity-0 relative z-10 flex flex-col items-center`}>
-          <div className={`overflow-hidden px-2`}>
-            <h1 className={`hero-title !text-white !mb-6 md:!mb-0 !leading-[1.1] md:!leading-[9vw] text-center !text-[11.5vw] sm:!text-[4rem] md:!text-[6.5rem] 2xl:!text-[8.5rem]`}>
-              Building Intelligent Systems
-            </h1>
+        {isHeroVisible && (
+          <div className="fixed inset-0 z-[110] pointer-events-none min-h-screen min-w-full">
+            <SplashCursor 
+              COLOR_UPDATE_SPEED={10} 
+              BACK_COLOR={{ r: 0, g: 0, b: 0 }} 
+              SPLAT_RADIUS={0.2}
+            />
           </div>
-          
-          <div
-            style={{
-              clipPath: `polygon(50% 0, 50% 0, 50% 100%, 50% 100%)`,
-            }}
-            className={`hero-text-scroll !border-white`}
-          >
-            <div className={`hero-subtitle !bg-[#111111]`}>
-              <h1 className={`!text-white !text-[9vw] sm:!text-[3rem] md:!text-[6.5rem] 2xl:!text-[8.5rem]`}>AI + Software</h1>
-            </div>
+        )}
+
+        {/* FIX: Switched to flex-col and flex-1 so it takes up all available space and pushes content down naturally */}
+        <div className="relative z-10 w-full flex-1 pointer-events-none flex flex-col">
+          <div className="pointer-events-auto w-full flex-1 flex flex-col">
+            <SplineSceneBasic />
           </div>
-
-          <h2 className={`!text-gray-300 mt-4 md:mt-0 text-sm md:text-lg text-center px-4`}>
-            Unlock the power of your data with advanced web systems and scalable portals.
-          </h2>
-
-          <Link 
-            href={`/services`}
-            className={`hero-button mt-8 px-8 py-3 rounded-full !bg-white !text-black cursor-pointer hover:scale-105 transition-transform flex items-center justify-center`}
-          >
-            <p className={`font-bold m-0`}>Explore Services</p>
-          </Link>
         </div>
-      </div>
-    </section>
+        
+      </section>
+    </main>
   );
-};
-
-export default HeroSection;
+}

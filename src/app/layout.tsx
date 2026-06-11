@@ -1,8 +1,8 @@
 import "./globals.css";
-import Preloader from "../components/Preloader";
+
 import React from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import GlobalNavbar from "@/components/GlobalNavbar";
+import FooterSection from "@/sections/FooterSection";
 import { ClientSlideshow } from "@/components/ClientSlideshow";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -67,15 +67,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body>
-        <Preloader />
+       
         {/* 1. Hide Navbar on Dashboard */}
         <HideOnDashboard>
-          <Navbar />
+          <GlobalNavbar />
         </HideOnDashboard>
 
         {/* 2. ALWAYS show the main content (This is your actual page/dashboard) */}
         <main>{children}</main>
-         <Footer />
+         <FooterSection />
 
         {/* 3. Hide all these marketing/footer elements on Dashboard */}
         <HideOnDashboard>

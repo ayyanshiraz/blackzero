@@ -50,13 +50,7 @@ const VideoPinSection = () => {
   return (
     <section className={`vd-pin-section h-[100dvh] w-full relative`}>
       <div className={`size-full video-box`}>
-        <video src={`/videos/rrr2.mp4`} playsInline muted loop autoPlay />
-        <div className={`abs-center md:scale-100 scale-200`}>
-          <img src={`/images/circle-text.svg`} alt={``} className={`spin-circle`} />
-          <div className={`play-btn`}>
-            <img src={`/images/play.svg`} alt={``} className={`size-[3vw] ml-[.5vw]`} />
-          </div>
-        </div>
+        <video src={`/videos/handshake.mp4`} playsInline muted loop autoPlay />
       </div>
     </section>
   );

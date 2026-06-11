@@ -1,0 +1,243 @@
+/* --- Global Container --- */
+.cyber-loader-wrapper {
+  position: fixed;
+  inset: 0;
+  background-color: #030305;
+  color: #fff;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  font-family: Courier New, Courier, monospace;
+}
+
+/* --- Background FX --- */
+.cyber-grid {
+  position: absolute;
+  inset: -50%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+  animation: gridMove 10s linear infinite;
+  z-index: 1;
+}
+
+@keyframes gridMove {
+  0% { transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px); }
+  100% { transform: perspective(500px) rotateX(60deg) translateY(40px) translateZ(-200px); }
+}
+
+.cyber-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, #030305 80%);
+  z-index: 2;
+}
+
+/* --- Header & Typography --- */
+.cyber-header {
+  position: relative;
+  z-index: 10;
+  padding: 40px 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cyber-logo {
+  width: 65px; /* Increased size */
+  height: 65px; /* Increased size */
+  opacity: 0.9;
+  /* Removed the spin animation */
+}
+
+.cyber-brand {
+  font-size: 14px;
+  letter-spacing: 4px;
+  font-weight: 600;
+  color: #fff;
+  margin-left: -5px;
+}
+
+.cyber-brand span {
+  color: #a0a0a0; 
+}
+
+.cyber-status {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #cccccc; 
+}
+
+.blinking-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* --- 3D Quantum Core --- */
+.quantum-core-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantum-scene {
+  width: 400px;
+  height: 400px;
+  perspective: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+/* The Rings */
+.orbital-ring {
+  position: absolute;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.ring-1 {
+  width: 350px;
+  height: 350px;
+  border: 2px solid rgba(200, 200, 200, 0.4);
+  animation: spin3D-1 6s linear infinite;
+}
+
+.ring-2 {
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  animation: spin3D-2 8s linear infinite reverse;
+}
+
+.ring-3 {
+  width: 210px;
+  height: 210px;
+  border: 3px solid rgba(150, 150, 150, 0.8);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  animation: spin3D-3 4s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+.ring-4 {
+  width: 150px;
+  height: 150px;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  animation: spin3D-4 10s linear infinite;
+}
+
+/* Complex 3D Rotations */
+@keyframes spin3D-1 {
+  0% { transform: rotateX(70deg) rotateY(0deg) rotateZ(0deg); }
+  100% { transform: rotateX(70deg) rotateY(360deg) rotateZ(360deg); }
+}
+
+@keyframes spin3D-2 {
+  0% { transform: rotateX(45deg) rotateY(45deg) rotateZ(0deg); }
+  100% { transform: rotateX(45deg) rotateY(405deg) rotateZ(360deg); }
+}
+
+@keyframes spin3D-3 {
+  0% { transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg) scale(1); }
+  50% { transform: rotateX(120deg) rotateY(180deg) rotateZ(90deg) scale(1.1); }
+  100% { transform: rotateX(80deg) rotateY(360deg) rotateZ(360deg) scale(1); }
+}
+
+@keyframes spin3D-4 {
+  0% { transform: rotateX(0deg) rotateY(80deg) rotateZ(0deg); }
+  100% { transform: rotateX(360deg) rotateY(80deg) rotateZ(360deg); }
+}
+
+/* Central Text */
+.core-percentage {
+  position: absolute;
+  transform: translateZ(50px);
+  display: flex;
+  align-items: flex-end;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.percent-number {
+  font-family: Inter, sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 0.8;
+  color: #fff;
+}
+
+.percent-symbol {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #cccccc;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+/* --- Footer Loading Bar --- */
+.cyber-footer {
+  position: relative;
+  z-index: 10;
+  padding: 40px 5vw;
+}
+
+.loading-bar-container {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: #e0e0e0;
+  box-shadow: 0 0 10px #e0e0e0;
+  transition: width 0.2s ease;
+}
+
+.loading-data-stream {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #888888;
+  letter-spacing: 1px;
+}
+
+/* --- Massive Warp Drive Exit Animation --- */
+.warp-drive-exit {
+  animation: fadeToWhite 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.warp-drive-exit .quantum-scene {
+  animation: warpSpeed 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes warpSpeed {
+  0% { transform: scale(1) translateZ(0); opacity: 1; }
+  20% { transform: scale(0.8) translateZ(-200px); opacity: 1; } 
+  100% { transform: scale(20) translateZ(1000px); opacity: 0; } 
+}
+
+@keyframes fadeToWhite {
+  0% { opacity: 1; pointer-events: none; }
+  100% { opacity: 0; pointer-events: none; visibility: hidden; }
+}
