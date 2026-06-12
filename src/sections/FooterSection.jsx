@@ -12,9 +12,9 @@ const FooterSection = () => {
       <div className={`min-h-screen h-auto relative md:pt-[15vh] pt-[10vh] flex flex-col justify-between`}>
         
         <div className={`relative z-10 w-full`}>
-          <h1 className={`general-title text-center text-white pt-5 pb-10`}>
+          <h2 className={`general-title text-center text-white pt-5 pb-10`}>
             BUILDING THE FUTURE
-          </h1>
+          </h2>
         </div>
 
         <div className={`flex-center gap-5 relative z-10 md:mt-10 mt-5`}>
