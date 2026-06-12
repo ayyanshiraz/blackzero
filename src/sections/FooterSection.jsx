@@ -14,9 +14,9 @@ const FooterSection = () => {
         
         {/* Title Container */}
         <div className="w-full text-center z-10 my-4">
-          <h1 className="general-title text-center text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none">
+          <h2 className="general-title text-center text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none">
             BUILDING THE FUTURE
-          </h1>
+          </h2>
         </div>
 
         {/* Social Icons Container (Now Clickable) */}
