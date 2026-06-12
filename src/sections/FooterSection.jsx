@@ -14,8 +14,7 @@ const FooterSection = () => {
         
         {/* Title Container */}
         <div className="w-full text-center z-10 my-4">
-          {/* Adjusted base text size and mobile line height to prevent overlapping */}
-          <h1 className="general-title text-center text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-tight md:leading-none">
+          <h1 className="general-title text-center text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none">
             BUILDING THE FUTURE
           </h1>
         </div>
@@ -92,7 +91,7 @@ const FooterSection = () => {
 
         </div>
 
-        {/* Centered Copyright Line */}
+        {/* Centered Copyright Line (Updated size and color) */}
         <div className="w-full text-center border-t border-white/10 pt-8 mt-16 md:mt-24">
           <p className="text-white text-base md:text-lg tracking-wide font-medium">
             Copyright © 2026 Black Zero IT Solutions - All Rights Reserved
