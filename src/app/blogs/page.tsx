@@ -30,7 +30,6 @@ export const metadata: Metadata = {
 export default function BlogsPage() {
   return (
     <>
-      <Navbar />
 
       <div className="relative h-[450px] flex items-center justify-center text-center text-white overflow-hidden">
         <div

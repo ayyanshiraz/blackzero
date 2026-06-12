@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { blogPostsData } from '@/data/blogs';
 import BlogPostImage from '@/components/BlogPostImage';
@@ -65,7 +64,6 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
-      <Navbar />
 
       <div className="pt-8 bg-white">
         <Breadcrumbs items={breadcrumbItems} />
