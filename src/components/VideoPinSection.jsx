@@ -12,22 +12,20 @@ const VideoPinSection = () => {
   useGSAP(
     () => {
       gsap.fromTo(
-        ".video-slide",
+        `.video-slide`,
         { 
-          x: "100%", 
+          x: `100%`, 
           opacity: 0 
         },
         {
-          x: "0%",
+          x: `0%`,
           opacity: 1,
           duration: 1.2,
-          ease: "power3.out",
+          ease: `power3.out`,
           scrollTrigger: {
             trigger: containerRef.current,
-            // Start the animation when the top of the section hits 80 percent down the viewport
-            start: "top 80%", 
-            // Reset tells GSAP to reset the animation when you scroll away
-            toggleActions: "play none none reset", 
+            start: `top 80%`, 
+            toggleActions: `play none none reset`, 
           },
         }
       );
@@ -36,17 +34,16 @@ const VideoPinSection = () => {
   );
 
   return (
-    // Changed bg-black to bg-white in the className below
-    <section ref={containerRef} className="h-[100dvh] w-full relative overflow-hidden bg-white">
-      <div className="w-full h-full video-slide">
+    <section ref={containerRef} className={`h-[60dvh] md:h-[100dvh] w-full relative overflow-hidden bg-white`}>
+      <div className={`w-full h-full video-slide`}>
         <video
-          src="/videos/handshake.mp4"
+          src={`/videos/handshake.mp4`}
           playsInline
           muted
           loop
           autoPlay
-          preload="none"
-          className="w-full h-full object-cover" 
+          preload={`auto`}
+          className={`w-full h-full object-cover`} 
         />
       </div>
     </section>
