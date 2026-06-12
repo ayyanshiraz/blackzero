@@ -31,7 +31,10 @@ body {
   color: #523122;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
 }
@@ -379,4 +382,51 @@ nav, nav *,
 .benefit-section p,
 .footer-section p {
   font-family: "ProximaNova, sans-serif" !important;
+}
+/* ─── Performance & Cross-Platform Rendering Fixes ──────────────────────── */
+
+/* Ensure consistent font rendering across Mac (Retina) and Windows */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Promote animated elements to their own composite layer */
+.orbital-ring,
+.cyber-grid,
+.marquee-services__track,
+.loading-bar-fill {
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Fix Safari/Mac dvh — use svh fallback where needed */
+@supports not (height: 1dvh) {
+  .vd-pin-section {
+    height: 100svh;
+    height: 100vh;
+  }
+}
+
+/* Prevent FOUC on clip-path animated elements */
+.first-title,
+.second-title,
+.third-title,
+.fourth-title {
+  opacity: 0;
+  clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+
+/* Smooth scroll-anchored transitions (Mac trackpad feel) */
+html {
+  scroll-behavior: auto; /* Let Lenis own all scroll — native smooth conflicts */
+}
+
+/* Fix conic-gradient rendering on Safari */
+@supports (-webkit-appearance: none) {
+  .void-container {
+    -webkit-backface-visibility: hidden;
+  }
 }

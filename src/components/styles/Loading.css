@@ -1,0 +1,230 @@
+/* ─── Global Container ─────────────────────────────────────────────────── */
+.cyber-loader-wrapper {
+  position: fixed;
+  inset: 0;
+  background-color: #030305;
+  color: #fff;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  font-family: "Courier New", Courier, monospace;
+  /* GPU-composite the whole layer */
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* ─── Background Grid ──────────────────────────────────────────────────── */
+.cyber-grid {
+  position: absolute;
+  inset: -50%;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px);
+  animation: gridMove 12s linear infinite;
+  z-index: 1;
+  will-change: transform;
+}
+
+@keyframes gridMove {
+  0%   { transform: perspective(500px) rotateX(60deg) translateY(0)    translateZ(-200px); }
+  100% { transform: perspective(500px) rotateX(60deg) translateY(40px) translateZ(-200px); }
+}
+
+.cyber-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, #030305 80%);
+  z-index: 2;
+}
+
+/* ─── Header ───────────────────────────────────────────────────────────── */
+.cyber-header {
+  position: relative;
+  z-index: 10;
+  padding: 36px 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cyber-logo {
+  width: 60px;
+  height: 60px;
+  opacity: 0.92;
+  /* No spin — matches original intent */
+}
+
+.cyber-brand {
+  font-size: 13px;
+  letter-spacing: 4px;
+  font-weight: 600;
+  color: #fff;
+  margin-left: -4px;
+}
+.cyber-brand span { color: #888; }
+
+.cyber-status {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #ccc;
+}
+
+.blinking-cursor {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ─── Quantum Core ─────────────────────────────────────────────────────── */
+.quantum-core-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantum-scene {
+  width: 380px;
+  height: 380px;
+  perspective: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+/* ─── Rings ────────────────────────────────────────────────────────────── */
+.orbital-ring {
+  position: absolute;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  /* Single shared shadow — cheaper than two */
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
+  will-change: transform;
+}
+
+.ring-1 {
+  width: 340px; height: 340px;
+  border: 2px solid rgba(200, 200, 200, 0.35);
+  animation: spin3D-1 6s linear infinite;
+}
+.ring-2 {
+  width: 268px; height: 268px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  animation: spin3D-2 8s linear infinite reverse;
+}
+.ring-3 {
+  width: 200px; height: 200px;
+  border: 2px solid rgba(150, 150, 150, 0.75);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  /* Replaced cubic-bezier bounce with linear for smoother feel */
+  animation: spin3D-3 4s linear infinite;
+}
+.ring-4 {
+  width: 140px; height: 140px;
+  border: 1.5px dashed rgba(255, 255, 255, 0.35);
+  animation: spin3D-4 10s linear infinite;
+}
+
+@keyframes spin3D-1 {
+  from { transform: rotateX(70deg) rotateY(0deg) rotateZ(0deg); }
+  to   { transform: rotateX(70deg) rotateY(360deg) rotateZ(360deg); }
+}
+@keyframes spin3D-2 {
+  from { transform: rotateX(45deg) rotateY(45deg) rotateZ(0deg); }
+  to   { transform: rotateX(45deg) rotateY(405deg) rotateZ(360deg); }
+}
+@keyframes spin3D-3 {
+  from { transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg); }
+  to   { transform: rotateX(80deg) rotateY(360deg) rotateZ(360deg); }
+}
+@keyframes spin3D-4 {
+  from { transform: rotateX(0deg) rotateY(80deg) rotateZ(0deg); }
+  to   { transform: rotateX(360deg) rotateY(80deg) rotateZ(360deg); }
+}
+
+/* ─── Counter ──────────────────────────────────────────────────────────── */
+.core-percentage {
+  position: absolute;
+  transform: translateZ(50px);
+  display: flex;
+  align-items: flex-end;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.35);
+}
+
+.percent-number {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 0.8;
+  color: #fff;
+  /* Crisp on both Retina (Mac) and standard (Windows) screens */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.percent-symbol {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #bbb;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+/* ─── Footer / Progress Bar ────────────────────────────────────────────── */
+.cyber-footer {
+  position: relative;
+  z-index: 10;
+  padding: 36px 5vw;
+}
+
+.loading-bar-container {
+  width: 100%;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: #e0e0e0;
+  box-shadow: 0 0 8px #e0e0e0;
+  /* Smooth hardware-accelerated width transition */
+  transition: width 0.18s linear;
+  will-change: width;
+}
+
+.loading-data-stream {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: #666;
+  letter-spacing: 1px;
+}
+
+/* ─── Mobile adjustments ───────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .quantum-scene { width: 280px; height: 280px; }
+  .ring-1 { width: 260px; height: 260px; }
+  .ring-2 { width: 204px; height: 204px; }
+  .ring-3 { width: 152px; height: 152px; }
+  .ring-4 { width: 108px; height: 108px; }
+  .percent-number { font-size: 3.6rem; }
+}

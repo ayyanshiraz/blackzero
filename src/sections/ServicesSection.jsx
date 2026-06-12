@@ -1,8 +1,7 @@
 "use client";
+
 import React, { useEffect, useRef, useCallback, useState } from "react";
 import { useLenis } from "lenis/react";
-import StarBorder from "../components/StarBorder";
-import SplashCursor from "../components/SplashCursor";
 import Link from "next/link";
 
 const services = [
@@ -25,10 +24,6 @@ const ServicesSection = () => {
   const cardOffsetsRef = useRef([]);
   const endOffsetRef = useRef(0);
   const stackInnerRef = useRef(null);
-  const stackInnerTopRef = useRef(0);
-  
-  const voidContainerRef = useRef(null);
-  const kineticWheelRef = useRef(null);
 
   const [ready, setReady] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -46,7 +41,6 @@ const ServicesSection = () => {
     const cards = cardsRef.current;
     const cardOffsets = cardOffsetsRef.current;
     const endElementTop = endOffsetRef.current;
-    const stackInnerTop = stackInnerTopRef.current;
     const containerHeight = window.innerHeight;
 
     if (!cards.length || !cardOffsets.length) return;
@@ -55,26 +49,13 @@ const ServicesSection = () => {
     const stackPositionPx = (containerHeight - firstCardHeight) / 2;
     const scaleEndPositionPx = stackPositionPx - (BASE_CONFIG.stackPosition - BASE_CONFIG.scaleEndPosition) * containerHeight;
 
-    const lastCardTop = cardOffsets[cards.length - 1];
-    const triggerEndLast = lastCardTop - scaleEndPositionPx;
-    const voidStart = triggerEndLast;
-    
-    const runwayHeight = isMobile ? containerHeight * 1.0 : containerHeight * 1.2;
-    const voidDistance = runwayHeight;
-    
-    let voidProgress = 0;
-
-    if (scroll > voidStart) {
-      voidProgress = Math.min(Math.max((scroll - voidStart) / voidDistance, 0), 1);
-    }
-
     for (let i = 0; i < cards.length; i++) {
       const card = cards[i];
       const cardTop = cardOffsets[i];
       const triggerStart = cardTop - stackPositionPx - BASE_CONFIG.itemStackDistance * i;
       const triggerEnd = cardTop - scaleEndPositionPx;
       const pinStart = triggerStart;
-      const pinEnd = Math.max(endElementTop - containerHeight * 0.5, voidStart + voidDistance);
+      const pinEnd = endElementTop - containerHeight * 0.5;
 
       let scaleProgress = 0;
       if (scroll >= triggerEnd) scaleProgress = 1;
@@ -87,68 +68,6 @@ const ServicesSection = () => {
       if (scroll >= pinStart && scroll <= pinEnd) translateY = scroll - cardTop + stackPositionPx + BASE_CONFIG.itemStackDistance * i;
       else if (scroll > pinEnd) translateY = pinEnd - cardTop + stackPositionPx + BASE_CONFIG.itemStackDistance * i;
     }
-
-    const voidContainer = voidContainerRef.current;
-    const stackInner = stackInnerRef.current;
-
-    if (voidContainer && stackInner) {
-      const originY = scroll + containerHeight / 2 - stackInnerTop;
-      stackInner.style.perspectiveOrigin = `50% ${originY}px`;
-      stackInner.style.perspective = `1500px`;
-
-      if (voidProgress > 0) {
-        if (isMobile) {
-          const fadeOutProgress = Math.min(voidProgress / 0.25, 1);
-          voidContainer.style.transformOrigin = `50% ${originY}px`;
-          voidContainer.style.transform = `translate3d(0, 0, 0) scale(1)`;
-          voidContainer.style.opacity = Math.max(0, 1 - fadeOutProgress).toFixed(3);
-          voidContainer.style.visibility = fadeOutProgress >= 1 ? `hidden` : `visible`;
-        } else {
-          const easeScale = Math.pow(voidProgress, 1.5);
-          const currentZ = -easeScale * 3000;
-          const currentScale = 1 - easeScale;
-          const currentOpacity = 1 - Math.pow(voidProgress, 2.5);
-
-          voidContainer.style.transformOrigin = `50% ${originY}px`;
-          voidContainer.style.transform = `translate3d(0, 0, ${currentZ}px) scale(${Math.max(0, currentScale).toFixed(4)})`;
-          voidContainer.style.opacity = Math.max(0, currentOpacity).toFixed(3);
-          voidContainer.style.visibility = voidProgress >= 1 ? `hidden` : `visible`;
-        }
-      } else {
-        voidContainer.style.transformOrigin = ``;
-        voidContainer.style.transform = ``;
-        voidContainer.style.opacity = `1`;
-        voidContainer.style.visibility = `visible`;
-      }
-    }
-
-    const kineticWheel = kineticWheelRef.current;
-    if (kineticWheel) {
-      if (scroll > endElementTop + (isMobile ? containerHeight * 1.1 : containerHeight * 1.4)) {
-        kineticWheel.style.display = `none`;
-        kineticWheel.style.visibility = `hidden`;
-      } else if (voidProgress > 0) {
-        kineticWheel.style.display = `block`;
-        kineticWheel.style.visibility = `visible`;
-
-        let wheelOpacity = Math.min(voidProgress * 4, 1);
-
-        if (isMobile && scroll > endElementTop + containerHeight * 0.4) {
-            const fadeOut = (scroll - (endElementTop + containerHeight * 0.4)) / (containerHeight * 0.6);
-            wheelOpacity = Math.max(0, 1 - fadeOut);
-        }
-
-        kineticWheel.style.opacity = wheelOpacity.toFixed(3);
-        const targetRotation = 180 * (1 - voidProgress);
-        kineticWheel.style.transformOrigin = `50% 100%`;
-        kineticWheel.style.transform = `rotate(${targetRotation}deg)`;
-
-      } else {
-        kineticWheel.style.display = `block`;
-        kineticWheel.style.opacity = `0`;
-        kineticWheel.style.visibility = `hidden`;
-      }
-    }
   });
 
   const calculatePositions = useCallback(() => {
@@ -156,16 +75,13 @@ const ServicesSection = () => {
     const cards = Array.from(document.querySelectorAll(`.scroll-stack-card`));
     cardsRef.current = cards;
     cards.forEach(card => card.style.transform = ``);
-    if (voidContainerRef.current) voidContainerRef.current.style.transform = ``;
-    if (kineticWheelRef.current) kineticWheelRef.current.style.transform = ``;
     
     const scrollY = window.scrollY;
     cardOffsetsRef.current = cards.map(card => card.getBoundingClientRect().top + scrollY);
     
     const endElement = document.querySelector(`.scroll-stack-end`);
     if (endElement) endOffsetRef.current = endElement.getBoundingClientRect().top + scrollY;
-    if (stackInnerRef.current) stackInnerTopRef.current = stackInnerRef.current.getBoundingClientRect().top + scrollY;
-    
+
     setReady(true);
   }, []);
 
@@ -181,7 +97,7 @@ const ServicesSection = () => {
   }, [calculatePositions]);
 
   return (
-    <section id={`services`} ref={sectionRef} className={`bg-transparent min-h-screen w-full relative z-20 -mt-[15vh] md:mt-0`}>
+    <div className={`relative w-full bg-transparent pb-12`}>
       
       <style>{`
         @keyframes custom-star-rotate {
@@ -190,57 +106,47 @@ const ServicesSection = () => {
         }
       `}</style>
 
-      <div className={`fixed inset-0 pointer-events-none`} style={{ zIndex: 0 }}>
-        <div className={`hidden lg:block w-full h-full`}>
-          <SplashCursor />
-        </div>
-      </div>
-
-      <div className={`relative z-10 w-full h-full`}>
-        <div className={`w-full h-[12vh] md:h-[30vh] lg:h-[60vh] overflow-hidden flex items-center relative z-10 mb-4 md:mb-12`}>
+      <section id={`services`} ref={sectionRef} className={`relative z-20 min-h-screen w-full -mt-[15vh] md:mt-0`}>
+        
+        <div className={`w-full py-8 md:py-12 bg-white overflow-hidden flex items-center relative z-10 mb-4 md:mb-12`}>
           <div className={`marquee-services`}>
-            <div className={`marquee-services__track`}>
+            
+            <div 
+              className={`marquee-services__track`} 
+              style={{ 
+                animationDuration: `35s`, 
+                willChange: `transform` 
+              }}
+            >
               {[0, 1, 2, 3].map((blockIndex) => (
                 <div key={blockIndex} className={`marquee-services__segment`} aria-hidden={blockIndex > 0 ? `true` : undefined}>
-                  <span className={`marquee-services__text text-white`}>Tech Solutions</span>
-                  <span className={`marquee-services__dash text-white`}>—</span>
+                  <span className={`marquee-services__text text-black font-bold`} style={{ fontFamily: `Arial, sans-serif`, fontSize: `clamp(1.5rem, 3vw, 3rem)` }}>Advancing Ideas With Superior Technology</span>
+                  <span className={`marquee-services__dash text-black font-bold`} style={{ fontFamily: `Arial, sans-serif`, fontSize: `clamp(1.5rem, 3vw, 3rem)` }}>—</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div ref={stackInnerRef} className={`px-4 md:px-12 w-full`} style={{ transformStyle: `preserve-3d` }}>
-          <div ref={voidContainerRef} className={`void-container relative w-full flex flex-col items-center justify-center`} style={{ willChange: `transform, opacity`, transformStyle: `preserve-3d` }}>
+        <div ref={stackInnerRef} className={`px-4 md:px-12 w-full`}>
+          <div className={`relative w-full flex flex-col items-center justify-center`}>
             
             {services.map((service) => (
-              <div 
-                key={service.id} 
-                className={`scroll-stack-card relative w-[95%] md:w-[85%] max-w-[1200px] mb-12 origin-top rounded-[60px]`}
-              >
+              <div key={service.id} className={`scroll-stack-card relative w-[95%] md:w-[85%] max-w-[1200px] mb-12 origin-top rounded-[60px] group`}>
+                <Link href={service.link} className={`absolute inset-0 z-30 rounded-[60px]`} aria-label={service.title} />
+
                 <div 
-                  className={`absolute inset-0 z-0 pointer-events-none`}
+                  className={`absolute inset-0 z-20 pointer-events-none`}
                   style={{
-                    borderRadius: `60px`,
-                    padding: `2px`, 
-                    WebkitMask: `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
-                    mask: `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
-                    WebkitMaskComposite: `xor`,
-                    maskComposite: `exclude`,
-                    overflow: `hidden`
+                    borderRadius: `60px`, padding: `2px`, 
+                    WebkitMask: `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`, mask: `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
+                    WebkitMaskComposite: `xor`, maskComposite: `exclude`, overflow: `hidden`
                   }}
                 >
-                  <div 
-                    className={`absolute w-[200%] h-[200%] top-[-50%] left-[-50%]`}
-                    style={{
-                      background: `conic-gradient(from 0deg, transparent, ${service.color}, transparent)`,
-                      animation: `custom-star-rotate 8s linear infinite`,
-                      filter: `blur(4px)`
-                    }}
-                  />
+                  <div className={`absolute w-[200%] h-[200%] top-[-50%] left-[-50%]`} style={{ background: `conic-gradient(from 0deg, transparent, ${service.color}, transparent)`, animation: `custom-star-rotate 8s linear infinite`, filter: `blur(4px)` }} />
                 </div>
 
-                <div className={`relative z-10 w-full h-full min-h-[250px] md:min-h-[350px] rounded-[58px] bg-black/20 backdrop-blur-xl border border-white/5 p-6 md:p-10 flex flex-col`}>
+                <div className={`relative z-10 w-full h-full min-h-[250px] md:min-h-[350px] rounded-[58px] bg-black backdrop-blur-xl border border-white/10 p-6 md:p-10 flex flex-col hover:bg-white/5 transition-colors duration-500`}>
                   <div className={`flex flex-col md:flex-row justify-between items-start md:items-center w-full mb-8 gap-6`}>
                     <div className={`flex items-center gap-6`}>
                       <span className={`text-white text-5xl md:text-7xl font-black font-sans leading-none tracking-tighter drop-shadow-lg`}>{service.id}</span>
@@ -250,13 +156,9 @@ const ServicesSection = () => {
                       </div>
                     </div>
                     
-                    {/* Updated Link to use the specific service link property */}
-                    <Link href={service.link}>
-                      <StarBorder as={`div`} className={`shrink-0 cursor-pointer hover:scale-105 transition-transform`} color={`#ffffff, #444444, #ffffff`} speed={`3s`}>
-                        <span className={`px-6 py-2 text-xs md:text-sm font-bold uppercase text-white block`}>{service.cta}</span>
-                      </StarBorder>
-                    </Link>
-
+                    <div className={`shrink-0 cursor-pointer hover:scale-105 transition-transform bg-white rounded-full shadow-lg flex items-center justify-center relative z-40`}>
+                      <span className={`px-6 py-3 text-xs md:text-sm font-bold uppercase text-black block tracking-widest`} style={{ fontFamily: `Arial, sans-serif` }}>{service.cta}</span>
+                    </div>
                   </div>
 
                   <div className={`flex-1 flex items-center justify-start py-4 mt-auto`}>
@@ -267,37 +169,10 @@ const ServicesSection = () => {
             ))}
           </div>
           
-          <div className={`scroll-stack-end pointer-events-none w-full opacity-0`} style={{ height: isMobile ? `100vh` : `120vh` }} />
+          <div className={`scroll-stack-end pointer-events-none w-full opacity-0`} />
         </div>
-
-        <div ref={kineticWheelRef} className={`kinetic-wheel pointer-events-none`} style={{
-          position: `fixed`,
-          bottom: isMobile ? `-2vh` : `-18vh`,
-          left: `50%`,
-          width: isMobile ? `250vw` : `100vw`,
-          marginLeft: isMobile ? `-125vw` : `-50vw`,
-          zIndex: 0,
-          visibility: `hidden`,
-          opacity: 0,
-          willChange: `transform, opacity`,
-        }}>
-            <svg viewBox={`0 0 3000 1500`} className={`w-full h-auto`} style={{ overflow: `visible`, display: `block` }}>
-              <path id={`arc-path`} d={`M 400,1500 A 1100,1100 0 0,1 2600,1500`} fill={`none`} stroke={`none`} />
-              {[
-                { text: `ANALYZE`, offset: `15%` }, { text: `●`, offset: `27%` },
-                { text: `DESIGN`, offset: `38%` }, { text: `●`, offset: `50%` },
-                { text: `BUILD`, offset: `62%` }, { text: `●`, offset: `73%` },
-                { text: `DELIVER`, offset: `85%` },
-              ].map((item, i) => (
-                <text key={i} fill={`#ffffff`} style={{ fontFamily: `sans-serif`, fontWeight: 800, fontSize: item.text === `●` ? `50px` : `100px`, textTransform: `uppercase` }} dy={item.text === `●` ? `-18` : `0`}>
-                  <textPath href={`#arc-path`} startOffset={item.offset} textAnchor={`middle`}>{item.text}</textPath>
-                </text>
-              ))}
-            </svg>
-        </div>
-
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
