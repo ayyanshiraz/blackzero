@@ -13,7 +13,7 @@ export const projectsData = [
       title: 'BizVibez Properties',
       category: "Media Coverage",
       imageUrl: "/Projects/59.webp",
-      imgAltText: "Luxury real estate website for Dubai properties displayed on a monitor",
+      imgAltText: "Luxury real estate website for USA properties displayed on a monitor",
       className: 'md:col-span-1',
       services: ['Social Media', 'Web Development', 'Media Coverage']
   },
