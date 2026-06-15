@@ -4,14 +4,14 @@ import { projectsData } from './data';
 
 export const metadata: Metadata = {
   title: 'Our Projects | AI, Dev & Analytics | Black Zero',
-  description: 'Discover Black Zero\'s successful projects across the UAE. From custom enterprise software and real estate portals to advanced AI and data analytics solutions.',
+  description: 'Discover Black Zero\'s successful projects across the USA. From custom enterprise software and real estate portals to advanced AI and data analytics solutions.',
   keywords: ['IT solutions portfolio', 'strategic marketing case studies', 'Black Zero projects', 'software development', 'UI/UX design', 'branding portfolio', 'IT consulting agency'],
   alternates: {
     canonical: '/projects',
   },
   openGraph: {
     title: 'Our Projects | AI, Dev & Analytics | Black Zero',
-    description: 'Discover Black Zero\'s successful projects across the UAE. From custom enterprise software and real estate portals to advanced AI and data analytics solutions.',
+    description: 'Discover Black Zero\'s successful projects across the USA. From custom enterprise software and real estate portals to advanced AI and data analytics solutions.',
     url: '/projects',
     type: 'website',
     images: [

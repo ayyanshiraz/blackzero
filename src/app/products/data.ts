@@ -8,8 +8,8 @@ export const productsData = [
         brand: 'Black Zero',
         shortDescription: 'Streamline your recruitment with our AI-driven ATS. Automate parsing and ranking to find top talent faster.',
         seoTitle: 'AI Application Tracking System | HR Tech by Black Zero',
-        metaDescription: 'Streamline your recruitment with Black Zero\'s AI-driven Application Tracking System. Automate resume parsing and rank top talent instantly in the UAE & GCC.',
-        seoKeywords: ['AI Application Tracking System', 'HR Tech UAE', 'Recruitment Automation Software', 'AI ATS'],
+        metaDescription: 'Streamline your recruitment with Black Zero\'s AI-driven Application Tracking System. Automate resume parsing and rank top talent instantly in the USA & GCC.',
+        seoKeywords: ['AI Application Tracking System', 'HR Tech USA', 'Recruitment Automation Software', 'AI ATS'],
         fullDescription: 'The Application Tracking System (ATS) by Black Zero is a comprehensive recruitment solution engineered to modernize how companies hire. In a competitive job market, finding the right talent manually is time-consuming and error-prone. Our ATS automates the most tedious parts of recruitment, including resume parsing, candidate screening, and interview scheduling. By leveraging advanced Artificial Intelligence, the system automatically ranks applicants based on how well their skills match your job descriptions, ensuring your HR team focuses only on the most qualified candidates. The platform also features a collaborative portal where hiring managers can leave feedback, rate candidates, and share notes in real-time, eliminating email clutter. With built-in integration for major job boards like LinkedIn and Indeed, you can post openings with a single click. Furthermore, the advanced analytics dashboard provides deep insights into your hiring pipeline, helping you identify bottlenecks and reduce your time-to-hire significantly. This is the ultimate tool for scaling your workforce efficiently.',
         features: [
             'AI-Powered Resume Parsing',
@@ -32,7 +32,7 @@ export const productsData = [
         shortDescription: 'Automated billing software. Generate professional invoices, track real-time payments, and manage multi-currency accounts.',
         seoTitle: 'Automated Company Invoicer Software | Black Zero',
         metaDescription: 'Simplify billing with Black Zero\'s Company Invoicer. Generate professional invoices, track real-time payments, and manage multi-currency accounts securely.',
-        seoKeywords: ['Automated Invoicing Software', 'B2B Billing Software', 'Multi-currency Invoicer', 'Finance Tech UAE'],
+        seoKeywords: ['Automated Invoicing Software', 'B2B Billing Software', 'Multi-currency Invoicer', 'Finance Tech USA'],
         fullDescription: 'The Company Invoicer by Black Zero is a robust financial tool designed to simplify billing operations for Small to Medium Enterprises (SMEs). Managing cash flow is critical for business survival, and our software ensures you get paid faster and with less administrative effort. It allows users to generate sleek, professional invoices that are fully compliant with international tax standards. The system excels in automation; you can set up recurring billing profiles for subscription-based clients, ensuring invoices are sent out automatically each month without you lifting a finger. With support for multiple currencies and languages, it is perfect for businesses operating in global markets like Dubai, London, and New York. The real-time dashboard gives you an immediate view of your financial health, highlighting overdue payments and automatically sending polite reminders to clients. Secure, efficient, and easy to use, the Company Invoicer removes the headache from financial management.',
         features: [
             'Customizable Invoice Templates',

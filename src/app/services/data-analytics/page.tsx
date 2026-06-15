@@ -85,14 +85,14 @@ const dataAnalyticsData = {
 
 export const metadata: Metadata = {
   title: `Strategic Data Analytics Consultant in USA`,
-  description: `Turn complex data into effective growth strategies. Our UAE-based data analytics consultants provide clear, actionable insights to drive corporate success.`,
+  description: `Turn complex data into effective growth strategies. Our USA-based data analytics consultants provide clear, actionable insights to drive corporate success.`,
   keywords: [`data analytics`, `data visualization`, `Power BI`, `big data`, `predictive analytics`, `data automation`],
   alternates: {
     canonical: `/services/data-analytics`,
   },
   openGraph: {
     title: `Data Analytics Services | Data Analysis and Visualization | Black Zero`,
-    description: `Turn complex data into effective growth strategies. Our UAE-based data analytics consultants provide clear, actionable insights to drive corporate success.`,
+    description: `Turn complex data into effective growth strategies. Our USA-based data analytics consultants provide clear, actionable insights to drive corporate success.`,
     url: `/services/data-analytics`,
     siteName: `Black Zero`,
     locale: `en_US`,

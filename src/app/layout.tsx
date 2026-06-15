@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     },
   },
   title: {
-    default: "Black Zero: IT Consulting and Digital Solutions UAE",
+    default: "Black Zero: IT Consulting and Digital Solutions",
     template: "%s",
   },
   description: "Grow your business with Black Zero. We provide outstanding IT consulting, custom app development, and scalable digital solutions customized for the USA market.",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     google: "1HfyejT0xZl6FqT0DJLA59GxpsyCsDe5Ii3KFuvhDmg",
   },
   openGraph: {
-    title: "Black Zero: Strategic IT Consulting Solutions UAE",
+    title: "Black Zero: Strategic IT Consulting Solutions",
     description: "Grow your business with Black Zero. We provide outstanding IT consulting, custom app development, and scalable digital solutions customized for the USA market.",
     url: "https://www.blackzero.org/",
     siteName: "Black Zero",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Black Zero: Strategic IT Consulting Solutions UAE",
+    title: "Black Zero: Strategic IT Consulting Solutions USA",
     description: "Grow your business with Black Zero. We provide outstanding IT consulting, custom app development, and scalable digital solutions customized for the USA market.",
     images: ["/opengraph-image.png"],
   },
