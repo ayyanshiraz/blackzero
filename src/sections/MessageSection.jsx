@@ -90,14 +90,14 @@ const MessageSection = () => {
             {/* MODIFIED: Explicitly added md:mt-0 md:mb-0 to protect the original desktop layout */}
             <div
               style={{ clipPath: `polygon(0 0, 0 0, 0 100%, 0% 100%)` }}
-              className={`msg-text-scroll border-black mt-8 mb-2 md:mt-0 md:mb-0`}
+              className={`msg-text-scroll border-black mt-8 mb-2 md:mt-0 md:mb-[-190]`}
             >
               <div className={`bg-black md:pb-5 pb-3 px-5`}>
                 <h2 className={`text-white`}>Scale Up</h2>
               </div>
             </div>
 
-            <h1 className={`second-message text-black/10 mt-2 md:mt-0`}>
+            <h1 className={`second-message text-black/10 mt-2 md:mt-30`}>
               your business with next generation AI solutions
             </h1>
             
