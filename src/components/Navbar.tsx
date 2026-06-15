@@ -66,7 +66,7 @@ export default function Navbar() {
         { name: `Advanced Website and Portal Systems`, href: `/services/advanced-websites` },
         { name: `Hybrid SEO Services`, href: `/services/hybrid-seo` },
         { name: `Marketing`, href: `/services/marketing` },
-        { name: `Creative Design and Animation Studio`, href: `/services/creative-design` },
+        { name: `Creative Design and Animation Studio`, href: `/services/creative-design-and-animation-studio` },
     ];
 
     const aboutItems = [
