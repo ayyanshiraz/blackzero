@@ -1,9 +1,11 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+// Agar aap Next.js use kar rahe hain to acha hai ke yahan Link import kar lein
+// import Link from 'next/link';
 
 // --- Animated Success Timeline Step Component ---
-const SuccessStep = ({ number, title, description, alignLeft }: { number: string; title: string; description: string; alignLeft: boolean; }) => {
+const SuccessStep = ({ number, title, description, alignLeft }: { number: string; title: string; description: string | React.ReactNode; alignLeft: boolean; }) => {
     const [isVisible, setIsVisible] = useState(false);
     const stepRef = useRef<HTMLDivElement>(null);
 
@@ -74,7 +76,15 @@ export default function EcommerceSuccessClient() {
         { number: '03', title: 'BRANDING', description: "In the game of eCommerce, what you sell does not matter to thrive successfully. If you are able to make your ideal customers believe that yours is the only store they need, you win. And the best way to make that happen is eCommerce Branding. We will do your A to Z effective branding to make you stand out in a fiercely competitive ecommerce space." },
         { number: '04', title: 'TRADEMARK & BUSINESS REGISTRATION', description: "We know how hectic, complex and lengthy is the process of giving your business the legal shields. At the same, its very vital to protect your intellectual property rights." },
         { number: '05', title: 'CREATIVE DESIGNING', description: "With our talented, creative and skilled team of designers we engage, communicate and persuade the audience to sell your services and products in a way that they would love to pay for. We will boost your IT and Marketing with the help of creative visual communication." },
-        { number: '06', title: 'WEBSITE DESIGN & DEVELOPMENT', description: 'Utilizing the power of <a>creative designing</a> we build an eye-catching online presence of your business making it completely mobile and user friendly, SEO optimized and highly converting. We will help grow your business with a website design that customers love to visit and buy.' },
+        { 
+            number: '06', 
+            title: 'WEBSITE DESIGN & DEVELOPMENT', 
+            description: (
+                <>
+                    Utilizing the power of <a href="/services/creative-design-and-animation-studio" className="text-white underline hover:text-gray-300 transition-colors">creative designing</a> we build an eye-catching online presence of your business making it completely mobile and user friendly, SEO optimized and highly converting. We will help grow your business with a website design that customers love to visit and buy.
+                </>
+            )
+        },
         { number: '07', title: 'PERFORMANCE IT AND MARKETING', description: "The most vital part of any business is its IT and Marketing infrastructure. No matter if you have the best product in the world and the best offer, no one would be willing to buy until the need is best developed and then fulfilled successfully." },
         { number: '08', title: 'STORE MANAGEMENT', description: 'Forget about the hectic store management operations and focus more on your business goals. Our expert dedicated team looks after your stock, manages abundant carts, handles your product attributes or visibility, and everything in between.' },
         { number: '09', title: 'BUSINESS ANALYSIS AND REPORTING', description: "Numbers speak and the business which cannot make sense of their data face a shameful failure. We help businesses trust where they are headed by providing them with detailed analytical reports in a way they can easily understand." },
