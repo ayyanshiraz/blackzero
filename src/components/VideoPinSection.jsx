@@ -35,6 +35,13 @@ const VideoPinSection = () => {
 
   return (
     <section ref={containerRef} className={`h-[60dvh] md:h-[100dvh] w-full relative overflow-hidden bg-white`}>
+      {/* Target and hide Safari WebKit media controls entirely */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        video::-webkit-media-controls { display: none !important; }
+        video::-webkit-media-controls-play-button { display: none !important; }
+        video::-webkit-media-controls-start-playback-button { display: none !important; }
+      `}} />
+      
       <div className={`w-full h-full video-slide`}>
         <video
           src={`/videos/handshake.mp4`}
@@ -43,7 +50,8 @@ const VideoPinSection = () => {
           loop
           autoPlay
           preload={`auto`}
-          className={`w-full h-full object-cover`} 
+          /* Added pointer-events-none to block touch interactions that might trigger UI */
+          className={`w-full h-full object-cover pointer-events-none`} 
         />
       </div>
     </section>

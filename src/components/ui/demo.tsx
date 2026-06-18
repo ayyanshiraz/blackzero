@@ -33,9 +33,8 @@ export function SplineSceneBasic() {
     <Card className={`w-full min-h-full bg-transparent relative overflow-hidden border-none rounded-none flex flex-col`}>
       <div className={`flex flex-col md:flex-row flex-1 w-full max-w-[1920px] mx-auto min-h-full`}>
         
-        {/* Left content (Text) */}
-        {/* MODIFIED: Replaced min-h-[60svh] with h-auto and adjusted padding so the wrapper tightly hugs the button on mobile */}
-        <div className={`w-full h-auto px-6 pb-8 md:pb-6 md:h-full md:flex-1 pt-32 md:pt-48 lg:pt-64 xl:pt-37 md:pl-16 lg:pl-24 relative z-10 flex flex-col justify-start pointer-events-none order-1`}>
+        {/* Left content text wrapper */}
+        <div className={`w-full h-auto px-6 pb-8 md:pb-6 md:h-full md:flex-1 pt-32 md:pt-24 lg:pt-32 md:pl-16 lg:pl-24 relative z-10 flex flex-col justify-center pointer-events-none order-1`}>
           
           <div className={`flex flex-col items-start w-full`}>
             <motion.h1 
@@ -94,8 +93,7 @@ export function SplineSceneBasic() {
           </div>
         </div>
 
-        {/* Right content (3D Robot) */}
-        {/* MODIFIED: Added a subtle negative top margin (-mt-4) to pull the scene up slightly closer to the button */}
+        {/* Right content 3D Robot wrapper */}
         <div className={`w-full flex-none h-[100svh] -mt-4 md:mt-0 md:h-full relative md:flex-1 pointer-events-auto order-2 overflow-hidden flex items-center justify-center`}>
           <div className={`absolute inset-0 w-full h-full flex items-center justify-center`}>
             <SplineScene 
