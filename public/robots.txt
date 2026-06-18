@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Allow crawling for all compliant web crawlers
 User-agent: *
 Allow: /
@@ -9,3 +10,14 @@ Allow: /
 
 # Point crawlers to your sitemap
 Sitemap: https://www.almadinahijamacenter.com/sitemap.xml
+=======
+# robots.txt for blackzero.org
+# Built with Next.js
+
+# Allow all reputable crawlers full access
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://www.blackzero.org/sitemap.xml
+>>>>>>> aa0485d (Fix hero section layout and padding)

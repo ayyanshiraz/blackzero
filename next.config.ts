@@ -1,30 +1,41 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    unoptimized: true,
-  },
+import type { NextConfig } from "next";
 
-  async redirects() {
-    return [
-     
-      // New redirects
-      {
-        source: '/services/dry-and-massage-cupping',
-        destination: '/services/dry-cupping',
-        permanent: true,
-      },
-      {
-        source: '/blog/services/hijama-for-baldness',
-        destination: '/services/hijama-for-baldness',
-        permanent: true,
-      },
-      {
-        source: '/services/blood-cupping',
-        destination: '/services/wet-cupping',
-        permanent: true,
-      },
-    ];
-  },
+const nextConfig: NextConfig = {
+    trailingSlash: false, // This automatically redirects /about/ to /about
+    
+    // Server Actions configuration for file uploads up to 50MB
+    experimental: {
+        serverActions: {
+            bodySizeLimit: 52428800, // 50MB limit for file uploads
+        },
+    },
+
+    async redirects() {
+        return [
+            {
+                source: '/:path*',
+                has: [
+                    {
+                        type: 'host',
+                        value: 'blackzero.org',
+                    },
+                ],
+                destination: 'https://www.blackzero.org/:path*',
+                permanent: true,
+            },
+            // 2. Page Redirects (No need to list trailing slash versions separately)
+            { source: '/portfolio', destination: '/projects', permanent: true },
+            
+            { source: '/our-team', destination: '/team', permanent: true },
+            
+            { source: '/bizvibez-about', destination: '/about', permanent: true },
+            
+            { source: '/mobile-application', destination: '/services/development', permanent: true },
+                        
+            { source: '/tag/:path*', destination: '/blogs', permanent: true }, 
+            { source: '/category/:path*', destination: '/blogs', permanent: true }, 
+        ];
+    },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

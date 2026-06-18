@@ -1,6 +1,23 @@
+<<<<<<< HEAD
+=======
+# This section tells Netlify how to build your Next.js site.
+>>>>>>> aa0485d (Fix hero section layout and padding)
 [build]
   command = "npm run build"
   publish = ".next"
 
+<<<<<<< HEAD
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+=======
+# This new section tells Netlify where to find your serverless function
+# and how to prepare it for deployment.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# This makes sure the Next.js plugin runs correctly.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+>>>>>>> aa0485d (Fix hero section layout and padding)

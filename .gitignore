@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+<<<<<<< HEAD
+=======
+secrets.json
+<<<<<<< HEAD
+=======
+node_modules/
+.next/
+.env.local
+node_modules/
+.next/
+dist/
+.env
+>>>>>>> temp-fix
+>>>>>>> aa0485d (Fix hero section layout and padding)
