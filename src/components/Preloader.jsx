@@ -67,7 +67,7 @@ const Preloader = ({ onComplete }) => {
     document.body.style.overflow = `hidden`;
 
     let rafId;
-    const duration = 10000; // 10 seconds in milliseconds
+    const duration = 3000; // 10 seconds in milliseconds
     const startTime = Date.now();
 
     // Calculate progress smoothly over exactly 10 seconds

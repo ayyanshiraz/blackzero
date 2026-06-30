@@ -2,8 +2,14 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { Inter } from "next/font/google";
-import { SplineSceneBasic } from "../components/ui/demo";
+import dynamic from "next/dynamic";
 import SplashCursor from "../components/ui/splash-cursor";
+
+// Dynamically import SplineSceneBasic and completely disable SSR for it
+const SplineSceneBasic = dynamic(
+  () => import("../components/ui/demo").then((mod) => mod.SplineSceneBasic),
+  { ssr: false }
+);
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "900"] });
 

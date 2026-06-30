@@ -11,12 +11,19 @@ const MessageSection = () => {
     // Use once: true so splits are stable and do not re-run on every render
     const firstMsgSplit  = SplitText.create(`.first-message`,  { type: `words` });
     const secMsgSplit    = SplitText.create(`.second-message`, { type: `words` });
-    const paragraphSplit = SplitText.create(`.message-content p`, {
-      type: `words, lines`,
-      linesClass: `paragraph-line`,
-    });
+    
+    // Check if the paragraph element actually exists before trying to split it
+    const pElement = document.querySelector(`.message-content p`);
+    let paragraphSplit;
 
-    // First headline — fade in words as user scrolls
+    if (pElement) {
+      paragraphSplit = SplitText.create(`.message-content p`, {
+        type: `words, lines`,
+        linesClass: `paragraph-line`,
+      });
+    }
+
+    // First headline fade in words as user scrolls
     gsap.fromTo(
       firstMsgSplit.words,
       { color: `rgba(0,0,0,0.08)` },
@@ -62,19 +69,21 @@ const MessageSection = () => {
       ease: `circ.inOut`,
     });
 
-    // Paragraph words stagger in
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: `.message-content p`,
-        start: `top center`,
-      },
-    }).from(paragraphSplit.words, {
-      yPercent: 250,
-      rotate: 2,
-      ease: `power2.out`,
-      duration: 0.8,
-      stagger: 0.008,
-    });
+    // Paragraph words stagger in (Execute only if paragraph exists)
+    if (paragraphSplit) {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: `.message-content p`,
+          start: `top center`,
+        },
+      }).from(paragraphSplit.words, {
+        yPercent: 250,
+        rotate: 2,
+        ease: `power2.out`,
+        duration: 0.8,
+        stagger: 0.008,
+      });
+    }
   }, { dependencies: [], once: true });
 
   return (
