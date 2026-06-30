@@ -8,11 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const MessageSection = () => {
   useGSAP(() => {
-    // Use once: true so splits are stable and do not re-run on every render
     const firstMsgSplit  = SplitText.create(`.first-message`,  { type: `words` });
     const secMsgSplit    = SplitText.create(`.second-message`, { type: `words` });
     
-    // Check if the paragraph element actually exists before trying to split it
     const pElement = document.querySelector(`.message-content p`);
     let paragraphSplit;
 
@@ -23,7 +21,6 @@ const MessageSection = () => {
       });
     }
 
-    // First headline fade in words as user scrolls
     gsap.fromTo(
       firstMsgSplit.words,
       { color: `rgba(0,0,0,0.08)` },
@@ -40,7 +37,6 @@ const MessageSection = () => {
       }
     );
 
-    // Second headline
     gsap.fromTo(
       secMsgSplit.words,
       { color: `rgba(0,0,0,0.08)` },
@@ -57,7 +53,6 @@ const MessageSection = () => {
       }
     );
 
-    // Scale Up clip reveal
     gsap.timeline({
       scrollTrigger: {
         trigger: `.msg-text-scroll`,
@@ -69,7 +64,6 @@ const MessageSection = () => {
       ease: `circ.inOut`,
     });
 
-    // Paragraph words stagger in (Execute only if paragraph exists)
     if (paragraphSplit) {
       gsap.timeline({
         scrollTrigger: {
@@ -96,7 +90,6 @@ const MessageSection = () => {
               Accelerate your digital transformation and
             </h1>
 
-            {/* MODIFIED: Explicitly added md:mt-0 md:mb-0 to protect the original desktop layout */}
             <div
               style={{ clipPath: `polygon(0 0, 0 0, 0 100%, 0% 100%)` }}
               className={`msg-text-scroll border-black mt-8 mb-2 md:mt-0 md:mb-[-190]`}
