@@ -8,8 +8,8 @@ import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import CookieBanner from "@/components/CookieBanner";
 import type { Metadata } from "next";
-import HideOnDashboard from '@/components/HideOnDashboard';
-import WhatsAppButton from '@/components/WhatsAppButton';
+import HideOnDashboard from "@/components/HideOnDashboard";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.blackzero.org"),
@@ -59,6 +59,21 @@ export const metadata: Metadata = {
   },
 };
 
+// Define the JSON-LD Schema for Organization and Local Business
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Black Zero",
+  url: "https://www.blackzero.org",
+  logo: "https://www.blackzero.org/opengraph-image.png",
+  description: "Grow your business with Black Zero. We provide outstanding IT consulting, custom app development, and scalable digital solutions customized for the USA market.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    availableLanguage: ["English"]
+  }
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -66,14 +81,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        {/* Inject JSON-LD Script for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body suppressHydrationWarning>
        
         {/* 1. Hide Navbar on Dashboard */}
         <HideOnDashboard>
           <GlobalNavbar />
         </HideOnDashboard>
+        
         <main>{children}</main>
-         <FooterSection />
+        <FooterSection />
 
         {/* 3. Hide all these marketing/footer elements on Dashboard */}
         <HideOnDashboard>
