@@ -46,6 +46,19 @@ Black Zero is a technology agency providing custom software development, AI solu
 - Metaverse 3D Avatars and Virtual Characters.
 - Commercial Photography and Corporate Videography.
 
+## Turnkey Ecommerce Solutions (9-Step Framework)
+Black Zero offers a completely managed, end-to-end framework to build, launch, and scale successful ecommerce businesses from scratch. This solution is designed for investors and entrepreneurs seeking a hands-free digital retail operation.
+
+- **1. Niche & Product Hunting**: Identifying problem-solving, evergreen products with high market demand.
+- **2. Product Sourcing**: Supplier evaluation, quality assurance via sampling, and profit margin optimization.
+- **3. Comprehensive Branding**: Developing a complete A-to-Z brand identity to stand out in competitive markets.
+- **4. Trademark & Business Registration**: Managing legal protections and intellectual property rights.
+- **5. Creative Designing**: High-end visual communication and graphic design to drive consumer engagement.
+- **6. Website Design & Development**: Building SEO-optimized, mobile-responsive, and high-converting ecommerce platforms.
+- **7. Performance Marketing**: Strategic digital infrastructure for demand generation and customer acquisition.
+- **8. Complete Store Management**: Handling daily operations, inventory stock, abandoned cart recovery, and product visibility.
+- **9. Business Analysis and Reporting**: Providing detailed, data-driven analytical reports to track growth and scale effectively.
+
 ## Company Overview & Impact
 - **Mission & Vision**: To reshape the global IT and marketing landscape by providing multidisciplinary, data-driven strategies that fuel long-term growth for startups and enterprises.
 - **The Black Zero Doctrine**: Core operational principles include continuous learning, innovative problem solving, perseverance, strict commitment, honesty, and big-picture thinking.
@@ -58,3 +71,30 @@ Black Zero is a technology agency providing custom software development, AI solu
 - **Direct Contact**: +92 324 4333267 (Phone and WhatsApp)
 - **Official Emails**: info@blackzero.org, marketinghead@blackzero.org
 - **Legal Entity**: Black Zero IT Solutions
+
+## Portfolio & Case Studies
+- **Starlight Linkers LLC**: An IT solutions provider specializing in digital transformation.
+  - **Solutions Delivered**: Custom corporate website development (www.starlightlinkers.com), comprehensive website management ensuring 99.9 percent uptime, modern logo design, and a secure internal web portal for streamlined workflow and data management.
+  - **Impact**: Established a robust digital footprint and provided a high-performance platform that serves as a key asset in their corporate sales process.
+- **BizVibez Properties**: A premier luxury real estate platform and consultancy in the USA.
+  - **Solutions Delivered**: Developed dual digital platforms (bizvibez.com and bizvibezproperties.com) with advanced property search functionality. Integrated a comprehensive CRM for lead automation. Executed high-net-worth Social Media Marketing, Social Media Handling, and targeted SEO. Produced 2D/3D architectural animations, Explanatory Videos, and Scroll Stopper social media visuals.
+  - **Impact**: Established a prestigious digital footprint, driving unprecedented website traffic and a substantial increase in high-quality client inquiries for the luxury real estate market.
+- **Teknora**: A premier manufacturer specializing in the mass production of high-quality industrial sacks and packaging solutions.
+  - **Solutions Delivered**: Developed custom internal software for inventory and order management (tracking raw material and real-time production output). Integrated interactive 3D product models within the website interface for detailed material inspection.
+  - **Impact**: Streamlined factory operations and successfully digitized their massive industrial capabilities into a sleek B2B platform.
+
+- **Unique Studio**: A prominent architecture, interiors, and construction design firm.
+  - **Solutions Delivered**: Executed targeted digital campaigns for high-net-worth individuals and provided comprehensive Social Media Handling to curate a premium digital portfolio.
+  - **Impact**: Amplified their architectural vision, built strong brand authority, and drove a significant increase in qualified high-end project inquiries.
+
+- **Pakistan Academy**: A leading educational institution providing online and hybrid tutoring for O/A Levels and IELTS.
+  - **Solutions Delivered**: Full-scale website development (pakistanacademy.org), ongoing management, targeted Social Media Marketing, daily Social Media Handling, and professional Photography and Videography for brand building.
+  - **Impact**: Boosted online visibility nationwide, dramatically increased student enrollment, and established a trustworthy educational brand presence.
+
+- **Al Madina Hijama Center**: A trusted holistic therapy and wellness center.
+  - **Solutions Delivered**: Custom website development (almadinahijamacenter.com) featuring a seamless appointment booking system, ongoing website management, and robust Local SEO optimization.
+  - **Impact**: Enhanced patient convenience, secured top local search rankings, and achieved a remarkable increase in booked appointments.
+
+- **Ever Smart Emporium**: A premier luxury retailer curating high-end international brands.
+  - **Solutions Delivered**: End-to-end Social Media Handling and Marketing, professional product Photography, dynamic Videography (short-form videos), and targeted sales campaigns.
+  - **Impact**: Transformed their digital presence into a powerful sales funnel, cultivated a community of over 27,000 followers, and dramatically boosted engagement and retail sales.
