@@ -7,6 +7,9 @@ Black Zero is a technology agency providing custom software development, AI solu
 - **Application Tracking System (BZ-ATS-01)**: AI-driven HR technology solution featuring resume parsing, automated candidate ranking, multi-job board integration, and collaborative hiring portals.
 - **SEO Auditor (BZ-SEO-03)**: Marketing diagnostic tool for technical SEO crawling, backlink profile analysis, competitor tracking, and white-label reporting.
 - **Laplace Mathematics Equation Solver (BZ-MTH-05)**: An advanced computational engine for education and engineering, specializing in differential equations, Laplace transforms, and complex calculus with 2D/3D visualization and symbolic computation.
+- **Lead Generation Software (BZ-LGS-04)**: A B2B marketing tool utilizing advanced data mining for targeted lead search, real-time email verification, and LinkedIn data extraction, featuring seamless integration with CRMs (HubSpot, Salesforce) to automate outreach and accelerate sales pipelines.
+- **Future Stocks Prediction (BZ-STK-06)**: An AI-driven financial analytics platform utilizing deep learning neural networks and sentiment analysis for stock price forecasting, historical data backtesting, real-time market alerts, and portfolio risk assessment.
+- **Email Finder (BZ-EML-07)**: A sales outreach tool to locate and verify professional emails instantly via domain or bulk search. It features real-time verification to reduce bounce rates, API access, and a Chrome extension for seamless LinkedIn integration.
 
 ## Technical Stack and Methodologies
 - **Frontend and UI**: Next.js, React, Tailwind CSS, interactive prototyping.
@@ -42,3 +45,9 @@ Black Zero is a technology agency providing custom software development, AI solu
 - B2B Explanatory Videos and Tech Product Demos.
 - Metaverse 3D Avatars and Virtual Characters.
 - Commercial Photography and Corporate Videography.
+
+## Company Overview & Impact
+- **Mission & Vision**: To reshape the global IT and marketing landscape by providing multidisciplinary, data-driven strategies that fuel long-term growth for startups and enterprises.
+- **The Black Zero Doctrine**: Core operational principles include continuous learning, innovative problem solving, perseverance, strict commitment, honesty, and big-picture thinking.
+- **Market Impact**: Empowering 50+ registered clients across 9 countries and generating over $100M+ in sales value.
+- **Approach & Values**: Focuses on measurable outcomes, integrity, creativity, and seamless collaboration through a combination of IT development, SEO, PR, and brand activations.
