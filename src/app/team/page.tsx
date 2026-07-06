@@ -28,19 +28,13 @@ const teamStructure = {
   level2: [
     {
       id: "org-manager",
-      name: "AYYAN SHIRAZ",
-<<<<<<< HEAD
-      position: "Marketing Head",
-      avatar: "/Team/ayyan.webp",
-      imgAltText: "Ayyan Shiraz, Marketing Head at Black Zero",
-=======
-      position: "Chief Technology Officer",
-      avatar: "/Team/ayyan.webp",
-      imgAltText: "Ayyan Shiraz, CTO at Black Zero",
->>>>>>> 049a88de9658d0dfd1f3fb068e364d71a6776604
-      ringColor: "border-gray-700",
-      size: "w-52 h-52",
-      delay: "0.5s"
+        name: "AYYAN SHIRAZ",
+        position: "Chief Technology Officer", 
+        avatar: "/Team/ayyan.webp",
+        imgAltText: "Ayyan Shiraz at Black Zero",
+        ringColor: "border-gray-700",
+        size: "w-52 h-52",
+        delay: "0.5s"
     }
   ],
   level3: [
