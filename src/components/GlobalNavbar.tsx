@@ -20,11 +20,7 @@ const Dropdown = ({ title, items, mainHref }: DropdownProps) => {
                 className={`px-4 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300 flex items-center`}
             >
                 {title}
-<<<<<<< HEAD
-                <svg className={`w-3.5 h-3.5 ml-1.5 opacity-60 transition-transform group-hover:rotate-180`} fill={`none`} stroke={`currentColor`} viewBox={`0 0 24 24`} xmlns="http://www.w3.org/2000/svg">
-=======
                 <svg className={`w-3.5 h-3.5 ml-1.5 opacity-60 transition-transform group-hover:rotate-180`} fill={`none`} stroke={`currentColor`} viewBox={`0 0 24 24`} xmlns={`http://www.w3.org/2000/svg`}>
->>>>>>> 049a88de9658d0dfd1f3fb068e364d71a6776604
                     <path strokeLinecap={`round`} strokeLinejoin={`round`} strokeWidth={`2.5`} d={`M19 9l-7 7-7-7`}></path>
                 </svg>
             </Link>
@@ -47,8 +43,6 @@ const Dropdown = ({ title, items, mainHref }: DropdownProps) => {
     );
 };
 
-<<<<<<< HEAD
-=======
 const MobileDropdown = ({ title, items, mainHref, onLinkClick }: { title: string; items: { name: string; href: string }[]; mainHref: string; onLinkClick: () => void; }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
@@ -72,7 +66,6 @@ const MobileDropdown = ({ title, items, mainHref, onLinkClick }: { title: string
     );
 };
 
->>>>>>> 049a88de9658d0dfd1f3fb068e364d71a6776604
 export default function GlobalNavbar() {
     const pathname = usePathname();
 
@@ -150,10 +143,6 @@ export default function GlobalNavbar() {
                     </div>
                 )}
 
-<<<<<<< HEAD
-                {/* Added global rule for .force-arial to bypass styled-jsx scoping on children */}
-=======
->>>>>>> 049a88de9658d0dfd1f3fb068e364d71a6776604
                 <style jsx>{`
                     :global(.force-arial), :global(.force-arial *) {
                         font-family: Arial, Helvetica, sans-serif !important;
@@ -227,17 +216,10 @@ export default function GlobalNavbar() {
 
                 {mobileMenuOpen && (
                     <div className={`lg:hidden bg-black/95 backdrop-blur-2xl text-white py-8 absolute top-[calc(100%+1rem)] left-0 w-full max-h-[70vh] overflow-y-auto flex flex-col items-center border border-white/10 rounded-[2.5rem] shadow-2xl z-[120]`}>
-<<<<<<< HEAD
-                        <Link href={`/services`} className={`py-4 text-xl font-bold`} onClick={handleMobileLinkClick}>Services</Link>
-                        <Link href={`/turnitin`} className={`py-4 text-xl font-bold`} onClick={handleMobileLinkClick}>Turnitin</Link>
-                        <Link href={`/products`} className={`py-4 text-xl font-bold`} onClick={handleMobileLinkClick}>Products</Link>
-                        <Link href={`/about`} className={`py-4 text-xl font-bold`} onClick={handleMobileLinkClick}>About</Link>
-=======
                         <MobileDropdown title={`Services`} items={servicesItems} mainHref={`/services`} onLinkClick={handleMobileLinkClick} />
                         <Link href={`/turnitin`} className={`py-4 text-xl font-bold`} onClick={handleMobileLinkClick}>Turnitin</Link>
                         <MobileDropdown title={`Products`} items={productsItems} mainHref={`/products`} onLinkClick={handleMobileLinkClick} />
                         <MobileDropdown title={`About`} items={aboutItems} mainHref={`/about`} onLinkClick={handleMobileLinkClick} />
->>>>>>> 049a88de9658d0dfd1f3fb068e364d71a6776604
                         <Link href={`/portfolio`} className={`py-4 text-xl font-bold`} onClick={handleMobileLinkClick}>Portfolio</Link>
                         <Link href={`/customized-solutions`} onClick={handleMobileLinkClick} className={`mt-6 bg-white text-black px-12 py-4 rounded-full font-bold text-base`}>
                             Customized Solutions
