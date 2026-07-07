@@ -1,5 +1,5 @@
 import { withAuth } from "next-auth/middleware";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest, NextFetchEvent } from "next/server";
 
 const deadLinks = [
     "/home",
@@ -12,7 +12,8 @@ const authMiddleware = withAuth({
     },
 });
 
-export default function middleware(req, event) {
+// Added types for req and event to fix TypeScript errors
+export default function middleware(req: NextRequest, event: NextFetchEvent) {
     const path = req.nextUrl.pathname;
 
     if (deadLinks.includes(path)) {
@@ -20,7 +21,7 @@ export default function middleware(req, event) {
     }
 
     if (path.startsWith("/dashboard")) {
-        return authMiddleware(req, event);
+        return authMiddleware(req as any, event);
     }
 
     return NextResponse.next();
