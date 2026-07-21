@@ -26,13 +26,13 @@ export default function PrivacyPolicyClient() {
           <p className="mb-6 text-sm text-gray-600">Last Updated: October 22, 2025</p>
 
           <p className="mb-6 leading-relaxed">
-            Welcome to Blackzero. We are committed to protecting your privacy and providing a transparent understanding of how we operate.
+            Welcome to Black zero. We are committed to protecting your privacy and providing a transparent understanding of how we operate.
             This page outlines our policies regarding data collection, use, and your rights when you interact with our website (https://blackzero.org/).
           </p>
 
           <h2 className="text-3xl font-bold mb-6 mt-12">1. Privacy Policy</h2>
           <p className="mb-6 leading-relaxed">
-            This Privacy Policy describes how Blackzero (we, us, or our) collects, uses, and shares information about you when you visit our Website.
+            This Privacy Policy describes how Black zero (we, us, or our) collects, uses, and shares information about you when you visit our Website.
           </p>
 
           <h3 className="text-2xl font-semibold mb-4 mt-6">Information We Collect</h3>
@@ -136,17 +136,17 @@ export default function PrivacyPolicyClient() {
 
           <h3 className="text-2xl font-semibold mb-4 mt-6">Intellectual Property</h3>
           <p className="mb-6 leading-relaxed">
-            All content on this Website, including text, graphics, logos, images, and the MAGICAL 9 STEP ecommerce success formula, is the property of Blackzero or its content suppliers and is protected by international copyright and trademark laws. The Blackzero name and logo are trademarks of Blackzero.
+            All content on this Website, including text, graphics, logos, images, and the MAGICAL 9 STEP ecommerce success formula, is the property of Black zero or its content suppliers and is protected by international copyright and trademark laws. The   name and logo are trademarks of Black zero.
           </p>
 
           <h3 className="text-2xl font-semibold mb-4 mt-6">Disclaimer of Warranties</h3>
           <p className="mb-6 leading-relaxed">
-            This Website is provided as is. Blackzero makes no representations or warranties of any kind, express or implied, as to the operation of the site or the information, content, or materials included on it. You expressly agree that your use of this site is at your sole risk.
+            This Website is provided as is. Black zero makes no representations or warranties of any kind, express or implied, as to the operation of the site or the information, content, or materials included on it. You expressly agree that your use of this site is at your sole risk.
           </p>
 
           <h3 className="text-2xl font-semibold mb-4 mt-6">Limitation of Liability</h3>
           <p className="mb-6 leading-relaxed">
-            Blackzero will not be liable for any damages of any kind arising from the use of this site or from any information, content, or services included on or otherwise made available to you through this site, including, but not limited to direct, indirect, incidental, punitive, and consequential damages.
+            Black zero will not be liable for any damages of any kind arising from the use of this site or from any information, content, or services included on or otherwise made available to you through this site, including, but not limited to direct, indirect, incidental, punitive, and consequential damages.
           </p>
 
           <h3 className="text-2xl font-semibold mb-4 mt-6">Governing Law</h3>

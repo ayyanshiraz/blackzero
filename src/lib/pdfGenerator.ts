@@ -239,7 +239,7 @@ function createHighlightedHTML(analysis: AnalysisResult): string {
       <div class="footer">
         <p>This report was generated using advanced pattern recognition and content analysis algorithms.</p>
         <p>Results are indicative and should always be verified through manual review.</p>
-        <p>© ${new Date().getFullYear()} BlackZero - Plagiarism & AI Detection Service</p>
+        <p>© ${new Date().getFullYear()} Black Zero - Plagiarism & AI Detection Service</p>
       </div>
     </body>
     </html>
