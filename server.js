@@ -11,10 +11,7 @@ const client = new Client({
     authStrategy: new LocalAuth()
 });
 
-// Array to store messages that the agent types on WhatsApp
-let pendingFrontendMessages = [];
-
-// Set to store the IDs of automated messages so we do not echo them back
+let pendingFrontendMessages = {};
 const botMessageIds = new Set();
 const chatId = "923044355096@c.us";
 
@@ -26,13 +23,33 @@ client.on("ready", () => {
     console.log("WhatsApp Client is ready!");
 });
 
-// Listen for any new messages (including your own replies)
-client.on("message_create", (msg) => {
-    // Check if the message is in our target chat
+// Handle incoming messages with safe quote checking
+client.on("message_create", async (msg) => {
+    if (!msg || !msg.id || !msg.id.id) return;
+
     if (msg.to === chatId || msg.from === chatId) {
-        // If the message ID is not in our botMessageIds set, it means a human typed it
         if (!botMessageIds.has(msg.id.id)) {
-            pendingFrontendMessages.push(msg.body);
+            if (msg.hasQuotedMsg) {
+                try {
+                    // Extract quoted body from raw data to avoid puppeteer evaluation errors
+                    const quotedBody = msg._data && msg._data.quotedMsg && msg._data.quotedMsg.body;
+                    
+                    if (quotedBody) {
+                        const match = quotedBody.match(/\[#(.*?)\]/);
+                        if (match && match[1]) {
+                            const sessionId = match[1];
+                            if (!pendingFrontendMessages[sessionId]) {
+                                pendingFrontendMessages[sessionId] = [];
+                            }
+                            pendingFrontendMessages[sessionId].push(msg.body);
+                        }
+                    }
+                } catch (err) {
+                    console.error("Error reading quoted message safely:", err);
+                }
+            } else {
+                console.log("Agent replied without quoting a message.");
+            }
         }
     }
 });
@@ -42,11 +59,11 @@ client.initialize();
 app.post("/api/send-message", async (req, res) => {
     try {
         const { message } = req.body;
-        
         const response = await client.sendMessage(chatId, message);
         
-        // Save the automated message ID to avoid showing it in the frontend chat
-        botMessageIds.add(response.id.id);
+        if (response && response.id && response.id.id) {
+            botMessageIds.add(response.id.id);
+        }
         
         res.status(200).json({ success: true, message: "Message sent successfully" });
     } catch (error) {
@@ -55,11 +72,16 @@ app.post("/api/send-message", async (req, res) => {
     }
 });
 
-// New endpoint for React to fetch the agent replies
 app.get("/api/get-messages", (req, res) => {
-    res.json({ success: true, messages: pendingFrontendMessages });
-    // Clear the messages after sending them to the frontend
-    pendingFrontendMessages = []; 
+    const sessionId = req.query.sessionId;
+    if (!sessionId) {
+        return res.json({ success: false, error: "Session ID required" });
+    }
+
+    const messages = pendingFrontendMessages[sessionId] || [];
+    delete pendingFrontendMessages[sessionId]; 
+    
+    res.json({ success: true, messages });
 });
 
 app.listen(5000, () => {
