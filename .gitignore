@@ -50,3 +50,5 @@ node_modules/
 dist/
 .env
 >>>>>>> temp-fix
+.wwebjs_auth/
+.wwebjs_cache/
