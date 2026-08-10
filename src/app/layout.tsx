@@ -10,6 +10,7 @@ import CookieBanner from "@/components/CookieBanner";
 import type { Metadata } from "next";
 import HideOnDashboard from "@/components/HideOnDashboard";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import WhatsAppChat from "@/components/WhatsAppChat";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.blackzero.org"),
@@ -95,7 +96,7 @@ export default function RootLayout({
           <GlobalNavbar />
         </HideOnDashboard>
         
-        <main>{children}</main>
+        <main>{children}<WhatsAppButton /></main>
         <FooterSection />
 
         {/* 3. Hide all these marketing/footer elements on Dashboard */}
@@ -103,7 +104,7 @@ export default function RootLayout({
           <CookieBanner />
         </HideOnDashboard>  
         <Analytics />
-        <WhatsAppButton />
+        
       </body>
       <GoogleAnalytics gaId="G-V4V0EPZTPQ" />
     </html>
