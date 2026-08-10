@@ -7,7 +7,7 @@ const aboutPageContent = {
         imageUrl: "/team.webp", 
         alt: "Black Zero team collaboration in a creative digital studio setting" 
     },
-    ceo: { 
+    ceo: {  
         imageUrl: "/Team/CEO[1].webp", 
         alt: "Mian Hashim Haroon, CEO of Black Zero delivering a message" 
     },
