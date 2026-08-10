@@ -116,13 +116,13 @@ const ImageModal = ({ images, initialIndex, onClose }: { images: string[], initi
     }, [doNext, doPrev, onClose]);
 
     return (
-        <motion.div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}>
+        <motion.div className="fixed inset-0 bg-black bg-opacity-95 flex items-center justify-center z-[99999] p-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}>
             <AnimatePresence mode="wait">
                 <motion.img 
                     key={currentIndex} 
                     src={images[currentIndex]} 
                     alt="Gallery View" 
-                    className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg" 
+                    className="max-w-[95vw] max-h-[85vh] object-contain rounded-lg shadow-2xl" 
                     initial={{ opacity: 0, scale: 0.95 }} 
                     animate={{ opacity: 1, scale: 1 }} 
                     exit={{ opacity: 0, scale: 0.95 }} 
@@ -130,9 +130,9 @@ const ImageModal = ({ images, initialIndex, onClose }: { images: string[], initi
                     onClick={(e) => e.stopPropagation()} 
                 />
             </AnimatePresence>
-            <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-gray-300 z-50"><X size={32} /></button>
-            <button onClick={(e) => { e.stopPropagation(); doPrev(); }} className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/30 p-2 rounded-full hover:bg-black/50 z-50"><ArrowLeft size={24} /></button>
-            <button onClick={(e) => { e.stopPropagation(); doNext(); }} className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/30 p-2 rounded-full hover:bg-black/50 z-50"><ArrowRight size={24} /></button>
+            <button onClick={onClose} className="fixed top-6 right-6 text-white bg-black/60 p-3 rounded-full hover:bg-black/90 z-[999999] border border-white/20"><X size={32} /></button>
+            <button onClick={(e) => { e.stopPropagation(); doPrev(); }} className="fixed left-4 md:left-8 top-1/2 -translate-y-1/2 text-white bg-black/60 p-3 rounded-full hover:bg-black/90 z-[999999] border border-white/20"><ArrowLeft size={32} /></button>
+            <button onClick={(e) => { e.stopPropagation(); doNext(); }} className="fixed right-4 md:right-8 top-1/2 -translate-y-1/2 text-white bg-black/60 p-3 rounded-full hover:bg-black/90 z-[999999] border border-white/20"><ArrowRight size={32} /></button>
         </motion.div>
     );
 };
