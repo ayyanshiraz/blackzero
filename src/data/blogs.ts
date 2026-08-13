@@ -4887,11 +4887,11 @@ export const blogPostsData: BlogPost[] = [
   {
     id: 3,
     slug: 'investing-in-digital-marketing-usa-2025',
-    title: 'Is Investing in Digital Marketing a Smart Move in USA & Saudi Arabia in 2025?',
+    title: 'Is Investing in Digital Marketing a Smart Move in USA  in 2026?',
     date: 'October 22, 2025',
     imageUrl: '/Blogs/blog1.webp',
     excerpt: 'The digital marketing landscape is constantly evolving. As an investor or business owner, you might be wondering where the best opportunities lie.',
-    seoTitle: 'Is Investing in Digital Marketing a Smart Move in USA & Saudi Arabia in 2025?',
+    seoTitle: 'Is Investing in Digital Marketing a Smart Move in USA  in 2026?',
     metaDescription: 'Maximize business growth in USA & KSA with 2025 digital marketing trends. Explore how AI targeting and measurable ROI drive cost-effective success.',
     focusKeyPhrase: 'Investing in Digital Marketing 2025',
     seoKeyPhrase: 'Digital Marketing Investment',
