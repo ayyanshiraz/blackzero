@@ -160,7 +160,7 @@ export default function Navbar() {
                     <Link href={`/turnitin`} className={`px-3 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300`}>Turnitin</Link>
                     <Dropdown title={`Products`} items={productsItems} mainHref={`/products`} />
                     <Dropdown title={`About`} items={aboutItems} mainHref={`/about`} />
-                    <Link href={`/portfolio`} className={`px-3 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300`}>Portfolio</Link>
+                    <Link href={`/projects`} className={`px-3 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300`}>Portfolio</Link>
                 </div>
 
                 <div className={`hidden lg:flex items-center justify-end gap-3`}>
@@ -186,7 +186,7 @@ export default function Navbar() {
                     <Link href={`/turnitin`} className={`py-4 text-xl font-bold`} onClick={handleMobileLinkClick}>Turnitin</Link>
                     <MobileDropdown title={`Products`} items={productsItems} mainHref={`/products`} onLinkClick={handleMobileLinkClick} />
                     <MobileDropdown title={`About`} items={aboutItems} mainHref={`/about`} onLinkClick={handleMobileLinkClick} />
-                    <Link href={`/portfolio`} className={`py-4 text-xl font-bold`} onClick={handleMobileLinkClick}>Portfolio</Link>
+                    <Link href={`/projects`} className={`py-4 text-xl font-bold`} onClick={handleMobileLinkClick}>Portfolio</Link>
                     <Link href={`/customized-solutions`} onClick={handleMobileLinkClick} className={`mt-6 bg-white text-black px-12 py-4 rounded-full font-bold text-base`}>
                         Customized Solutions
                     </Link>
