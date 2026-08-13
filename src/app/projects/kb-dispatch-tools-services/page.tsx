@@ -10,7 +10,7 @@ const projectData = {
     description: "KB Dispatch Tools Services required a robust and highly tailored digital solution to streamline their complex logistics and dispatch operations. To meet this need, we developed a powerful custom software platform designed specifically to optimize routing, fleet management, and real-time tracking.<br/><br/>This fully customized application enhances overall operational efficiency and provides comprehensive analytics. It empowers the management team to make data-driven decisions with maximum precision and ease, ensuring smooth daily operations.",
     services: ["Custom Software"],
     gallery: [
-        "/Clients/18.png",
+        "/Clients/18.webp",
     ],
     details: [
         {
