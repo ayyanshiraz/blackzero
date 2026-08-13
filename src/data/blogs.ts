@@ -3621,7 +3621,7 @@ export const blogPostsData: BlogPost[] = [
     date: 'May 15, 2026',
     imageUrl: '/Blogs/blog15.webp',
     excerpt: 'Many large enterprises in USA and Saudi Arabia are still running on software built decades ago. Learn how integrating custom AI into legacy systems can modernize your infrastructure.',
-    seoTitle: 'Integrating Custom AI into Legacy Systems | USA & Saudi Arabia | Black Zero',
+    seoTitle: 'Integrating Custom AI into Legacy Systems | USA | Black Zero',
     metaDescription: 'Upgrade your enterprise infrastructure in USA and Saudi Arabia. Integrating custom AI into legacy systems ensures modernization for corporate software.',
     focusKeyPhrase: 'Integrating Custom Artificial Intelligence into Legacy Business Systems',
     seoKeyPhrase: 'Legacy system modernization',
