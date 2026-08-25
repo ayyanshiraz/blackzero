@@ -106,7 +106,7 @@ export const blogPostsData: BlogPost[] = [
 
       <h4 class="text-xl font-semibold mb-2 mt-4">Start Scanning Your Documents for Free Today</h4>
       <p class="mb-6 leading-relaxed">
-        To get your free word limit and secure your written content straight away, paste your text into the Black Zero <a href="/services/customized-solutions" class="text-blue-600 hover:underline font-semibold">scanning engine</a>.
+        To get your free word limit and secure your written content straight away, paste your text into the Black Zero <a href="/customized-solutions " class="text-blue-600 hover:underline font-semibold">scanning engine</a>.
       </p>
     `,
   },
@@ -151,7 +151,7 @@ export const blogPostsData: BlogPost[] = [
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">In House Teams vs Custom Reporting Software Company</h3>
       <p class="mb-6 leading-relaxed">
-        Technical capabilities and operational goals must be carefully considered while selecting the best development path. Internal IT departments frequently struggle with large backlogs and lack the specialized attention needed to create intelligent systems from the ground up. On the other hand, working with a specialized <a href="/services/customized-solutions" class="text-blue-600 hover:underline font-semibold">custom reporting software provider</a> guaranties quick setup and access to advanced models.
+        Technical capabilities and operational goals must be carefully considered while selecting the best development path. Internal IT departments frequently struggle with large backlogs and lack the specialized attention needed to create intelligent systems from the ground up. On the other hand, working with a specialized <a href="/customized-solutions " class="text-blue-600 hover:underline font-semibold">custom reporting software provider</a> guaranties quick setup and access to advanced models.
       </p>
       <p class="mb-6 leading-relaxed">
         Real-time dashboards are used by businesses that want instant insights to track performance as fresh data enters the database. Analyzing the distinctions between external and internal development reveals clear benefits. Answer engines greatly respect factual tables for speedy data extraction.
