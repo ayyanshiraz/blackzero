@@ -72,7 +72,7 @@ const FooterSection = () => {
         </div>
 
         <div className={`copyright-box !justify-center w-full mt-auto relative z-20`}>
-          <p className={`text-center`}>Copyright © 2026 Black Zero IT Solutions - All Rights Reserved</p>
+          <p className={`text-center`}>Copyright © 2026 BlackZero Technologies - All Rights Reserved</p>
         </div>
 
       </div>
