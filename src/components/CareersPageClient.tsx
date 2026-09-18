@@ -61,7 +61,7 @@ export default function CareersPageClient() {
             >
                 <img
                     src="/careers.webp"
-                    alt="Black Zero collaborative team working environment"
+                    alt="BlackZero Technologies collaborative team working environment"
                     className="absolute inset-0 w-full h-full object-cover z-0 filter blur-[3px]"
                 />
                 <div className="absolute inset-0 bg-black/60 z-10"></div>
@@ -165,7 +165,7 @@ export default function CareersPageClient() {
                         transition={{ duration: 0.5 }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl md:text-5xl font-extrabold">Why Join Black Zero?</h2>
+                        <h2 className="text-4xl md:text-5xl font-extrabold">Why Join BlackZero Technologies?</h2>
                         <p className="mt-4 text-lg text-gray-600">We&apos;re more than just a workplace. We&apos;re a launchpad.</p>
                     </motion.div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -199,7 +199,7 @@ export default function CareersPageClient() {
                         <Mail className="w-12 h-12 mx-auto mb-6" />
                         <h2 className="text-3xl md:text-4xl font-extrabold">Don&apos;t See a Fit?</h2>
                         <p className="mt-4 text-lg text-gray-300 leading-relaxed">
-                            We&apos;re always looking for exceptional talent. If you believe you have what it takes to be a rebel at Black Zero, send us your resume and tell us why you&apos;d be a great addition to our team.
+                            We&apos;re always looking for exceptional talent. If you believe you have what it takes to be a rebel at BlackZero Technologies, send us your resume and tell us why you&apos;d be a great addition to our team.
                         </p>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOnV1439kkii-UmJeAGsp-mECdMDXQk2Bb2_IxMdZg6Bvn5g/viewform?usp=header" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block bg-white text-black font-bold py-4 px-10 rounded-lg hover:bg-gray-200 transition-colors text-lg">
                             Send Us Your Resume

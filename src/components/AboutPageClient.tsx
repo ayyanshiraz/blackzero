@@ -255,7 +255,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isCeoMessageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">CEO Message</h2>
                         <p className="mt-4 text-gray-800 text-lg leading-relaxed max-w-2xl">
-                            &quot;At Black Zero, we believe in the power of partnership. Our journey began with a simple vision: to create a multi domain company that not only delivers exceptional results but also builds lasting relationships based on trust and transparency. We are more than just a service provider; we are an extension of your team, dedicated to understanding your challenges and achieving your goals. Thank you for entrusting us with your vision. We look forward to growing together.&quot;
+                            &quot;At BlackZero Technologies, we believe in the power of partnership. Our journey began with a simple vision: to create a multi domain company that not only delivers exceptional results but also builds lasting relationships based on trust and transparency. We are more than just a service provider; we are an extension of your team, dedicated to understanding your challenges and achieving your goals. Thank you for entrusting us with your vision. We look forward to growing together.&quot;
                         </p>
                     </div>
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isCeoMessageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
@@ -267,7 +267,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
             <section ref={credoSectionRef} style={credoBackgroundStyle} className="py-24 text-white">
                 <div className="container mx-auto px-12 md:px-24 lg:px-32">
                     <h2 className={`text-2xl font-bold text-center tracking-widest uppercase transition-all duration-1000 ease-out ${isCredoSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                        THE BLACK ZERO DOCTRINE <TitleArrowIcon />
+                        THE BlackZero Technologies DOCTRINE <TitleArrowIcon />
                     </h2>
                     <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-16">
                         {credoItems.map((item, index) => (
@@ -294,7 +294,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                     </div>
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isStorySectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
                         <h2 className="text-black text-4xl md:text-5xl font-extrabold leading-tight mb-6">Our Story</h2>
-                        <p className="mt-4 text-gray-800 text-lg leading-relaxed max-w-2xl">Black Zero was launched with one clear purpose: to help businesses grow through effective IT and Marketing. Our team combines hands-on experience in software development, content strategy, design, and technical skills to connect brands with their ideal audience online. Since day one, we have collaborated with startups and businesses across the world to build a stronger digital presence. By understanding market needs and business goals, we develop data-driven strategies that enhance online visibility and earn lasting customer trust.</p>
+                        <p className="mt-4 text-gray-800 text-lg leading-relaxed max-w-2xl">BlackZero Technologies was launched with one clear purpose: to help businesses grow through effective IT and Marketing. Our team combines hands-on experience in software development, content strategy, design, and technical skills to connect brands with their ideal audience online. Since day one, we have collaborated with startups and businesses across the world to build a stronger digital presence. By understanding market needs and business goals, we develop data-driven strategies that enhance online visibility and earn lasting customer trust.</p>
                     </div>
                 </div>
             </section>
@@ -305,7 +305,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                 <div className="container mx-auto px-8 sm:px-16 md:px-24 flex flex-col md:flex-row items-center justify-center gap-16">
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isVisionSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                         <h2 className="text-white text-4xl md:text-5xl font-extrabold leading-tight mb-6">Our Vision</h2>
-                        <p className="mt-4 text-gray-300 text-lg leading-relaxed max-w-2xl">At Black Zero, we envision reshaping the IT and Marketing landscape internationally. We strive to become the most trusted agency by delivering high-impact strategies that fuel long-term growth and deep customer engagement for every business, from startups to large enterprises. Our purpose is to empower brands worldwide, enabling them to build a strong online presence, compete effectively in global markets, and innovate with cutting-edge IT and Marketing techniques. We are the reliable partner businesses can count on to consistently provide measurable outcomes, overcome technical challenges, and achieve lasting success.</p>
+                        <p className="mt-4 text-gray-300 text-lg leading-relaxed max-w-2xl">At BlackZero Technologies, we envision reshaping the IT and Marketing landscape internationally. We strive to become the most trusted agency by delivering high-impact strategies that fuel long-term growth and deep customer engagement for every business, from startups to large enterprises. Our purpose is to empower brands worldwide, enabling them to build a strong online presence, compete effectively in global markets, and innovate with cutting-edge IT and Marketing techniques. We are the reliable partner businesses can count on to consistently provide measurable outcomes, overcome technical challenges, and achieve lasting success.</p>
                     </div>
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isVisionSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
                         <Image src={content.vision.imageUrl} alt={content.vision.alt} width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover border-2 border-gray-700 "/>
@@ -320,7 +320,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                     </div>
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isMissionSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
                         <h2 className="text-black text-4xl md:text-5xl font-extrabold leading-tight mb-6">Our Mission</h2>
-                        <p className="mt-4 text-gray-800 text-lg leading-relaxed max-w-2xl">Black Zero is a professional IT and Marketing company, dedicated to helping businesses, organizations, and political campaigns grow online. We specialize in expert SEO, social media management, IT development, content strategy, and paid advertising to connect clients with their ideal audience. Our goal is to provide services that drive tangible growth, based on extensive research and industry experience. Founded to bridge the gap between digital platforms and business goals, our team creates custom solutions. Every campaign is built around your specific audience and business objectives.</p>
+                        <p className="mt-4 text-gray-800 text-lg leading-relaxed max-w-2xl">BlackZero Technologies is a professional IT and Marketing company, dedicated to helping businesses, organizations, and political campaigns grow online. We specialize in expert SEO, social media management, IT development, content strategy, and paid advertising to connect clients with their ideal audience. Our goal is to provide services that drive tangible growth, based on extensive research and industry experience. Founded to bridge the gap between digital platforms and business goals, our team creates custom solutions. Every campaign is built around your specific audience and business objectives.</p>
                     </div>
                 </div>
             </section>

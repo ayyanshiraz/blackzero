@@ -94,7 +94,7 @@ const FooterSection = () => {
         {/* Centered Copyright Line (Updated size and color) */}
         <div className="w-full text-center border-t border-white/10 pt-8 mt-16 md:mt-24">
           <p className="text-white text-base md:text-lg tracking-wide font-medium">
-            Copyright © 2026 Black Zero IT Solutions - All Rights Reserved
+            Copyright © 2026 BlackZero Technologies - All Rights Reserved
           </p>
         </div>
 

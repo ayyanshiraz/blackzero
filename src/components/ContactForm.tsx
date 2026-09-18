@@ -2,7 +2,7 @@
 
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import PhoneInput from './form/PhoneInput';
 import { submitServiceForm, type FormSubmissionPayload } from '@/lib/formSubmissionHelper';
 
@@ -66,6 +66,58 @@ const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ child
 
 // --- The Main Contact Form Component ---
 
+const countryCodes = [
+    { iso: `pk`, dial: `+92` },
+    { iso: `af`, dial: `+93` }, { iso: `al`, dial: `+355` }, { iso: `dz`, dial: `+213` }, { iso: `ad`, dial: `+376` },
+    { iso: `ao`, dial: `+244` }, { iso: `ag`, dial: `+1` }, { iso: `ar`, dial: `+54` }, { iso: `am`, dial: `+374` },
+    { iso: `au`, dial: `+61` }, { iso: `at`, dial: `+43` }, { iso: `az`, dial: `+994` }, { iso: `bs`, dial: `+1` },
+    { iso: `bh`, dial: `+973` }, { iso: `bd`, dial: `+880` }, { iso: `bb`, dial: `+1` }, { iso: `by`, dial: `+375` },
+    { iso: `be`, dial: `+32` }, { iso: `bz`, dial: `+501` }, { iso: `bj`, dial: `+229` }, { iso: `bt`, dial: `+975` },
+    { iso: `bo`, dial: `+591` }, { iso: `ba`, dial: `+387` }, { iso: `bw`, dial: `+267` }, { iso: `br`, dial: `+55` },
+    { iso: `bn`, dial: `+673` }, { iso: `bg`, dial: `+359` }, { iso: `bf`, dial: `+226` }, { iso: `bi`, dial: `+257` },
+    { iso: `kh`, dial: `+855` }, { iso: `cm`, dial: `+237` }, { iso: `ca`, dial: `+1` }, { iso: `cv`, dial: `+238` },
+    { iso: `cf`, dial: `+236` }, { iso: `td`, dial: `+235` }, { iso: `cl`, dial: `+56` }, { iso: `cn`, dial: `+86` },
+    { iso: `co`, dial: `+57` }, { iso: `km`, dial: `+269` }, { iso: `cg`, dial: `+242` }, { iso: `cd`, dial: `+243` },
+    { iso: `cr`, dial: `+506` }, { iso: `hr`, dial: `+385` }, { iso: `cu`, dial: `+53` }, { iso: `cy`, dial: `+357` },
+    { iso: `cz`, dial: `+420` }, { iso: `dk`, dial: `+45` }, { iso: `dj`, dial: `+253` }, { iso: `dm`, dial: `+1` },
+    { iso: `do`, dial: `+1` }, { iso: `ec`, dial: `+593` }, { iso: `eg`, dial: `+20` }, { iso: `sv`, dial: `+503` },
+    { iso: `gq`, dial: `+240` }, { iso: `er`, dial: `+291` }, { iso: `ee`, dial: `+372` }, { iso: `sz`, dial: `+268` },
+    { iso: `et`, dial: `+251` }, { iso: `fj`, dial: `+679` }, { iso: `fi`, dial: `+358` }, { iso: `fr`, dial: `+33` },
+    { iso: `ga`, dial: `+241` }, { iso: `gm`, dial: `+220` }, { iso: `ge`, dial: `+995` }, { iso: `de`, dial: `+49` },
+    { iso: `gh`, dial: `+233` }, { iso: `gr`, dial: `+30` }, { iso: `gd`, dial: `+1` }, { iso: `gt`, dial: `+502` },
+    { iso: `gn`, dial: `+224` }, { iso: `gw`, dial: `+245` }, { iso: `gy`, dial: `+592` }, { iso: `ht`, dial: `+509` },
+    { iso: `hn`, dial: `+504` }, { iso: `hu`, dial: `+36` }, { iso: `is`, dial: `+354` }, { iso: `in`, dial: `+91` },
+    { iso: `id`, dial: `+62` }, { iso: `ir`, dial: `+98` }, { iso: `iq`, dial: `+964` }, { iso: `ie`, dial: `+353` },
+    { iso: `il`, dial: `+972` }, { iso: `it`, dial: `+39` }, { iso: `jm`, dial: `+1` }, { iso: `jp`, dial: `+81` },
+    { iso: `jo`, dial: `+962` }, { iso: `kz`, dial: `+7` }, { iso: `ke`, dial: `+254` }, { iso: `ki`, dial: `+686` },
+    { iso: `kp`, dial: `+850` }, { iso: `kr`, dial: `+82` }, { iso: `kw`, dial: `+965` }, { iso: `kg`, dial: `+996` },
+    { iso: `la`, dial: `+856` }, { iso: `lv`, dial: `+371` }, { iso: `lb`, dial: `+961` }, { iso: `ls`, dial: `+266` },
+    { iso: `lr`, dial: `+231` }, { iso: `ly`, dial: `+218` }, { iso: `li`, dial: `+423` }, { iso: `lt`, dial: `+370` },
+    { iso: `lu`, dial: `+352` }, { iso: `mg`, dial: `+261` }, { iso: `mw`, dial: `+265` }, { iso: `my`, dial: `+60` },
+    { iso: `mv`, dial: `+960` }, { iso: `ml`, dial: `+223` }, { iso: `mt`, dial: `+356` }, { iso: `mh`, dial: `+692` },
+    { iso: `mr`, dial: `+222` }, { iso: `mu`, dial: `+230` }, { iso: `mx`, dial: `+52` }, { iso: `fm`, dial: `+691` },
+    { iso: `md`, dial: `+373` }, { iso: `mc`, dial: `+377` }, { iso: `mn`, dial: `+976` }, { iso: `me`, dial: `+382` },
+    { iso: `ma`, dial: `+212` }, { iso: `mz`, dial: `+258` }, { iso: `mm`, dial: `+95` }, { iso: `na`, dial: `+264` },
+    { iso: `nr`, dial: `+674` }, { iso: `np`, dial: `+977` }, { iso: `nl`, dial: `+31` }, { iso: `nz`, dial: `+64` },
+    { iso: `ni`, dial: `+505` }, { iso: `ne`, dial: `+227` }, { iso: `ng`, dial: `+234` }, { iso: `mk`, dial: `+389` },
+    { iso: `no`, dial: `+47` }, { iso: `om`, dial: `+968` }, { iso: `pw`, dial: `+680` }, { iso: `pa`, dial: `+507` }, 
+    { iso: `pg`, dial: `+675` }, { iso: `py`, dial: `+595` }, { iso: `pe`, dial: `+51` }, { iso: `ph`, dial: `+63` },
+    { iso: `pl`, dial: `+48` }, { iso: `pt`, dial: `+351` }, { iso: `qa`, dial: `+974` }, { iso: `ro`, dial: `+40` },
+    { iso: `ru`, dial: `+7` }, { iso: `rw`, dial: `+250` }, { iso: `kn`, dial: `+1` }, { iso: `lc`, dial: `+1` },
+    { iso: `vc`, dial: `+1` }, { iso: `ws`, dial: `+685` }, { iso: `sm`, dial: `+378` }, { iso: `st`, dial: `+239` },
+    { iso: `sa`, dial: `+966` }, { iso: `sn`, dial: `+221` }, { iso: `rs`, dial: `+381` }, { iso: `sc`, dial: `+248` },
+    { iso: `sl`, dial: `+232` }, { iso: `sg`, dial: `+65` }, { iso: `sk`, dial: `+421` }, { iso: `si`, dial: `+386` },
+    { iso: `sb`, dial: `+677` }, { iso: `so`, dial: `+252` }, { iso: `za`, dial: `+27` }, { iso: `ss`, dial: `+211` },
+    { iso: `es`, dial: `+34` }, { iso: `lk`, dial: `+94` }, { iso: `sd`, dial: `+249` }, { iso: `sr`, dial: `+597` },
+    { iso: `se`, dial: `+46` }, { iso: `ch`, dial: `+41` }, { iso: `sy`, dial: `+963` }, { iso: `tj`, dial: `+992` },
+    { iso: `tz`, dial: `+255` }, { iso: `th`, dial: `+66` }, { iso: `tl`, dial: `+670` }, { iso: `tg`, dial: `+228` },
+    { iso: `to`, dial: `+676` }, { iso: `tt`, dial: `+1` }, { iso: `tn`, dial: `+216` }, { iso: `tr`, dial: `+90` },
+    { iso: `tm`, dial: `+993` }, { iso: `tv`, dial: `+688` }, { iso: `ug`, dial: `+256` }, { iso: `ua`, dial: `+380` },
+    { iso: `ae`, dial: `+971` }, { iso: `gb`, dial: `+44` }, { iso: `us`, dial: `+1` }, { iso: `uy`, dial: `+598` },
+    { iso: `uz`, dial: `+998` }, { iso: `vu`, dial: `+678` }, { iso: `va`, dial: `+379` }, { iso: `ve`, dial: `+58` },
+    { iso: `vn`, dial: `+84` }, { iso: `ye`, dial: `+967` }, { iso: `zm`, dial: `+260` }, { iso: `zw`, dial: `+263` }
+];
+
 interface ServiceOption {
     value: string;
     label: string;
@@ -75,16 +127,29 @@ interface ContactFormProps {
     title: string;
     subtitle: string;
     serviceOptions?: ServiceOption[];
-    serviceName?: string; // NEW: Service name to include in email
+    serviceName?: string;
 }
 
 export default function ContactForm({ title, subtitle, serviceOptions, serviceName }: ContactFormProps) {
     const [formData, setFormData] = useState({
-        fullName: '', email: '', subject: '', message: '', selectedService: '',
+        fullName: '', email: '', phone: '', subject: '', message: '', selectedService: '',
     });
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [selectedCountry, setSelectedCountry] = useState(countryCodes[0]);
     const [errors, setErrors] = useState<Partial<typeof formData>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [statusMessage, setStatusMessage] = useState({ type: '', text: '' });
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsDropdownOpen(false);
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -101,7 +166,6 @@ export default function ContactForm({ title, subtitle, serviceOptions, serviceNa
         else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
         if (!formData.subject) newErrors.subject = 'Subject is required';
         if (!formData.message) newErrors.message = 'Message is required';
-        // Only require service selection if service options exist and serviceName is not passed
         if (!serviceName && serviceOptions && serviceOptions.length > 0 && !formData.selectedService) {
             newErrors.selectedService = 'Please select a service';
         }
@@ -119,17 +183,16 @@ export default function ContactForm({ title, subtitle, serviceOptions, serviceNa
         setStatusMessage({ type: '', text: '' });
 
         try {
-            // Prepare the payload with serviceName if available
-            const payload: FormSubmissionPayload = {
+            const payload = {
                 fullName: formData.fullName,
                 email: formData.email,
+                phone: formData.phone ? `${selectedCountry.dial} ${formData.phone}` : ``,
                 subject: formData.subject,
                 message: formData.message,
-                ...(serviceName && { serviceName }), // Add serviceName if provided
-                ...(formData.selectedService && { serviceName: formData.selectedService }), // Or use selected service
-            };
+                ...(serviceName && { serviceName }),
+                ...(formData.selectedService && { serviceName: formData.selectedService }),
+            } as FormSubmissionPayload;
 
-            // Use the reusable helper function
             const result = await submitServiceForm(payload);
 
             if (!result.success) {
@@ -138,10 +201,9 @@ export default function ContactForm({ title, subtitle, serviceOptions, serviceNa
             }
 
             setStatusMessage({ type: 'success', text: result.message });
-            setFormData({ fullName: '', email: '', subject: '', message: '', selectedService: '' });
+            setFormData({ fullName: '', email: '', phone: '', subject: '', message: '', selectedService: '' });
 
         } catch (error) {
-            // Check if the caught object is an actual Error to safely access its message
             if (error instanceof Error) {
                 setStatusMessage({ type: 'error', text: error.message });
             } else {
@@ -175,6 +237,48 @@ export default function ContactForm({ title, subtitle, serviceOptions, serviceNa
                 <Input label="Full Name" name="fullName" value={formData.fullName} onChange={handleChange} placeholder="Enter your full name" required error={errors.fullName} />
                 
                 <Input label="Email Address" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="Enter your email address" required error={errors.email} />
+
+                <div>
+                    <label htmlFor={`phone`} className={`block text-sm font-medium text-gray-300 mb-1`}>Phone Number</label>
+                    <div ref={dropdownRef} className={`mt-1 flex w-full bg-white border border-gray-300 rounded-md shadow-sm focus-within:ring-1 focus-within:ring-red-500 focus-within:border-red-500 relative`}>
+                        <div
+                            className={`flex items-center pl-3 pr-3 py-2 bg-transparent text-black border-r border-gray-300 cursor-pointer sm:text-sm hover:bg-gray-50 transition-colors`}
+                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        >
+                            <img src={`https://flagcdn.com/w20/${selectedCountry.iso}.png`} alt={selectedCountry.iso} className={`w-5 h-auto mr-2 shadow-sm`} />
+                            <span className={`mr-2 font-medium`}>{selectedCountry.dial}</span>
+                            <svg className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+
+                        {isDropdownOpen && (
+                            <ul className={`absolute top-full left-0 mt-1 w-64 max-h-60 overflow-y-auto bg-white border border-gray-200 rounded-md shadow-xl z-50 py-1`}>
+                                {countryCodes.map((c, i) => (
+                                    <li
+                                        key={i}
+                                        className={`flex items-center px-4 py-2.5 cursor-pointer hover:bg-gray-50 text-black sm:text-sm transition-colors`}
+                                        onClick={() => {
+                                            setSelectedCountry(c);
+                                            setIsDropdownOpen(false);
+                                        }}
+                                    >
+                                        <img src={`https://flagcdn.com/w20/${c.iso}.png`} alt={c.iso} className={`w-5 h-auto mr-3 shadow-sm`} />
+                                        <span className={`font-medium w-12`}>{c.dial}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+
+                        <input
+                            type={`tel`}
+                            name={`phone`}
+                            id={`phone`}
+                            value={formData.phone}
+                            onChange={handleChange}
+                            placeholder={`Enter your phone number`}
+                            className={`block w-full px-3 py-2 bg-transparent outline-none text-black placeholder-gray-400 sm:text-sm rounded-r-md`}
+                        />
+                    </div>
+                </div>
 
                 {!serviceName && finalServiceOptions.length > 1 && (
                     <Select 
