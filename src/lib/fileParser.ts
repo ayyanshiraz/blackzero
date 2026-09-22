@@ -42,11 +42,19 @@ export function validateFile(file: File): { valid: boolean; error?: string } {
 }
 
 /**
- * Converts File to Buffer for server processing
+ * Converts File to a Uint8Array for server processing.
+ *
+ * IMPORTANT: this file runs in the BROWSER (it's imported by a 'use client'
+ * page). `Buffer` is a Node.js global with no polyfill configured in this
+ * project, so `Buffer.from(...)` here would throw "Buffer is not defined"
+ * in real browsers. Uint8Array is a standard Web API that works in both
+ * the browser and Node, and passes cleanly across the Server Action
+ * boundary, so we use that instead and convert to a Node Buffer only on
+ * the server (see fileActions.ts).
  */
-export async function fileToBuffer(file: File): Promise<Buffer> {
+export async function fileToBuffer(file: File): Promise<Uint8Array> {
   const arrayBuffer = await file.arrayBuffer();
-  return Buffer.from(arrayBuffer);
+  return new Uint8Array(arrayBuffer);
 }
 
 /**

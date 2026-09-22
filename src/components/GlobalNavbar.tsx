@@ -179,12 +179,12 @@ export default function GlobalNavbar() {
                             />
                         </div>
                         
-                        <div className={`overflow-hidden relative h-12 w-28 md:h-14 md:w-32 flex flex-col justify-center`}>
-                            <div className={`absolute top-0 text-lg md:text-xl font-extrabold tracking-tighter animate-black-loop`}>
-                                BLACK
+                        <div className={`overflow-hidden relative h-12 w-36 md:h-14 md:w-44 flex flex-col justify-center`}>
+                            <div className={`absolute top-1 md:top-1.5 text-base md:text-lg font-extrabold tracking-tight animate-black-loop`}>
+                                BLACK ZERO
                             </div>
-                            <p className={`absolute bottom-0 text-lg md:text-xl font-extrabold tracking-[0.2em] animate-zero-loop`}>
-                                ZERO
+                            <p className={`absolute bottom-1 md:bottom-1.5 text-[10px] md:text-xs font-extrabold tracking-[0.2em] animate-zero-loop`}>
+                                TECHNOLOGIES
                             </p>
                         </div>
                     </Link>

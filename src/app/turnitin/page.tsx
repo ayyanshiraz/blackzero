@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { analyzeContent, generateReportData } from '@/lib/detectionEngine';
 import { generatePDF } from '@/lib/pdfGenerator';
 import { validateFile, normalizeText, fileToBuffer, getFileExtension } from '@/lib/fileParser';
-import { parseFileServer, type FileParseResult } from '@/app/actions/fileActions';
+import { parseFileServer } from '@/app/actions/fileActions';
 import TurnitinFeedbackForm from '@/components/TurnitinFeedbackForm';
 import type { AnalysisResult } from '@/lib/detectionEngine';
 
@@ -134,20 +134,29 @@ export default function TurnitinPage() {
 
     try {
       console.log(`🔄 Processing ${file.name}...`);
-      
+
       // Convert file to buffer
       const buffer = await fileToBuffer(file);
       const fileType = getFileExtension(file.name);
 
-      // Call server action for file parsing
-      const parseResult: FileParseResult = await parseFileServer(buffer, file.name, fileType);
-      
+      // Call server action for file parsing.
+      // NOTE: this returns a { success, ... } object rather than throwing.
+      // Next.js redacts thrown-Error messages from Server Actions in
+      // production, so throwing here would only ever show a generic
+      // "Server Components render" error with no useful detail.
+      const parseResult = await parseFileServer(buffer, file.name, fileType);
+
+      if (!parseResult.success) {
+        setUploadError(parseResult.error);
+        return;
+      }
+
       const normalizedText = normalizeText(parseResult.text);
-      
+
       setInputText(normalizedText);
       setUploadedFileName(parseResult.fileName);
       setActiveTab('input');
-      
+
       // Show file info
       console.log(`✓ File parsed successfully: ${parseResult.fileName}`);
       console.log(`  • Type: ${parseResult.fileType.toUpperCase()}`);
@@ -156,9 +165,12 @@ export default function TurnitinPage() {
         console.log(`  • Pages: ${parseResult.metadata.pages}`);
       }
     } catch (error) {
-      console.error('File parsing error:', error);
+      // This only catches genuine client-side failures now (e.g. the
+      // browser refusing to read the file) - parsing failures come back
+      // as parseResult.success === false above.
+      console.error('File upload error:', error);
       setUploadError(
-        error instanceof Error ? error.message : 'Failed to parse file. Please try another file format.'
+        error instanceof Error ? error.message : 'Failed to read the file in your browser. Please try again.'
       );
     } finally {
       setIsAnalyzing(false);
