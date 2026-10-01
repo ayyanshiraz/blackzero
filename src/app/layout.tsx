@@ -1,5 +1,5 @@
+//@ts-ignore
 import "./globals.css";
-
 import React from "react";
 import GlobalNavbar from "@/components/GlobalNavbar";
 import FooterSection from "@/sections/FooterSection";
