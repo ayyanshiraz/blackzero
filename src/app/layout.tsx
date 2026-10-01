@@ -29,16 +29,16 @@ export const metadata: Metadata = {
     },
   },
   title: {
-    default: "Black Zero: IT Consulting and Digital Solutions",
+    default: "IT Consulting & Custom App Development USA | Black Zero",
     template: "%s",
   },
-  description: "Grow your business with Black Zero. We provide outstanding IT consulting, custom app development, and scalable digital solutions customized for the USA market.",
+  description: "Expert IT consulting, custom app development, and scalable digital solutions to grow your USA business with Black Zero.",
   verification: {
     google: "1HfyejT0xZl6FqT0DJLA59GxpsyCsDe5Ii3KFuvhDmg",
   },
   openGraph: {
-    title: "Black Zero: Strategic IT Consulting Solutions",
-    description: "Grow your business with Black Zero. We provide outstanding IT consulting, custom app development, and scalable digital solutions customized for the USA market.",
+    title: "IT Consulting & Custom App Development USA | Black Zero",
+    description: "Expert IT consulting, custom app development, and scalable digital solutions to grow your USA business with Black Zero.",
     url: "https://www.blackzero.org/",
     siteName: "Black Zero",
     type: "website",
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Black Zero: Strategic IT Consulting Solutions USA",
-    description: "Grow your business with Black Zero. We provide outstanding IT consulting, custom app development, and scalable digital solutions customized for the USA market.",
+    title: "IT Consulting & Custom App Development USA | Black Zero",
+    description: "Expert IT consulting, custom app development, and scalable digital solutions to grow your USA business with Black Zero.",
     images: ["/opengraph-image.png"],
   },
 };
@@ -67,7 +67,7 @@ const jsonLd = {
   name: "Black Zero",
   url: "https://www.blackzero.org",
   logo: "https://www.blackzero.org/opengraph-image.png",
-  description: "Grow your business with Black Zero. We provide outstanding IT consulting, custom app development, and scalable digital solutions customized for the USA market.",
+  description: "Expert IT consulting, custom app development, and scalable digital solutions to grow your USA business with Black Zero.",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
@@ -90,16 +90,12 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
-       
-        {/* 1. Hide Navbar on Dashboard */}
         <HideOnDashboard>
           <GlobalNavbar />
         </HideOnDashboard>
         
         <main>{children}<WhatsAppButton /></main>
         <FooterSection />
-
-        {/* 3. Hide all these marketing/footer elements on Dashboard */}
         <HideOnDashboard>
           <CookieBanner />
         </HideOnDashboard>  
