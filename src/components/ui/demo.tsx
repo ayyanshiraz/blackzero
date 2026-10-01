@@ -37,6 +37,7 @@ export function SplineSceneBasic() {
         <div className={`w-full h-auto px-6 pb-8 md:pb-6 md:h-full md:flex-1 pt-32 md:pt-24 lg:pt-32 md:pl-16 lg:pl-24 relative z-10 flex flex-col justify-center pointer-events-none order-1`}>
           
           <div className={`flex flex-col items-start w-full`}>
+            {/* Primary Heading H1 */}
             <motion.h1 
               variants={wipeIn}
               initial={`hidden`}
@@ -51,6 +52,7 @@ export function SplineSceneBasic() {
               Building Intelligent Systems
             </motion.h1>
             
+            {/* Secondary Heading changed to H2 for SEO */}
             <motion.div 
               variants={wipeIn}
               initial={`hidden`}
@@ -58,12 +60,12 @@ export function SplineSceneBasic() {
               transition={{ delay: 0.2 }}
               className={`relative z-20 mt-4 md:mt-6 transform -rotate-[3deg] border-[4px] md:border-[8px] border-white px-3 py-1 md:px-6 md:py-1 bg-transparent`}
             >
-              <h1 
+              <h2 
                 className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight text-white whitespace-nowrap`}
                 style={{ transform: `scaleY(1.15)`, transformOrigin: `bottom left` }}
               >
                 AI + Software
-              </h1>
+              </h2>
             </motion.div>
 
             <motion.p
