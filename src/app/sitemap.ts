@@ -22,10 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const baseUrl = 'https://www.blackzero.org'; 
   
- 
-  const staticLastModified = new Date('2024-03-20');
- 
-  // 1. Static Pages
+  const dynamicLastModified = new Date();
+
   const staticPages = [
     { route: '', priority: 1.0 }, 
     { route: '/about', priority: 0.8 },
@@ -37,27 +35,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/team', priority: 0.8 },
     { route: '/privacy-policy', priority: 0.5 }, 
     { route: '/blogs', priority: 0.8 },
-    // Naye static pages yahan add kiye gaye hain
     { route: '/customized-solutions', priority: 0.8 },
   ].map((item) => ({
     url: `${baseUrl}${item.route}`,
-    lastModified: staticLastModified,
+    lastModified: dynamicLastModified,
     changeFrequency: 'monthly' as const,
     priority: item.priority,
   }));
 
-  // 2. Projects (Automatic)
   const projectPages = projectsData.map((project) => ({
     url: `${baseUrl}/projects/${project.slug}`,
-    lastModified: staticLastModified,
+    lastModified: dynamicLastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }));
 
-  // 3. Services
   const servicePages = servicesData.map((service) => ({
     url: `${baseUrl}/services/${service.slug}`,
-    lastModified: staticLastModified,
+    lastModified: dynamicLastModified,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }));
@@ -67,21 +62,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .filter(subSection => subSection.slug) 
       .map((subSection) => ({
         url: `${baseUrl}/services/${service.slug}/${subSection.slug}`,
-        lastModified: staticLastModified,
+        lastModified: dynamicLastModified,
         changeFrequency: 'weekly' as const,
         priority: 0.7,
       }))
   );
 
-  // 4. Products (Automatic)
   const productPages = productsData.map((product) => ({
     url: productUrl(product.slug),
-    lastModified: staticLastModified,
+    lastModified: dynamicLastModified,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }));
 
-  // 5. Blogs (Automatic - Keeps original correct logic)
   const blogPages = blogPostsData.map((blog) => ({
     url: `${baseUrl}/blogs/${blog.slug}`,
     lastModified: new Date(blog.date),
@@ -89,10 +82,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  // Subdomain landing pages (products.blackzero.org / turnitin.blackzero.org)
   const subdomainPages = [
-    { url: PRODUCTS_URL, lastModified: staticLastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
-    { url: TURNITIN_URL, lastModified: staticLastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: PRODUCTS_URL, lastModified: dynamicLastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: TURNITIN_URL, lastModified: dynamicLastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
   ];
 
   return [

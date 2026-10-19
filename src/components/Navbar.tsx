@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { productsData } from "@/app/products/data";
-import { PRODUCTS_URL, TURNITIN_URL, productUrl } from "@/lib/siteUrls";
+// Dropdown ki zaroorat nahi isliye data import hata diya
+// import { productsData } from "@/app/products/data";
+import { PRODUCTS_URL, TURNITIN_URL } from "@/lib/siteUrls";
 
 const Dropdown = ({ title, items, mainHref }: { title: string; items: { name: string; href: string }[]; mainHref: string; }) => {
     return (
@@ -95,13 +96,6 @@ export default function Navbar() {
         { name: "Our Team", href: "/team" },
     ];
 
-    const productsItems = [
-        ...(productsData ? productsData.map((product: any) => ({
-            name: product.name,
-            href: productUrl(product.slug)
-        })) : [])
-    ];
-
     const navClassName = `fixed top-5 left-4 right-4 md:left-8 md:right-8 lg:left-12 lg:right-12 z-[100] bg-black rounded-full border border-white/10 transition-all duration-500 force-arial ${hasMounted && scrolled ? "shadow-2xl py-1" : "py-2"}`;
 
     return (
@@ -154,8 +148,10 @@ export default function Navbar() {
 
                 <div className="hidden lg:flex items-center justify-center flex-grow gap-4 xl:gap-6">
                     <Dropdown title="Services" items={servicesItems} mainHref="/services" />
-                    <Link href={TURNITIN_URL} className="px-3 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300">Turnitin</Link>
-                    <Dropdown title="Products" items={productsItems} mainHref={PRODUCTS_URL} />
+                    {/* Turnitin changed to AI Content Detector */}
+                    <Link href={TURNITIN_URL} target="_blank" className="px-3 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300">AI Content Detector</Link>
+                    {/* Products is now a simple link directly to subdomain */}
+                    <Link href={PRODUCTS_URL} target="_blank" className="px-3 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300">Products</Link>
                     <Dropdown title="About" items={aboutItems} mainHref="/about" />
                     <Link href="/projects" className="px-3 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300">Portfolio</Link>
                 </div>
@@ -180,8 +176,8 @@ export default function Navbar() {
             {mobileMenuOpen && (
                 <div className="lg:hidden bg-black/95 backdrop-blur-2xl text-white py-8 absolute top-[calc(100%+1rem)] left-0 w-full max-h-[70vh] overflow-y-auto flex flex-col items-center border border-white/10 rounded-[2.5rem] shadow-2xl z-[120]">
                     <MobileDropdown title="Services" items={servicesItems} mainHref="/services" onLinkClick={handleMobileLinkClick} />
-                    <Link href={TURNITIN_URL} className="py-4 text-xl font-bold" onClick={handleMobileLinkClick}>Turnitin</Link>
-                    <MobileDropdown title="Products" items={productsItems} mainHref={PRODUCTS_URL} onLinkClick={handleMobileLinkClick} />
+                    <Link href={TURNITIN_URL} target="_blank" className="py-4 text-xl font-bold" onClick={handleMobileLinkClick}>AI Content Detector</Link>
+                    <Link href={PRODUCTS_URL} target="_blank" className="py-4 text-xl font-bold" onClick={handleMobileLinkClick}>Products</Link>
                     <MobileDropdown title="About" items={aboutItems} mainHref="/about" onLinkClick={handleMobileLinkClick} />
                     <Link href="/projects" className="py-4 text-xl font-bold" onClick={handleMobileLinkClick}>Portfolio</Link>
                     <Link href="/customized-solutions" onClick={handleMobileLinkClick} className="mt-6 bg-white text-black px-12 py-4 rounded-full font-bold text-base">
