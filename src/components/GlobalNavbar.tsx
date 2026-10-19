@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { productsData } from "@/app/products/data";
+import { PRODUCTS_URL, TURNITIN_URL, productUrl } from "@/lib/siteUrls";
 import SplashCursor from "../components/ui/splash-cursor";
 
 interface DropdownProps {
@@ -66,8 +67,14 @@ const MobileDropdown = ({ title, items, mainHref, onLinkClick }: { title: string
     );
 };
 
+// On products.blackzero.org / turnitin.blackzero.org the browser path is "/" even though the
+// page being shown is not the home page, so "/" alone can't decide whether to hide this navbar.
+const subscribeNoop = () => () => {};
+const isSubdomainHost = () => /^(products|turnitin)\./.test(window.location.hostname);
+
 export default function GlobalNavbar() {
     const pathname = usePathname();
+    const onSubdomain = useSyncExternalStore(subscribeNoop, isSubdomainHost, () => false);
 
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -91,7 +98,7 @@ export default function GlobalNavbar() {
         setMobileMenuOpen(false);
     };
 
-    if (pathname === `/`) {
+    if (pathname === `/` && !onSubdomain) {
         return null;
     }
 
@@ -112,7 +119,7 @@ export default function GlobalNavbar() {
     const productsItems = [
         ...(productsData ? productsData.map(product => ({
             name: product.name,
-            href: `/products/${product.slug}`
+            href: productUrl(product.slug)
         })) : [])
     ];
 
@@ -191,8 +198,8 @@ export default function GlobalNavbar() {
 
                     <div className={`hidden lg:flex items-center justify-center flex-grow gap-4 xl:gap-6`}>
                         <Dropdown title={`Services`} items={servicesItems} mainHref={`/services`} />
-                        <Link href={`/turnitin`} className={`px-3 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300`}>Turnitin</Link>
-                        <Dropdown title={`Products`} items={productsItems} mainHref={`/products`} />
+                        <Link href={TURNITIN_URL} className={`px-3 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300`}>Turnitin</Link>
+                        <Dropdown title={`Products`} items={productsItems} mainHref={PRODUCTS_URL} />
                         <Dropdown title={`About`} items={aboutItems} mainHref={`/about`} />
                         <Link href={`/projects`} className={`px-3 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300`}>Portfolio</Link>
                     </div>
@@ -217,8 +224,8 @@ export default function GlobalNavbar() {
                 {mobileMenuOpen && (
                     <div className={`lg:hidden bg-black/95 backdrop-blur-2xl text-white py-8 absolute top-[calc(100%+1rem)] left-0 w-full max-h-[70vh] overflow-y-auto flex flex-col items-center border border-white/10 rounded-[2.5rem] shadow-2xl z-[120]`}>
                         <MobileDropdown title={`Services`} items={servicesItems} mainHref={`/services`} onLinkClick={handleMobileLinkClick} />
-                        <Link href={`/turnitin`} className={`py-4 text-xl font-bold`} onClick={handleMobileLinkClick}>Turnitin</Link>
-                        <MobileDropdown title={`Products`} items={productsItems} mainHref={`/products`} onLinkClick={handleMobileLinkClick} />
+                        <Link href={TURNITIN_URL} className={`py-4 text-xl font-bold`} onClick={handleMobileLinkClick}>Turnitin</Link>
+                        <MobileDropdown title={`Products`} items={productsItems} mainHref={PRODUCTS_URL} onLinkClick={handleMobileLinkClick} />
                         <MobileDropdown title={`About`} items={aboutItems} mainHref={`/about`} onLinkClick={handleMobileLinkClick} />
                         <Link href={`/projects`} className={`py-4 text-xl font-bold`} onClick={handleMobileLinkClick}>Portfolio</Link>
                         <Link href={`/customized-solutions`} onClick={handleMobileLinkClick} className={`mt-6 bg-white text-black px-12 py-4 rounded-full font-bold text-base`}>

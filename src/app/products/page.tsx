@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import ProductsPageClient from '@/components/ProductsPageClient';
 import { productsData } from './data';
+import { PRODUCTS_URL } from '@/lib/siteUrls';
 
 // --- SEO METADATA ---
 export const metadata: Metadata = {
@@ -8,12 +9,12 @@ export const metadata: Metadata = {
   description: 'Explore BlackZero Technologies\'s suite of cutting-edge software products. From HR Tech and Finance tools to Marketing and Educational software, we accelerate business growth.',
   keywords: ['software products', 'HR technology', 'finance tools', 'marketing software', 'lead generation tool', 'SEO auditor', 'math solver', 'BlackZero Technologies products'],
   alternates: {
-    canonical: 'https://www.blackzero.org/products',
+    canonical: PRODUCTS_URL,
   },
   openGraph: {
     title: 'Our Products | Innovative Software Solutions | BlackZero Technologies',
     description: 'Explore BlackZero Technologies\'s suite of cutting-edge software products. From HR Tech and Finance tools to Marketing and Educational software.',
-    url: 'https://www.blackzero.org/products',
+    url: PRODUCTS_URL,
     type: 'website',
     images: [
       {

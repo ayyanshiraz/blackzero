@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { blogPostsData } from '@/data/blogs';
 import { productsData } from '@/app/products/data';
 import { projectsData } from '@/app/projects/data'; 
+import { PRODUCTS_URL, TURNITIN_URL, productUrl } from '@/lib/siteUrls';
 
 const servicesData = [
   { 
@@ -35,11 +36,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/services', priority: 0.8 },
     { route: '/team', priority: 0.8 },
     { route: '/privacy-policy', priority: 0.5 }, 
-    { route: '/products', priority: 0.8 },
     { route: '/blogs', priority: 0.8 },
     // Naye static pages yahan add kiye gaye hain
     { route: '/customized-solutions', priority: 0.8 },
-    { route: '/turnitin', priority: 0.8 },
   ].map((item) => ({
     url: `${baseUrl}${item.route}`,
     lastModified: staticLastModified,
@@ -76,7 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 4. Products (Automatic)
   const productPages = productsData.map((product) => ({
-    url: `${baseUrl}/products/${product.slug}`,
+    url: productUrl(product.slug),
     lastModified: staticLastModified,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
@@ -90,8 +89,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  // Subdomain landing pages (products.blackzero.org / turnitin.blackzero.org)
+  const subdomainPages = [
+    { url: PRODUCTS_URL, lastModified: staticLastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: TURNITIN_URL, lastModified: staticLastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
+  ];
+
   return [
     ...staticPages,
+    ...subdomainPages,
     ...projectPages,
     ...servicePages,
     ...subServicePages,

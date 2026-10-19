@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { productsData } from "@/app/products/data";
+import { PRODUCTS_URL, TURNITIN_URL, productUrl } from "@/lib/siteUrls";
 
 const Dropdown = ({ title, items, mainHref }: { title: string; items: { name: string; href: string }[]; mainHref: string; }) => {
     return (
@@ -97,7 +98,7 @@ export default function Navbar() {
     const productsItems = [
         ...(productsData ? productsData.map((product: any) => ({
             name: product.name,
-            href: `/products/${product.slug}`
+            href: productUrl(product.slug)
         })) : [])
     ];
 
@@ -153,8 +154,8 @@ export default function Navbar() {
 
                 <div className="hidden lg:flex items-center justify-center flex-grow gap-4 xl:gap-6">
                     <Dropdown title="Services" items={servicesItems} mainHref="/services" />
-                    <Link href="/turnitin" className="px-3 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300">Turnitin</Link>
-                    <Dropdown title="Products" items={productsItems} mainHref="/products" />
+                    <Link href={TURNITIN_URL} className="px-3 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300">Turnitin</Link>
+                    <Dropdown title="Products" items={productsItems} mainHref={PRODUCTS_URL} />
                     <Dropdown title="About" items={aboutItems} mainHref="/about" />
                     <Link href="/projects" className="px-3 py-2 text-white/90 text-base font-bold hover:text-white transition-colors duration-300">Portfolio</Link>
                 </div>
@@ -179,8 +180,8 @@ export default function Navbar() {
             {mobileMenuOpen && (
                 <div className="lg:hidden bg-black/95 backdrop-blur-2xl text-white py-8 absolute top-[calc(100%+1rem)] left-0 w-full max-h-[70vh] overflow-y-auto flex flex-col items-center border border-white/10 rounded-[2.5rem] shadow-2xl z-[120]">
                     <MobileDropdown title="Services" items={servicesItems} mainHref="/services" onLinkClick={handleMobileLinkClick} />
-                    <Link href="/turnitin" className="py-4 text-xl font-bold" onClick={handleMobileLinkClick}>Turnitin</Link>
-                    <MobileDropdown title="Products" items={productsItems} mainHref="/products" onLinkClick={handleMobileLinkClick} />
+                    <Link href={TURNITIN_URL} className="py-4 text-xl font-bold" onClick={handleMobileLinkClick}>Turnitin</Link>
+                    <MobileDropdown title="Products" items={productsItems} mainHref={PRODUCTS_URL} onLinkClick={handleMobileLinkClick} />
                     <MobileDropdown title="About" items={aboutItems} mainHref="/about" onLinkClick={handleMobileLinkClick} />
                     <Link href="/projects" className="py-4 text-xl font-bold" onClick={handleMobileLinkClick}>Portfolio</Link>
                     <Link href="/customized-solutions" onClick={handleMobileLinkClick} className="mt-6 bg-white text-black px-12 py-4 rounded-full font-bold text-base">

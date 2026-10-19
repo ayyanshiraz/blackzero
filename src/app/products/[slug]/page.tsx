@@ -3,6 +3,7 @@ import { productsData } from '../data';
 import { notFound } from 'next/navigation';
 import ProductDetailClient from './product-client'; 
 import { Metadata } from 'next';
+import { productUrl } from '@/lib/siteUrls';
 
 type Props = {
     params: Promise<{ slug: string }>
@@ -19,12 +20,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         description: product.metaDescription,
         keywords: product.seoKeywords,
         alternates: {
-            canonical: `https://www.blackzero.org/products/${slug}`,
+            canonical: productUrl(slug),
         },
         openGraph: {
             title: product.seoTitle,
             description: product.metaDescription,
-            url: `https://www.blackzero.org/products/${slug}`,
+            url: productUrl(slug),
             type: 'website',
             images: [
                 {

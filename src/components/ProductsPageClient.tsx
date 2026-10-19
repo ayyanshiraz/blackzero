@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, ChevronLeft, ChevronRight, ShoppingBag, Users, FileText, BarChart, Calculator, TrendingUp, Mail, Phone, Target } from 'lucide-react';
 import Link from 'next/link';
+import { productUrl } from '@/lib/siteUrls';
 import { motion, AnimatePresence, Variants } from 'framer-motion'; 
 
 interface Product {
@@ -262,7 +263,7 @@ export default function ProductsPageClient({ products }: { products: Product[] }
                                     whileTap="tap"
                                     className="group relative bg-black border border-neutral-800 rounded-xl p-6 transition-colors duration-300 flex flex-col cursor-pointer shadow-lg"
                                 >
-                                    <Link href={`/products/${product.slug}`} className="absolute inset-0 z-0" aria-label={`View details for ${product.name}`} />
+                                    <Link href={productUrl(product.slug)} className="absolute inset-0 z-0" aria-label={`View details for ${product.name}`} />
 
                                     <div className="flex justify-between items-start mb-4 relative z-0 pointer-events-none">
                                         <span className="bg-neutral-900 text-gray-300 text-[10px] md:text-xs font-bold px-3 py-1 rounded-md border border-neutral-800 uppercase tracking-wider">
