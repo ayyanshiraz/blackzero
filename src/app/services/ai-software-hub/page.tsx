@@ -60,20 +60,26 @@ const aiSoftwareData = {
 };
 
 export const metadata: Metadata = {
-  title: `AI and Software Hub Custom Tech Solutions in the USA `,
-  description: ` Experience next-generation custom software development and AI solutions. We build scalable ERP systems and intelligent architectures for US businesses.`,
+  title: `AI and Software Hub Custom Tech Solutions in the USA`,
+  description: `Experience next-generation custom software development and AI solutions. We build scalable ERP systems and intelligent architectures for US businesses.`,
   keywords: [`AI solutions`, `custom software development`, `ERP implementation`, `machine learning`, `intelligent system architecture`],
   alternates: {
-    canonical: `/services/ai-software-hub`,
+    canonical: `https://www.blackzero.org/services/ai-software-hub`,
   },
   openGraph: {
-    title: `AI and Software Hub Custom Tech Solutions in the USA `,
-    description: ` Experience next-generation custom software development and AI solutions. We build scalable ERP systems and intelligent architectures for US businesses.`,
-    url: `/services/ai-software-hub`,
+    title: `AI and Software Hub Custom Tech Solutions in the USA`,
+    description: `Experience next-generation custom software development and AI solutions. We build scalable ERP systems and intelligent architectures for US businesses.`,
+    url: `https://www.blackzero.org/services/ai-software-hub`,
     siteName: `Black Zero`,
     locale: `en_US`,
     type: `website`,
     images: [{ url: `/development.webp`, alt: `AI and Software Hub providing complete ERP solutions` }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `AI and Software Hub Custom Tech Solutions in the USA`,
+    description: `Experience next-generation custom software development and AI solutions. We build scalable ERP systems and intelligent architectures for US businesses.`,
+    images: ["/development.webp"],
   },
 };
 
