@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import ContactPageClient from "@/components/ContactPageClient";
 
-
 export const metadata: Metadata = {
   title: "Contact Us | AI, Analytics & Custom Development",
   description: "Contact Black Zero for expert AI, custom development, and data analytics solutions. Reach out to build scalable tech for your enterprise in the USA and GCC.",
@@ -24,6 +23,12 @@ export const metadata: Metadata = {
         alt: "Contact Black Zero support team for digital marketing and IT services",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | AI, Analytics & Custom Development",
+    description: "Contact Black Zero for expert AI, custom development, and data analytics solutions. Reach out to build scalable tech for your enterprise in the USA and GCC.",
+    images: ["/contact4.webp"],
   },
 };
 
