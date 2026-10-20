@@ -312,7 +312,7 @@ export default function ContactPageClient() {
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-12 text-center md:text-left">
 
                         <div className="md:w-1/2">
-                            <h1 className={`text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-none ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+                            <h1 className={`text-5xl sm:text-7xl mt-12 md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-none ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
                                 CONTACT<br />US!
                             </h1>
                             <p className={`text-lg sm:text-xl md:text-2xl mt-4 max-w-md mx-auto md:mx-0 text-gray-200 ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
