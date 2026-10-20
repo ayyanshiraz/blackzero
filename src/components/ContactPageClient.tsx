@@ -1,9 +1,9 @@
 'use client';
-import React, { useState, useEffect, useRef, type FC } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { countryCodes } from '@/constants/countries';
 
-// --- Icons ---
 const MapPin = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-black">
         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
@@ -30,7 +30,6 @@ const WhatsApp = () => (
     </svg>
 );
 
-// --- Typing Hook ---
 const useTypingEffect = (textToType: string, speed = 100, startCondition = false) => {
     const [typedText, setTypedText] = useState('');
 
@@ -53,7 +52,6 @@ const useTypingEffect = (textToType: string, speed = 100, startCondition = false
     return typedText;
 };
 
-// --- FAQ Data & Components ---
 const faqData = [
     { question: "What is BlackZero Technologies?", answer: "BlackZero Technologies is a full-service creative and digital agency based in Lahore. We are a team of thinkers, creators, and strategists dedicated to helping businesses grow by building powerful brand identities and effective IT and Marketing solutions." },
     { question: "Why should I choose BlackZero Technologies?", answer: "You should choose us because we become an extension of your team. We focus on building lasting relationships based on trust and transparency. Our strategies are data-driven, human-centric, and designed to deliver measurable results that align with your business goals." },
@@ -61,7 +59,7 @@ const faqData = [
     { question: "How can I get a quotation for my business?", answer: "To get a custom quotation, please fill out the contact form with as much detail about your project as possible. Our team will review your request and contact you to schedule a consultation to discuss your needs and provide a detailed proposal." },
     { question: "What are your services?", answer: "We offer a comprehensive suite of services including IT and Marketing, Business Analytics, 2D/3D Animation, Web and App Development, Graphic Design, and professional Photography/Videography." },
     { question: "When did BlackZero Technologies form?", answer: "BlackZero Technologies was founded in 2024 by a team of passionate experts with a vision to create a multi-domain company that delivers exceptional results." },
-    { question: "Who is the owner of BlackZero Technologies?", answer: "BlackZero Technologies is led by our CEO, Mian Hashim Haroon, who oversees the company's vision and strategic direction." },
+    { question: "Who is the owner of BlackZero Technologies?", answer: "BlackZero Technologies is led by our CEO, Mian Hashim Haroon, who oversees the company vision and strategic direction." },
     { question: "How do I contact the BlackZero Technologies team?", answer: "The most efficient way to reach our team is through the contact form on our website or by emailing us at info@blackzero.org. For urgent matters, you can call our office number." },
     { question: "What are the costs?", answer: "Our costs are project-dependent. We do not offer one-size-fits-all packages because we believe every business has unique needs. We provide a custom quotation after an initial consultation to ensure our services are perfectly tailored to you." },
     { question: "In which countries do you operate?", answer: "Our main office is physically located in Lahore, Pakistan. However, we operate globally and have proudly served clients in 9 different countries across the world." }
@@ -179,59 +177,15 @@ const FaqSection = () => {
     );
 };
 
-const countryCodes = [
-    { iso: `pk`, dial: `+92` },
-    { iso: `af`, dial: `+93` }, { iso: `al`, dial: `+355` }, { iso: `dz`, dial: `+213` }, { iso: `ad`, dial: `+376` },
-    { iso: `ao`, dial: `+244` }, { iso: `ag`, dial: `+1` }, { iso: `ar`, dial: `+54` }, { iso: `am`, dial: `+374` },
-    { iso: `au`, dial: `+61` }, { iso: `at`, dial: `+43` }, { iso: `az`, dial: `+994` }, { iso: `bs`, dial: `+1` },
-    { iso: `bh`, dial: `+973` }, { iso: `bd`, dial: `+880` }, { iso: `bb`, dial: `+1` }, { iso: `by`, dial: `+375` },
-    { iso: `be`, dial: `+32` }, { iso: `bz`, dial: `+501` }, { iso: `bj`, dial: `+229` }, { iso: `bt`, dial: `+975` },
-    { iso: `bo`, dial: `+591` }, { iso: `ba`, dial: `+387` }, { iso: `bw`, dial: `+267` }, { iso: `br`, dial: `+55` },
-    { iso: `bn`, dial: `+673` }, { iso: `bg`, dial: `+359` }, { iso: `bf`, dial: `+226` }, { iso: `bi`, dial: `+257` },
-    { iso: `kh`, dial: `+855` }, { iso: `cm`, dial: `+237` }, { iso: `ca`, dial: `+1` }, { iso: `cv`, dial: `+238` },
-    { iso: `cf`, dial: `+236` }, { iso: `td`, dial: `+235` }, { iso: `cl`, dial: `+56` }, { iso: `cn`, dial: `+86` },
-    { iso: `co`, dial: `+57` }, { iso: `km`, dial: `+269` }, { iso: `cg`, dial: `+242` }, { iso: `cd`, dial: `+243` },
-    { iso: `cr`, dial: `+506` }, { iso: `hr`, dial: `+385` }, { iso: `cu`, dial: `+53` }, { iso: `cy`, dial: `+357` },
-    { iso: `cz`, dial: `+420` }, { iso: `dk`, dial: `+45` }, { iso: `dj`, dial: `+253` }, { iso: `dm`, dial: `+1` },
-    { iso: `do`, dial: `+1` }, { iso: `ec`, dial: `+593` }, { iso: `eg`, dial: `+20` }, { iso: `sv`, dial: `+503` },
-    { iso: `gq`, dial: `+240` }, { iso: `er`, dial: `+291` }, { iso: `ee`, dial: `+372` }, { iso: `sz`, dial: `+268` },
-    { iso: `et`, dial: `+251` }, { iso: `fj`, dial: `+679` }, { iso: `fi`, dial: `+358` }, { iso: `fr`, dial: `+33` },
-    { iso: `ga`, dial: `+241` }, { iso: `gm`, dial: `+220` }, { iso: `ge`, dial: `+995` }, { iso: `de`, dial: `+49` },
-    { iso: `gh`, dial: `+233` }, { iso: `gr`, dial: `+30` }, { iso: `gd`, dial: `+1` }, { iso: `gt`, dial: `+502` },
-    { iso: `gn`, dial: `+224` }, { iso: `gw`, dial: `+245` }, { iso: `gy`, dial: `+592` }, { iso: `ht`, dial: `+509` },
-    { iso: `hn`, dial: `+504` }, { iso: `hu`, dial: `+36` }, { iso: `is`, dial: `+354` }, { iso: `in`, dial: `+91` },
-    { iso: `id`, dial: `+62` }, { iso: `ir`, dial: `+98` }, { iso: `iq`, dial: `+964` }, { iso: `ie`, dial: `+353` },
-    { iso: `il`, dial: `+972` }, { iso: `it`, dial: `+39` }, { iso: `jm`, dial: `+1` }, { iso: `jp`, dial: `+81` },
-    { iso: `jo`, dial: `+962` }, { iso: `kz`, dial: `+7` }, { iso: `ke`, dial: `+254` }, { iso: `ki`, dial: `+686` },
-    { iso: `kp`, dial: `+850` }, { iso: `kr`, dial: `+82` }, { iso: `kw`, dial: `+965` }, { iso: `kg`, dial: `+996` },
-    { iso: `la`, dial: `+856` }, { iso: `lv`, dial: `+371` }, { iso: `lb`, dial: `+961` }, { iso: `ls`, dial: `+266` },
-    { iso: `lr`, dial: `+231` }, { iso: `ly`, dial: `+218` }, { iso: `li`, dial: `+423` }, { iso: `lt`, dial: `+370` },
-    { iso: `lu`, dial: `+352` }, { iso: `mg`, dial: `+261` }, { iso: `mw`, dial: `+265` }, { iso: `my`, dial: `+60` },
-    { iso: `mv`, dial: `+960` }, { iso: `ml`, dial: `+223` }, { iso: `mt`, dial: `+356` }, { iso: `mh`, dial: `+692` },
-    { iso: `mr`, dial: `+222` }, { iso: `mu`, dial: `+230` }, { iso: `mx`, dial: `+52` }, { iso: `fm`, dial: `+691` },
-    { iso: `md`, dial: `+373` }, { iso: `mc`, dial: `+377` }, { iso: `mn`, dial: `+976` }, { iso: `me`, dial: `+382` },
-    { iso: `ma`, dial: `+212` }, { iso: `mz`, dial: `+258` }, { iso: `mm`, dial: `+95` }, { iso: `na`, dial: `+264` },
-    { iso: `nr`, dial: `+674` }, { iso: `np`, dial: `+977` }, { iso: `nl`, dial: `+31` }, { iso: `nz`, dial: `+64` },
-    { iso: `ni`, dial: `+505` }, { iso: `ne`, dial: `+227` }, { iso: `ng`, dial: `+234` }, { iso: `mk`, dial: `+389` },
-    { iso: `no`, dial: `+47` }, { iso: `om`, dial: `+968` }, { iso: `pw`, dial: `+680` }, { iso: `pa`, dial: `+507` }, 
-    { iso: `pg`, dial: `+675` }, { iso: `py`, dial: `+595` }, { iso: `pe`, dial: `+51` }, { iso: `ph`, dial: `+63` },
-    { iso: `pl`, dial: `+48` }, { iso: `pt`, dial: `+351` }, { iso: `qa`, dial: `+974` }, { iso: `ro`, dial: `+40` },
-    { iso: `ru`, dial: `+7` }, { iso: `rw`, dial: `+250` }, { iso: `kn`, dial: `+1` }, { iso: `lc`, dial: `+1` },
-    { iso: `vc`, dial: `+1` }, { iso: `ws`, dial: `+685` }, { iso: `sm`, dial: `+378` }, { iso: `st`, dial: `+239` },
-    { iso: `sa`, dial: `+966` }, { iso: `sn`, dial: `+221` }, { iso: `rs`, dial: `+381` }, { iso: `sc`, dial: `+248` },
-    { iso: `sl`, dial: `+232` }, { iso: `sg`, dial: `+65` }, { iso: `sk`, dial: `+421` }, { iso: `si`, dial: `+386` },
-    { iso: `sb`, dial: `+677` }, { iso: `so`, dial: `+252` }, { iso: `za`, dial: `+27` }, { iso: `ss`, dial: `+211` },
-    { iso: `es`, dial: `+34` }, { iso: `lk`, dial: `+94` }, { iso: `sd`, dial: `+249` }, { iso: `sr`, dial: `+597` },
-    { iso: `se`, dial: `+46` }, { iso: `ch`, dial: `+41` }, { iso: `sy`, dial: `+963` }, { iso: `tj`, dial: `+992` },
-    { iso: `tz`, dial: `+255` }, { iso: `th`, dial: `+66` }, { iso: `tl`, dial: `+670` }, { iso: `tg`, dial: `+228` },
-    { iso: `to`, dial: `+676` }, { iso: `tt`, dial: `+1` }, { iso: `tn`, dial: `+216` }, { iso: `tr`, dial: `+90` },
-    { iso: `tm`, dial: `+993` }, { iso: `tv`, dial: `+688` }, { iso: `ug`, dial: `+256` }, { iso: `ua`, dial: `+380` },
-    { iso: `ae`, dial: `+971` }, { iso: `gb`, dial: `+44` }, { iso: `us`, dial: `+1` }, { iso: `uy`, dial: `+598` },
-    { iso: `uz`, dial: `+998` }, { iso: `vu`, dial: `+678` }, { iso: `va`, dial: `+379` }, { iso: `ve`, dial: `+58` },
-    { iso: `vn`, dial: `+84` }, { iso: `ye`, dial: `+967` }, { iso: `zm`, dial: `+260` }, { iso: `zw`, dial: `+263` }
-];
+const getCountryName = (isoCode: string) => {
+    try {
+        const displayNames = new Intl.DisplayNames(['en'], { type: 'region' });
+        return displayNames.of(isoCode.toUpperCase()) || isoCode;
+    } catch (error) {
+        return isoCode;
+    }
+};
 
-// --- Main Client Component ---
 export default function ContactPageClient() {
     const [isHeroVisible, setIsHeroVisible] = useState(false);
     const heroRef = useRef<HTMLElement>(null);
@@ -242,6 +196,7 @@ export default function ContactPageClient() {
     });
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedCountry, setSelectedCountry] = useState(countryCodes[0]);
+    const [searchQuery, setSearchQuery] = useState('');
     const [loading, setLoading] = useState(false);
     const [statusMessage, setStatusMessage] = useState('');
 
@@ -249,6 +204,7 @@ export default function ContactPageClient() {
         function handleClickOutside(event: MouseEvent) {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
                 setIsDropdownOpen(false);
+                setSearchQuery('');
             }
         }
         document.addEventListener('mousedown', handleClickOutside);
@@ -290,7 +246,7 @@ export default function ContactPageClient() {
         try {
             const payload = {
                 ...formData,
-                phone: formData.phone ? `${selectedCountry.dial} ${formData.phone}` : ``
+                phone: formData.phone ? `${selectedCountry.dial}${formData.phone}` : ``
             };
             
             const response = await fetch('/api/send-email', {
@@ -304,12 +260,17 @@ export default function ContactPageClient() {
                 setFormData({ fullName: '', email: '', phone: '', subject: '', message: '' });
             }
         } catch (error) {
-             console.error("Form submission error:", error);
             setStatusMessage('An error occurred. Please try again.');
         } finally {
             setLoading(false);
         }
     };
+
+    const filteredCountries = countryCodes.filter(c => {
+        const query = searchQuery.toLowerCase();
+        const countryName = getCountryName(c.iso).toLowerCase();
+        return countryName.includes(query) || c.dial.includes(query) || c.iso.toLowerCase().includes(query);
+    });
 
     const boldPart = "BlackZero Technologies:";
     const regularPart = " The Genesis Point.";
@@ -351,7 +312,7 @@ export default function ContactPageClient() {
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-12 text-center md:text-left">
 
                         <div className="md:w-1/2">
-                            <h1 className={`text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-none ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+                            <h1 className={`text-5xl sm:text-7xl mt-12 md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-none ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
                                 CONTACT<br />US!
                             </h1>
                             <p className={`text-lg sm:text-xl md:text-2xl mt-4 max-w-md mx-auto md:mx-0 text-gray-200 ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
@@ -404,27 +365,47 @@ export default function ContactPageClient() {
                                             className={`flex items-center pl-3 pr-3 py-2 bg-transparent text-black border-r border-gray-300 cursor-pointer sm:text-sm hover:bg-gray-200 transition-colors`}
                                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                                         >
-                                            <img src={`https://flagcdn.com/w20/${selectedCountry.iso}.png`} alt={selectedCountry.iso} className={`w-5 h-auto mr-2 shadow-sm`} />
+                                            <img src={`https://flagcdn.com/w20/${selectedCountry.iso}.png`} alt={selectedCountry.iso} width={20} height={15} loading="lazy" className={`w-5 h-auto mr-2 shadow-sm`} />
                                             <span className={`mr-2 font-medium`}>{selectedCountry.dial}</span>
                                             <svg className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                                         </div>
 
                                         {isDropdownOpen && (
-                                            <ul className={`absolute top-full left-0 mt-1 w-64 max-h-60 overflow-y-auto bg-white border border-gray-200 rounded-md shadow-xl z-50 py-1`}>
-                                                {countryCodes.map((c, i) => (
-                                                    <li
-                                                        key={i}
-                                                        className={`flex items-center px-4 py-2.5 cursor-pointer hover:bg-gray-100 text-black sm:text-sm transition-colors`}
-                                                        onClick={() => {
-                                                            setSelectedCountry(c);
-                                                            setIsDropdownOpen(false);
-                                                        }}
-                                                    >
-                                                        <img src={`https://flagcdn.com/w20/${c.iso}.png`} alt={c.iso} className={`w-5 h-auto mr-3 shadow-sm`} />
-                                                        <span className={`font-medium w-12`}>{c.dial}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                            <div className={`absolute top-full left-0 mt-1 w-72 bg-white border border-gray-200 rounded-md shadow-xl z-50 flex flex-col`}>
+                                                <div className="p-2 border-b border-gray-100 bg-white sticky top-0 rounded-t-md z-10">
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Search country..."
+                                                        value={searchQuery}
+                                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                                        className="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-black focus:border-black text-black"
+                                                    />
+                                                </div>
+                                                <ul className="max-h-60 overflow-y-auto py-1">
+                                                    {filteredCountries.length > 0 ? (
+                                                        filteredCountries.map((c, i) => {
+                                                            const countryName = getCountryName(c.iso);
+                                                            return (
+                                                                <li
+                                                                    key={i}
+                                                                    className={`flex items-center px-4 py-2.5 cursor-pointer hover:bg-gray-100 text-black sm:text-sm transition-colors`}
+                                                                    onClick={() => {
+                                                                        setSelectedCountry(c);
+                                                                        setIsDropdownOpen(false);
+                                                                        setSearchQuery('');
+                                                                    }}
+                                                                >
+                                                                    <img src={`https://flagcdn.com/w20/${c.iso}.png`} alt={c.iso} width={20} height={15} loading="lazy" className={`w-5 h-auto mr-3 shadow-sm flex-shrink-0`} />
+                                                                    <span className={`font-medium w-12 flex-shrink-0`}>{c.dial}</span>
+                                                                    <span className="text-gray-600 text-xs truncate ml-2">{countryName}</span>
+                                                                </li>
+                                                            );
+                                                        })
+                                                    ) : (
+                                                        <li className="px-4 py-3 text-sm text-gray-500 text-center">No country found</li>
+                                                    )}
+                                                </ul>
+                                            </div>
                                         )}
 
                                         <input
@@ -468,20 +449,20 @@ export default function ContactPageClient() {
                                 <div className="p-4 rounded-lg flex flex-col bg-white border-2 border-transparent transition-all duration-300 hover:border-gray-200 hover:shadow-lg hover:-translate-y-1">
                                     <div className="flex justify-center mb-2"><Phone /></div>
                                     <p className="text-black font-semibold">Call Us</p>
-                                    <p className="text-gray-700 text-sm break-words">+92 324 4333267</p>
+                                    <a href="tel:+923244333267" className="text-gray-700 text-sm break-words hover:text-black transition-colors block">+92 324 4333267</a>
                                 </div>
                                 <div className="p-4 rounded-lg flex flex-col bg-white border-2 border-transparent transition-all duration-300 hover:border-gray-200 hover:shadow-lg hover:-translate-y-1">
                                     <div className="flex justify-center mb-2"><Mail /></div>
                                     <p className="text-black font-semibold">Email Us</p>
-                                    <div className="text-gray-700 text-sm break-words">
-                                        <p>info@blackzero.org</p>
-                                        <p>marketinghead@blackzero.org</p>
+                                    <div className="text-gray-700 text-sm break-words flex flex-col">
+                                        <a href="mailto:info@blackzero.org" className="hover:text-black transition-colors">info@blackzero.org</a>
+                                        <a href="mailto:marketinghead@blackzero.org" className="hover:text-black transition-colors">marketinghead@blackzero.org</a>
                                     </div>
                                 </div>
                                 <div className="p-4 rounded-lg flex flex-col bg-white border-2 border-transparent transition-all duration-300 hover:border-gray-200 hover:shadow-lg hover:-translate-y-1">
                                     <div className="flex justify-center mb-2"><WhatsApp /></div>
                                     <p className="text-black font-semibold">WhatsApp</p>
-                                    <a href="https://wa.me/923244333267" target="_blank" rel="noopener noreferrer" className="text-gray-700 text-sm break-words hover:text-black transition-colors">+92 324 4333267</a>
+                                    <a href="https://wa.me/923244333267" target="_blank" rel="noopener noreferrer" className="text-gray-700 text-sm break-words hover:text-black transition-colors block">+92 324 4333267</a>
                                 </div>
                             </div>
 
@@ -508,7 +489,8 @@ export default function ContactPageClient() {
                                     style={{ border: 0 }}
                                     allowFullScreen={false}
                                     loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade">
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Google Maps Location for BlackZero Technologies">
                                 </iframe>
                             </div>
                         </div>

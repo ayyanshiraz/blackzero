@@ -11,6 +11,7 @@ import type { Metadata } from "next";
 import HideOnDashboard from "@/components/HideOnDashboard";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import WhatsAppChat from "@/components/WhatsAppChat";
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.blackzero.org"),
@@ -99,7 +100,7 @@ export default function RootLayout({
         <HideOnDashboard>
           <GlobalNavbar />
         </HideOnDashboard>
-        
+        <SchemaMarkup />
         <main>{children}<WhatsAppButton /></main>
         <FooterSection />
         <HideOnDashboard>

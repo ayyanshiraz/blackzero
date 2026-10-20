@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
-// --- Types ---
 interface ImageContent {
     imageUrl: string;
     alt: string;
@@ -18,7 +17,6 @@ interface AboutPageContent {
     values: ImageContent;
 }
 
-// --- Arrow Icon Component for Hero ---
 const SectionArrowIcon = ({ color = 'black' }: { color?: string }) => (
     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M24 38V10" stroke={color} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
@@ -26,7 +24,6 @@ const SectionArrowIcon = ({ color = 'black' }: { color?: string }) => (
     </svg>
 );
 
-// --- Arrow for Credo Title ---
 const TitleArrowIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline-block ml-2">
         <path d="M5 12H19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -34,84 +31,6 @@ const TitleArrowIcon = () => (
     </svg>
 );
 
-// --- AnimatedNumber Component ---
-const AnimatedNumber = ({ endValue, duration = 2000, isVisible }: { endValue: number; duration?: number; isVisible: boolean; }) => {
-    const [currentValue, setCurrentValue] = useState(0);
-    const frameRef = useRef<number | null>(null);
-    const startTimeRef = useRef<number | null>(null);
-
-    useEffect(() => {
-        if (!isVisible) return;
-        const animate = (timestamp: number) => {
-            if (startTimeRef.current === null) startTimeRef.current = timestamp;
-            const elapsedTime = timestamp - (startTimeRef.current || timestamp);
-            const progress = Math.min(elapsedTime / duration, 1);
-            const value = Math.floor(progress * endValue);
-            setCurrentValue(value);
-            if (progress < 1) frameRef.current = requestAnimationFrame(animate);
-        };
-        frameRef.current = requestAnimationFrame(animate);
-        return () => {
-            if (frameRef.current) cancelAnimationFrame(frameRef.current);
-        };
-    }, [isVisible, endValue, duration]);
-
-    return <span>{currentValue.toLocaleString()}</span>;
-};
-
-// --- Main Stats Section Component ---
-const StatsSection = () => {
-    const [isStatsSectionVisible, setStatsSectionVisible] = useState(false);
-    const statsSectionRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setStatsSectionVisible(true);
-                    observer.unobserve(entry.target);
-                }
-            }, { threshold: 0.2 }
-        );
-        const currentRef = statsSectionRef.current;
-        if (currentRef) {
-            observer.observe(currentRef);
-        }
-        return () => {
-            if (currentRef) observer.disconnect();
-        };
-    }, []);
-
-    const statsData = [
-        { number: 50, suffix: '+', label: 'Registered Clients' },
-        { number: 100, suffix: 'M+', label: 'Worth of Sales' },
-        { number: 9, suffix: '', label: 'Countries Covered' },
-    ];
-
-    return (
-        <section ref={statsSectionRef} className="bg-white py-16">
-            <div className={`container mx-auto px-8 sm:px-16 md:px-24 grid grid-cols-1 sm:grid-cols-3 gap-y-12 text-center transition-all duration-1000 ease-out ${isStatsSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                {statsData.map((stat, index) => (
-                    <div 
-                        key={index} 
-                        className={`
-                            flex flex-col items-center justify-center px-4
-                            ${index < statsData.length - 1 ? 'sm:border-r sm:border-gray-300' : ''}
-                        `} 
-                    >
-                        <div className="text-5xl md:text-6xl font-extrabold text-black mb-2">
-                            <AnimatedNumber endValue={stat.number} isVisible={isStatsSectionVisible} />
-                            {stat.suffix}
-                        </div>
-                        <span className="text-lg md:text-xl text-gray-600">{stat.label}</span>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
-};
-
-// --- Main About Page Client Component ---
 export default function AboutPageClient({ content }: { content: AboutPageContent }) {
     const [isMounted, setIsMounted] = useState(false);
     const [isStudioSectionVisible, setStudioSectionVisible] = useState(false);
@@ -219,7 +138,6 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                 }
             `}</style>
 
-            {/* ---------- HERO SECTION ---------- */}
             <div style={heroBackgroundStyle} className="relative text-white">
                 <div className="absolute inset-0 bg-black/60 z-10 backdrop-filter backdrop-blur-[2px]"></div> 
                 
@@ -249,7 +167,6 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                 </div>
             </section>
 
-            {/* ---------- CEO MESSAGE SECTION ---------- */}
             <section ref={ceoMessageRef} className="bg-white text-black py-24 overflow-hidden">
                 <div className="container mx-auto px-8 sm:px-16 md:px-24 flex flex-col md:flex-row items-center justify-center gap-16">
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isCeoMessageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
@@ -274,7 +191,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                             <div 
                                 key={item.num} 
                                 className={`py-12 text-left ${index < 4 ? 'border-b border-gray-700' : ''} transition-all duration-1000 ease-out ${isCredoSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} 
-                                style={{ transitionDelay: `${200 + index * 100}ms` }}
+                                style={{ transitionDelay: `${200 + (index * 100)}ms` }}
                             >
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 bg-white rounded-full flex-shrink-0 flex items-center justify-center text-black font-bold text-xl">{item.num}</div>
@@ -299,8 +216,6 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                 </div>
             </section>
 
-            <StatsSection />
-            
             <section ref={visionSectionRef} className="bg-black text-white py-24 overflow-hidden">
                 <div className="container mx-auto px-8 sm:px-16 md:px-24 flex flex-col md:flex-row items-center justify-center gap-16">
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isVisionSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
@@ -342,7 +257,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isValuesSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                         <Image src={content.values.imageUrl} alt={content.values.alt} width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover border-2 border-gray-200 "/>
                     </div>
-                    <div className={`md:w-1/2 text-left transition-all duration-1G00 ease-out ${isValuesSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
+                    <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isValuesSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
                         <h2 className="text-black text-4xl md:text-5xl font-extrabold leading-tight mb-6">Our Values</h2>
                         <ul className="space-y-4 text-lg text-gray-800 leading-relaxed max-w-2xl">
                             {valuesContent.map((item, index) => (
