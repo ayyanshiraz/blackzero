@@ -30,14 +30,17 @@ export const metadata: Metadata = {
   },
   title: {
     default: "IT Consulting & Custom App Development USA | Black Zero",
-    template: "%s",
+    template: "%s | Black Zero",
   },
   description: "Expert IT consulting, custom app development, and scalable digital solutions to grow your USA business with Black Zero.",
   verification: {
     google: "1HfyejT0xZl6FqT0DJLA59GxpsyCsDe5Ii3KFuvhDmg",
   },
   openGraph: {
-    title: "IT Consulting & Custom App Development USA | Black Zero",
+    title: {
+      default: "IT Consulting & Custom App Development USA | Black Zero",
+      template: "%s | Black Zero",
+    },
     description: "Expert IT consulting, custom app development, and scalable digital solutions to grow your USA business with Black Zero.",
     url: "https://www.blackzero.org/",
     siteName: "Black Zero",
@@ -54,7 +57,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "IT Consulting & Custom App Development USA | Black Zero",
+    title: {
+      default: "IT Consulting & Custom App Development USA | Black Zero",
+      template: "%s | Black Zero",
+    },
     description: "Expert IT consulting, custom app development, and scalable digital solutions to grow your USA business with Black Zero.",
     images: ["/opengraph-image.png"],
   },
