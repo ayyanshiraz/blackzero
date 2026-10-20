@@ -89,6 +89,8 @@ export default function Navbar() {
         { name: "Hybrid SEO Services", href: "/services/hybrid-seo" },
         { name: "Marketing", href: "/services/marketing" },
         { name: "Creative Design and Animation Studio", href: "/services/creative-design-and-animation-studio" },
+        { name: "Enterprise Resource Planning (ERP)", href: "/services/erp" },
+        { name: "Customer Relationship Management (CRM)", href: "/services/crm" },
     ];
 
     const aboutItems = [

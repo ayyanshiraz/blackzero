@@ -44,6 +44,20 @@ const servicesData = [
         imgAltText: `Creative 2D and 3D animation character and motion graphics design`,
         description: `Bringing Ideas to Life in 2D and 3D. Creative Designs. Stunning Animations. From Graphics to Motion We Create It All. Visual Stories, Perfectly Animated. Includes explanatory videos and scroll stoppers.`,
     },
+    { 
+        title: `Enterprise Resource Planning (ERP)`, 
+        slug: `erp`,
+        imageUrl: `/erp.webp`,
+        imgAltText: `Enterprise Resource Planning system visualization`,
+        description: `Streamline your business operations with our comprehensive ERP systems. Enhance efficiency, automate processes, and unify your data across all departments for smarter decision making.`,
+    },
+    { 
+        title: `Customer Relationship Management (CRM)`, 
+        slug: `crm`,
+        imageUrl: `/crm.webp`,
+        imgAltText: `Customer Relationship Management dashboard and interactions`,
+        description: `Build stronger relationships and drive sales growth with our advanced CRM solutions. Manage interactions, track leads, and optimize your customer journey seamlessly.`,
+    }
 ];
 
 export const metadata: Metadata = {

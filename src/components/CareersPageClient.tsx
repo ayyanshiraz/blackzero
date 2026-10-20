@@ -146,7 +146,7 @@ export default function CareersPageClient() {
                                     </div>
                                 </div>
                                 <div className="mt-6 text-left">
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOnV1439kkii-UmJeAGsp-mECdMDXQk2Bb2_IxMdZg6Bvn5g/viewform?usp=header" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-black font-semibold py-3 px-8 rounded-md hover:bg-gray-200 transition-colors">
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd015m2n_FBh4MdmmpG15jr1LS3TTcmi2lMBBvzsUoPr4b7wg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-black font-semibold py-3 px-8 rounded-md hover:bg-gray-200 transition-colors">
                                         Apply Now
                                     </a>
                                 </div>
@@ -201,7 +201,7 @@ export default function CareersPageClient() {
                         <p className="mt-4 text-lg text-gray-300 leading-relaxed">
                             We&apos;re always looking for exceptional talent. If you believe you have what it takes to be a rebel at BlackZero Technologies, send us your resume and tell us why you&apos;d be a great addition to our team.
                         </p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOnV1439kkii-UmJeAGsp-mECdMDXQk2Bb2_IxMdZg6Bvn5g/viewform?usp=header" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block bg-white text-black font-bold py-4 px-10 rounded-lg hover:bg-gray-200 transition-colors text-lg">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd015m2n_FBh4MdmmpG15jr1LS3TTcmi2lMBBvzsUoPr4b7wg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block bg-white text-black font-bold py-4 px-10 rounded-lg hover:bg-gray-200 transition-colors text-lg">
                             Send Us Your Resume
                         </a>
                     </motion.div>
