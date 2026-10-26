@@ -1,18 +1,15 @@
 'use client';
 import React from 'react';
-import Navbar from '@/components/Navbar';
 
 export default function PrivacyPolicyClient() {
   return (
     <>
-      <Navbar />
-
       <div className="relative h-[400px] flex items-center justify-center overflow-hidden border-b border-white">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url("/pp.webp")' }}
           role="img"
-          aria-label="BlackZero Technologies Privacy Policy and Legal Terms Header" // Added accessible Alt text equivalent
+          aria-label="BlackZero Technologies Privacy Policy and Legal Terms Header"
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
@@ -136,7 +133,7 @@ export default function PrivacyPolicyClient() {
 
           <h3 className="text-2xl font-semibold mb-4 mt-6">Intellectual Property</h3>
           <p className="mb-6 leading-relaxed">
-            All content on this Website, including text, graphics, logos, images, and the MAGICAL 9 STEP ecommerce success formula, is the property of BlackZero Technologies or its content suppliers and is protected by international copyright and trademark laws. The   name and logo are trademarks of BlackZero Technologies.
+            All content on this Website, including text, graphics, logos, images, and the MAGICAL 9 STEP ecommerce success formula, is the property of BlackZero Technologies or its content suppliers and is protected by international copyright and trademark laws. The name and logo are trademarks of BlackZero Technologies.
           </p>
 
           <h3 className="text-2xl font-semibold mb-4 mt-6">Disclaimer of Warranties</h3>
