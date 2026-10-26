@@ -1,4 +1,6 @@
 "use client";
+
+import React from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
@@ -87,7 +89,7 @@ const MessageSection = () => {
           <div className={`msg-wrapper flex flex-col items-center`}>
             
             <h1 className={`first-message text-black/10 mb-2 md:mb-0`}>
-              Accelerate your digital transformation and
+              Architect custom enterprise software and
             </h1>
 
             <div
@@ -100,7 +102,7 @@ const MessageSection = () => {
             </div>
 
             <h1 className={`second-message text-black/10 mt-2 md:mt-30`}>
-              your business with next generation AI solutions
+              your operations with secure AI and custom ERP systems
             </h1>
             
           </div>
