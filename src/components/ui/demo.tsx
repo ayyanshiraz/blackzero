@@ -42,7 +42,7 @@ export function SplineSceneBasic() {
               variants={wipeIn}
               initial={`hidden`}
               animate={`show`}
-              className={`relative z-10 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.85] tracking-tighter text-white`}
+              className={`relative z-10 text-4xl pt-8 sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.85] tracking-tighter text-white`}
               style={{ 
                 transform: `scaleY(1.15)`, 
                 transformOrigin: `bottom left`,
