@@ -105,7 +105,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
         backgroundSize: '2rem 2rem',
     };
 
-    const mainDescription = "We provide all the nourishment that any business needs to grow and succeed. Hence we are your partner in building brands, creating experience and transforming business.";
+    const mainDescription = "We engineer custom ERP, CRM, and AI automation solutions to scale operations for mid-market and enterprise teams across the US.";
     
     const credoItems = [
         { num: '01', title: 'NEVER STOP LEARNING', desc: 'With curiosity in our hearts & minds we constantly keep evolving & learning.' },
@@ -117,11 +117,11 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
     ];
 
     const valuesContent = [
-        { title: 'Innovation:', text: 'We explore the latest IT and Marketing tools. Our fresh and effective solutions meet modern industry needs internationally.' },
-        { title: 'Creativity:', text: 'Original content and innovative ideas are at our core. Engaging visuals strengthen your brand identity.' },
-        { title: 'Collaboration:', text: 'Close coordination with every client ensures open communication. Seamless teamwork is a key part of every project.' },
-        { title: 'Results Focus:', text: 'Our focus is on achieving measurable outcomes. We align all efforts with your specific business goals.' },
-        { title: 'Integrity:', text: 'Honest IT and Marketing practices guide our work. We build lasting trust through transparent communication.' },
+        { title: 'Innovation:', text: 'We explore the latest enterprise AI tools and data architectures. Our scalable solutions meet modern industrial needs internationally.' },
+        { title: 'Security:', text: 'Data integrity and secure cloud infrastructure are at our core. We build robust systems that protect your corporate assets.' },
+        { title: 'Collaboration:', text: 'Close coordination with your technical leads ensures open communication. Seamless integration is a key part of every software rollout.' },
+        { title: 'Results Focus:', text: 'Our focus is on achieving measurable operational efficiency. We align all development efforts with your specific business goals.' },
+        { title: 'Integrity:', text: 'Honest engineering practices guide our work. We build lasting trust through transparent communication and clean codebases.' },
     ];
 
     return (
@@ -159,10 +159,10 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
             <section ref={studioSectionRef} className="bg-white text-black py-20">
                 <div className="container mx-auto px-8 lg:px-48 text-center flex flex-col items-center">
                     <h2 className={`text-3xl md:text-4xl font-extrabold text-black uppercase tracking-wider headline-shadow transition-all duration-1000 ease-out delay-200 ${isStudioSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                        We are a Multidisciplinary<br/>Creative & Digital Studio!
+                        Custom Enterprise Software<br/>& AI Automation Firm
                     </h2>
                     <p className={`mt-6 max-w-5xl text-gray-700 uppercase text-base md:text-lg transition-all duration-1000 ease-out delay-300 ${isStudioSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                        We are a team of out-of-the-box thinkers, creators and developers, ready to boost your brands image and impression via new and inventive IT and Marketing techniques. We create novel yet actionable concepts across a variety of BUSINESS TYPES.
+                        We are a team of elite software engineers and data scientists, ready to modernize your operational infrastructure via secure, scalable enterprise solutions. We create high-performance custom ERP, CRM, and AI architectures across a variety of US corporate sectors.
                     </p>
                 </div>
             </section>
@@ -172,7 +172,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isCeoMessageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">CEO Message</h2>
                         <p className="mt-4 text-gray-800 text-lg leading-relaxed max-w-2xl">
-                            &quot;At BlackZero Technologies, we believe in the power of partnership. Our journey began with a simple vision: to create a multi domain company that not only delivers exceptional results but also builds lasting relationships based on trust and transparency. We are more than just a service provider; we are an extension of your team, dedicated to understanding your challenges and achieving your goals. Thank you for entrusting us with your vision. We look forward to growing together.&quot;
+                            "At BlackZero Technologies, we believe in the power of robust engineering. Our journey began with a simple vision: to create an enterprise software firm that not only delivers scalable technical architecture but also builds lasting relationships based on trust and data security. We are more than just an agency; we are an extension of your IT operations, dedicated to resolving operational bottlenecks and automating your growth. Thank you for entrusting us with your digital infrastructure. We look forward to scaling together."
                         </p>
                     </div>
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isCeoMessageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
@@ -211,7 +211,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                     </div>
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isStorySectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
                         <h2 className="text-black text-4xl md:text-5xl font-extrabold leading-tight mb-6">Our Story</h2>
-                        <p className="mt-4 text-gray-800 text-lg leading-relaxed max-w-2xl">BlackZero Technologies was launched with one clear purpose: to help businesses grow through effective IT and Marketing. Our team combines hands-on experience in software development, content strategy, design, and technical skills to connect brands with their ideal audience online. Since day one, we have collaborated with startups and businesses across the world to build a stronger digital presence. By understanding market needs and business goals, we develop data-driven strategies that enhance online visibility and earn lasting customer trust.</p>
+                        <p className="mt-4 text-gray-800 text-lg leading-relaxed max-w-2xl">BlackZero Technologies was launched with one clear purpose: to help mid-market and enterprise businesses scale through high-performance software engineering. Our team combines deep technical expertise in custom development, secure database architecture, and machine learning models to solve complex operational bottlenecks. Since day one, we have collaborated with organizations across the US to build resilient digital infrastructures. By understanding complex workflows, we engineer bespoke solutions that streamline enterprise operations and ensure long-term stability.</p>
                     </div>
                 </div>
             </section>
@@ -220,7 +220,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                 <div className="container mx-auto px-8 sm:px-16 md:px-24 flex flex-col md:flex-row items-center justify-center gap-16">
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isVisionSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                         <h2 className="text-white text-4xl md:text-5xl font-extrabold leading-tight mb-6">Our Vision</h2>
-                        <p className="mt-4 text-gray-300 text-lg leading-relaxed max-w-2xl">At BlackZero Technologies, we envision reshaping the IT and Marketing landscape internationally. We strive to become the most trusted agency by delivering high-impact strategies that fuel long-term growth and deep customer engagement for every business, from startups to large enterprises. Our purpose is to empower brands worldwide, enabling them to build a strong online presence, compete effectively in global markets, and innovate with cutting-edge IT and Marketing techniques. We are the reliable partner businesses can count on to consistently provide measurable outcomes, overcome technical challenges, and achieve lasting success.</p>
+                        <p className="mt-4 text-gray-300 text-lg leading-relaxed max-w-2xl">At BlackZero Technologies, we envision reshaping enterprise digital infrastructure globally. We strive to become the most trusted technology partner by delivering secure, scalable software architectures that fuel long-term growth and operational efficiency for every business. Our purpose is to empower organizations with automation, enabling them to build a flawless digital foundation, compete effectively in fast-paced markets, and innovate with cutting-edge AI technologies. We are the engineering team businesses count on to execute flawless deployments and achieve lasting technical superiority.</p>
                     </div>
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isVisionSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
                         <Image src={content.vision.imageUrl} alt={content.vision.alt} width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover border-2 border-gray-700 "/>
@@ -235,7 +235,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                     </div>
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isMissionSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
                         <h2 className="text-black text-4xl md:text-5xl font-extrabold leading-tight mb-6">Our Mission</h2>
-                        <p className="mt-4 text-gray-800 text-lg leading-relaxed max-w-2xl">BlackZero Technologies is a professional IT and Marketing company, dedicated to helping businesses, organizations, and political campaigns grow online. We specialize in expert SEO, social media management, IT development, content strategy, and paid advertising to connect clients with their ideal audience. Our goal is to provide services that drive tangible growth, based on extensive research and industry experience. Founded to bridge the gap between digital platforms and business goals, our team creates custom solutions. Every campaign is built around your specific audience and business objectives.</p>
+                        <p className="mt-4 text-gray-800 text-lg leading-relaxed max-w-2xl">BlackZero Technologies is a specialized software engineering firm dedicated to helping mid-market and enterprise operations scale. We specialize in Custom ERP, Enterprise CRM solutions, AI automation, and secure data analytics to unify fragmented workflows. Our goal is to provide engineering services that drive tangible performance, based on rigorous architectural standards. Founded to bridge the gap between legacy systems and modern cloud capabilities, our team builds custom tools designed around your specific operational logic and business objectives.</p>
                     </div>
                 </div>
             </section>
@@ -244,7 +244,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                 <div className="container mx-auto px-8 sm:px-16 md:px-24 flex flex-col md:flex-row items-center justify-center gap-16">
                     <div className={`md:w-1/2 text-left transition-all duration-1000 ease-out ${isApproachSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                         <h2 className="text-white text-4xl md:text-5xl font-extrabold leading-tight mb-6">Our Approach</h2>
-                        <p className="mt-4 text-gray-300 text-lg leading-relaxed max-w-2xl">A leading IT and Marketing company, we deliver exceptional IT and Marketing solutions, PR, and brand activations. Our approach is driven by data-backed strategies that enhance brand visibility, foster customer engagement, and build a powerful online presence for businesses and public figures internationally. Whether its launching impactful social media campaigns, handling public relations for strong reputation management, or executing unique on-ground activations, our goal is to achieve measurable IT and Marketing results. We partner closely with clients to guarantee every strategy aligns with their brand objectives, helping them succeed in a competitive market and form lasting customer relationships.</p>
+                        <p className="mt-4 text-gray-300 text-lg leading-relaxed max-w-2xl">As a leading enterprise technology partner, we deliver exceptional custom software and automation architectures. Our approach is driven by data-backed engineering that enhances system performance, eliminates administrative friction, and builds a secure digital ecosystem for corporate organizations. Whether it is deploying private local LLMs, integrating complex third-party APIs, or migrating legacy databases, our goal is to achieve flawless execution. We partner closely with IT directors to guarantee every deployment aligns with enterprise security standards, helping you dominate your market through technological excellence.</p>
                     </div>
                     <div className={`md:w-1/2 flex justify-center transition-all duration-1000 ease-out ${isApproachSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
                         <Image src={content.approach.imageUrl} alt={content.approach.alt} width={800} height={600} className="rounded-xl shadow-xl w-full max-w-lg h-auto object-cover image-pop-on-hover "/>
