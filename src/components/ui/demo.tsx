@@ -49,7 +49,7 @@ export function SplineSceneBasic() {
                 textShadow: `0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4)` 
               }}
             >
-              Building Intelligent Systems
+              Building intelligent Systems
             </motion.h1>
             
             {/* Secondary Heading changed to H2 for SEO */}
@@ -64,7 +64,7 @@ export function SplineSceneBasic() {
                 className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight text-white whitespace-nowrap`}
                 style={{ transform: `scaleY(1.15)`, transformOrigin: `bottom left` }}
               >
-                AI + Software
+                AI + software
               </h2>
             </motion.div>
 
@@ -75,7 +75,7 @@ export function SplineSceneBasic() {
               transition={{ delay: 0.5 }}
               className={`mt-6 md:mt-12 text-white/90 font-serif text-base sm:text-lg md:text-xl lg:text-2xl max-w-lg leading-relaxed`}
             >
-              Unlock the power of your data with advanced web systems and scalable portals.
+              Architecting secure custom enterprise ERP, CRM solutions, and AI automation workflows for US industry leaders.
             </motion.p>
 
             <motion.div
@@ -89,7 +89,7 @@ export function SplineSceneBasic() {
                 href={`/services`}
                 className={`inline-block text-center w-full sm:w-auto bg-white text-black font-bold uppercase tracking-widest px-8 md:px-10 py-4 rounded-full text-sm md:text-base hover:scale-105 hover:bg-gray-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)]`}
               >
-                Explore Services
+                Explore Solutions
               </Link>
             </motion.div>
           </div>
