@@ -58,8 +58,8 @@ const FooterSection = () => {
               <Link className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max" href="/privacy-policy">
                 Privacy Policy
               </Link>
-              <Link className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max" href="/terms-of-service">
-                Terms of Service
+              <Link className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max" href="/team">
+                Our Team
               </Link>
             </div>
 
