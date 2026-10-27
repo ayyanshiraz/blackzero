@@ -172,7 +172,7 @@ export default function CustomERPClient() {
                 href="/contact"
                 className="inline-block text-center bg-white text-black font-bold uppercase tracking-widest px-8 py-4 rounded-full text-sm md:text-base hover:bg-gray-200 transition-all"
               >
-                Book a Technical Architecture Call
+                Book a Call
               </Link>
               <a
                 href="#architecture-blueprint"
