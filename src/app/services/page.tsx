@@ -46,14 +46,14 @@ const servicesData = [
     },
     { 
         title: `Enterprise Resource Planning (ERP)`, 
-        slug: `erp`,
+        slug: `custom-erp-development`,
         imageUrl: `/erp.webp`,
         imgAltText: `Enterprise Resource Planning system visualization`,
         description: `Streamline your business operations with our comprehensive ERP systems. Enhance efficiency, automate processes, and unify your data across all departments for smarter decision making.`,
     },
     { 
         title: `Customer Relationship Management (CRM)`, 
-        slug: `crm`,
+        slug: `custom-crm-development`,
         imageUrl: `/crm.webp`,
         imgAltText: `Customer Relationship Management dashboard and interactions`,
         description: `Build stronger relationships and drive sales growth with our advanced CRM solutions. Manage interactions, track leads, and optimize your customer journey seamlessly.`,
