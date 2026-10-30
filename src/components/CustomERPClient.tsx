@@ -183,7 +183,7 @@ export default function CustomERPClient() {
             </div>
           </motion.div>
 
-          {/* Key Metrics Strip */}
+          
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-zinc-800/80">
             <div>
               <p className="text-3xl md:text-4xl font-black text-white">&lt;150ms</p>
