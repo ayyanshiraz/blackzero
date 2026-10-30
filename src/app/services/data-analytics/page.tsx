@@ -1,106 +1,196 @@
-import { Metadata } from 'next';
-import ServiceClientView from '@/components/ServiceClientView';
+import { Metadata } from "next";
+import ServiceClientView from "@/components/ServiceClientView";
 
-const dataAnalyticsData = { 
-  title: `Data Analytics`, 
-  slug: `data-analytics`,
-  imageUrl: `/business-analytics.webp`,
-  imgAltText: `Data analytics dashboard showing data visualization and growth trends`,
-  description: `Gain a competitive edge by understanding the depth of your market. Partner with an expert data analytics consultant to refine your vision and create a roadmap that leads you directly to measurable success.`,
+const dataAnalyticsData = {
+  title: "Data Analytics",
+  slug: "data-analytics",
+  imageUrl: "/business-analytics.webp",
+  imgAltText: "Enterprise data analytics dashboard displaying real-time KPIs and predictive growth trends",
+  description:
+    "Transform fragmented corporate data into real-time operational intelligence. Partner with our data engineering and analytics consultants to architect cloud data warehouses, executive BI dashboards, and predictive revenue models.",
   subSections: [
-      { 
-          title: `Dashboard Building`, 
-          slug: `dashboard-building`, 
-          description: `As a leader in data visualization consulting services, we ensure that every chart and graph serves a specific strategic purpose. Our developers use the latest technologies to create custom solutions tailored to your unique operational needs and goals. We proudly provide these comprehensive analytics and development solutions to clients across the United States who want to stay ahead in the competitive marketplace. \n\nOur dashboards are designed for speed and reliability, so you have access to critical information at all times. User experience is a central part of our development process, making it easy for non-technical staff to understand and use data. We pay special attention to security and scalability so that your reporting infrastructure can keep up with your growing business operations. \n\nFrom initial concept to final implementation, our experts work closely with you to define the metrics that matter most. Experience the difference of a central data hub that unites all your departments and streamlines communication. Let us turn your raw numbers into a visual story that guides your organization toward a prosperous future.`, 
-          imageUrl: `/dash.webp` 
-      },
-      { 
-          title: `Automations`, 
-          slug: `automations`, 
-          description: `Maximize your operational efficiency by integrating intelligent software solutions that handle repetitive tasks without human intervention. We implement robust strategies that eliminate bottlenecks and significantly reduce the risk of costly manual errors in daily operations. Our premium business automation services allow your team to focus on high-value creative activities rather than mundane data entry. \n\nLeveraging cutting-edge technology, we transform haphazard workflows into streamlined and streamlined systems that operate with complete confidence and speed. We specialize in comprehensive business process automation services that connect your disparate software tools into a unified ecosystem. This seamless integration ensures that information flows freely throughout the organization, improving collaboration across departments. \n\nOur experts are committed to empowering companies across the U.S. with scalable architectures that can adapt to changing market needs. We analyze your current infrastructure to identify specific areas where automation can deliver the highest return on investment. The result is a more agile and responsive organization that can respond quickly to customer needs and industry trends.`, 
-          imageUrl: `/automation.webp` 
-      },
-      { 
-          title: `Excel / Sheetbots`, 
-          slug: `excel-sheetbots`, 
-          description: `Unleash the full potential of your spreadsheets by implementing intelligent bots that handle data management with unprecedented speed. We specialize in providing high-quality Excel automation services that eliminate manual data entry and complex formula errors. Our custom scripts work silently in the background and keep your financial reports and inventory lists organized without any human intervention. \n\nIf you rely on cloud-based collaboration, we can connect you with a Google Sheets automation consultant to streamline your real-time workflows. These automated solutions are perfect for businesses looking to save countless hours each week on administrative tasks. We proudly provide these advanced productivity tools to clients across the US who demand accuracy and efficiency. \n\nBy automating daily reporting, you ensure that your team always has the most up-to-date information. Our developers write clean, efficient code that integrates seamlessly with your existing office software ecosystem. Whether you need simple macros or complex data processing bots, we have the expertise to build them.`, 
-          imageUrl: `/excelsheetbots.webp` 
-      },
-      { 
-          title: `Big Data Handling`, 
-          slug: `big-data-handling`, 
-          description: `Manage your large data sets efficiently with a scalable infrastructure designed for speed and reliability. We help organizations migrate their legacy systems to a secure cloud data warehouse that provides unlimited storage capacity. Our engineers are experts at optimizing architectures so that millions of transactions can be processed without performance lag or downtime. \n\nUsing premium AWS data warehouse services, we ensure that your analytics pipeline is robust and accessible at all times. We deliver these advanced data engineering solutions to forward-thinking companies across the U.S. that want to get the most out of their information assets. Our approach reduces the complexity of managing physical servers, allowing your IT team to focus on innovation and creation. \n\nWe implement strict security protocols to protect your sensitive corporate records from unauthorized access or data breaches. Real-time processing capabilities allow you to react quickly to market changes while having accurate data at your fingertips at all times. From structural design to final implementation, we handle every aspect of your big data ecosystem.`, 
-          imageUrl: `/big data handling.webp` 
-      },
-      { 
-          title: `Software Development Life Cycle`, 
-          slug: `sdlc`, 
-          description: `We guide your project from initial concept to final deployment in a structured and transparent process. Our team specializes in customizing a software development lifecycle that is tailored to your specific business goals and technical requirements. We adopt a robust agile software development lifecycle to ensure flexibility and continuous improvement at every stage of construction. \n\nThis iterative approach enables us to adapt quickly to changes and deliver high-quality products on time. We provide these end-to-end engineering services to startups and enterprises across the US based on their market needs. Our developers write clean, maintainable, and scalable code that scales easily as the user base grows. Quality assurance is incorporated into every phase to ensure the timely identification and resolution of bugs. \n\nWe prioritize clear communication so that all stakeholders are kept informed of project progress and key milestones. By focusing on user experience and robust architecture, we create digital solutions that stand the test of time. Our proven approach minimizes risk and ensures maximum return on your technology investment.`, 
-          imageUrl: `/sdlc.webp` 
-      },
-      { 
-          title: `Database Systems`, 
-          slug: `database-systems`, 
-          description: `Build a strong foundation for your applications with our comprehensive database management solutions. We specialize in optimizing your data architecture to handle high traffic loads without compromising speed or security. Our team provides expert SQL Server tuning to eliminate query bottlenecks and significantly improve response times for users. If you are looking to modernize your infrastructure, we offer seamless Azure data migration services, which securely migrate your data assets to the cloud. \n\nWe help organizations across the U.S. maintain data integrity and availability. Our administrators implement rigorous backup protocols so that your critical information is never lost in the event of a system failure. We design scalable schemas that easily scale with your growing business demands. Security is our top priority, which is why we use advanced encryption methods to protect sensitive records from cyber threats. \n\nBy continuously monitoring system health, we prevent downtime before it impacts your daily operations. Focus on your business strategy and leave the responsibility of complex upgrades and patches to our certified engineers.`, 
-          imageUrl: `/database system.webp` 
-      },
-      { 
-          title: `Python Programming`, 
-          slug: `python-programming`, 
-          description: `We build secure and scalable applications for your enterprise by harnessing the full power of the most versatile coding language. Our team specializes in custom Python development services that efficiently solve your most complex back-end challenges. Whether you need data analysis tools or high-performance web apps, we deliver quality and performance in every line of code. \n\nWe are experts in Django web development and build fast, secure websites that handle heavy traffic with ease. Companies across the US trust us to write clean, maintainable, and long-lasting scripts. We seamlessly integrate third-party APIs into your existing systems to significantly improve functionality and user experience. \n\nOur development process prioritizes security and performance, so your software runs smoothly under all conditions. We automate your repetitive workflows, allowing your staff to focus on strategic development instead of manual tasks. From initial architecture to final deployment, our engineers work closely with you at every stage to ensure all requirements are met.Trust us to turn your innovative ideas into a powerful digital reality using modern programming standards.`, 
-          imageUrl: `/python.webp` 
-      },
-      { 
-          title: `Research Analysis`, 
-          slug: `research-analysis`, 
-          description: `We help you understand your industry landscape with deep analytical insights that drive increased profitability and reduced risk. Unlike other market analysis companies, we do not just focus on surface data, but delve into the underlying drivers of consumer behavior. Our team specializes in comprehensive market surveys and market research to effectively validate your product ideas before launch. \n\nWe collect real-time feedback from target demographics to ensure your strategy is aligned with consumer needs. Businesses across the U.S. rely on our detailed reports to make investment decisions with confidence. We analyze competitors to identify gaps in their offerings, which you can leverage for immediate benefits. \n\nOur methodology combines quantitative data with qualitative feedback to provide a complete picture of your industry. We provide clear, actionable recommendations that enable you to quickly change direction in a changing economy. Stop guessing what your audience wants, and base your decisions on solid facts and data. From focus groups to large-scale digital polling, we handle every stage of data collection.`, 
-          imageUrl: `/research-analysis.webp` 
-      },
-      { 
-          title: `Econometrics`, 
-          slug: `econometrics`, 
-          description: `We solve real-world economic problems for businesses and government agencies using rigorous and authoritative statistical methods. Our team specializes in high-level econometric consulting that helps you predict future trends with mathematical precision. We measure the impact of policy changes and market fluctuations on your bottom line to strengthen your strategic planning. Through advanced economic impact analysis consulting, we determine the direct and indirect value of your projects to the community. \n\nClients across the U.S. trust our models to provide evidence-based answers to their complex financial questions. We transform historical data into predictive tools that reduce risk in an uncertain market. Our experts handle everything from demand estimation to pricing strategy optimization so you can maximize revenue. \n\nWe present our research in clear, easy-to-understand reports that even non-technical stakeholders can easily understand. Avoid costly mistakes by making decisions based on robust empirical research and analysis. Let us guide you through the economic landscape with data-driven confidence and clarity.`, 
-          imageUrl: `/econometrics.webp` 
-      },
-      { 
-          title: `Advance Data Analysis`, 
-          slug: `advance-data-analysis`, 
-          description: `We leverage your raw data with cutting-edge mathematical techniques to unlock the true value of your information assets. Our team specializes in advanced statistical modeling that uncovers subtle patterns that are often overlooked by conventional tools. With these deep analytical insights, we enable you to anticipate future market trends in real time, rather than reacting to the past. \n\nWe provide high-quality predictive analytics consulting that transforms your decision-making process into a proactive strategy. Organizations across the U.S. rely on our expertise to reduce operational risk and capture new opportunities. We clean and organize your data sets so that every calculation is based on accurate and reliable information. Our methods help you predict customer behavior and optimize inventory levels with exceptional accuracy. \n\nWe use cutting-edge algorithms to test different business scenarios before committing significant resources. This scientific approach eliminates guesswork and provides a clear path to sustainable growth. Let us turn your complex numbers into a competitive advantage that drives your success.`, 
-          imageUrl: `/advance data analysis.webp` 
-      },
-      { 
-          title: `Decision Making For Businesses`, 
-          slug: `decision-making`, 
-          description: `We empower your leadership team to rely on solid facts for every important decision, not just guesses. Our experts implement comprehensive business analytics for decision-making to make sense of complex market signals and internal performance metrics. By integrating data-driven decision-making tools into your daily workflow, we ensure that every strategy is based on solid evidence. \n\nThis approach significantly reduces the risk of costly mistakes and aligns the entire organization toward shared goals. Companies across the U.S. trust our methods to navigate uncertainty and achieve leadership in their industry. We analyze historical trends and real-time data to give you a complete picture of operational health. Our solutions allow you to evaluate potential outcomes before allocating resources to ensure maximum return on investment. \n\nWe focus on presenting insights in simple, clear formats so stakeholders can understand right away. Stop guessing what the next step should be and start executing with complete confidence. Let us help you establish a culture where information guides strategy and delivers consistent, measurable success.`, 
-          imageUrl: `/decision making for businesses.webp` 
-      },
-      { 
-          title: `Business Consultancy`, 
-          slug: `business-consultancy`, 
-          description: `We help organizations improve their overall operational performance and market competitiveness by guiding them through complex digital transformations. Our team specializes in custom ERP development services that unify finance, HR, and supply chain data into a single, accessible dashboard. We design ERP solutions specifically for small and medium-sized businesses, so you pay only for the features you really need. \n\nBy streamlining internal processes, we help you reduce administrative costs and focus on expanding your core business. Clients across the U.S. trust our strategic guidance to address the challenges of adopting modern technology. We analyze your current workflows to identify bottlenecks and recommend software integrations that create immediate value. Our consultants work side-by-side with your staff to ensure a smooth implementation and minimize resistance to change. \n\nWe believe that technology should serve business, not the other way around, which is why we prioritize user-friendly interfaces. From initial planning to post-launch support, we are committed to your long-term success and sustainability. Experience the clarity that comes from managing everyday corporate functions with a unified system.`, 
-          imageUrl: `/business consultancy.webp` 
-      },
-  ]
+    {
+      title: "Dashboard Building",
+      slug: "dashboard-building",
+      description:
+        "Executive teams cannot make high-stakes decisions from static weekly spreadsheets. Through our data visualization consulting services, we engineer custom Power BI, Tableau, and React/Next.js executive command centers that unify financial, sales, and operational telemetry in real time.\n\nEvery dashboard is architected for sub-second query performance, granular role-based access control (RBAC), and intuitive drill-down filtering so non-technical stakeholders can isolate margin trends instantly. We collaborate directly with US operations leaders across EST and PST hours to map your core KPIs into a single source of truth.",
+      imageUrl: "/dash.webp",
+      imgAltText: "Custom executive BI dashboard showing real-time financial and operational KPIs",
+    },
+    {
+      title: "Automations",
+      slug: "automations",
+      description:
+        "Eliminate manual data entry bottlenecks and cross-departmental reporting delays with event-driven workflow automation. Our business process automation services connect your CRM, ERP, billing gateways, and warehouse databases through fault-tolerant Python and Node.js pipelines.\n\nBy replacing repetitive CSV reconciliations with automated webhook triggers and scheduled ETL jobs, we reduce human accounting errors and free your analysts to focus on high-value strategy. Every automated workflow includes dead-letter retry queues and real-time Slack or email anomaly alerts.",
+      imageUrl: "/automation.webp",
+      imgAltText: "Automated business process and ETL workflow connecting enterprise software systems",
+    },
+    {
+      title: "Excel / Sheetbots",
+      slug: "excel-sheetbots",
+      description:
+        "Finance and operations teams often rely on complex spreadsheet models that break under heavy transaction volumes. We engineer enterprise Excel automation scripts, VBA/Office Scripts, and Google Sheets API bots that synchronize live database records directly into your financial models without manual copy-pasting.\n\nOur Google Sheets and Excel automation consultants build bidirectional connectors that pull live ledger, inventory, and ad-spend metrics on automated schedules. Your team keeps the familiar spreadsheet interface while gaining database-grade validation, version control, and zero formula corruption.",
+      imageUrl: "/excelsheetbots.webp",
+      imgAltText: "Automated Excel and Google Sheets financial reporting bot synchronizing live database metrics",
+    },
+    {
+      title: "Big Data Handling",
+      slug: "big-data-handling",
+      description:
+        "Process millions of daily events without query timeouts or infrastructure bottlenecks. We design and migrate legacy databases to modern cloud data warehouse architectures on Snowflake, Google BigQuery, Amazon Redshift, and AWS RDS.\n\nOur data engineers implement partitioned schemas, automated ingestion pipelines, and strict encryption-at-rest protocols aligned with US enterprise compliance standards. Whether ingesting IoT telemetry, multi-channel e-commerce logs, or historical financial records, we ensure high availability and predictable cloud compute costs.",
+      imageUrl: "/big data handling.webp",
+      imgAltText: "Cloud data warehouse architecture processing high-volume enterprise big data streams",
+    },
+    {
+      title: "Software Development Life Cycle",
+      slug: "sdlc",
+      description:
+        "Data-intensive applications require disciplined engineering governance from initial schema design through production deployment. We implement an agile software development life cycle (SDLC) featuring automated CI/CD pipelines, containerization, and rigorous load testing.\n\nOur US-aligned engineering pods maintain transparent sprint velocity, comprehensive API documentation, and peer-reviewed code standards. By embedding quality assurance and security scanning into every development phase, we deliver analytics platforms that scale cleanly as your transaction volume grows.",
+      imageUrl: "/sdlc.webp",
+      imgAltText: "Agile software development life cycle diagram with automated CI/CD and quality assurance stages",
+    },
+    {
+      title: "Database Systems",
+      slug: "database-systems",
+      description:
+        "Eliminate sluggish application performance caused by unindexed tables and poorly normalized schemas. Our database administrators provide deep SQL Server, PostgreSQL, and MySQL performance tuning alongside zero-downtime Azure and AWS cloud data migration services.\n\nWe architect high-concurrency relational and NoSQL database clusters with automated point-in-time recovery, read-replica load balancing, and row-level security. Continuous health monitoring ensures your transactional databases maintain ACID compliance and 99.99% uptime under peak workloads.",
+      imageUrl: "/database system.webp",
+      imgAltText: "High-availability SQL and PostgreSQL database cluster architecture with cloud migration",
+    },
+    {
+      title: "Python Programming",
+      slug: "python-programming",
+      description:
+        "Harness the industry standard language for data engineering, quantitative modeling, and high-throughput backend APIs. Our custom Python development services cover everything from FastAPI and Django microservices to automated Pandas, Polars, and PySpark data processing pipelines.\n\nWe write clean, type-safe, and maintainable Python codebases that integrate third-party financial, logistics, and marketing APIs into your internal infrastructure. Every deployment is packaged in reproducible Docker containers for seamless scaling across your cloud environment.",
+      imageUrl: "/python.webp",
+      imgAltText: "Custom Python data engineering and FastAPI backend microservice code architecture",
+    },
+    {
+      title: "Research Analysis",
+      slug: "research-analysis",
+      description:
+        "Validate capital investments and product expansions with empirical market intelligence rather than executive guesswork. Our quantitative research analysts combine primary demographic polling, competitor pricing telemetry, and industry cohort data to map untapped revenue opportunities.\n\nWe deliver structured market research reports and interactive data models that quantify customer acquisition costs, addressable market size, and demand elasticity across US regional segments—giving your leadership team clear evidence before committing budget.",
+      imageUrl: "/research-analysis.webp",
+      imgAltText: "Market research and competitive intelligence analysis dashboard for US business expansion",
+    },
+    {
+      title: "Econometrics",
+      slug: "econometrics",
+      description:
+        "Isolate the true causal drivers behind your revenue fluctuations, pricing tiers, and marketing spend. Our econometric consulting team applies time-series forecasting, panel data regression, and economic impact modeling to answer complex corporate finance questions.\n\nWe help CFOs and strategy teams measure price elasticity, macroeconomic sensitivity, and multi-touch attribution with statistical rigor. Complex mathematical outputs are translated into clear scenario simulators so leadership can stress-test quarterly plans with confidence.",
+      imageUrl: "/econometrics.webp",
+      imgAltText: "Econometric time-series forecasting and price elasticity statistical model",
+    },
+    {
+      title: "Advanced Data Analysis",
+      slug: "advance-data-analysis",
+      description:
+        "Uncover hidden margin leakage and customer churn signals buried inside raw transaction logs. Through advanced statistical modeling and predictive analytics consulting, we transform historical datasets into forward-looking operational alerts.\n\nOur data scientists cleanse, normalize, and model multi-source data to optimize inventory reorder points, customer lifetime value (LTV) segmentation, and capacity planning. You gain reproducible analytical pipelines that continuously sharpen accuracy as new data arrives.",
+      imageUrl: "/advance data analysis.webp",
+      imgAltText: "Advanced predictive analytics and customer lifetime value segmentation model",
+    },
+    {
+      title: "Decision Making For Businesses",
+      slug: "decision-making",
+      description:
+        "Bridge the gap between raw analytics and boardroom execution. We implement decision-intelligence frameworks that embed live operational metrics, variance alerts, and scenario modeling directly into your leadership cadence.\n\nBy aligning finance, sales, and operations around standardized KPI definitions, we eliminate conflicting departmental reports. Your executive team gains instant visibility into unit economics, cash flow velocity, and resource allocation trade-offs.",
+      imageUrl: "/decision making for businesses.webp",
+      imgAltText: "Executive decision intelligence platform showing unit economics and scenario planning",
+    },
+    {
+      title: "Business Consultancy",
+      slug: "business-consultancy",
+      description:
+        "Modernize legacy operational workflows with a structured digital transformation roadmap. Our technical consultants audit your existing software stack, identify data silos, and design phased integration architectures that connect finance, supply chain, and revenue operations.\n\nRather than pushing bloated off-the-shelf software licenses, we help US mid-market organizations architect lean, interoperable data ecosystems. From vendor evaluation and schema governance to staff onboarding, we ensure every technology investment delivers measurable operational ROI.",
+      imageUrl: "/business consultancy.webp",
+      imgAltText: "Enterprise data strategy and digital transformation consulting roadmap for US operations",
+    },
+  ],
 };
 
 export const metadata: Metadata = {
-  title: `Strategic Data Analytics Consultant in USA`,
-  description: `Turn complex data into effective growth strategies. Our USA-based data analytics consultants provide clear, actionable insights to drive corporate success.`,
-  keywords: [`data analytics`, `data visualization`, `Power BI`, `big data`, `predictive analytics`, `data automation`],
+  title: "Enterprise Data Analytics & BI Consulting USA | Black Zero",
+  description:
+    "Transform raw corporate data into real-time executive intelligence. Custom BI dashboards, cloud data warehousing, Python ETL automation, and predictive analytics for US enterprises.",
+  keywords: [
+    "data analytics consultant USA",
+    "data visualization consulting services",
+    "cloud data warehouse migration",
+    "business process automation services",
+    "custom Python data engineering",
+    "predictive analytics consulting",
+    "executive BI dashboard development",
+  ],
   alternates: {
-    canonical: `/services/data-analytics`,
+    canonical: "https://www.blackzero.org/services/data-analytics",
   },
   openGraph: {
-    title: `Data Analytics Services | Data Analysis and Visualization | Black Zero`,
-    description: `Turn complex data into effective growth strategies. Our USA-based data analytics consultants provide clear, actionable insights to drive corporate success.`,
-    url: `/services/data-analytics`,
-    siteName: `Black Zero`,
-    locale: `en_US`,
-    type: `website`,
-    images: [{ url: `/business-analytics.webp`, alt: `Data analytics dashboard showing data visualization and growth trends` }],
+    title: "Enterprise Data Analytics & BI Consulting USA | Black Zero Technologies",
+    description:
+      "Custom BI dashboards, cloud data warehousing, Python ETL automation, and predictive analytics engineered for US mid-market and enterprise teams.",
+    url: "https://www.blackzero.org/services/data-analytics",
+    siteName: "Black Zero Technologies",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.blackzero.org/business-analytics.webp",
+        width: 1200,
+        height: 630,
+        alt: "Enterprise data analytics dashboard displaying real-time KPIs and predictive growth trends",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Enterprise Data Analytics & BI Consulting USA | Black Zero Technologies",
+    description:
+      "Architect scalable cloud data warehouses, automated ETL pipelines, and real-time executive BI dashboards with Black Zero Technologies.",
+    images: ["https://www.blackzero.org/business-analytics.webp"],
   },
 };
 
 export default function DataAnalyticsPage() {
-  return <ServiceClientView service={dataAnalyticsData} />;
+  // Structured data for Enterprise Data Analytics & BI Services
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Enterprise Data Analytics and Business Intelligence Consulting",
+    serviceType: "Data Analytics, Cloud Data Warehousing, and BI Engineering",
+    provider: {
+      "@type": "Organization",
+      name: "Black Zero Technologies",
+      url: "https://www.blackzero.org",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    description:
+      "Enterprise data analytics consulting, custom BI dashboard engineering, cloud data warehousing, Python ETL automation, and econometric modeling for US businesses.",
+    url: "https://www.blackzero.org/services/data-analytics",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Data Engineering and Analytics Capabilities",
+      itemListElement: dataAnalyticsData.subSections.map((sub, index) => ({
+        "@type": "Offer",
+        position: index + 1,
+        itemOffered: {
+          "@type": "Service",
+          name: sub.title,
+          description: sub.description.replace(/\n+/g, " "),
+        },
+      })),
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ServiceClientView service={dataAnalyticsData} />
+    </>
+  );
 }
