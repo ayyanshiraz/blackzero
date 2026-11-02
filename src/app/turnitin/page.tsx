@@ -238,7 +238,7 @@ export default function TurnitinPage() {
               </div>
             </div>
             <h1 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 mb-4">
-              Turnitin
+              AI Content Detector
             </h1>
             <p className="text-xl md:text-2xl text-gray-800 mb-3 font-light">
               AI & Plagiarism Detection with <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600 font-bold">100% Genuine Analysis</span>

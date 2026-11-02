@@ -1,100 +1,190 @@
-import { Metadata } from 'next';
-import ServiceClientView from '@/components/ServiceClientView';
+import { Metadata } from "next";
+import ServiceClientView from "@/components/ServiceClientView";
 
-const creativeDesignData = { 
-  title: `Creative Design and Animation Studio`, 
-  slug: `creative-design-and-animation-studio`,
-  imageUrl: `/animation.webp`,
-  imgAltText: `Creative 2D and 3D animation character and motion graphics design`,
-  description: `We transform static concepts into cinematic experiences, where high-end aesthetics are combined with fluid motion. Our studio uses cutting-edge glass morphism and neon accents to create unique visual stories that define the future of digital branding.`,
+const creativeDesignData = {
+  title: "Creative Design and Animation Studio",
+  slug: "creative-design-and-animation-studio",
+  imageUrl: "/animation.webp",
+  imgAltText: "3D character rigging, motion graphics, and commercial animation studio workflow by Black Zero Technologies",
+  description:
+    "Transform complex product narratives into high-converting visual assets. Our creative studio engineers 2D and 3D animations, B2B SaaS explainer videos, interactive WebGL assets, and commercial video production for US brands.",
   subSections: [
-      { 
-          title: `Bringing Ideas to Life in 2D and 3D`, 
-          slug: `ideas-2d-3d`,
-          description: `Our studio bridges the gap between imagination and reality, creating captivating visual experiences. We specialise in providing high-quality 2D and 3D animation for global brands that want to make an impact. From initial sketches to final renders, we ensure that every frame resonates with your audience. Our creative team creates each 3D character with high-fidelity detail and smooth motion. We combine cinematic lighting and advanced textures to create worlds that feel real. Whether you need technical explainers or artistic storytelling, we provide expert services in the US. \n\nOur workflow combines artistic insight with cutting-edge software to deliver high-end results. As a specialist 2D animation maker, we create lifelike motion graphics that strengthen digital identities. We focus on precise design and smooth transitions to keep the viewer engaged. Each project is a unique collaboration designed to elevate your business beyond the competition. Our team uses glass morphism and neon aesthetics to give your brand a futuristic look.`, 
-          imageUrl: `/bit.webp` 
-      },
-      { 
-          title: `Creative Designs and Stunning Animations`, 
-          slug: `creative-designs-animations`,
-          description: `High-end visual solutions are the hallmark of our modern digital storytelling approach. We create immersive environments that combine artistic vision with technical precision. Our team specializes in developing creative models that push the boundaries of realism. Every project begins with a deep understanding of your brand identity and goals. We use fluid motion and cinematic lighting to maximize viewer impact. Experience the future of interaction through our exclusive Creative Designs website portal. We effortlessly bridge the gap between static images and dynamic user experiences. \n\nOur experts provide world-class design and animation services across the United States. From glass morphisms to neon accents, we focus on premium enterprise aesthetics. Each animation is designed to capture attention and create meaningful engagement. We transform complex data into beautiful visual sequences that connect with audiences. Let us take your digital presence to new heights with sophisticated and stunning visual assets.`, 
-          imageUrl: `/cda.webp` 
-      },
-      { 
-          title: `From Graphics to Motion We Create It All`, 
-          slug: `graphics-to-motion`,
-          description: `We bridge the gap between static art and dynamic visual experiences. Our studio specialises in transforming raw ideas into high-end digital assets. We provide complete creative design and supply for modern enterprises. Every project begins with a strong foundation of sophisticated and minimal graphic design. We then bring these visuals to life with cutting-edge motion. Our team specialises in creating custom motion graphics that tell a unique story. We focus on smooth transitions and cinematic effects to engage viewers. \n\nOur experts deliver world-class digital solutions for clients across the US. From interactive 3D globes to glass-morphing UI\UX, we cover every aspect. We ensure that every frame is fully optimised for performance and visual clarity. Your brand message is transformed into a vibrant and connected journey. Partner with us and redefine the way you interact with your audience.`, 
-          imageUrl: `/fgt1.webp` 
-      },
-      { 
-          title: `Visual Stories, Perfectly Animated`, 
-          slug: `visual-stories`,
-          description: `Every brand has a story that needs to be told in motion. We specialise in transforming vague ideas into visual stories with perfect timing. Our process ensures that every transition feels natural and purposeful. We provide custom creative design and supplies for high-quality digital projects. Each scene is crafted with special attention to lighting and depth of atmosphere. We transform traditional marketing into a cinematic journey for your users. \n\nOur studio provides elite animation and strategy services in the US. We create futuristic aesthetics using glass morphism and neon accents. Expertly crafted custom motion graphics highlight your brand identity. From 3D models to fluid 2D assets, we handle every technical detail. Your vision is translated into a language that both inspires and captivates. Learn how precision animation can transform your corporate presence.`, 
-          imageUrl: `/visual-stories.webp` 
-      },
-      { 
-          title: `2D Animation`, 
-          slug: `2d-animation`,
-          description: `High-quality visuals are essential for modern digital communication. We create lifelike characters and backgrounds that connect with audiences. Our workflow uses the latest 2D animation software. This ensures smooth transitions and clean, engaging visual quality every time. We combine traditional principles with modern digital storytelling methods. Our team specializes in a variety of 2D animation techniques to meet the needs of different projects. From educational explainers to artistic shorts, we handle everything. \n\nEach project is crafted to a unique brand identity. We pride ourselves on providing premium creative services in the USA. We focus on fluid motion and expressive character acting to create greater impact. Our designs make businesses stand out in a crowded digital environment. Let us help you tell your story through professional motion art.`, 
-          imageUrl: `/2danimation.webp`
-      },
-      { 
-          title: `3D Animation`, 
-          slug: `3d-animation`,
-          description: `We add depth and dimension to your most ambitious digital ideas. Our team creates immersive worlds using high-end 3D animation software. We specialize in realistic textures and cinematic lighting for every scene. Every frame is meticulously rendered to ensure enterprise-grade quality. As a leading 3D animation maker, we focus on fluid character movement. We incorporate complex physics and dynamic environments into your project. Our studio provides high-quality animation and modeling services in the US. \n\nFrom interactive 3D assets to full cinematic videos, we specialize at every level. We create a futuristic feel using glass morphism and neon accents. Your brand message is transformed into a real and engaging experience. We optimize each model for smooth performance across all platforms. Partner with us and elevate your story with professional depth.`, 
-          imageUrl: `/3danimation.webp`
-      },
-      { 
-          title: `Scroll Stoppers`, 
-          slug: `scroll-stoppers`,
-          description: `In the world of infinite scrolling, we create visuals that capture attention. We create high-impact moments that make users stop and engage. Our team specializes in interactive digital experiences that captivate audiences. We combine cinematic motion with glass morphism to define your brand identity. Every pixel is meticulously crafted by our premium UI/UX design agency experts. We focus on bold typography and neon accents to create a futuristic look. Our goal is to transform passive browsing into active exploration. \n\nWe provide world-class creative and technical services in the US. From 3D robots to fluid layouts, we push the boundaries of web design. Your digital presence should be as unique as your business vision. We optimize every interaction to ensure high retention and conversion. Let us make you stand out in the digital space with scroll-stopping art.`, 
-          imageUrl: `/scrollstopper.webp`
-      },
-      { 
-          title: `Explanatory Videos`, 
-          slug: `explanatory-videos`,
-          description: `We transform complex technical terms into clear and engaging visual stories. We lead the market in the field of B2B explainer video production in the USA through quality. We simplify your core message in a way that your audience can immediately understand your value. Our experts create tech product demo videos that highlight every feature with precision. We use fluid motion and glass morphism to keep viewers’ attention and interest. Each frame is designed in a way that guides the customer to your unique solution. \n\nOur studio proudly says that we provide services in the USA. Our workflow ensures that even the most complex software feels simple and understandable. We combine cinematic lighting with clean layouts to create a professional enterprise feel. Your brand story is made more effective through strategic pacing and high-quality audio. We help you establish trust and authority in your industry. Let us transform your complex data into a compelling and visual journey.`, 
-          imageUrl: `/explanatoryvideos.webp`
-      },
-      { 
-          title: `Animes`, 
-          slug: `animes`,
-          description: `We bring the dynamic energy of Japanese art styles to your brand identity. Our team works as a premium custom anime character design agency for creators. We focus on expressive eyes and fluid action to fully express your vision. Each frame is hand-drawn and digitally enhanced for maximum visual impact. As a leading commercial anime production company, we bridge the gap between art and marketing. We use cinematic lighting and rich colours to create atmospheric scenes. \n\nOur experts specialise in creating immersive worlds for a global audience. We proudly provide these high-end animation services in the USA. From series development to short promos, we handle the entire production pipeline. We incorporate cutting-edge glass morphism and neon glow effects to achieve a futuristic look. Your story is transformed into a captivating journey through motion and sound. Partner with us today and define the next era of visual storytelling.`, 
-          imageUrl: `/animes.webp`
-      },
-      { 
-          title: `Metaverse Characters`, 
-          slug: `metaverse-characters`,
-          description: `We create the digital identity of the future in the vast realm of the metaverse. Our team creates custom 3D avatars for businesses to enhance their virtual presence. Each model is optimized for seamless interaction across different digital realms. We focus on high-fidelity textures and fluid skeletal rigging to deliver a realistic experience. You can count on us for a professional custom VRChat avatar commission. \n\nWe create a high-end aesthetic by incorporating glass morphism and neon accents. Our designers ensure that your digital twin reflects your brand’s unique values. We provide world-class virtual character services across the United States. From corporate meetings to social gaming, we cover every virtual need. Each character is designed to perform optimally across multiple platforms. We bridge the gap between human expression and digital representation. Step into the next dimension with a character built for ultimate impact.`, 
-          imageUrl: `/metaverse.webp`
-      },
-      { 
-          title: `Photography and Videography`, 
-          slug: `photo-video`,
-          description: `Capturing the essence of your brand requires a combination of art and precision. We deliver high-definition visual content that tells powerful stories. Our studio serves as a premium commercial video production agency for elite brands. We use cinematic lighting and advanced camera techniques for every frame. From high-end product shots to large-scale event coverage, we specialize in every area. \n\nWe provide specialized corporate photoshoot services to elevate your professional image. Each image is polished to reflect the sophisticated standards of your business. We provide these comprehensive media solutions across the United States. We incorporate modern aesthetic elements like glass morphism in post-production. Your visual identity is further enhanced through expert editing and color grading. We transform ordinary footage into an engaging and immersive experience. Trust our experts to frame your vision with complete clarity and impact.`, 
-          imageUrl: `/photo-video.webp`
-      }
-  ]
+    {
+      title: "Bringing Ideas to Life in 2D and 3D",
+      slug: "ideas-2d-3d",
+      description:
+        "Static graphics rarely hold executive or consumer attention in crowded digital feeds. Our studio bridges the gap between early concept sketches and production-ready 2D and 3D animation for commercial brands that need their message understood immediately.\n\nFrom storyboarding and styleframes to custom character rigging and physically based rendering (PBR), our animators control every stage of the pipeline. Whether visualizing an abstract software architecture or launching a physical hardware product, we deliver frame-accurate motion assets ready for web, broadcast, and paid social.",
+      imageUrl: "/bit.webp",
+      imgAltText: "2D and 3D animation production pipeline from concept storyboard to final 3D render",
+    },
+    {
+      title: "Creative Designs and Stunning Animations",
+      slug: "creative-designs-animations",
+      description:
+        "Cohesive visual design shapes how buyers perceive your product quality before they ever book a demo. We pair senior art direction with technical motion design to build brand systems, interactive web visuals, and launch trailers that stand out across high-competition markets.\n\nEvery engagement begins with a deep audit of your brand positioning and target buyer psychology. We translate complex value propositions into clean visual sequences, pairing balanced typography, custom illustration, and fluid pacing that elevate your digital presence.",
+      imageUrl: "/cda.webp",
+      imgAltText: "High-end commercial creative design and motion graphics sequence for brand launch",
+    },
+    {
+      title: "From Graphics to Motion We Create It All",
+      slug: "graphics-to-motion",
+      description:
+        "Managing separate agencies for static design, UI/UX assets, and motion graphics leads to fractured brand identity and slow turnaround times. Our studio operates as an all-in-one visual production partner—taking raw concepts from vector design and UI/UX layouts all the way to animated micro-interactions and 3D web elements.\n\nWe optimize every asset for its final delivery environment, whether that means lightweight Lottie JSON animations for mobile apps, compressed WebM loops for Next.js landing pages, or 4K master files for keynote presentations.",
+      imageUrl: "/fgt1.webp",
+      imgAltText: "Vector graphic design transitioning into animated UI/UX micro-interactions and 3D web assets",
+    },
+    {
+      title: "Visual Stories, Perfectly Animated",
+      slug: "visual-stories",
+      description:
+        "Great animation relies on deliberate pacing, narrative tension, and clear visual hierarchy. We turn dense corporate messaging into structured visual stories where every camera movement, transition, and sound-design cue guides the viewer toward your call to action.\n\nOur creative directors work closely with your marketing and product leads during US business hours to script, voice-cast, and animate stories that resonate with real buyers. You get narrative-driven creative assets built to increase landing page dwell time and ad recall.",
+      imageUrl: "/visual-stories.webp",
+      imgAltText: "Narrative storyboarding and timed motion graphics timeline for commercial brand storytelling",
+    },
+    {
+      title: "2D Animation",
+      slug: "2d-animation",
+      description:
+        "Clean 2D motion graphics remain one of the most effective ways to distil abstract services, financial workflows, and software features into clear takeaways. Using industry-standard 2D animation software, our illustrators and motion designers craft custom vector rigs, kinetic typography, and isometric workflow animations.\n\nEvery project is illustrated from scratch—never recycled from generic stock templates—so your characters, icons, and color palettes remain 100% exclusive to your brand. We deliver crisp, lightweight animations tailored for onboarding flows, social campaigns, and investor decks.",
+      imageUrl: "/2danimation.webp",
+      imgAltText: "Custom 2D vector animation and isometric motion graphics illustrating software workflows",
+    },
+    {
+      title: "3D Animation",
+      slug: "3d-animation",
+      description:
+        "Showcasing industrial hardware, medical devices, architectural layouts, or enterprise tech requires depth and photorealistic precision. As a specialized 3D animation studio, we handle hard-surface modeling, CAD file conversion, fluid and particle simulations, and studio-grade lighting.\n\nOur 3D artists reveal internal product mechanics through exploded-view renders and x-ray cutaways that traditional cameras could never capture. Each sequence is rendered for maximum visual clarity across trade show displays, product pages, and digital ad placements.",
+      imageUrl: "/3danimation.webp",
+      imgAltText: "Photorealistic 3D product animation and exploded-view CAD rendering",
+    },
+    {
+      title: "Scroll Stoppers",
+      slug: "scroll-stoppers",
+      description:
+        "You have less than two seconds to halt a prospect scrolling through a busy LinkedIn, Meta, or TikTok feed. We engineer high-contrast visual hooks and scroll-stopping motion loops specifically designed to win the first three seconds of viewer attention.\n\nBy combining bold kinetic headlines, unexpected 3D visual reveals, and rapid pattern-interrupt pacing, our creative team turns passive impressions into active clicks. Every creative batch includes multiple hook variations so your media buyers can A/B test what drives the lowest cost per click.",
+      imageUrl: "/scrollstopper.webp",
+      imgAltText: "High-impact 3D scroll-stopper video hook designed for paid social media ad campaigns",
+    },
+    {
+      title: "Explanatory Videos",
+      slug: "explanatory-videos",
+      description:
+        "When buyers cannot understand how your platform works within 90 seconds, they bounce to a competitor. We specialize in B2B explainer video production in the USA, turning complex SaaS architectures, fintech workflows, and enterprise services into concise, persuasive walkthroughs.\n\nOur team manages the entire production cycle: conversion scripting, professional American voiceover casting, custom UI screen animations, and sound mixing. Sales and marketing teams use our tech product demo videos on homepage heroes and outbound email sequences to shorten sales cycles.",
+      imageUrl: "/explanatoryvideos.webp",
+      imgAltText: "B2B SaaS explainer video and tech product demo animation showing software UI features",
+    },
+    {
+      title: "Animes",
+      slug: "animes",
+      description:
+        "Distinctive stylized animation gives gaming studios, entertainment brands, and bold consumer companies an unforgettable cultural edge. Operating as a custom anime character design agency and commercial anime production studio, we blend traditional hand-drawn keyframing with modern digital compositing.\n\nFrom expressive character sheets and dynamic action sequences to atmospheric background painting, our artists deliver authentic cel-shaded commercials, lore trailers, and brand mascots that build fierce community loyalty.",
+      imageUrl: "/animes.webp",
+      imgAltText: "Custom commercial anime character design and hand-drawn cel-shaded animation frame",
+    },
+    {
+      title: "Metaverse Characters",
+      slug: "metaverse-characters",
+      description:
+        "Interactive 3D environments, virtual training simulations, and Web3 experiences require optimized, expressive digital humans. We sculpt, texture, and rig custom 3D avatars and virtual brand ambassadors engineered for Unreal Engine, Unity, WebGL, and real-time spatial platforms.\n\nOur character technical directors enforce clean polygon topology, facial blendshapes for live motion-capture tracking, and full skeletal rigging—ensuring your virtual avatars perform smoothly across VR headsets, browser portals, and interactive livestreams.",
+      imageUrl: "/metaverse.webp",
+      imgAltText: "Rigged 3D virtual avatar and digital twin model built for Unreal Engine and WebGL",
+    },
+    {
+      title: "Photography and Videography",
+      slug: "photo-video",
+      description:
+        "Authentic live-action footage anchors brand credibility alongside digital motion graphics. As a commercial video production agency, we direct and edit high-definition corporate interviews, customer case study documentaries, product commercials, and executive photography.\n\nOur post-production editors handle multi-cam cutting, studio color grading, motion-tracked callouts, and broadcast audio mastering—turning raw footage into polished visual assets ready for your website, investor presentations, and national ad campaigns.",
+      imageUrl: "/photo-video.webp",
+      imgAltText: "Commercial video production set with cinema camera lighting and color grading monitor",
+    },
+  ],
 };
 
 export const metadata: Metadata = {
-  title: `Cinematic 3D Animation and Creative Design Studio USA`,
-  description: `Transform your visual identity with USA's top animation studio. We forge elite brand identities using immersive 3D avatars and cinematic motion graphics.`,
-  keywords: [`3D animation`, `2D animation`, `explainer videos`, `scroll stoppers`, `motion graphics`, `photography`, `videography`, `creative design`],
+  title: "3D Animation, B2B Explainer Videos & Motion Studio USA | Black Zero",
+  description:
+    "Elevate your brand with Black Zero Technologies. Custom 2D/3D animation, B2B SaaS explainer videos, scroll-stopping ad creatives, and commercial video production.",
+  keywords: [
+    "3D animation studio USA",
+    "B2B explainer video production USA",
+    "tech product demo videos",
+    "custom motion graphics agency",
+    "2D animation services",
+    "scroll stopping video ads",
+    "commercial anime production company",
+    "custom 3D avatar modeling",
+    "commercial video production agency",
+  ],
   alternates: {
-    canonical: `/services/creative-design-and-animation-studio`,
+    canonical: "https://www.blackzero.org/services/creative-design-and-animation-studio",
   },
   openGraph: {
-    title: `Cinematic 3D Animation and Creative Design Studio USA`,
-    description: `Transform your visual identity with USA's top animation studio. We forge elite brand identities using immersive 3D avatars and cinematic motion graphics.`,
-    url: `/services/creative-design-and-animation-studio`,
-    siteName: `Black Zero`,
-    locale: `en_US`,
-    type: `website`,
-    images: [{ url: `/animation.webp`, alt: `Creative 2D and 3D animation character and motion graphics design` }],
+    title: "3D Animation, B2B Explainer Videos & Motion Studio USA | Black Zero Technologies",
+    description:
+      "Custom 2D and 3D animation, B2B SaaS explainer videos, interactive 3D avatars, and high-converting motion graphics engineered for US brands.",
+    url: "https://www.blackzero.org/services/creative-design-and-animation-studio",
+    siteName: "Black Zero Technologies",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.blackzero.org/animation.webp",
+        width: 1200,
+        height: 630,
+        alt: "3D character rigging, motion graphics, and commercial animation studio workflow by Black Zero Technologies",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "3D Animation, B2B Explainer Videos & Motion Studio USA | Black Zero Technologies",
+    description:
+      "Turn complex ideas into high-converting 2D/3D animations, B2B product demos, and scroll-stopping video creatives.",
+    images: ["https://www.blackzero.org/animation.webp"],
   },
 };
 
 export default function CreativeDesignPage() {
-  return <ServiceClientView service={creativeDesignData} />;
+  // Structured data for 2D/3D Animation and Creative Production Studio
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Creative Design, 2D/3D Animation, and B2B Explainer Video Studio",
+    serviceType: "3D Animation, Motion Graphics, and Commercial Video Production",
+    provider: {
+      "@type": "Organization",
+      name: "Black Zero Technologies",
+      url: "https://www.blackzero.org",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    description:
+      "Custom 2D and 3D animation, B2B SaaS explainer videos, scroll-stopping social ad creatives, commercial anime production, 3D avatar rigging, and video production for US businesses.",
+    url: "https://www.blackzero.org/services/creative-design-and-animation-studio",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Animation and Creative Studio Capabilities",
+      itemListElement: creativeDesignData.subSections.map((sub, index) => ({
+        "@type": "Offer",
+        position: index + 1,
+        itemOffered: {
+          "@type": "Service",
+          name: sub.title,
+          description: sub.description.replace(/\n+/g, " "),
+        },
+      })),
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ServiceClientView service={creativeDesignData} />
+    </>
+  );
 }
