@@ -1,79 +1,142 @@
-import { Metadata } from 'next';
-import ServiceClientView from '@/components/ServiceClientView';
+import { Metadata } from "next";
+import ServiceClientView from "@/components/ServiceClientView";
 
-const marketingData = { 
-  title: `Turn Clicks Into Customers`,
-  slug: `marketing`,
-  imageUrl: `/brand-strategy.webp`,
-  imgAltText: `Professional marketing team brainstorming internet marketing strategies for small business in modern workspace.`,
-  description: `Making your way in the online world can be complicated, but growing your brand does not have to be. We specialize in custom internet marketing strategies for small business owners who are ready to expand their businesses.`,
+const marketingData = {
+  title: "Turn Clicks Into Customers",
+  slug: "marketing",
+  imageUrl: "/brand-strategy.webp",
+  imgAltText: "Marketing strategists mapping full-funnel internet marketing strategies for small business and mid-market brands",
+  description:
+    "Scaling a brand in a crowded market requires more than random ad spend. We engineer custom internet marketing strategies for small business owners and growing enterprises ready to turn attention into measurable revenue.",
   subSections: [
     {
-      title: `Digital Marketing`,
-      slug: `digital-marketing`,
-      description: `Standing out in a crowded marketplace requires a strategy that cuts through the noise and connects directly with your ideal audience. We are committed to filling this gap with professional digital marketing services for small businesses, helping them take their brand identity to new heights. \n\nOur team combines technical expertise with creative vision to create campaigns that not only attract visitors but also convert them into loyal customers. Through our specialized content marketing services, we ensure that your voice is heard clearly across all channels, building trust and long-term engagement. \n\nAs a dynamic company serving the US, we understand the unique needs of the market and tailor our solutions to those specific requirements. Partner with us today and secure a leadership position in your industry.`,
-      imageUrl: `/digitalmarketing.webp`,
-      imgAltText: `Data analytics dashboard showing growth from digital marketing services and content marketing services for small businesses in the US.`
+      title: "Digital Marketing",
+      slug: "digital-marketing",
+      description:
+        "Standing out in a saturated market takes a clear message that reaches buyers at the exact moment they are evaluating solutions. We deliver full-funnel digital marketing services for small businesses and scaling commercial brands, connecting every campaign directly to qualified pipeline growth.\n\nInstead of chasing vanity impressions, our strategists pair conversion-focused landing pages with authority-building content marketing services that answer real buyer questions. Every channel is tracked from first click to closed sale so you know exactly which campaigns drive customer acquisition across competitive US markets.",
+      imageUrl: "/digitalmarketing.webp",
+      imgAltText: "Analytics dashboard tracking conversions from digital marketing services and content marketing services",
     },
     {
-      title: `Design and Branding`,
-      slug: `design-and-branding`,
-      description: `Good design is not just about beauty; it is a strategic tool that determines how the world sees your value. We partner with committed and passionate companies to create a cohesive visual system that inspires trust and professionalism from the very first meeting. \n\nBy focusing on comprehensive brand identity design, we ensure that your message is consistent and effective everywhere, whether it is a business card or a billboard. A key part of this foundation is a strong brand identity, which is why we provide premium logo design services that accurately reflect your unique corporate DNA. \n\nRecognizing the competitive nature of the Western market, we offer high-quality branding services in the United States, enabling local and national businesses to thrive. Partner with us and bring your vision to life as a sophisticated reality that resonates deeply with your target audience.`,
-      imageUrl: `/designandbranding.webp`,
-      imgAltText: `Graphic designer outlining creative concepts for brand identity design and custom logo design services.`
+      title: "Design and Branding",
+      slug: "design-and-branding",
+      description:
+        "First impressions shape how buyers judge your pricing power and credibility before a sales conversation ever begins. We partner with ambitious companies to build cohesive visual systems through strategic brand identity design—covering typography, color architecture, messaging guidelines, and packaging.\n\nWhether launching a new venture or repositioning an established company, our custom logo design services and brand books ensure your visual identity looks sharp across web applications, pitch decks, and physical retail touchpoints. You walk away with a distinct corporate identity that commands immediate trust.",
+      imageUrl: "/designandbranding.webp",
+      imgAltText: "Brand strategist developing custom logo design services and visual brand identity guidelines",
     },
     {
-      title: `PR Campaigns`,
-      slug: `pr-campaigns`,
-      description: `In todays hyper-connected world, a single story can determine the future of your brand, which is why controlling your public narrative is more important than ever. We specialize in building lasting trust with your audience and shaping positive perceptions through strategic storytelling and effective media relations. \n\nOur approach is not limited to press releases; we implement comprehensive online reputation management strategies to ensure your digital presence remains positive and influential. Through our expert pr services, we secure high-value media placements that position your company as a thought leader in your industry. \n\nWe proudly provide these critical communications services in the United States, enabling businesses to move forward with confidence in a complex media landscape. Let us be the guardians of your brand image, so that your message is heard clearly and accurately.`,
-      imageUrl: `/pr-campaigns.webp`,
-      imgAltText: `The public relations specialist is handling online reputation management and providing PR services for clients in the US.`
+      title: "PR Campaigns",
+      slug: "pr-campaigns",
+      description:
+        "A single media mention or search result can define how investors, partners, and customers perceive your company. We shape public narrative through targeted media relations, executive thought-leadership placements, and proactive online reputation management.\n\nRather than blasting generic press releases into the void, our PR services connect your founders and product milestones with relevant trade journalists, podcasts, and national business publications. We monitor brand sentiment continuously to protect your credibility and position your leadership team as a trusted industry voice.",
+      imageUrl: "/pr-campaigns.webp",
+      imgAltText: "Public relations campaign manager coordinating media placements and online reputation management",
     },
     {
-      title: `Traditional Marketing`,
-      slug: `traditional-marketing`,
-      description: `While digital channels dominate modern communication, the real impact of offline engagement still has the power to build trust in the real world. We understand that a complete strategy often requires looking beyond the screen and connecting with consumers in their real environments. Our team specializes in impactful traditional marketing in the U.S., bridging the gap between old-fashioned credibility and modern brand messaging. \n\nWhether it is engaging print campaigns, direct mail, or strategic billboard installations, we create experiences that leave a lasting impression. We are proud to offer these lasting services across the U.S., helping businesses gain attention where their competitors often are not looking. By combining these classic approaches with your digital efforts, we ensure your brand maintains a dominant presence both online and offline.`,
-      imageUrl: `/traditional marketing.webp`,
-      imgAltText: `Creative team discussing print layout and direct mail strategies for traditional marketing for clients in the US.`
+      title: "Traditional Marketing",
+      slug: "traditional-marketing",
+      description:
+        "Offline touchpoints still carry unmatched weight when building regional familiarity and high-trust buyer relationships. We execute targeted traditional marketing in the US—spanning high-impact out-of-home billboards, trade show booth experiences, print collateral, and localized direct mail drops.\n\nTo bridge the gap between physical campaigns and digital attribution, we pair offline placements with custom QR routing, dedicated vanity URLs, and call-tracking numbers. Your brand captures attention in the real world while maintaining clear visibility into campaign return on investment.",
+      imageUrl: "/traditional marketing.webp",
+      imgAltText: "Creative team reviewing print collateral and direct mail layouts for traditional marketing campaigns",
     },
     {
-      title: `Data-Driven Ads`,
-      slug: `data-driven-ads`,
-      description: `We design and deploy data-driven ads of all sorts across every platform. Reach your exact target audience with precision and maximize your return on investment through strategic ad placements. By analyzing consumer behavior and engagement metrics, we ensure your advertising budget is spent efficiently on the networks that matter most to your business growth.`,
-      imageUrl: `/dda.webp`,
-      imgAltText: `Data driven advertising campaigns across multiple digital platforms.`
-    }
-  ] 
+      title: "Data-Driven Ads",
+      slug: "data-driven-ads",
+      description:
+        "Paid media budgets evaporate quickly without strict audience segmentation and creative testing. We design, launch, and optimize data-driven ads across search, social, and programmatic display networks to capture high-intent buyers at a predictable cost per acquisition.\n\nBy feeding server-side conversion events and CRM deal outcomes back into ad platform algorithms, our media buyers cut wasted spend on low-quality clicks. We continuously test ad hooks, visual formats, and bidding strategies to scale your return on ad spend.",
+      imageUrl: "/dda.webp",
+      imgAltText: "Performance marketing specialist optimizing data-driven ads and return on ad spend metrics",
+    },
+  ],
 };
 
 export const metadata: Metadata = {
-  title: `Top Internet Marketing Strategies in the USA`,
-  description: `Grow your small business in USA & the USA with Black Zero's internet marketing strategies. Our expert digital services drive leads and maximize ROI.`,
+  title: "Full-Funnel Marketing & Brand Strategy USA | Black Zero",
+  description:
+    "Scale your business in the USA with Black Zero Technologies. Custom internet marketing strategies, brand identity design, PR campaigns, and data-driven ads.",
   keywords: [
-    `Internet marketing strategies for small business`,
-    `digital marketing services for small business`,
-    `content marketing services`,
-    `brand identity design`,
-    `logo design services`,
-    `online reputation management`,
-    `pr service`,
-    `Traditional marketing in usa`,
-    `data driven ads`
+    "internet marketing strategies for small business",
+    "digital marketing services for small business",
+    "content marketing services",
+    "brand identity design",
+    "logo design services",
+    "online reputation management",
+    "pr services",
+    "traditional marketing in usa",
+    "data driven ads",
   ],
   alternates: {
-    canonical: `/services/marketing`,
+    canonical: "https://www.blackzero.org/services/marketing",
   },
   openGraph: {
-    title: `Top Internet Marketing Strategies in the USA`,
-    description: `Grow your small business in USA & the USA with Black Zero's internet marketing strategies. Our expert digital services drive leads and maximize ROI.`,
-    url: `/services/marketing`,
-    siteName: `Black Zero`,
-    locale: `en_US`,
-    type: `website`,
-    images: [{ url: `/brand-strategy.webp`, alt: `Professional marketing team brainstorming internet marketing strategies for small business in modern workspace.` }],
+    title: "Full-Funnel Marketing & Brand Strategy USA | Black Zero Technologies",
+    description:
+      "Turn clicks into customers with custom internet marketing strategies, cohesive brand identity design, PR media relations, and data-driven paid advertising.",
+    url: "https://www.blackzero.org/services/marketing",
+    siteName: "Black Zero Technologies",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.blackzero.org/brand-strategy.webp",
+        width: 1200,
+        height: 630,
+        alt: "Marketing strategists mapping full-funnel internet marketing strategies for small business and mid-market brands",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Full-Funnel Marketing & Brand Strategy USA | Black Zero Technologies",
+    description:
+      "Drive measurable customer acquisition with digital marketing, brand identity design, PR campaigns, and data-driven ad management.",
+    images: ["https://www.blackzero.org/brand-strategy.webp"],
   },
 };
 
 export default function MarketingPage() {
-  return <ServiceClientView service={marketingData} />;
+  // Structured data for Full-Funnel Marketing and Brand Strategy Services
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Full-Funnel Marketing and Brand Strategy Services",
+    serviceType: "Digital Marketing, Brand Identity Design, and Public Relations",
+    provider: {
+      "@type": "Organization",
+      name: "Black Zero Technologies",
+      url: "https://www.blackzero.org",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    description:
+      "Full-funnel internet marketing strategies, content marketing, brand identity design, PR reputation management, traditional offline campaigns, and data-driven paid advertising for US businesses.",
+    url: "https://www.blackzero.org/services/marketing",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Marketing and Brand Growth Capabilities",
+      itemListElement: marketingData.subSections.map((sub, index) => ({
+        "@type": "Offer",
+        position: index + 1,
+        itemOffered: {
+          "@type": "Service",
+          name: sub.title,
+          description: sub.description.replace(/\n+/g, " "),
+        },
+      })),
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ServiceClientView service={marketingData} />
+    </>
+  );
 }

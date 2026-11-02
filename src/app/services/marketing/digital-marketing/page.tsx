@@ -1,113 +1,176 @@
-import { Metadata } from 'next';
-import SubSectionClientView from '@/components/SubSectionClientView';
+import { Metadata } from "next";
+import SubSectionClientView from "@/components/SubSectionClientView";
 
 const parentServiceInfo = {
-  title: `Marketing`,
-  slug: `marketing`,
+  title: "Marketing",
+  slug: "marketing",
 };
 
 const currentSubSection = {
-  title: `Digital Marketing`,
-  slug: `digital-marketing`,
-  description: `Choosing the best digital marketing company for small businesses is the first step towards sustainable growth and online prominence. Our team creates customized campaigns with your specific target audience in mind to maximize your return on investment.`,
-  imageUrl: `/digitalmarketing.webp`,
-  imgAltText: `Team working at a digital marketing company for small businesses to improve online growth.`
+  title: "Digital Marketing",
+  slug: "digital-marketing",
+  description:
+    "Partnering with the right digital marketing company for small businesses and mid-market brands is the fastest path to predictable customer acquisition. We engineer channel-specific campaigns built around buyer intent, clear attribution, and measurable return on ad spend.",
+  imageUrl: "/digitalmarketing.webp",
+  imgAltText: "Performance marketing strategists analyzing multi-channel customer acquisition metrics for US businesses",
 };
 
 const digitalMarketingDetails = [
-  { 
-    title: `Social Media Marketing`, 
-    description: `Strengthen your brand presence and build deeper relationships with your audience through our strategic online engagement and community-building strategies. We understand that consistency is essential to building a strong digital identity, which is why we tailor strategies to your business goals. Our expert team specializes in high-quality social media content creation services that capture attention and effectively tell your brands unique story. By combining compelling visuals and powerful storytelling, we ensure that your message reaches potential customers across all major social networks effectively and increases brand engagement. \n\nYou can extend your reach beyond organic boundaries with our data-driven social media advertising strategies that are designed to maximize your return on investment. We drive quality traffic by precisely targeting your ideal target audience and generating leads that actually convert into sales. Whether you are a local startup or an established organization, we are proud to provide high-quality digital marketing services in the US to help you grow your business. Let us guide you through the changing trends of the digital world and transform your social media profiles into powerful business assets.`, 
-    imageUrl: `/smm.webp`,
-    imgAltText: `Graph showing growth from social media advertising and content creation services.`
+  {
+    title: "Social Media Marketing",
+    description:
+      "Organic reach alone rarely sustains aggressive revenue targets. We combine high-converting social media content creation services with precision social media advertising across Meta, Instagram, and emerging video networks to capture demand where your buyers spend their time.\n\nInstead of boosting random posts, our media buyers structure full-funnel campaigns—pairing scroll-stopping creative hooks for cold prospecting with dynamic retargeting sequences that recover abandoned carts and book qualified sales calls. Every campaign is tracked against customer acquisition cost (CAC) and net revenue contribution.",
+    imageUrl: "/smm.webp",
+    imgAltText: "Paid social media advertising funnel showing conversion growth and return on ad spend",
   },
-  { 
-    title: `Social Media Handling`, 
-    description: `Effective social media management is essential to maintaining a positive brand image and building meaningful relationships with your target audience. We simplify the complexity of managing your digital presence, monitoring every interaction, and ensuring that your profiles are always vibrant and engaging. Our team uses cutting-edge social media management platforms to efficiently organize postings and monitor real-time engagement across all channels. We know that consistency and high-quality content are key to maintaining follower engagement and brand loyalty. That is why we are committed to providing high-quality social media content creation services in the US that are fully aligned with your unique business goals. \n\nBy combining creative visuals and effective storytelling, we ensure that your message reaches the right people, rather than being drowned out by the noise. We continuously refine our strategies through data-driven analytics to ensure your growth is sustainable and measurable over the long term. Our expert team handles everything from community management to emergency response, so you can focus on your core business without any worries. We are proud to provide professional digital solutions to businesses across the US to help them stand out in their industries.`, 
-    imageUrl: `/smh.webp`,
-    imgAltText: `Dashboard view of social media management platforms used for services in usa`
+  {
+    title: "Social Media Handling",
+    description:
+      "Active, responsive social profiles build immediate buyer confidence when prospects research your company. Our account managers oversee your daily presence using enterprise social media management platforms—handling publishing queues, comment moderation, direct message triage, and real-time reputation monitoring.\n\nWe establish clear brand voice guidelines and rapid response workflows so customer inquiries never sit unanswered in your inbox. While your leadership team focuses on core operations, we keep your digital storefronts active, credible, and consistently aligned with your commercial calendar.",
+    imageUrl: "/smh.webp",
+    imgAltText: "Unified social media management platform displaying community engagement and inbox response queues",
   },
-  { 
-    title: `Google Ads`, 
-    description: `Accelerate your business growth and bring your brand to the top of search results where potential customers are searching. As an expert Google Ads consultant, we conduct in-depth analysis of your industry trends to design campaigns that outperform your competitors. Our primary goal is to drive quality traffic to your website that instantly converts into valuable leads and sales. We provide end-to-end Google Ads management services so that every dollar of your budget is spent effectively on high-performing keywords. Through constant bid monitoring and timely adjustments, we reduce unnecessary costs and significantly improve your return on ad spend. \n\nYou need a partner who understands the refinement of Quality Score and Ad Relevance to get you the best positions. We have helped countless businesses expand their reach and achieve financial goals through data-driven paid strategies. Our team is fully equipped to provide these high-quality digital advertising solutions to clients in the US market. Experience the difference of working with experts who put your profitability and long-term success first. We create compelling ad copy that grabs attention and immediately compels users to act on your offer.`, 
-    imageUrl: `/googleads.webp`,
-    imgAltText: `Professional Google Ads consultant analyzing campaign data for management services.`
+  {
+    title: "Google Ads",
+    description:
+      "Capture high-intent buyers at the exact moment they search for your solution. Working with a dedicated Google Ads consultant ensures your budget goes toward commercial-intent keywords rather than irrelevant informational clicks. Our Google Ads management services cover Search, Performance Max, YouTube, and Shopping feeds.\n\nWe structure tightly themed ad groups, negative keyword guardrails, and conversion-optimized landing pages to improve your Quality Score and lower cost per click. By syncing offline CRM deal stages back into Google Ads, we train bidding algorithms to optimize for closed revenue rather than raw form fills.",
+    imageUrl: "/googleads.webp",
+    imgAltText: "Google Ads consultant reviewing search campaign Quality Scores and cost per acquisition metrics",
   },
-  { 
-    title: `Content Calendar`, 
-    description: `Staying organized is the foundation of every successful marketing strategy, helping to avoid last-minute panic and pressure. We specialize in providing high-quality content calendar services in the US so that businesses can easily manage their publishing workflow. A well-organized plan ensures that your brand voice remains consistent and effective across all channels, keeping your audience engaged. We use cutting-edge social media scheduling platforms to ensure your posts are automatically published on time, and no key engagement windows are missed. Our team works with you to plan monthly themes and key dates that align with your sales goals. \n\nBy planning, you can maintain a consistent flow of high-quality content that both informs and entertains your followers. We understand market dynamics and proudly provide these planning solutions to companies across the US. This strategic approach allows you to focus on creating great content instead of worrying about when to post. With our expert help, take the guesswork out of your marketing efforts and take full control of your digital story. We help you see your entire marketing timeline in one place, making collaboration between team members much smoother.`, 
-    imageUrl: `/cc2.webp`,
-    imgAltText: `Monthly plan on social media scheduling platforms for content calendar services in us`
+  {
+    title: "Content Calendar",
+    description:
+      "Inconsistent posting erodes audience trust and creates last-minute creative bottlenecks for internal teams. Our content calendar services give your brand a structured 30-to-90-day publishing roadmap aligned with product launches, seasonal promotions, and industry events.\n\nUsing collaborative social media scheduling platforms, we map out copy, visual assets, video scripts, and approval stages weeks in advance. Your marketing stakeholders get a single transparent view of every upcoming campaign, ensuring on-time execution across all channels without daily fire drills.",
+    imageUrl: "/cc2.webp",
+    imgAltText: "Multi-channel editorial calendar interface on a social media scheduling platform",
   },
-  { 
-    title: `Pinterest Marketing`, 
-    description: `Highlight the visual power of your brand with our unique strategies designed to capture attention and drive action. As expert Pinterest marketing specialists, we know exactly how to optimize your Pins to reach the right audience. We leverage the unique capabilities of Pinterest for Business to drive significant traffic to your product pages. Our team creates stunning visual designs that align with your brand identity and encourage users to save and share. We believe that Pinterest is a long-term strategy that requires consistency and high-quality imagery to succeed. By using rich Pins and the right keywords, we ensure that your content stands out in relevant search results. \n\nWe proudly provide these specialized visual marketing services to clients across the United States. Turn your casual viewers into engaged buyers by leveraging the immense potential of this discovery platform. We analyze analytics to continuously improve our strategy so that each pin contributes to your overall growth. Through detailed board management, we effectively organize your products for a better user experience.`, 
-    imageUrl: `/pinterest.webp`,
-    imgAltText: `Pinterest marketing expert creating visual boards for business growth.`
+  {
+    title: "Pinterest Marketing",
+    description:
+      "Reach shoppers early in their planning phase when they are actively curating ideas and comparing products, long before they commit to a specific brand. Our Pinterest marketing specialists turn your product catalog into a visual discovery engine using Pinterest for Business, Rich Pins, and verified merchant feeds.\n\nWe research high-converting visual search terms, design vertical pin creatives built for high save rates, and manage promoted shopping campaigns that send ready-to-buy traffic directly to your checkout pages. Because pins maintain a long shelf life in search feeds, your visual assets continue driving compounding referral traffic months after publication.",
+    imageUrl: "/pinterest.webp",
+    imgAltText: "Pinterest marketing strategist optimizing visual shopping boards and product pins for e-commerce conversion",
   },
-  { 
-    title: `TikTok Marketing`, 
-    description: `Capture the attention of a wide audience worldwide with our dynamic strategies designed specifically for the fastest-growing video platform. We help you harness the full power of TikTok for Business to connect with the younger generation in a real and impactful way. Our creative team creates engaging short-form videos that are both entertaining and effectively communicate your products to potential buyers. As a specialist TikTok Ads company, we know exactly how to create campaigns that drive engagement and conversions. We focus on creating hooks that capture immediate attention because we know that the algorithm values watch time the most. \n\nWhether it is viral challenges or influencer collaborations, we handle every aspect of your development to ensure success. We proudly provide these cutting-edge digital services to passionate brands across the US. Through real-time data analysis, we continuously refine your content strategy to consistently increase reach and follower count. Turn casual scrollers into a vibrant community that supports your brand and shares your videos. We ensure that your brand voice remains consistent and strong while remaining in sync with the creative freedom of the platform.`, 
-    imageUrl: `/tiktok.webp`,
-    imgAltText: `Mobile screen showing TikTok ads company campaign results for business.`
+  {
+    title: "TikTok Marketing",
+    description:
+      "Short-form vertical video is one of the fastest channels for product discovery and rapid brand awareness. We help commercial brands leverage TikTok for Business through native, creator-style video production that holds viewer attention past the critical first three seconds.\n\nAs a performance-focused TikTok Ads company, we pair Spark Ads, user-generated content (UGC) frameworks, and TikTok Shop integrations with granular audience testing. We monitor thumb-stop ratios, average watch time, and checkout conversions daily to scale winning creatives before ad fatigue sets in.",
+    imageUrl: "/tiktok.webp",
+    imgAltText: "Short-form video performance dashboard from a TikTok Ads campaign showing engagement and conversion rates",
   },
-  { 
-    title: `LinkedIn Marketing`, 
-    description: `Strengthen your professional network and establish your authority with our strategic corporate social media strategy. We understand the unique dynamics of the professional world, where a consistent and credible brand voice is essential. As a specialized B2B marketing company, we enable you to reach the decision-makers who really matter. Our team creates impactful content that highlights your industry expertise and fosters meaningful conversations with potential partners. We use advanced LinkedIn Ads Management to precisely target specific job titles and companies, so your budget reaches high-value prospects instead of wasting it on generic and uninformed audiences. \n\nWe proudly provide these specialized corporate solutions to businesses operating across the United States. By improving your company profile, we help you acquire top talent and quality leads at the same time. Our strategies are designed to turn your connections into real opportunities that strengthen your sales pipeline. We continuously analyze performance metrics to maximize impact and achieve the best return on investment.`, 
-    imageUrl: `/linkedin.webp`,
-    imgAltText: `B2b marketing company team discussing linked in ads management strategy`
+  {
+    title: "LinkedIn Marketing",
+    description:
+      "Reaching C-suite executives, VPs, and procurement committees requires authoritative B2B positioning rather than consumer-style gimmicks. As a specialized B2B marketing company, we build executive thought-leadership programs and account-based marketing (ABM) funnels tailored to complex sales cycles.\n\nThrough precision LinkedIn Ads management—including Sponsored Content, Lead Gen Forms, and Conversation Ads—we target prospects by exact job title, company headcount, industry vertical, and seniority. Your sales team receives pre-qualified decision-makers directly in their pipeline without wasting ad spend on unverified traffic.",
+    imageUrl: "/linkedin.webp",
+    imgAltText: "B2B marketing team configuring account-based LinkedIn Ads management targeting enterprise decision-makers",
   },
 ];
 
 const contactOptions = [
-  { value: `digital-marketing`, label: `Digital Marketing` },
-  { value: `traditional-marketing`, label: `Traditional Marketing` },
-  { value: `pr-campaigns`, label: `PR Campaigns` },
-  { value: `design-and-branding`, label: `Design and Branding` }
+  { value: "digital-marketing", label: "Digital Marketing" },
+  { value: "traditional-marketing", label: "Traditional Marketing" },
+  { value: "pr-campaigns", label: "PR Campaigns" },
+  { value: "design-and-branding", label: "Design and Branding" },
+  { value: "data-driven-ads", label: "Data-Driven Ads" },
 ];
 
 export const metadata: Metadata = {
-  title: `Digital Marketing Company for Small Businesses in the USA`,
-  description: `Looking for top digital marketing services in the USA? We provide expert growth strategies for small businesses to drive high-quality leads and ROI.`,
+  title: "Performance Digital Marketing Services USA | Black Zero",
+  description:
+    "Drive qualified leads and measurable ROAS with Black Zero Technologies. Expert Google Ads management, B2B LinkedIn marketing, paid social, and content strategy.",
   keywords: [
-    `Digital Marketing Company for Small Business`,
-    `social media advertising`,
-    `social media content creation services`,
-    `social media management platforms`,
-    `social media content creation services in usa`,
-    `Google Ads consultant`,
-    `Google Ads management services`,
-    `social media scheduling platforms`,
-    `content calendar services in usa`,
-    `Pinterest marketing expert`,
-    `Pinterest for business`,
-    `TikTok ads company`,
-    `TikTok for business`,
-    `linked in ads management`,
-    `b2b marketing company`
+    "digital marketing company for small business",
+    "social media advertising",
+    "social media content creation services",
+    "social media management platforms",
+    "Google Ads consultant",
+    "Google Ads management services",
+    "social media scheduling platforms",
+    "content calendar services in usa",
+    "Pinterest marketing expert",
+    "Pinterest for business",
+    "TikTok ads company",
+    "TikTok for business",
+    "LinkedIn ads management",
+    "B2B marketing company",
   ],
   alternates: {
-    canonical: `/services/marketing/digital-marketing`, 
+    canonical: "https://www.blackzero.org/services/marketing/digital-marketing",
   },
   openGraph: {
-    title: `Digital Marketing Company for Small Businesses in the USA`,
-    description: `Looking for top digital marketing services in the USA? We provide expert growth strategies for small businesses to drive high-quality leads and ROI.`,
-    url: `/services/marketing/digital-marketing`,
-    siteName: `Black Zero`,
-    locale: `en_US`,
-    type: `website`,
-    images: [{ url: `/digitalmarketing.webp`, alt: `Team working at a digital marketing company for small businesses to improve online growth.` }],
+    title: "Performance Digital Marketing Services USA | Black Zero Technologies",
+    description:
+      "Scale customer acquisition with Google Ads management, B2B LinkedIn campaigns, TikTok & Meta paid social, and structured content calendars.",
+    url: "https://www.blackzero.org/services/marketing/digital-marketing",
+    siteName: "Black Zero Technologies",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.blackzero.org/digitalmarketing.webp",
+        width: 1200,
+        height: 630,
+        alt: "Performance marketing strategists analyzing multi-channel customer acquisition metrics for US businesses",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Performance Digital Marketing Services USA | Black Zero Technologies",
+    description:
+      "Full-funnel paid search, B2B LinkedIn advertising, and social media management engineered for measurable ROI.",
+    images: ["https://www.blackzero.org/digitalmarketing.webp"],
   },
 };
 
 export default function DigitalMarketingPage() {
+  // Structured data for Performance Digital Marketing Services
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Performance Digital Marketing Services",
+    serviceType: "Paid Search, Paid Social, and B2B Digital Marketing",
+    provider: {
+      "@type": "Organization",
+      name: "Black Zero Technologies",
+      url: "https://www.blackzero.org",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    description:
+      "Multi-channel digital marketing services including Google Ads management, B2B LinkedIn advertising, TikTok and Pinterest growth, paid social media marketing, and editorial content calendars.",
+    url: "https://www.blackzero.org/services/marketing/digital-marketing",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Digital Marketing Channel Capabilities",
+      itemListElement: digitalMarketingDetails.map((item, index) => ({
+        "@type": "Offer",
+        position: index + 1,
+        itemOffered: {
+          "@type": "Service",
+          name: item.title,
+          description: item.description.replace(/\n+/g, " "),
+        },
+      })),
+    },
+  };
+
   return (
-    <SubSectionClientView 
-      serviceTitle={parentServiceInfo.title}
-      serviceSlug={parentServiceInfo.slug}
-      subSection={currentSubSection}
-      details={digitalMarketingDetails}
-      contactOptions={contactOptions}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SubSectionClientView
+        serviceTitle={parentServiceInfo.title}
+        serviceSlug={parentServiceInfo.slug}
+        subSection={currentSubSection}
+        details={digitalMarketingDetails}
+        contactOptions={contactOptions}
+      />
+    </>
   );
 }
