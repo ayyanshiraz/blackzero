@@ -11,12 +11,12 @@ import type { Metadata } from "next";
 import HideOnDashboard from "@/components/HideOnDashboard";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import WhatsAppChat from "@/components/WhatsAppChat";
-import SchemaMarkup from '@/components/SchemaMarkup';
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.blackzero.org"),
   alternates: {
-    canonical: "./",
+    canonical: "https://www.blackzero.org",
   },
   robots: {
     index: true,
@@ -30,21 +30,31 @@ export const metadata: Metadata = {
     },
   },
   title: {
-    default: "IT Consulting & Custom App Development USA | Black Zero",
-    template: "%s | Black Zero",
+    default: "Custom Software, Enterprise AI & ERP Development USA | Black Zero",
+    template: "%s",
   },
-  description: "Expert IT consulting, custom app development, and scalable digital solutions to grow your USA business with Black Zero.",
+  description:
+    "Black Zero engineers custom ERP & CRM platforms, private AI agents, scalable Next.js web portals, data analytics, and Hybrid SEO for US enterprises with 100% IP ownership.",
+  keywords: [
+    "custom software development company USA",
+    "enterprise AI development services",
+    "custom ERP software development",
+    "custom omnichannel CRM development",
+    "private LLM and RAG engineering",
+    "Next.js enterprise web portals",
+    "B2B data analytics consulting",
+    "hybrid SEO and AEO agency USA",
+    "Black Zero Technologies",
+  ],
   verification: {
     google: "1HfyejT0xZl6FqT0DJLA59GxpsyCsDe5Ii3KFuvhDmg",
   },
   openGraph: {
-    title: {
-      default: "IT Consulting & Custom App Development USA | Black Zero",
-      template: "%s | Black Zero",
-    },
-    description: "Expert IT consulting, custom app development, and scalable digital solutions to grow your USA business with Black Zero.",
-    url: "https://www.blackzero.org/",
-    siteName: "Black Zero",
+    title: "Custom Software, Enterprise AI & ERP Development USA | Black Zero",
+    description:
+      "Replace bloated SaaS fees with 100% proprietary software. We engineer custom ERP/CRM systems, private AI pipelines, Next.js portals, and Hybrid SEO for US businesses.",
+    url: "https://www.blackzero.org",
+    siteName: "Black Zero Technologies",
     type: "website",
     locale: "en_US",
     images: [
@@ -52,34 +62,138 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Black Zero - Strategic IT Consulting Solutions",
+        alt: "Black Zero Technologies - Custom Software, Enterprise AI, ERP & Digital Growth Solutions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: {
-      default: "IT Consulting & Custom App Development USA | Black Zero",
-      template: "%s | Black Zero",
-    },
-    description: "Expert IT consulting, custom app development, and scalable digital solutions to grow your USA business with Black Zero.",
+    title: "Custom Software, Enterprise AI & ERP Development USA | Black Zero",
+    description:
+      "Custom ERP & CRM platforms, private LLM/RAG AI agents, Next.js web applications, data analytics, and Hybrid SEO built for US mid-market and enterprise teams.",
     images: ["/opengraph-image.png"],
   },
 };
 
-// Define the JSON-LD Schema for Organization and Local Business
+// Comprehensive JSON-LD Entity Graph for Organization, WebSite, and Core B2B Catalog
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Black Zero",
-  url: "https://www.blackzero.org",
-  logo: "https://www.blackzero.org/opengraph-image.png",
-  description: "Expert IT consulting, custom app development, and scalable digital solutions to grow your USA business with Black Zero.",
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "customer service",
-    availableLanguage: ["English"]
-  }
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://www.blackzero.org/#organization",
+      name: "Black Zero Technologies",
+      alternateName: "Black Zero",
+      url: "https://www.blackzero.org",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.blackzero.org/opengraph-image.png",
+      },
+      image: "https://www.blackzero.org/opengraph-image.png",
+      description:
+        "US-aligned enterprise software engineering, private AI development, custom ERP/CRM systems, data analytics, and Hybrid SEO agency.",
+      areaServed: {
+        "@type": "Country",
+        name: "United States",
+      },
+      knowsAbout: [
+        "Custom Enterprise ERP Software Development",
+        "Custom Omnichannel CRM Engineering",
+        "Private Large Language Models (LLMs) and RAG Pipelines",
+        "Next.js and TypeScript Full-Stack Web Applications",
+        "Automated Python ETL and Business Intelligence Analytics",
+        "Hybrid SEO, Answer Engine Optimization (AEO), and Generative Engine Optimization (GEO)",
+        "Full-Funnel B2B Performance Marketing",
+        "2D/3D Product Animation and SaaS Explainer Videos",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales and customer support",
+        availableLanguage: ["English"],
+        areaServed: "US",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Black Zero Enterprise Technology & Digital Growth Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI and Software Hub",
+              url: "https://www.blackzero.org/services/ai-software-hub",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Enterprise Resource Planning (ERP)",
+              url: "https://www.blackzero.org/services/custom-erp-development",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Customer Relationship Management (CRM)",
+              url: "https://www.blackzero.org/services/custom-crm-development",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Advanced Website and Portal Systems",
+              url: "https://www.blackzero.org/services/advanced-websites",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Data Analytics & Business Intelligence",
+              url: "https://www.blackzero.org/services/data-analytics",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Hybrid SEO Services (Traditional + AI)",
+              url: "https://www.blackzero.org/services/hybrid-seo",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "B2B Performance Marketing",
+              url: "https://www.blackzero.org/services/marketing",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Creative Design and Animation Studio",
+              url: "https://www.blackzero.org/services/creative-design-and-animation-studio",
+            },
+          },
+        ],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.blackzero.org/#website",
+      url: "https://www.blackzero.org",
+      name: "Black Zero Technologies",
+      publisher: {
+        "@id": "https://www.blackzero.org/#organization",
+      },
+      inLanguage: "en-US",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -90,7 +204,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* Inject JSON-LD Script for SEO */}
+        {/* Inject JSON-LD Entity Graph for SEO & AI Search Engines */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -101,13 +215,15 @@ export default function RootLayout({
           <GlobalNavbar />
         </HideOnDashboard>
         <SchemaMarkup />
-        <main>{children}<WhatsAppButton /></main>
+        <main>
+          {children}
+          <WhatsAppButton />
+        </main>
         <FooterSection />
         <HideOnDashboard>
           <CookieBanner />
-        </HideOnDashboard>  
+        </HideOnDashboard>
         <Analytics />
-        
       </body>
       <GoogleAnalytics gaId="G-V4V0EPZTPQ" />
     </html>
