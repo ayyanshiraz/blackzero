@@ -13,6 +13,40 @@ const fadeUp: Variants = {
   },
 };
 
+/* --- PREMIUM HERO ANIMATION VARIANTS --- */
+const heroContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const heroItem: Variants = {
+  hidden: { opacity: 0, y: 40, filter: "blur(12px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 1, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+const imageReveal: Variants = {
+  hidden: { opacity: 0, y: 150, rotateX: 25, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    scale: 1,
+    transition: { duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.5 },
+  },
+};
+/* ------------------------------------------- */
+
 export default function CustomCRMClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -48,62 +82,46 @@ export default function CustomCRMClient() {
       code: "CRM-01",
       title: "Unified Omnichannel Messaging Inbox",
       description:
-        "Aggregate WhatsApp Cloud API, Instagram DMs, Facebook Messenger, SMS/Twilio, live web chat, and two-way IMAP/SMTP email into a single real-time WebSocket inbox with zero tab switching.",
+        "Aggregate WhatsApp, Meta, SMS, and IMAP email into a single real-time WebSocket inbox with zero tab switching.",
       specs: ["Real-Time WebSocket Threads", "WhatsApp & Meta Graph API", "SLA Response Timer Alerts"],
+      image: "/inbox-crm.jpg",
     },
     {
       code: "CRM-02",
-      title: "B2B Deal Pipeline & Meeting Conversion Engine",
+      title: "B2B Deal Pipeline & Meeting Conversion",
       description:
-        "High-velocity kanban and tabular opportunity management engineered for complex multi-stakeholder B2B sales cycles, automated stage gates, and calendar-to-deal conversion tracking.",
+        "High-velocity kanban pipeline engineered for complex B2B sales cycles and automated calendar-to-deal tracking.",
       specs: ["Multi-Pipeline Stage Gates", "Automated Follow-Up Tasks", "Win/Loss Velocity Telemetry"],
     },
     {
       code: "CRM-03",
-      title: "AI Triage, Lead Scoring & Conversation Copilot",
+      title: "AI Triage & Lead Scoring Copilot",
       description:
-        "Embedded LLM agents that automatically summarize long buyer threads, classify inbound intent, score lead readiness, and route high-value opportunities to the right account executive.",
+        "Embedded LLM agents that summarize threads, score lead readiness, and route opportunities to the right executive.",
       specs: ["Automated Thread Summaries", "Predictive Intent Scoring", "Smart Round-Robin Routing"],
+      image: "/chatbot-crm.jpg",
     },
     {
       code: "CRM-04",
-      title: "Custom CPQ, Proposals & ERP Ledger Sync",
+      title: "Custom CPQ & ERP Ledger Sync",
       description:
-        "Configure-Price-Quote (CPQ) modules connected directly to your ERP inventory and Chart of Accounts—generating multi-tier B2B quotes, digital contracts, and automated recurring invoices.",
+        "CPQ modules connected directly to your ERP inventory generating multi-tier B2B quotes and automated invoices.",
       specs: ["Live ERP Inventory Lookup", "Dynamic Tiered Pricing", "Automated Stripe & ACH Billing"],
+      image: "/reports-crm.jpg",
     },
     {
       code: "CRM-05",
-      title: "Dedicated-IP Outbound & Unlimited Email Engine",
+      title: "Dedicated-IP Outbound Email Engine",
       description:
-        "Own your outbound infrastructure with unlimited contact storage, automated multi-step drip sequences, real-time SMTP/DNS email verification, and dedicated IP reputation control.",
+        "Own your outbound infrastructure with automated multi-step drip sequences and dedicated IP reputation control.",
       specs: ["Zero Per-Contact Surcharges", "Automated Drip Sequences", "Dedicated IP Deliverability"],
     },
     {
       code: "CRM-06",
-      title: "Multi-Tenant RBAC, Audit Logs & Revenue BI",
+      title: "Multi-Tenant RBAC & Revenue BI",
       description:
-        "Territory-based data isolation, SAML 2.0 Single Sign-On, immutable compliance logs, and dark-mode executive attribution dashboards tracking CAC, LTV, and rep quota attainment.",
+        "SAML 2.0 Single Sign-On, compliance logs, and dark-mode executive attribution dashboards tracking CAC and LTV.",
       specs: ["Territory & Team RBAC", "Offline Ad Conversion Sync", "Real-Time Cohort Attribution"],
-    },
-  ];
-
-  const integrations = [
-    {
-      category: "Messaging, Telephony & Social Channels",
-      systems: "WhatsApp Cloud API, Meta Graph API (Instagram & Messenger), Twilio Voice & SMS, SendGrid, Amazon SES, Custom SMTP/IMAP",
-    },
-    {
-      category: "Legacy CRMs & Marketing Attribution",
-      systems: "Salesforce Enterprise, HubSpot CRM, Zoho, Microsoft Dynamics 365, Google Ads Offline Conversion API, Meta Conversions API",
-    },
-    {
-      category: "ERP, Accounting & Payment Gateways",
-      systems: "Custom Enterprise ERP, Oracle NetSuite, SAP, QuickBooks Enterprise, Stripe Webhooks, Authorize.Net, DocuSign API",
-    },
-    {
-      category: "Identity, Calendar & Data Infrastructure",
-      systems: "Okta, Microsoft Entra ID (Azure AD), Google Workspace & Outlook Calendar APIs, Neon PostgreSQL, Redis, Snowflake",
     },
   ];
 
@@ -135,395 +153,240 @@ export default function CustomCRMClient() {
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen font-sans selection:bg-white selection:text-black">
+    <div className="bg-black text-white min-h-screen font-sans selection:bg-[#0066FF] selection:text-white">
+      
       {/* 1. HERO SECTION */}
-     {/* 1. HERO SECTION */}
-      <section className="relative pt-36 pb-24 px-6 md:px-12 lg:px-24 border-b border-zinc-800 overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 z-0 bg-[url('/crm-bg.webp')] bg-cover bg-center bg-no-repeat opacity-100"
-        />
-
-        {/* 1. Left-to-Right Dark Gradient: Left text area ko dark rakhega aur right laptop screen ko clear */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/95 via-black/75 to-black/10" />
-
-        {/* 2. Bottom-to-Top Dark Gradient: Neeche wale metrics strip ke peeche dark contrast banayega */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-
-        {/* Tech grid pattern */}
-        <div
-          className="absolute inset-0 opacity-15 pointer-events-none z-0"
+      <section className="relative pt-32 pb-0 px-6 md:px-12 lg:px-24 flex flex-col items-center overflow-hidden bg-white text-gray-900">
+        
+        {/* Vertical Striped Background Pattern */}
+        <div 
+          className="absolute top-0 left-0 right-0 h-[65%] z-0 pointer-events-none"
           style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
-            backgroundSize: "3rem 3rem",
+            backgroundImage: "repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(0,0,0,0.03) 60px, rgba(0,0,0,0.03) 120px)"
           }}
         />
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-4xl">
-            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-mono uppercase tracking-widest border border-zinc-700 bg-zinc-900/90 text-gray-200 rounded-full">
-              Enterprise Revenue &amp; Omnichannel Architecture • Serving US Operations Teams
-            </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.95] mb-8 drop-shadow-md">
-              Custom CRM Software Development for High-Velocity Revenue Teams
-            </h1>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-3xl mb-10 drop-shadow">
+        <div className="relative z-30 w-full max-w-[1400px] px-4 mx-auto text-center flex flex-col items-center">
+          <motion.div initial="hidden" animate="visible" variants={heroContainer} className="w-full max-w-[1200px]">
+            
+            <motion.div variants={heroItem}>
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-[10px] sm:text-xs font-mono uppercase tracking-widest border border-gray-200 bg-gray-50 text-black rounded-full">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-black"></span>
+                </span>
+                Enterprise Revenue &amp; Omnichannel Architecture • Serving US Operations Teams
+              </span>
+            </motion.div>
+            
+            <motion.h1 variants={heroItem} className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-[4.5rem] font-black uppercase tracking-tighter leading-[1.05] mb-6 text-[#0f172a]">
+              Custom CRM Software Development <br className="hidden md:block" /> for High-Velocity Revenue Teams
+            </motion.h1>
+            
+            <motion.p variants={heroItem} className="text-sm md:text-base text-black max-w-3xl mx-auto mb-8 leading-relaxed font-medium">
               Eliminate bloated per-seat SaaS renewals and fragmented communication silos. Black Zero Technologies engineers bespoke B2B CRM platforms, unified omnichannel inboxes, and AI-assisted pipeline engines using Next.js, Node.js, WebSockets, Prisma ORM, and PostgreSQL.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            </motion.p>
+            
+            <motion.div variants={heroItem} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 sm:mb-0">
               <Link
                 href="/contact"
-                className="inline-block text-center bg-white text-black font-bold uppercase tracking-widest px-8 py-4 rounded-full text-sm md:text-base hover:bg-gray-200 transition-all shadow-lg"
+                className="inline-flex items-center justify-center bg-black text-white font-bold uppercase tracking-widest px-12 py-5 rounded-full text-sm md:text-base lg:text-lg transition-all duration-300 shadow-lg w-full sm:w-auto hover:-translate-y-1 hover:scale-105 hover:bg-zinc-800 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
               >
                 Book a Call
               </Link>
-              <a
-                href="#crm-architecture-blueprint"
-                className="inline-block text-center border border-zinc-500 bg-black/70 backdrop-blur-sm text-white font-bold uppercase tracking-widest px-8 py-4 rounded-full text-sm md:text-base hover:border-white transition-all"
-              >
-                Inspect System Architecture
-              </a>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Key Metrics Strip */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-zinc-700/80">
-            <div>
-              <p className="text-3xl md:text-4xl font-black text-white drop-shadow">Unlimited</p>
-              <p className="text-xs md:text-sm text-gray-200 mt-1 uppercase tracking-wider font-mono">
-                Seats &amp; Contact Storage ($0 Tax)
-              </p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-black text-white drop-shadow">&lt;100ms</p>
-              <p className="text-xs md:text-sm text-gray-200 mt-1 uppercase tracking-wider font-mono">
-                WebSocket Omnichannel Sync
-              </p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-black text-white drop-shadow">100%</p>
-              <p className="text-xs md:text-sm text-gray-200 mt-1 uppercase tracking-wider font-mono">
-                Source Code &amp; Database IP
-              </p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-black text-white drop-shadow">EST / PST</p>
-              <p className="text-xs md:text-sm text-gray-200 mt-1 uppercase tracking-wider font-mono">
-                US Timezone Engineering Overlap
-              </p>
-            </div>
-          </div>
+          </motion.div>
+        </div>
+
+        {/* IMAGE-BASED DASHBOARD MOCKUP WITH 3D TILT & CONTINUOUS FLOAT */}
+        <div 
+          className="relative z-10 w-full max-w-[1400px] mx-auto -mt-16 sm:-mt-24 md:-mt-32 lg:-mt-40 -mb-24 sm:-mb-32 md:-mb-48 lg:-mb-64"
+          style={{ perspective: 1500 }}
+        >
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={imageReveal}
+            className="w-full flex justify-center px-2 sm:px-6 md:px-12 relative transform-style-preserve-3d"
+          >
+            <div className="absolute inset-0 bg-black/15 blur-[100px] max-w-5xl mx-auto rounded-full z-0 pointer-events-none" style={{ transform: 'translateY(15%)', height: '70%' }}></div>
+            
+            <motion.img 
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              src="/covercrm.webp" 
+              alt="Black Zero Custom CRM Dashboard showing Revenue and Omnichannel Analytics" 
+              className="w-full max-w-7xl lg:max-w-[1300px] h-auto object-contain rounded-xl md:rounded-3xl relative z-20 drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
+            />
+          </motion.div>
         </div>
       </section>
 
       {/* 2. WHO IT IS FOR & TRIGGER EVENTS */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white text-black overflow-hidden">
+      <section className="py-12 lg:py-24 px-6 md:px-12 lg:px-24 bg-white text-black overflow-hidden relative z-30">
         <div className="max-w-7xl mx-auto">
-          {/* Header Animation: once: false kar diya taake har scroll par chale */}
+          
           <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: -30, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: false }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl mb-16"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-4xl mx-auto text-center mb-16 md:mb-24"
           >
-            <span className="text-xs font-mono uppercase tracking-widest text-gray-500 block mb-3">
-              01 / Revenue &amp; Operations Trigger Events
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-tight mb-6">
-              Engineered for VPs of Sales, RevOps Leaders, and CTOs Tired of SaaS Bloat
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-6 text-[#0f172a]">
+              Engineered for VPs of Sales, RevOps Leaders, and CTOs <br></br> Tired of SaaS Bloat.<span className="text-black italic font-mono font-bold"> </span>
             </h2>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-black text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
               We build custom CRM systems for mid-market and enterprise organizations where off-the-shelf platforms have become an expensive bottleneck rather than a revenue accelerator.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 items-stretch">
             {triggerEvents.map((item, index) => (
               <motion.div
                 key={item.tag}
-                // once: false ki wajah se yeh animation har scroll par repeat hogi
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: false }}
-                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="border-2 border-black p-8 rounded-2xl bg-gray-50 hover:bg-black hover:text-white transition-colors duration-300 group shadow-md hover:shadow-2xl cursor-pointer"
+                transition={{ duration: 0.7, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col justify-between p-6 lg:p-8 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 h-full w-full group"
               >
-                <span className="text-xs font-mono font-bold tracking-widest uppercase px-3 py-1 bg-black text-white group-hover:bg-white group-hover:text-black rounded-full inline-block mb-4">
-                  {item.tag}
-                </span>
-                <h3 className="text-2xl font-extrabold mb-3">{item.title}</h3>
-                <p className="text-gray-700 group-hover:text-gray-300 leading-relaxed">
+               <div>
+                 <div className="w-14 h-14 rounded-full flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110 bg-black text-white shadow-md">
+                    {index === 0 && (
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    )}
+                    {index === 1 && (
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                    )}
+                    {index === 2 && (
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg>
+                    )}
+                    {index === 3 && (
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" /></svg>
+                    )}
+                  </div>
+                  
+                  <h3 className="text-lg md:text-xl font-bold mb-3 text-[#0f172a]">{item.title}</h3>
+               </div>
+                
+                <p className="text-sm text-black leading-relaxed mt-auto">
                   {item.description}
                 </p>
+                
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-    {/* 3. WHAT WE BUILD: MODULES & INLINE SVG ARCHITECTURE DIAGRAM */}
-      <section id="crm-architecture-blueprint" className="py-24 px-6 md:px-12 lg:px-24 bg-black text-white border-t border-zinc-800 overflow-hidden">
+      {/* 3. WHAT WE BUILD: MODULES */}
+      <section id="crm-modules" className="py-12 lg:py-24 px-6 md:px-12 lg:px-24 bg-white text-black border-t border-gray-200 relative z-30">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl mb-16"
-          >
-            <span className="text-xs font-mono uppercase tracking-widest text-gray-400 block mb-3">
-              02 / Modular CRM Capabilities &amp; Reference Stack
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-tight mb-6">
-              Core Omnichannel &amp; Pipeline Modules Tailored to Your Sales Motion
-            </h2>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Every custom CRM we architect combines sub-second frontend responsiveness with event-driven webhook ingestion, AI lead triage, and strict role-based security.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            {crmModules.map((mod, index) => {
-              let initialX = 0;
-              let initialY = 0;
-
-              if (index === 0 || index === 1) {
-                initialX = -60;
-              } else if (index === 2 || index === 3) {
-                initialX = 60;
-              } else if (index === 4) {
-                initialY = -50;
-              } else if (index === 5) {
-                initialY = 50;
-              }
-
-              return (
-                <motion.div
-                  key={mod.code}
-                  initial={{ opacity: 0, x: initialX, y: initialY }}
-                  whileInView={{ opacity: 1, x: 0, y: 0 }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  className="bg-white border border-gray-200 p-8 rounded-2xl flex flex-col justify-between hover:border-black hover:shadow-2xl transition-all duration-300 cursor-pointer shadow-md"
-                >
-                  <div>
-                    <span className="text-xs font-mono text-gray-500 block mb-3">{mod.code}</span>
-                    <h3 className="text-xl font-extrabold mb-4 text-black">{mod.title}</h3>
-                    <p className="text-gray-700 text-sm leading-relaxed mb-6">{mod.description}</p>
-                  </div>
-                  <ul className="space-y-2 pt-4 border-t border-gray-200">
-                    {mod.specs.map((spec) => (
-                      <li key={spec} className="text-xs font-mono text-gray-700 flex items-center">
-                        <span className="w-2 h-2 bg-black rounded-full mr-2.5 flex-shrink-0" />
-                        {spec}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Inline Accessible Architecture SVG Diagram with Scroll Animation */}
-          <motion.div
-            initial={{ opacity: 0, x: -80, scale: 0.95 }}
-            whileInView={{ opacity: 1, x: 0, scale: 1 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 md:p-12"
-          >
-            <div className="mb-8">
-              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-2">
-                Reference Omnichannel CRM Architecture Blueprint
-              </h3>
-              <p className="text-gray-400 text-sm md:text-base">
-                Multi-channel webhook ingestion, WebSocket real-time inbox streaming, AI triage copilot, and bi-directional ERP/PostgreSQL persistence.
-              </p>
-            </div>
-
-            <div className="w-full overflow-x-auto">
-              <svg
-                viewBox="0 0 1000 420"
-                className="w-full min-w-[760px] h-auto"
-                role="img"
-                aria-label="Black Zero Custom Enterprise CRM Architecture Diagram showing Omnichannel Ingestion, WebSocket Gateway, AI Triage and Pipeline Core, and PostgreSQL Database Layer"
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            
+            <div className="w-full lg:sticky lg:top-32 self-start z-10 mb-12 lg:mb-0">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="w-full rounded-2xl overflow-hidden shadow-2xl"
               >
-                <rect width="1000" height="420" rx="16" fill="#09090b" stroke="#27272a" strokeWidth="2" />
-
-                {/* Column 1: Omnichannel Sources */}
-                <rect x="30" y="35" width="200" height="350" rx="12" fill="#18181b" stroke="#3f3f46" strokeWidth="1.5" />
-                <text x="130" y="65" fill="#ffffff" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
-                  1. OMNICHANNEL INGEST
-                </text>
-                <rect x="50" y="90" width="160" height="55" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="130" y="115" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  WhatsApp Cloud API
-                </text>
-                <text x="130" y="133" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Two-Way Business Messaging
-                </text>
-
-                <rect x="50" y="165" width="160" height="55" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="130" y="190" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Meta Graph &amp; Social
-                </text>
-                <text x="130" y="208" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Instagram DMs &amp; Messenger
-                </text>
-
-                <rect x="50" y="240" width="160" height="55" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="130" y="265" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Custom SMTP &amp; IMAP
-                </text>
-                <text x="130" y="283" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Two-Way Email &amp; Sequences
-                </text>
-
-                <rect x="50" y="315" width="160" height="50" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="130" y="344" fill="#111827" fontSize="11" fontWeight="bold" textAnchor="middle">
-                  Twilio VoIP / SMS / WebChat
-                </text>
-
-                {/* Column 2: Real-Time Event & Auth Gateway */}
-                <rect x="275" y="35" width="205" height="350" rx="12" fill="#18181b" stroke="#3f3f46" strokeWidth="1.5" />
-                <text x="377" y="65" fill="#ffffff" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
-                  2. REAL-TIME GATEWAY
-                </text>
-                <rect x="295" y="95" width="165" height="75" rx="8" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1.5" />
-                <text x="377" y="125" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Webhook Normalizer
-                </text>
-                <text x="377" y="145" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Node.js &amp; Express Queue
-                </text>
-
-                <rect x="295" y="190" width="165" height="80" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="377" y="220" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  WebSocket Streamer
-                </text>
-                <text x="377" y="240" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Sub-100ms Live Inbox Push
-                </text>
-
-                <rect x="295" y="290" width="165" height="75" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="377" y="320" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  SAML 2.0 &amp; RBAC Guard
-                </text>
-                <text x="377" y="340" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Territory &amp; Rep Isolation
-                </text>
-
-                {/* Column 3: CRM Core & AI Triage */}
-                <rect x="525" y="35" width="210" height="350" rx="12" fill="#18181b" stroke="#3f3f46" strokeWidth="1.5" />
-                <text x="630" y="65" fill="#ffffff" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
-                  3. CRM &amp; AI TRIAGE CORE
-                </text>
-                <rect x="545" y="90" width="170" height="55" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="630" y="115" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Next.js 15 Unified Inbox
-                </text>
-                <text x="630" y="133" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Single-Screen Agent Console
-                </text>
-
-                <rect x="545" y="165" width="170" height="55" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="630" y="190" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  LLM Triage &amp; Lead Scorer
-                </text>
-                <text x="630" y="208" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Intent &amp; Summary Copilot
-                </text>
-
-                <rect x="545" y="240" width="170" height="55" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="630" y="265" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Pipeline &amp; CPQ Engine
-                </text>
-                <text x="630" y="283" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Deal Stages &amp; Live Quotes
-                </text>
-
-                <rect x="545" y="315" width="170" height="50" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="630" y="344" fill="#111827" fontSize="11" fontWeight="bold" textAnchor="middle">
-                  Offline Ad Conversion Sync
-                </text>
-
-                {/* Column 4: Persistence & ERP Bridge */}
-                <rect x="780" y="35" width="190" height="350" rx="12" fill="#18181b" stroke="#3f3f46" strokeWidth="1.5" />
-                <text x="875" y="65" fill="#ffffff" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
-                  4. DATA &amp; ERP BRIDGE
-                </text>
-                <rect x="800" y="95" width="150" height="80" rx="8" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1.5" />
-                <text x="875" y="125" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  PostgreSQL + Prisma
-                </text>
-                <text x="875" y="145" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Unified Customer Graph
-                </text>
-
-                <rect x="800" y="195" width="150" height="75" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="875" y="225" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Bi-Directional ERP Sync
-                </text>
-                <text x="875" y="245" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Inventory &amp; Ledger Parity
-                </text>
-
-                <rect x="800" y="290" width="150" height="75" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="875" y="320" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Redis &amp; Audit Vault
-                </text>
-                <text x="875" y="340" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  SLA Timers &amp; Security Logs
-                </text>
-
-                {/* Connector Lines */}
-                <line x1="230" y1="210" x2="275" y2="210" stroke="#ffffff" strokeWidth="2" strokeDasharray="4 4" />
-                <line x1="480" y1="210" x2="525" y2="210" stroke="#ffffff" strokeWidth="2" strokeDasharray="4 4" />
-                <line x1="735" y1="210" x2="780" y2="210" stroke="#ffffff" strokeWidth="2" strokeDasharray="4 4" />
-              </svg>
+                <div className="w-full flex items-center justify-center rounded-2xl bg-white">
+                   <img 
+                     src="/crmsec 1.png" 
+                     alt="CRM Architecture Preview" 
+                     className="w-full h-auto object-contain" 
+                   />
+                </div>
+              </motion.div>
             </div>
-          </motion.div>
+
+            <div className="flex flex-col gap-12 lg:pb-20">
+              
+              <motion.div
+                initial={{ opacity: 0, y: -30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="mb-8"
+              >
+                <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-tight mb-6 text-black">
+                  Core Omnichannel &amp; Pipeline Modules Tailored to Your Sales Motion
+                </h2>
+                <p className="text-black text-lg leading-relaxed">
+                  Every custom CRM we architect combines sub-second frontend responsiveness with event-driven webhook ingestion, AI lead triage, and strict role-based security.
+                </p>
+              </motion.div>
+
+              {crmModules.map((mod, index) => {
+                return (
+                  <motion.div
+                    key={mod.code}
+                    initial={{ opacity: 0, x: 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                    className="flex flex-col text-black"
+                  >
+                    <div>
+                      <span className="text-xs font-mono text-black block mb-2">{mod.code}</span>
+                      <h3 className="text-2xl font-extrabold mb-3 text-black">{mod.title}</h3>
+                      <p className="text-black text-base leading-relaxed mb-4">{mod.description}</p>
+                    </div>
+                    <ul className="space-y-2 pt-4 border-t border-gray-200 mt-auto">
+                      {mod.specs.map((spec) => (
+                        <li key={spec} className="text-sm font-mono text-black flex items-center">
+                          <span className="w-1.5 h-1.5 bg-black rounded-full mr-3 flex-shrink-0" />
+                          {spec}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+          </div>
         </div>
       </section>
 
-      {/* 7. VISIBLE CRAWLABLE FAQ SECTION */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white text-black border-t border-gray-200">
-        <div className="max-w-5xl mx-auto">
+      {/* 4. FAQ SECTION (2-Column Match) */}
+      <section className="pt-20 pb-32 px-6 md:px-12 lg:px-24 bg-white text-black">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-xs font-mono uppercase tracking-widest text-gray-500 block mb-3">
-             Technical &amp; Commercial FAQs
+            <span className="text-xs font-mono uppercase tracking-widest text-black block mb-3">
+              Technical &amp; Commercial FAQs
             </span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-[#0f172a]">
               Custom CRM Evaluation Questions
             </h2>
           </div>
 
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
             {faqs.map((faq, index) => {
               const isOpen = openFaq === index;
 
               return (
                 <div
                   key={index}
-                  className="border border-black rounded-2xl overflow-hidden transition-all duration-300"
+                  className="bg-white border-2 border-black rounded-2xl shadow-[4px_4px_0px_0px_#000] overflow-hidden transition-all duration-300"
                 >
-                  {/* Question Box (Black Bg, White Text) */}
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : index)}
-                    className="w-full flex justify-between items-center p-6 bg-black text-white text-left focus:outline-none cursor-pointer"
+                    className="w-full flex justify-between items-center p-6 bg-white text-black text-left focus:outline-none cursor-pointer"
                   >
-                    <h3 className="text-lg md:text-xl font-bold pr-4">{faq.q}</h3>
-                    <span className="text-2xl font-light leading-none">
-                      {isOpen ? "−" : "+"}
-                    </span>
+                    <h3 className="text-base md:text-lg font-bold pr-4">{faq.q}</h3>
+                    <div className="w-8 h-8 rounded-full border border-black flex items-center justify-center shrink-0">
+                      <span className="text-sm font-bold leading-none">
+                        {isOpen ? "−" : "+"}
+                      </span>
+                    </div>
                   </button>
 
-                  {/* Answer Box (White Bg, Black Text) with Smooth Animation */}
                   <AnimatePresence>
                     {isOpen && (
                       <motion.div
@@ -533,8 +396,8 @@ export default function CustomCRMClient() {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="bg-white text-black"
                       >
-                        <div className="p-6 border-t border-gray-200">
-                          <p className="text-gray-700 leading-relaxed">{faq.a}</p>
+                        <div className="p-6 pt-0 border-t border-gray-100 mt-2">
+                          <p className="text-gray-700 text-sm md:text-base leading-relaxed">{faq.a}</p>
                         </div>
                       </motion.div>
                     )}

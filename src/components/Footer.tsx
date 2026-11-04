@@ -12,15 +12,15 @@ const FooterSection = () => {
 
   return (
     <section className={`footer-section ` + (isHomepage ? `bg-transparent` : `bg-[#000000]`)}>
-      <div className={`min-h-screen h-auto relative md:pt-[15vh] pt-[10vh] flex flex-col justify-between`}>
+      <div className={`min-h-screen h-auto md:pt-[15vh] pt-[10vh] flex flex-col justify-between`}>
         
-        <div className={`relative z-10 w-full`}>
+        <div className={`w-full`}>
           <h2 className={`general-title text-center text-white pt-5 pb-10`}>
             BUILDING THE FUTURE
           </h2>
         </div>
 
-        <div className={`flex-center gap-5 relative z-10 md:mt-10 mt-5`}>
+        <div className={`flex-center gap-5 md:mt-10 mt-5`}>
           <a href={`https://www.facebook.com/profile.php?id=61560559093444&mibextid=ZbWKwL`} className={`social-btn`}>
             <img src={`/images/facebook.svg`} alt={`Facebook`} />
           </a>
@@ -71,7 +71,7 @@ const FooterSection = () => {
 
         </div>
 
-        <div className={`copyright-box !justify-center w-full mt-auto relative z-20`}>
+        <div className={`copyright-box !justify-center w-full mt-auto`}>
           <p className={`text-center`}>Copyright © 2026 BlackZero Technologies - All Rights Reserved</p>
         </div>
 
