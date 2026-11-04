@@ -33,11 +33,11 @@ export interface BlogPost {
 
 export const blogPostsData: BlogPost[] = [
   {
-    id: 81,
+    id: 75,
     slug: "custom-saas-application-development-usa",
     title: "Custom SaaS Application Development in the USA: Building Scalable B2B Platforms",
     date: "November 4, 2026",
-    imageUrl: "/Blogs/blog81.webp",
+    imageUrl: "/Blogs/blog75.webp",
     excerpt: "Digital software vendors must provide U.S. enterprise buyers with fast response times, ironclad data security, and 100 percent uptime. Off-the-shelf software templates often fail when the number of simultaneous users exceeds the original limits.",
     seoTitle: "Custom SaaS Application Development USA | B2B Tech Agency",
     metaDescription: "Scale your tech business with custom SaaS application development in the USA. We engineer secure, high-performance B2B platforms using Next.js and Python.",
