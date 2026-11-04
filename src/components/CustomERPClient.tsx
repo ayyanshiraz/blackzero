@@ -88,25 +88,6 @@ export default function CustomERPClient() {
     },
   ];
 
-  const integrations = [
-    {
-      category: "Legacy ERPs & Accounting",
-      systems: "Oracle NetSuite, SAP S/4HANA & Business One, Microsoft Dynamics 365, QuickBooks Enterprise, Sage Intacct",
-    },
-    {
-      category: "CRM & Revenue Platforms",
-      systems: "Salesforce Enterprise, HubSpot, Custom Omnichannel CRM, Stripe, Authorize.Net, ACH Banking APIs",
-    },
-    {
-      category: "Supply Chain, EDI & E-Commerce",
-      systems: "SPS Commerce, Cleo EDI/X12 (850, 855, 856, 810), Shopify Plus, Amazon SP-API, ShipStation, FedEx/UPS/Freight APIs",
-    },
-    {
-      category: "Identity, Cloud & Data Warehousing",
-      systems: "Okta, Microsoft Entra ID (Azure AD), AWS RDS, Neon Serverless PostgreSQL, Snowflake, BigQuery",
-    },
-  ];
-
   const faqs = [
     {
       q: "How much does custom ERP software development cost for a mid-market firm?",
@@ -136,443 +117,306 @@ export default function CustomERPClient() {
 
   return (
     <div className="bg-black text-white min-h-screen font-sans selection:bg-white selection:text-black">
-      {/* 1. HERO SECTION */}
-      <section className="relative pt-36 pb-24 px-6 md:px-12 lg:px-24 border-b border-zinc-800 overflow-hidden">
-        {/* Background Image: Full 100% opacity */}
-        <div 
-          className="absolute inset-0 z-0 bg-[url('/erp-bg.webp')] bg-cover bg-center bg-no-repeat opacity-100"
-        />
+      
+      {/* 1. HERO SECTION (Centered B&W layout with 3-Line Text & Black Subheading) */}
+      <section className="relative pt-32 pb-0 px-6 md:px-12 lg:px-24 bg-white text-gray-900 overflow-hidden flex flex-col items-center text-center">
         
-        {/* Lighter Gradient Overlay: Left se black aur right se transparent */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/100 via-black/50 to-transparent" />
-
-        {/* Tech grid pattern */}
-        <div
-          className="absolute inset-0 opacity-15 pointer-events-none z-0"
+        {/* Vertical Striped Background Pattern */}
+        <div 
+          className="absolute top-0 left-0 right-0 h-[65%] z-0 pointer-events-none"
           style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
-            backgroundSize: "3rem 3rem",
+            backgroundImage: "repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(0,0,0,0.03) 60px, rgba(0,0,0,0.03) 120px)"
           }}
         />
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-4xl">
-            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-mono uppercase tracking-widest border border-zinc-700 bg-zinc-900/80 text-gray-300 rounded-full">
-              Enterprise Resource Planning Architecture • Serving US Operations Teams
-            </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.95] mb-8">
-              Custom ERP Software Development for Mid-Market &amp; Enterprise Operations
+
+        <div className="max-w-7xl mx-auto w-full relative z-30 flex flex-col items-center">
+          {/* Expanded max-w wrapper */}
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="w-full max-w-6xl flex flex-col items-center">
+            
+            {/* Heading - Size decreased to 4rem and structured into exactly 3 lines on desktop */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[4rem] font-black uppercase tracking-tighter text-[#0f172a] leading-[1.1] mb-8 w-full">
+              Custom ERP Software Development 
+              For Mid-Market &amp; 
+              Enterprise Operations
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-10">
-              Stop forcing your proprietary operational workflows into rigid, per-seat SaaS boxes. Black Zero Technologies engineers high-velocity, custom ERP platforms built on Next.js, Node.js, Prisma ORM, and PostgreSQL—giving your finance, warehouse, and production teams sub-second execution and 100% code ownership.
+
+            {/* Subheading - Font color changed to solid black with medium weight for readability */}
+            <p className="text-lg md:text-xl text-black font-medium mb-10 leading-relaxed max-w-4xl">
+              Stop forcing your proprietary operational workflows into rigid, per-seat SaaS boxes. Black Zero Technologies engineers high-velocity, custom ERP platforms built on Next.js, Node.js, Prisma ORM, and PostgreSQL giving your finance, warehouse, and production teams sub-second execution and 100% code ownership.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+
+            {/* Buttons - Size increased via px-10 and text-base */}
+            <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
               <Link
                 href="/contact"
-                className="inline-block text-center bg-white text-black font-bold uppercase tracking-widest px-8 py-4 rounded-full text-sm md:text-base hover:bg-gray-200 transition-all"
+                className="bg-black text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-base hover:bg-gray-800 transition-colors shadow-lg shadow-black/20 flex items-center gap-3"
               >
+                {/* Live Pulse Indicator */}
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
                 Book a Call
               </Link>
-              <a
-                href="#architecture-blueprint"
-                className="inline-block text-center border border-zinc-700 bg-zinc-900/60 text-white font-bold uppercase tracking-widest px-8 py-4 rounded-full text-sm md:text-base hover:border-white transition-all"
-              >
-                Inspect System Architecture
-              </a>
             </div>
           </motion.div>
 
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-zinc-800/80">
-            <div>
-              <p className="text-3xl md:text-4xl font-black text-white">&lt;150ms</p>
-              <p className="text-xs md:text-sm text-gray-400 mt-1 uppercase tracking-wider font-mono">
-                PostgreSQL Query Latency
-              </p>
+          {/* Centered Dashboard Image */}
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="relative w-full max-w-7xl mx-auto mt-4"
+          >
+            <div className="relative z-10 bg-white rounded-t-2xl shadow-[0_-20px_50px_-10px_rgba(0,0,0,0.1)] overflow-hidden border-t border-l border-r border-gray-200">
+              <img 
+                src="/cccc1.webp" 
+                alt="Dashboard Interface" 
+                className="w-full h-auto object-cover block"
+              />
             </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-black text-white">$0</p>
-              <p className="text-xs md:text-sm text-gray-400 mt-1 uppercase tracking-wider font-mono">
-                Recurring Per-Seat License Tax
-              </p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-black text-white">100%</p>
-              <p className="text-xs md:text-sm text-gray-400 mt-1 uppercase tracking-wider font-mono">
-                Proprietary IP &amp; Code Ownership
-              </p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-black text-white">EST / PST</p>
-              <p className="text-xs md:text-sm text-gray-400 mt-1 uppercase tracking-wider font-mono">
-                US Timezone Engineering Overlap
-              </p>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* 2. WHO IT IS FOR & TRIGGER EVENTS */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white text-black overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      {/* 2. WHO IT IS FOR & TRIGGER EVENTS (Equal Size Grid Layout) */}
+      <section className="pt-24 pb-12 px-6 md:px-12 lg:px-24 bg-white text-black relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          
+          {/* Centered Heading Layout */}
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl mb-16"
+            className="flex flex-col items-center text-center mb-16"
           >
-            <span className="text-xs font-mono uppercase tracking-widest text-gray-500 block mb-3">
-              01 / Operational Trigger Events
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-tight mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 max-w-4xl text-black">
               Built for COOs, CTOs, and VPs of Operations Scaling Past Legacy Limits
             </h2>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-black text-lg leading-relaxed max-w-3xl font-medium mt-4">
               We partner with mid-market and enterprise leaders across manufacturing, wholesale distribution, multi-site healthcare, and logistics who have reached the breaking point with disconnected spreadsheets or bloated legacy ERPs.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {triggerEvents.map((item, index) => (
-              <motion.div
-                key={item.tag}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="border-2 border-black p-8 rounded-2xl bg-gray-50 hover:bg-black hover:text-white transition-colors duration-300 group shadow-md hover:shadow-2xl cursor-pointer"
-              >
-                <span className="text-xs font-mono font-bold tracking-widest uppercase px-3 py-1 bg-black text-white group-hover:bg-white group-hover:text-black rounded-full inline-block mb-4">
-                  {item.tag}
-                </span>
-                <h3 className="text-2xl font-extrabold mb-3">{item.title}</h3>
-                <p className="text-gray-700 group-hover:text-gray-300 leading-relaxed">
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
+          {/* Equal Size Cards Grid (items-stretch + h-full) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mt-12 items-stretch">
+            {triggerEvents.map((item, index) => {
+              const icons = [
+                <svg key={1} className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
+                <svg key={2} className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>,
+                <svg key={3} className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>,
+                <svg key={4} className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
+              ];
+
+              return (
+                <motion.div
+                  key={item.tag}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+                  className="flex flex-col justify-between text-center h-full p-6 lg:p-8 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 w-full mx-auto relative group"
+                >
+                  <div>
+                    {/* Black Circular Icon Container */}
+                    <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 mx-auto shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      {icons[index]}
+                    </div>
+                    
+                    {/* Centered Content */}
+                    <h3 className="text-lg lg:text-xl font-bold text-black mb-3">{item.title}</h3>
+                  </div>
+                  <p className="text-black text-xs lg:text-sm leading-relaxed font-medium mt-auto">
+                    {item.description}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* 3. WHAT WE BUILD: MODULES & INLINE SVG ARCHITECTURE DIAGRAM */}
-      <section id="architecture-blueprint" className="py-24 px-6 md:px-12 lg:px-24 bg-black text-white border-t border-zinc-800 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      {/* NEW SECTION: UNIFIED ERP DASHBOARD */}
+      <section className="pt-12 pb-24 px-6 md:px-12 lg:px-24 bg-white text-black relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl mb-16"
+            className="flex flex-col items-center text-center mb-16"
           >
-            <span className="text-xs font-mono uppercase tracking-widest text-gray-400 block mb-3">
-              02 / Modular ERP Capabilities &amp; Reference Stack
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-tight mb-6">
-              Core Enterprise Modules Engineered Around Your Exact Business Logic
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight mb-4 max-w-3xl text-black">
+              Unify Your Entire Operation In One Place
             </h2>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Every module is architected as a decoupled, high-availability service backed by strict relational integrity, multi-tenant role isolation, and real-time event streaming.
+            <p className="text-black text-lg max-w-2xl font-medium">
+              All your inventory, finance, and production workflows come together in a single, high-velocity source of truth.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            {erpModules.map((mod, index) => {
-              let initialX = 0;
-              let initialY = 0;
-
-              if (index === 0 || index === 1) {
-                initialX = -60;
-              } else if (index === 2 || index === 3) {
-                initialX = 60;
-              } else if (index === 4) {
-                initialY = -50;
-              } else if (index === 5) {
-                initialY = 50;
-              }
-
-              return (
-                <motion.div
-                  key={mod.code}
-                  initial={{ opacity: 0, x: initialX, y: initialY }}
-                  whileInView={{ opacity: 1, x: 0, y: 0 }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  className="bg-white border border-gray-200 p-8 rounded-2xl flex flex-col justify-between hover:border-black hover:shadow-2xl transition-all duration-300 cursor-pointer shadow-md"
-                >
-                  <div>
-                    <span className="text-xs font-mono text-gray-500 block mb-3">{mod.code}</span>
-                    <h3 className="text-xl font-extrabold mb-4 text-black">{mod.title}</h3>
-                    <p className="text-gray-700 text-sm leading-relaxed mb-6">{mod.description}</p>
-                  </div>
-                  <ul className="space-y-2 pt-4 border-t border-gray-200">
-                    {mod.specs.map((spec) => (
-                      <li key={spec} className="text-xs font-mono text-gray-700 flex items-center">
-                        <span className="w-2 h-2 bg-black rounded-full mr-2.5 flex-shrink-0" />
-                        {spec}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Inline Accessible Architecture SVG Diagram with Scroll Animation */}
           <motion.div
-            initial={{ opacity: 0, x: -80, scale: 0.95 }}
-            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 md:p-12"
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="max-w-6xl mx-auto bg-gray-50/50 rounded-[2rem] p-8 md:p-12 lg:p-16 border border-gray-100 flex flex-col lg:flex-row items-center gap-12 lg:gap-20 shadow-sm hover:shadow-md transition-shadow duration-300"
           >
-            <div className="mb-8">
-              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-2">
-                Reference Enterprise ERP Architecture Blueprint
-              </h3>
-              <p className="text-gray-400 text-sm md:text-base">
-                Multi-tenant RBAC security, API gateway orchestration, ACID-compliant PostgreSQL storage, and real-time WebSocket state synchronization.
+            {/* Left Image */}
+            <div className="flex-1 w-full relative">
+              <div className="rounded-xl overflow-hidden border border-gray-200/60 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] bg-white">
+                <img src="/dddd.png" alt="Enterprise Command Center Dashboard" className="w-full h-auto object-cover block" />
+              </div>
+            </div>
+
+            {/* Right Content */}
+            <div className="flex-1 w-full">
+              <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">Real-Time Operational Command Center</h3>
+              <p className="text-black mb-8 leading-relaxed font-medium">
+                Monitor multi-warehouse inventory, track complex manufacturing BOMs, and reconcile financial ledgers instantly—without paying per-seat SaaS taxes.
               </p>
+              
+              <ul className="space-y-4 mb-10">
+                <li className="flex items-start gap-3 text-black font-semibold text-sm">
+                  <div className="mt-0.5 bg-black rounded-full p-0.5 shrink-0">
+                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  Eliminates manual CSV reconciliation and data silos.
+                </li>
+                <li className="flex items-start gap-3 text-black font-semibold text-sm">
+                  <div className="mt-0.5 bg-black rounded-full p-0.5 shrink-0">
+                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  Sub-second database querying and real-time state sync.
+                </li>
+              </ul>
+
+              <Link href="/contact" className="bg-black text-white px-8 py-3.5 rounded-full font-bold text-sm hover:bg-gray-800 transition-colors shadow-md inline-block">
+                Get Started
+              </Link>
             </div>
-
-            <div className="w-full overflow-x-auto">
-              <svg
-                viewBox="0 0 1000 420"
-                className="w-full min-w-[760px] h-auto"
-                role="img"
-                aria-label="Black Zero Custom Enterprise ERP Architecture Diagram showing Client Portals, Security Gateway, Core Microservices, and PostgreSQL Database Layer"
-              >
-                <rect width="1000" height="420" rx="16" fill="#09090b" stroke="#27272a" strokeWidth="2" />
-
-                {/* Column 1: Presentation & Edge */}
-                <rect x="30" y="35" width="200" height="350" rx="12" fill="#18181b" stroke="#3f3f46" strokeWidth="1.5" />
-                <text x="130" y="65" fill="#ffffff" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
-                  1. CLIENT &amp; EDGE LAYER
-                </text>
-                <rect x="50" y="90" width="160" height="55" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="130" y="115" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Next.js 15 App Router
-                </text>
-                <text x="130" y="133" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Executive &amp; Finance UI
-                </text>
-
-                <rect x="50" y="165" width="160" height="55" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="130" y="190" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Warehouse Terminal UI
-                </text>
-                <text x="130" y="208" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Barcode / RFID / Tablet PWA
-                </text>
-
-                <rect x="50" y="240" width="160" height="55" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="130" y="265" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Vendor &amp; EDI Portal
-                </text>
-                <text x="130" y="283" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Supplier ASN &amp; PO Intake
-                </text>
-
-                <rect x="50" y="315" width="160" height="50" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="130" y="344" fill="#111827" fontSize="11" fontWeight="bold" textAnchor="middle">
-                  SAML 2.0 / Okta / Entra SSO
-                </text>
-
-                {/* Column 2: API & Auth Gateway */}
-                <rect x="275" y="35" width="205" height="350" rx="12" fill="#18181b" stroke="#3f3f46" strokeWidth="1.5" />
-                <text x="377" y="65" fill="#ffffff" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
-                  2. SECURITY &amp; API CORE
-                </text>
-                <rect x="295" y="95" width="165" height="75" rx="8" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1.5" />
-                <text x="377" y="125" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  RBAC &amp; Tenant Guard
-                </text>
-                <text x="377" y="145" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Row-Level Security &amp; JWT
-                </text>
-
-                <rect x="295" y="190" width="165" height="80" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="377" y="220" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Node.js &amp; FastAPI Bus
-                </text>
-                <text x="377" y="240" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  REST / GraphQL / WebSockets
-                </text>
-
-                <rect x="295" y="290" width="165" height="75" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="377" y="320" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Webhook &amp; EDI Engine
-                </text>
-                <text x="377" y="340" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  SAP / NetSuite / Shopify Sync
-                </text>
-
-                {/* Column 3: Business Logic Modules */}
-                <rect x="525" y="35" width="210" height="350" rx="12" fill="#18181b" stroke="#3f3f46" strokeWidth="1.5" />
-                <text x="630" y="65" fill="#ffffff" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
-                  3. ERP DOMAIN SERVICES
-                </text>
-                <rect x="545" y="90" width="170" height="55" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="630" y="115" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Chart of Accounts Engine
-                </text>
-                <text x="630" y="133" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  General Ledger &amp; AP/AR
-                </text>
-
-                <rect x="545" y="165" width="170" height="55" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="630" y="190" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  BOM &amp; Production Hub
-                </text>
-                <text x="630" y="208" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  WIP Routing &amp; Lot Tracking
-                </text>
-
-                <rect x="545" y="240" width="170" height="55" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="630" y="265" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Multi-Site Inventory
-                </text>
-                <text x="630" y="283" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Bin Allocation &amp; 3PL Sync
-                </text>
-
-                <rect x="545" y="315" width="170" height="50" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="630" y="344" fill="#111827" fontSize="11" fontWeight="bold" textAnchor="middle">
-                  AI Demand &amp; Anomaly Worker
-                </text>
-
-                {/* Column 4: Data & Audit Layer */}
-                <rect x="780" y="35" width="190" height="350" rx="12" fill="#18181b" stroke="#3f3f46" strokeWidth="1.5" />
-                <text x="875" y="65" fill="#ffffff" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
-                  4. DATA &amp; AUDIT STORE
-                </text>
-                <rect x="800" y="95" width="150" height="80" rx="8" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1.5" />
-                <text x="875" y="125" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  PostgreSQL + Prisma
-                </text>
-                <text x="875" y="145" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  ACID Relational Transactions
-                </text>
-
-                <rect x="800" y="195" width="150" height="75" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="875" y="225" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Redis Cache &amp; Queue
-                </text>
-                <text x="875" y="245" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  Sub-Millisecond State Locks
-                </text>
-
-                <rect x="800" y="290" width="150" height="75" rx="8" fill="#f9fafb" stroke="#e5e7eb" />
-                <text x="875" y="320" fill="#111827" fontSize="12" fontWeight="bold" textAnchor="middle">
-                  Immutable Audit Log
-                </text>
-                <text x="875" y="340" fill="#4b5563" fontSize="10" textAnchor="middle">
-                  SOC2-Ready Change History
-                </text>
-
-                {/* Connector Lines */}
-                <line x1="230" y1="210" x2="275" y2="210" stroke="#ffffff" strokeWidth="2" strokeDasharray="4 4" />
-                <line x1="480" y1="210" x2="525" y2="210" stroke="#ffffff" strokeWidth="2" strokeDasharray="4 4" />
-                <line x1="735" y1="210" x2="780" y2="210" stroke="#ffffff" strokeWidth="2" strokeDasharray="4 4" />
-              </svg>
-            </div>
+            
           </motion.div>
+
         </div>
       </section>
 
-      {/* 4. BUILD VS BUY COMPARISON TABLE */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white text-black">
+      {/* 3. WHAT WE BUILD: MODULES & INLINE SVG ARCHITECTURE DIAGRAM */}
+      <section id="architecture-blueprint" className="pt-24 pb-12 md:pb-24 px-6 md:px-12 lg:px-24 bg-white text-black border-t border-gray-200 relative z-30">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-12">
-            <span className="text-xs font-mono uppercase tracking-widest text-gray-500 block mb-3">
-              03 / Executive TCO Evaluation
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-tight mb-4">
-              Legacy Off-the-Shelf ERP vs. Black Zero Custom ERP Architecture
-            </h2>
-            <p className="text-gray-700 text-lg">
-              Why mid-market CFOs and CTOs are replacing per-seat SaaS contracts with proprietary enterprise systems.
-            </p>
-          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            
+            <div className="lg:sticky top-32 self-start w-full z-10">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="w-full rounded-2xl overflow-hidden shadow-2xl"
+              >
+                <div className="w-full flex items-center justify-center rounded-2xl bg-white">
+                   <img 
+                     src="/eeee.png" 
+                     alt="ERP Architecture Preview" 
+                     className="w-full h-auto object-contain" 
+                   />
+                </div>
+              </motion.div>
+            </div>
 
-          <div className="overflow-x-auto border-2 border-black rounded-2xl">
-            <table className="min-w-full bg-white text-left border-collapse">
-              <thead>
-                <tr className="bg-black text-white">
-                  <th className="py-4 px-6 font-bold uppercase text-xs tracking-wider">Evaluation Criterion</th>
-                  <th className="py-4 px-6 font-bold uppercase text-xs tracking-wider">Legacy SaaS ERPs (NetSuite / SAP)</th>
-                  <th className="py-4 px-6 font-bold uppercase text-xs tracking-wider">Black Zero Custom Enterprise ERP</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200 text-sm md:text-base">
-                <tr>
-                  <td className="py-4 px-6 font-bold text-black">3-Year Licensing Cost (150 Users)</td>
-                  <td className="py-4 px-6 text-gray-600">$350,000 – $600,000+ in recurring seat &amp; tier fees</td>
-                  <td className="py-4 px-6 font-semibold text-black">$0 per-seat fees; unlimited employee &amp; vendor accounts</td>
-                </tr>
-                <tr className="bg-gray-50">
-                  <td className="py-4 px-6 font-bold text-black">Workflow &amp; BOM Alignment</td>
-                  <td className="py-4 px-6 text-gray-600">Forces operations to adapt to rigid software boxes</td>
-                  <td className="py-4 px-6 font-semibold text-black">100% engineered around your exact floor &amp; ledger logic</td>
-                </tr>
-                <tr>
-                  <td className="py-4 px-6 font-bold text-black">Query &amp; Reporting Speed</td>
-                  <td className="py-4 px-6 text-gray-600">Sluggish multi-second page loads on large tables</td>
-                  <td className="py-4 px-6 font-semibold text-black">Sub-second PostgreSQL indexing &amp; live WebSocket updates</td>
-                </tr>
-                <tr className="bg-gray-50">
-                  <td className="py-4 px-6 font-bold text-black">Code &amp; Database Ownership</td>
-                  <td className="py-4 px-6 text-gray-600">Vendor lock-in on shared multi-tenant servers</td>
-                  <td className="py-4 px-6 font-semibold text-black">Full IP assignment, private cloud hosting, &amp; raw SQL access</td>
-                </tr>
-                <tr>
-                  <td className="py-4 px-6 font-bold text-black">Third-Party API &amp; EDI Sync</td>
-                  <td className="py-4 px-6 text-gray-600">Brittle connectors with steep middleware surcharges</td>
-                  <td className="py-4 px-6 font-semibold text-black">Native custom webhooks, EDI/X12 parsers, &amp; REST APIs</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="flex flex-col gap-12 pb-8 md:pb-20 overflow-x-hidden">
+              
+              <motion.div
+                initial={{ opacity: 0, y: -30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="mb-8"
+              >
+                <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-tight mb-6 text-black">
+                  Core Enterprise Modules Engineered Around Your Exact Business Logic
+                </h2>
+                <p className="text-black text-lg leading-relaxed">
+                  Every module is architected as a decoupled, high-availability service backed by strict relational integrity, multi-tenant role isolation, and real-time event streaming.
+                </p>
+              </motion.div>
+
+              {erpModules.map((mod, index) => {
+                let initialX = 0;
+                let initialY = 0;
+
+                if (index % 2 === 0) {
+                  initialX = -40;
+                } else {
+                  initialX = 40;
+                }
+
+                return (
+                  <motion.div
+                    key={mod.code}
+                    initial={{ opacity: 0, x: initialX, y: initialY }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                    className="flex flex-col text-black border-b border-gray-200 pb-8 last:border-0"
+                  >
+                    <div>
+                      <span className="text-xs font-mono text-black block mb-2 font-bold">{mod.code}</span>
+                      <h3 className="text-2xl font-extrabold mb-3 text-black">{mod.title}</h3>
+                      <p className="text-black text-base leading-relaxed mb-4">{mod.description}</p>
+                    </div>
+                    <ul className="space-y-2 pt-2">
+                      {mod.specs.map((spec) => (
+                        <li key={spec} className="text-sm font-mono text-black flex items-center">
+                          <span className="w-1.5 h-1.5 bg-black rounded-full mr-3 flex-shrink-0" />
+                          {spec}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                );
+              })}
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* 7. VISIBLE CRAWLABLE FAQ SECTION */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white text-black border-t border-gray-200">
-        <div className="max-w-5xl mx-auto">
+      {/* 7. 2-COLUMN FAQ SECTION (Matching the Reference Style) */}
+      <section className="pt-20 pb-32 px-6 md:px-12 lg:px-24 bg-white text-black">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-xs font-mono uppercase tracking-widest text-gray-500 block mb-3">
-             Technical &amp; Commercial FAQs
+            <span className="text-xs font-mono uppercase tracking-widest text-black block mb-3">
+              Technical &amp; Commercial FAQs
             </span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-[#0f172a]">
               Custom ERP Evaluation Questions
             </h2>
           </div>
 
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
             {faqs.map((faq, index) => {
               const isOpen = openFaq === index;
 
               return (
                 <div
                   key={index}
-                  className="border border-black rounded-2xl overflow-hidden transition-all duration-300"
+                  className="bg-white border-2 border-black rounded-2xl shadow-[4px_4px_0px_0px_#000] overflow-hidden transition-all duration-300"
                 >
-                  {/* Question Box (Black Bg, White Text) */}
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : index)}
-                    className="w-full flex justify-between items-center p-6 bg-black text-white text-left focus:outline-none cursor-pointer"
+                    className="w-full flex justify-between items-center p-6 bg-white text-black text-left focus:outline-none cursor-pointer"
                   >
-                    <h3 className="text-lg md:text-xl font-bold pr-4">{faq.q}</h3>
-                    <span className="text-2xl font-light leading-none">
-                      {isOpen ? "−" : "+"}
-                    </span>
+                    <h3 className="text-base md:text-lg font-bold pr-4">{faq.q}</h3>
+                    <div className="w-8 h-8 rounded-full border border-black flex items-center justify-center shrink-0">
+                      <span className="text-sm font-bold leading-none">
+                        {isOpen ? "−" : "+"}
+                      </span>
+                    </div>
                   </button>
 
-                  {/* Answer Box (White Bg, Black Text) with Smooth Animation */}
                   <AnimatePresence>
                     {isOpen && (
                       <motion.div
@@ -582,8 +426,8 @@ export default function CustomERPClient() {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="bg-white text-black"
                       >
-                        <div className="p-6 border-t border-gray-200">
-                          <p className="text-gray-700 leading-relaxed">{faq.a}</p>
+                        <div className="p-6 pt-0 border-t border-gray-100 mt-2">
+                          <p className="text-gray-700 text-sm md:text-base leading-relaxed">{faq.a}</p>
                         </div>
                       </motion.div>
                     )}

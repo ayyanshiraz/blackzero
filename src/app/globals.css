@@ -27,7 +27,8 @@ body {
   background-color: #faeade;
   color: #523122;
   font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+  /* OVERFLOW HIDDEN KO CLIP MEIN CHANGE KIYA HAI STICKY FIX KARNE KE LIYE */
+  overflow-x: clip;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
