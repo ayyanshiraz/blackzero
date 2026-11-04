@@ -48,6 +48,9 @@ export const metadata: Metadata = {
   ],
   verification: {
     google: "1HfyejT0xZl6FqT0DJLA59GxpsyCsDe5Ii3KFuvhDmg",
+    other: {
+      "p:domain_verify": "a6cdee704c5206f996e6508521a011bc",
+    },
   },
   openGraph: {
     title: "Custom Software, Enterprise AI & ERP Development USA | Black Zero",
