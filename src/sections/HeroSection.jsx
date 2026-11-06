@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { Inter } from "next/font/google";
 import dynamic from "next/dynamic";
 import SplashCursor from "../components/ui/splash-cursor";
 
@@ -11,7 +10,7 @@ const SplineSceneBasic = dynamic(
   { ssr: false }
 );
 
-const inter = Inter({ subsets: ["latin"], weight: ["400", "900"] });
+
 
 export default function HeroSection() {
   const [isHeroVisible, setIsHeroVisible] = useState(true);
