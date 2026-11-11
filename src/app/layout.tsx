@@ -3,21 +3,15 @@ import "./globals.css";
 import React from "react";
 import GlobalNavbar from "@/components/GlobalNavbar";
 import FooterSection from "@/sections/FooterSection";
-import { ClientSlideshow } from "@/components/ClientSlideshow";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import CookieBanner from "@/components/CookieBanner";
 import type { Metadata } from "next";
 import HideOnDashboard from "@/components/HideOnDashboard";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import WhatsAppChat from "@/components/WhatsAppChat";
-import SchemaMarkup from "@/components/SchemaMarkup";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.blackzero.org"),
-  alternates: {
-    canonical: "https://www.blackzero.org",
-  },
   robots: {
     index: true,
     follow: true,
@@ -78,12 +72,11 @@ export const metadata: Metadata = {
   },
 };
 
-// Comprehensive JSON-LD Entity Graph for Organization, WebSite, and Core B2B Catalog
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["Organization", "ProfessionalService"],
+      "@type": "Organization",
       "@id": "https://www.blackzero.org/#organization",
       name: "Black Zero Technologies",
       alternateName: "Black Zero",
@@ -95,10 +88,24 @@ const jsonLd = {
       image: "https://www.blackzero.org/opengraph-image.png",
       description:
         "US-aligned enterprise software engineering, private AI development, custom ERP/CRM systems, data analytics, and Hybrid SEO agency.",
-      areaServed: {
-        "@type": "Country",
-        name: "United States",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Gulberg III",
+        addressLocality: "Lahore",
+        addressRegion: "Punjab",
+        postalCode: "54660",
+        addressCountry: "PK",
       },
+      areaServed: [
+        {
+          "@type": "Country",
+          name: "United States",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "North America",
+        },
+      ],
       knowsAbout: [
         "Custom Enterprise ERP Software Development",
         "Custom Omnichannel CRM Engineering",
@@ -112,6 +119,7 @@ const jsonLd = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "sales and customer support",
+        email: "info@blackzero.org",
         availableLanguage: ["English"],
         areaServed: "US",
       },
@@ -207,7 +215,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* Inject JSON-LD Entity Graph for SEO & AI Search Engines */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -217,7 +224,6 @@ export default function RootLayout({
         <HideOnDashboard>
           <GlobalNavbar />
         </HideOnDashboard>
-        <SchemaMarkup />
         <main>
           {children}
           <WhatsAppButton />
