@@ -101,9 +101,9 @@ const MessageSection = () => {
               </div>
             </div>
 
-            <h1 className={`second-message text-black/10 mt-2 md:mt-30`}>
-              your operations with secure AI and custom ERP systems
-            </h1>
+            <span className={`second-message text-black/10 mt-2 md:mt-30 block`}>
+  your operations with <br></br> secure AI and custom ERP <br></br>systems
+</span>
             
           </div>
         </div>

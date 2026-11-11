@@ -47,6 +47,17 @@ export default function ProjectsPageClient({ projects }: { projects: Project[] }
             `}</style>
             <main className="pt-32 pb-24 bg-white">
                 <div className="container mx-auto px-8 md:px-16 lg:px-32">
+                    
+                    {/* SEO H1 Heading Added Here */}
+                    <div className="mb-12 text-center animate-fade-in-up">
+                        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">
+                            Enterprise Software & AI Portfolio
+                        </h1>
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                            Discover our successful case studies across custom ERP systems, unified CRM platforms, and autonomous AI agents.
+                        </p>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {projects.map((project, index) => (
                             <Link
