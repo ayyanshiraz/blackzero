@@ -36,7 +36,7 @@ export const blogPostsData: BlogPost[] = [
     id: 77,
     slug: "custom-crm-software-development-omnichannel-guide",
     title: "Custom CRM Software Development: How US Enterprises Replace Bloated Per-Seat SaaS Platforms in 2026",
-    date: "November 14, 2026",
+    date: "November 11, 2026",
     imageUrl: "/Blogs/blog77.webp",
     excerpt: "Every month, US sales directors waste thousands of dollars on HubSpot and Salesforce licenses, while reps still have to jump across 5 browser tabs to answer WhatsApp chats, emails and social messages.",
     seoTitle: "Custom CRM Software Development: 2026 US Enterprise Guide",
