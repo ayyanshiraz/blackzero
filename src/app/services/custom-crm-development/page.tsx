@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 import CustomCRMClient from "@/components/CustomCRMClient";
 
 export const metadata: Metadata = {
-  title: "Custom CRM Software Development USA | Black Zero Technologies",
+  title: "Custom CRM Software Development USA | Black Zero",
   description:
     "Architect custom enterprise CRM systems and unified omnichannel inboxes. Replace bloated Salesforce or HubSpot seat fees with Next.js and PostgreSQL.",
   alternates: {
     canonical: "https://www.blackzero.org/services/custom-crm-development",
   },
   openGraph: {
-    title: "Custom CRM Software Development USA | Black Zero Technologies",
+    title: "Custom CRM Software Development USA | Black Zero",
     description:
       "Bespoke B2B CRM platforms, unified omnichannel messaging (WhatsApp, Meta, Email), AI lead triage, and ERP-connected sales pipelines for US enterprises.",
     url: "https://www.blackzero.org/services/custom-crm-development",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom CRM Software Development USA | Black Zero Technologies",
+    title: "Custom CRM Software Development USA | Black Zero",
     description:
       "Eliminate recurring per-seat CRM taxes. Build a proprietary omnichannel CRM and sales pipeline engine tailored to your exact B2B revenue workflows.",
     images: ["https://www.blackzero.org/Blogs/blog23.webp"],

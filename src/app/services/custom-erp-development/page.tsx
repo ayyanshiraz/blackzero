@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 import CustomERPClient from "@/components/CustomERPClient";
 
 export const metadata: Metadata = {
-  title: "Custom ERP Software Development Services | Black Zero Technologies",
+  title: "Custom ERP Software Development USA | Black Zero",
   description:
     "Architect scalable custom ERP software for mid-market and enterprise operations teams. Replace rigid NetSuite or SAP limits with Next.js and PostgreSQL.",
   alternates: {
     canonical: "https://www.blackzero.org/services/custom-erp-development",
   },
   openGraph: {
-    title: "Custom ERP Software Development Services | Black Zero Technologies",
+    title: "Custom ERP Software Development USA | Black Zero",
     description:
       "Bespoke ERP systems, Bill of Materials tracking, multi-warehouse inventory hubs, and automated financial ledgers for US enterprise operations.",
     url: "https://www.blackzero.org/services/custom-erp-development",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom ERP Software Development Services | Black Zero Technologies",
+    title: "Custom ERP Software Development USA | Black Zero",
     description:
       "Replace fragmented spreadsheets and rigid legacy ERPs with a proprietary, zero-license-tax custom ERP platform engineered for US operations.",
     images: ["https://www.blackzero.org/Blogs/blog71.webp"],
