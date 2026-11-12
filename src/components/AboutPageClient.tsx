@@ -162,7 +162,7 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                         Custom Enterprise Software<br/>& AI Automation Firm
                     </h2>
                     <p className={`mt-6 max-w-5xl text-gray-700 uppercase text-base md:text-lg transition-all duration-1000 ease-out delay-300 ${isStudioSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                        We are a team of elite software engineers and data scientists, ready to modernize your operational infrastructure via secure, scalable enterprise solutions. We create high-performance custom ERP, CRM, and AI architectures across a variety of US corporate sectors.
+                       Our engineers and data scientists build custom ERP, CRM, and AI systems for US mid-market and enterprise companies. Secure, documented, and fully owned by you.
                     </p>
                 </div>
             </section>

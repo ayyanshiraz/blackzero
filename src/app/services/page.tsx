@@ -49,14 +49,14 @@ const servicesData = [
     slug: `custom-erp-development`,
     imageUrl: `/erp.webp`,
     imgAltText: `Custom Enterprise Resource Planning software showing multi-warehouse inventory and financial ledgers`,
-    description: `Unify your multi-warehouse inventory, manufacturing Bill of Materials (BOM), procurement workflows, and Chart of Accounts into a custom-engineered ERP platform. Replace rigid legacy software and recurring per-seat licensing fees with 100% proprietary code.`,
+    description: `Modernize your supply chain, inventory, and HR with Custom ERP software designed specifically for US mid-market operations. Full IP ownership and no per-seat SaaS fees.`,
   },
   {
     title: `Customer Relationship Management (CRM)`,
     slug: `custom-crm-development`,
     imageUrl: `/crm.webp`,
     imgAltText: `Custom omnichannel CRM platform consolidating sales pipelines, WhatsApp, and email communications`,
-    description: `Consolidate fragmented customer interactions across email, WhatsApp, SMS, and social channels into a single high-speed CRM engine. Automate lead routing, track deal velocity in real time, and scale your sales team without per-user SaaS penalties.`,
+    description: `Unify WhatsApp, email, and social inbox with AI lead routing. Build a customized CRM software for your US revenue team with seamless ERP synchronization.`,
   },
 ];
 

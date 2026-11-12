@@ -7865,12 +7865,12 @@ ${formData.needs}
             </h1>
             
             <p className="text-base sm:text-lg md:text-2xl text-gray-400 font-light max-w-3xl mx-auto mt-4">
-              Built specifically for your business. No templates. No limits. Only pure, elite engineering.
+              Tell us the workflow costing you time or money. We’ll scope a custom ERP, CRM, or AI system and send a written proposal.
             </p>
             
             <div className="pt-8">
               <a href="#request-form" className="inline-block px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-all duration-300 hover:scale-105 active:scale-95">
-                Request a Custom Build
+                Get a Custom Software Estimate
               </a>
             </div>
           </div>
