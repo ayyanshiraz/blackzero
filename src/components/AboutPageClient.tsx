@@ -143,8 +143,8 @@ export default function AboutPageClient({ content }: { content: AboutPageContent
                 
                 <main className="relative z-20 container mx-auto px-8 flex items-center justify-center min-h-screen">
                     <div className={`max-w-4xl text-center transition-all duration-1000 ease-out transform ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                        <h1 className="text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-none mb-8">
-                            ABOUT US
+                        <h1 className="text-7xl md:text-8xl lg:text-5xl font-extrabold tracking-tighter leading-none mb-8">
+                            Custom Software & AI Engineering for US Mid-Market and Enterprise Teams
                         </h1>
                         <p className="text-lg md:text-xl leading-relaxed">
                             {mainDescription}

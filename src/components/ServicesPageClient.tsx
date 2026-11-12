@@ -133,9 +133,9 @@ export default function ServicesPageClient({ services }: { services: ServiceItem
     }, []);
     
     // --- Typing Logic ---
-    const part1Text = "With our extensive range of";
-    const part2Text = "EXPERTISE,";
-    const part3Text = " we amazingly fulfill most business needs.";
+    const part1Text = "Custom ERP, CRM and";
+    const part2Text = "AI systems";
+    const part3Text = " your team owns outright: 100% IP, US-hours support.";
 
     const typedPart1 = useTypingEffect(part1Text, 50, isHeroVisible);
     const isPart1Complete = typedPart1 === part1Text;
@@ -170,10 +170,10 @@ export default function ServicesPageClient({ services }: { services: ServiceItem
                         <div className="md:w-1/2 text-center md:text-left flex flex-col justify-center">
                             <div>
                                 <h1 className={`text-5xl sm:text-7xl md:text-9xl font-extrabold tracking-tighter leading-none ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.1s' }}>
-                                    <span className="text-white">WHAT</span><br />
-                                    <span>WE DO!</span>
+                                    <span className="text-white">Enterprise</span><br />
+                                    <span>Software</span>
                                 </h1>
-                                <p className={`text-2xl md:text-4xl font-semibold mt-4 ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>How We HELP!</p>
+                                <p className={`text-2xl md:text-4xl font-semibold mt-4 ${isHeroVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>AI & Data Services for US Companies</p>
                             </div>
                         </div>
                         

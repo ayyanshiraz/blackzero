@@ -293,7 +293,7 @@ export default function CustomERPClient() {
               </ul>
 
               <Link href="/contact" className="bg-black text-white px-8 py-3.5 rounded-full font-bold text-sm hover:bg-gray-800 transition-colors shadow-md inline-block">
-                Get Started
+                Get an ERP Cost Estimate
               </Link>
             </div>
             
