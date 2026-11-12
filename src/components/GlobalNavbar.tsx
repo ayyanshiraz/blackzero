@@ -159,7 +159,7 @@ export default function GlobalNavbar() {
                 
                 <div className="container mx-auto flex items-center justify-between px-6 md:px-8 lg:px-10 h-14 md:h-16 relative z-[120]">
                     
-                    <Link href="/" className="text-white flex items-center gap-3 transition-transform duration-300 hover:scale-105">
+                    <Link href="https://www.blackzero.org" className="text-white flex items-center gap-3 transition-transform duration-300 hover:scale-105">
                         <div className="w-10 h-10 md:w-11 md:h-11 overflow-hidden rounded-full flex items-center justify-center">
                             <video
                                 className="w-full h-full object-cover pointer-events-none"
