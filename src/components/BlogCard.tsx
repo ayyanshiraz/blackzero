@@ -59,7 +59,7 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => (
         href={`/blogs/${post.slug}`}
         className="text-white font-semibold transition-colors duration-200 inline-flex items-center mt-auto"
       >
-        Read More <ArrowRight size={16} className="ml-1" />
+        Read the Full Guide <ArrowRight size={16} className="ml-1" />
       </Link>
     </div>
   </motion.div>

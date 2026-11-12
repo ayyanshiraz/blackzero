@@ -39,7 +39,7 @@ export default function BlogsPage() {
           <div className="absolute inset-0 bg-black opacity-60"></div>
         </div>
         <div className="relative z-10 px-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold uppercase">Black Zero Blogs</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold uppercase">Enterprise Software & AI Insights for US Leaders</h1>
           <p className="mt-4 text-xl md:text-2xl text-gray-200">
             Your expert guide to the IT and Marketing market.
           </p>

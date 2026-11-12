@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   }
 
   return {
-    title: post.seoTitle || `${post.title} | Black Zero Blogs`,
+    title: post.seoTitle || `${post.title} | Black Zero Blog`,
     description: post.metaDescription || post.excerpt,
     keywords: post.seoKeywords,
     alternates: {
