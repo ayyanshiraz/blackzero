@@ -284,10 +284,10 @@ ${formData.needs}
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight break-words">
-              Customized
+              Custom Software
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white">
-                Solutions
+                Built Around Your Workflows
               </span>
             </h1>
             
