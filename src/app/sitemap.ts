@@ -1,8 +1,6 @@
 import { MetadataRoute } from 'next';
 import { blogPostsData } from '@/data/blogs';
-import { productsData } from '@/app/products/data';
 import { projectsData } from '@/app/projects/data'; 
-import { PRODUCTS_URL, TURNITIN_URL, productUrl } from '@/lib/siteUrls';
 
 const servicesData = [
   { 
@@ -16,12 +14,14 @@ const servicesData = [
   { slug: 'data-analytics', subSections: [] },
   { slug: 'hybrid-seo', subSections: [] },
   { slug: 'creative-design-and-animation-studio', subSections: [] },
+  
+  // Nayi Services yahan add kar di hain
+  { slug: 'custom-erp-development', subSections: [] },
+  { slug: 'custom-crm-development', subSections: [] },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  
   const baseUrl = 'https://www.blackzero.org'; 
-  
   const dynamicLastModified = new Date();
 
   const staticPages = [
@@ -68,13 +68,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }))
   );
 
-  const productPages = productsData.map((product) => ({
-    url: productUrl(product.slug),
-    lastModified: dynamicLastModified,
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }));
-
   const blogPages = blogPostsData.map((blog) => ({
     url: `${baseUrl}/blogs/${blog.slug}`,
     lastModified: new Date(blog.date),
@@ -82,18 +75,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  const subdomainPages = [
-    { url: PRODUCTS_URL, lastModified: dynamicLastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
-    { url: TURNITIN_URL, lastModified: dynamicLastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
-  ];
+  // Claude's recommendation: Subdomains (products, turnitin) removed from the main domain sitemap to prevent cross-host SEO errors.
 
   return [
     ...staticPages,
-    ...subdomainPages,
     ...projectPages,
     ...servicePages,
     ...subServicePages,
-    ...productPages,
     ...blogPages,
   ];
 }

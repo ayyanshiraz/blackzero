@@ -54,13 +54,13 @@ const FooterSection = () => {
             </div>
 
             <div className="flex flex-col min-w-[150px]">
-              <p className="text-light-brown mb-4 font-bold uppercase tracking-wider text-sm md:text-base">Legal</p>
-              <Link className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max" href="/privacy-policy">
-                Privacy Policy
-              </Link>
-              <Link className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max" href="/team">
-                Our Team
-              </Link>
+              <p className="text-light-brown mb-4 font-bold uppercase tracking-wider text-sm md:text-base">Services</p>
+              <li>
+  <Link href="/services/custom-erp-development" className="hover:text-white transition-colors">Custom ERP Development</Link>
+</li>
+<li>
+  <Link href="/services/custom-crm-development" className="hover:text-white transition-colors">Custom CRM Development</Link>
+</li>
             </div>
 
             <div className="flex flex-col max-w-[250px]">
