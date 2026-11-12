@@ -5,14 +5,14 @@ import BlogGrid from '@/components/BlogGrid';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Black Zero Blogs | Expert Guide to IT & Marketing',
+  title: 'Enterprise Software, ERP, CRM & AI Insights | Black Zero',
   description: 'Stay ahead with Black Zero blogs. Expert insights on digital marketing, e-commerce success, marketing ROI, and the latest IT trends.',
   keywords: ['IT blogs', 'digital marketing insights', 'ecommerce success guides', 'marketing trends 2025', 'Black Zero blog', 'business tips'],
   alternates: {
     canonical: '/blogs',
   },
   openGraph: {
-    title: 'Black Zero Blogs | Expert Guide to IT & Marketing',
+    title: 'Enterprise Software, ERP, CRM & AI Insights | Black Zero',
     description: 'Your expert guide to the IT and Marketing market. Read our latest articles on growth strategies and technology.',
     url: '/blogs',
     type: 'website',

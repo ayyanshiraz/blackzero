@@ -57,12 +57,12 @@ const faqData = [
     { question: "Why should I choose BlackZero Technologies?", answer: "You should choose us because we become an extension of your team. We focus on building lasting relationships based on trust and transparency. Our strategies are data-driven, human-centric, and designed to deliver measurable results that align with your business goals." },
     { question: "How to contact BlackZero Technologies?", answer: "You can contact us by filling out the form on this page, calling us at +92 324 4333267, or sending an email to info@blackzero.org. We are also available on WhatsApp." },
     { question: "How can I get a quotation for my business?", answer: "To get a custom quotation, please fill out the contact form with as much detail about your project as possible. Our team will review your request and contact you to schedule a consultation to discuss your needs and provide a detailed proposal." },
-    { question: "What are your services?", answer: "We offer a comprehensive suite of services including IT and Marketing, Business Analytics, 2D/3D Animation, Web and App Development, Graphic Design, and professional Photography/Videography." },
+    { question: "What are your services?", answer: "Custom ERP, CRM, AI and software development, data analytics and BI, advanced web portals, and Hybrid SEO." },
     { question: "When did BlackZero Technologies form?", answer: "BlackZero Technologies was founded in 2024 by a team of passionate experts with a vision to create a multi-domain company that delivers exceptional results." },
     { question: "Who is the owner of BlackZero Technologies?", answer: "BlackZero Technologies is led by our CEO, Mian Hashim Haroon, who oversees the company vision and strategic direction." },
     { question: "How do I contact the BlackZero Technologies team?", answer: "The most efficient way to reach our team is through the contact form on our website or by emailing us at info@blackzero.org. For urgent matters, you can call our office number." },
-    { question: "What are the costs?", answer: "Our costs are project-dependent. We do not offer one-size-fits-all packages because we believe every business has unique needs. We provide a custom quotation after an initial consultation to ensure our services are perfectly tailored to you." },
-    { question: "In which countries do you operate?", answer: "Our main office is physically located in Lahore, Pakistan. However, we operate globally and have proudly served clients in 9 different countries across the world." }
+    { question: "What are the costs?", answer: "Publish ranges here, matching the CRM page’s $35,000 to $75,000 figure. Add the equivalent ERP range if the ERP page lacks one." },
+    { question: "In which countries do you operate?", answer: "Our engineering leads overlap US Eastern, Central, and Pacific business hours. You keep 100% of the IP, under a US-enforceable NDA." }
 ];
 
 const FaqItem = ({ question, answer, isOpen, onClick }: { question: string; answer: string; isOpen: boolean; onClick: () => void; }) => {
@@ -434,7 +434,7 @@ export default function ContactPageClient() {
                                 )}
                                 <div>
                                     <button type="submit" disabled={loading} className="w-full text-white bg-black px-6 py-3 font-semibold rounded-md transition-all duration-300 hover:bg-black-800 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed">
-                                        {loading ? 'Sending...' : 'Send Message'}
+                                        {loading ? 'Sending...' : 'Get My Free Consultation'}
                                     </button>
                                 </div>
                             </form>

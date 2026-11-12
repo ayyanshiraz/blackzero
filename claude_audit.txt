@@ -6047,7 +6047,7 @@ const useTypingEffect = (textToType: string, speed = 100, startCondition = false
 };
 
 const faqData = [
-    { question: "What is BlackZero Technologies?", answer: "BlackZero Technologies is a full-service creative and digital agency based in Lahore. We are a team of thinkers, creators, and strategists dedicated to helping businesses grow by building powerful brand identities and effective IT and Marketing solutions." },
+    { question: "What is BlackZero Technologies?", answer: "Black Zero Technologies is a custom software engineering firm building ERP, CRM, and AI systems for US mid-market and enterprise companies." },
     { question: "Why should I choose BlackZero Technologies?", answer: "You should choose us because we become an extension of your team. We focus on building lasting relationships based on trust and transparency. Our strategies are data-driven, human-centric, and designed to deliver measurable results that align with your business goals." },
     { question: "How to contact BlackZero Technologies?", answer: "You can contact us by filling out the form on this page, calling us at +92 324 4333267, or sending an email to info@blackzero.org. We are also available on WhatsApp." },
     { question: "How can I get a quotation for my business?", answer: "To get a custom quotation, please fill out the contact form with as much detail about your project as possible. Our team will review your request and contact you to schedule a consultation to discuss your needs and provide a detailed proposal." },
