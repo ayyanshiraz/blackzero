@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     },
   },
   title: {
-    default: "Custom Software, Enterprise AI & ERP Development USA | Black Zero",
+    default: "Custom ERP, CRM & AI Software Development USA | Black Zero",
     template: "%s",
   },
   description:
-    "Black Zero engineers custom ERP & CRM platforms, private AI agents, scalable Next.js web portals, data analytics, and Hybrid SEO for US enterprises with 100% IP ownership.",
+    "Custom ERP, CRM, and AI software for US mid-market and enterprise teams. Cut per-seat SaaS fees, own 100% of your code, work in US time zones.",
   keywords: [
     "custom software development company USA",
     "enterprise AI development services",
@@ -213,7 +213,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en-US" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

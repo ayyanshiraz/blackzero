@@ -35,14 +35,14 @@ const aboutPageContent = {
 
 // --- SEO METADATA ---
 export const metadata: Metadata = {
-  title: "About Us | AI, Analytics & Custom Dev",
+  title: "About Black Zero Technologies | Custom ERP, CRM & AI Engineering",
   description: "Discover Black Zero's mission to transform USA enterprises. We specialize in custom AI, app development, and data analytics for modern businesses.",
   keywords: ["about Black Zero", "AI", "IT company profile", "marketing agency story", "CEO message", "company values", "creative team"],
   alternates: {
     canonical: "https://www.blackzero.org/about",
   },
   openGraph: {
-    title: "About Us | AI, Analytics & Custom Dev",
+    title: "About Black Zero Technologies | Custom ERP, CRM & AI Engineering",
     description: "Discover Black Zero's mission to transform USA enterprises. We specialize in custom AI, app development, and data analytics for modern businesses.",
     url: "https://www.blackzero.org/about",
     type: "website",
