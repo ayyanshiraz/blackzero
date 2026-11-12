@@ -5,7 +5,7 @@ import CustomCRMClient from "@/components/CustomCRMClient";
 export const metadata: Metadata = {
   title: "Custom CRM Software Development USA | Black Zero",
   description:
-    "Architect custom enterprise CRM systems and unified omnichannel inboxes. Replace bloated Salesforce or HubSpot seat fees with Next.js and PostgreSQL.",
+    "Custom CRM software for US revenue teams: unified WhatsApp, email, and social inbox, AI lead routing, ERP sync. You own 100% of the code. Get a cost estimate.",
   alternates: {
     canonical: "https://www.blackzero.org/services/custom-crm-development",
   },

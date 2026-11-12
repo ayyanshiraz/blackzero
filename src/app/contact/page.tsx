@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import ContactPageClient from "@/components/ContactPageClient";
 
 export const metadata: Metadata = {
-  title: "Contact Us | AI, Analytics & Custom Development",
-  description: "Contact Black Zero for expert AI, custom development, and data analytics solutions. Reach out to build scalable tech for your enterprise in the USA and GCC.",
+  title: "Contact Black Zero | Get a Custom Software Estimate",
+  description: "Remove “GCC”. Say: “Tell us about your ERP, CRM, or AI project and get a scoped estimate.",
   keywords: ["contact us", "digital marketing agency contact", "IT company Lahore", "web development inquiry", "business analytics consultation", "Black Zero support", "hire software developers"],
   
   alternates: {
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Contact Us | AI, Analytics & Custom Development",
-    description: "Contact Black Zero for expert AI, custom development, and data analytics solutions. Reach out to build scalable tech for your enterprise in the USA and GCC.",
+    title: "Contact Black Zero | Get a Custom Software Estimate",
+    description: "Remove “GCC”. Say: “Tell us about your ERP, CRM, or AI project and get a scoped estimate.",
     url: "https://www.blackzero.org/contact",
     type: "website",
     images: [
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us | AI, Analytics & Custom Development",
-    description: "Contact Black Zero for expert AI, custom development, and data analytics solutions. Reach out to build scalable tech for your enterprise in the USA and GCC.",
+    title: "Contact Black Zero | Get a Custom Software Estimate",
+    description: "Remove “GCC”. Say: “Tell us about your ERP, CRM, or AI project and get a scoped estimate.",
     images: ["/contact4.webp"],
   },
 };
