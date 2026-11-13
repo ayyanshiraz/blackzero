@@ -39,10 +39,10 @@ const FooterSection = () => {
               <p className={`text-light-brown mb-4 font-bold uppercase tracking-wider`}>Services</p>
               <a href={`/services/ai-software-hub`} className={`mb-2 hover:text-light-brown transition-colors`}>AI and Software Hub</a>
               <a href={`/services/data-analytics`} className={`mb-2 hover:text-light-brown transition-colors`}>Data Analytics</a>
-              <a href={`/services/advanced-websites`} className={`mb-2 hover:text-light-brown transition-colors`}>Advanced Website and Portal Systems</a>
+              <a href={`/services/web-portal-development`} className={`mb-2 hover:text-light-brown transition-colors`}>Advanced Website and Portal Systems</a>
               <a href={`/services/hybrid-seo`} className={`mb-2 hover:text-light-brown transition-colors`}>Hybrid SEO Services (Traditional + AI)</a>
               <a href={`/services/marketing`} className={`mb-2 hover:text-light-brown transition-colors`}>Marketing</a>
-              <a href={`/services/creative-design-and-animation-studio`} className={`mb-2 hover:text-light-brown transition-colors`}>Creative Design and Animation Studio</a>
+              <a href={`/services/3d-animation-explainer-videos`} className={`mb-2 hover:text-light-brown transition-colors`}>Creative Design and Animation Studio</a>
             </div>
 
             <div className={`flex flex-col`}>

@@ -14,8 +14,6 @@ const servicesData = [
   { slug: 'data-analytics', subSections: [] },
   { slug: 'hybrid-seo', subSections: [] },
   { slug: 'creative-design-and-animation-studio', subSections: [] },
-  
-  // Nayi Services yahan add kar di hain
   { slug: 'custom-erp-development', subSections: [] },
   { slug: 'custom-crm-development', subSections: [] },
 ];

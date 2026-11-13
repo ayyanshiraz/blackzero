@@ -116,13 +116,13 @@ export const metadata: Metadata = {
     "commercial video production agency",
   ],
   alternates: {
-    canonical: "https://www.blackzero.org/services/creative-design-and-animation-studio",
+    canonical: "https://www.blackzero.org/services/3d-animation-explainer-videos",
   },
   openGraph: {
     title: "3D Animation, B2B Explainer Videos & Motion Studio USA | Black Zero Technologies",
     description:
       "Custom 2D and 3D animation, B2B SaaS explainer videos, interactive 3D avatars, and high-converting motion graphics engineered for US brands.",
-    url: "https://www.blackzero.org/services/creative-design-and-animation-studio",
+    url: "https://www.blackzero.org/services/3d-animation-explainer-videos",
     siteName: "Black Zero Technologies",
     locale: "en_US",
     type: "website",
@@ -162,7 +162,7 @@ export default function CreativeDesignPage() {
     },
     description:
       "Custom 2D and 3D animation, B2B SaaS explainer videos, scroll-stopping social ad creatives, commercial anime production, 3D avatar rigging, and video production for US businesses.",
-    url: "https://www.blackzero.org/services/creative-design-and-animation-studio",
+    url: "https://www.blackzero.org/services/3d-animation-explainer-videos",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Animation and Creative Studio Capabilities",

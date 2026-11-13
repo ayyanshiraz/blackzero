@@ -44,12 +44,12 @@ export const metadata: Metadata = {
   description: `Discover how Black Zero transforms your digital presence in the USA. Explore our custom web apps, scalable portals, 3D experiences, and Shopify development.`,
   keywords: [`web development`, `app development`, `Next.js developers`, `mobile apps`, `UI/UX design`, `custom portals`, `3D digital platforms`],
   alternates: {
-    canonical: `https://www.blackzero.org/services/advanced-websites`,
+    canonical: `https://www.blackzero.org/services/web-portal-development`,
   },
   openGraph: {
     title: `Advanced Web, App & Portal Development | Black Zero`,
     description: `Discover how Black Zero transforms your digital presence in the USA. Explore our custom web apps, scalable portals, 3D experiences, and Shopify development.`,
-    url: `https://www.blackzero.org/services/advanced-websites`,
+    url: `https://www.blackzero.org/services/web-portal-development`,
     siteName: `Black Zero Technologies`,
     locale: `en_US`,
     type: `website`,
@@ -75,7 +75,7 @@ export default function AdvancedWebsitesPage() {
           name: "United States",
         },
         description: "Custom Websites, 3D Experiences and Scalable Portals. We Build Interactive Web and 3D Digital Platforms. From Websites to Advanced Portal Systems. Next-Level Web Development with 3D Innovation.",
-        url: "https://www.blackzero.org/services/advanced-websites",
+        url: "https://www.blackzero.org/services/web-portal-development",
       }
     ]
   };

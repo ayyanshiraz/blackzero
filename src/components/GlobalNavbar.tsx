@@ -102,10 +102,10 @@ export default function GlobalNavbar() {
     const servicesItems = [
         { name: "AI and Software Hub", href: "/services/ai-software-hub" },
         { name: "Data Analytics", href: "/services/data-analytics" },
-        { name: "Advanced Website and Portal Systems", href: "/services/advanced-websites" },
+        { name: "Advanced Website and Portal Systems", href: "/services/web-portal-development" },
         { name: "Enterprise Resource Planning (ERP)", href: "/services/custom-erp-development" },
         { name: "Customer Relationship Management (CRM)", href: "/services/custom-crm-development" },
-        { name: "Creative Design and Animation Studio", href: "/services/creative-design-and-animation-studio" },
+        { name: "Creative Design and Animation Studio", href: "/services/3d-animation-explainer-videos" },
          { name: "Hybrid SEO Services", href: "/services/hybrid-seo" },
         { name: "Marketing", href: "/services/marketing" },
        

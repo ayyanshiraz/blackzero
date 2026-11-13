@@ -1064,7 +1064,7 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Advanced Website and Portal Systems",
-              url: "https://www.blackzero.org/services/advanced-websites",
+              url: "https://www.blackzero.org/services/web-portal-development",
             },
           },
           {
@@ -1096,7 +1096,7 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Creative Design and Animation Studio",
-              url: "https://www.blackzero.org/services/creative-design-and-animation-studio",
+              url: "https://www.blackzero.org/services/3d-animation-explainer-videos",
             },
           },
         ],
@@ -2607,12 +2607,12 @@ export const metadata: Metadata = {
   description: `Discover how Black Zero transforms your digital presence in the USA. Explore our custom web apps, scalable portals, 3D experiences, and Shopify development.`,
   keywords: [`web development`, `app development`, `Next.js developers`, `mobile apps`, `UI/UX design`, `custom portals`, `3D digital platforms`],
   alternates: {
-    canonical: `https://www.blackzero.org/services/advanced-websites`,
+    canonical: `https://www.blackzero.org/services/web-portal-development`,
   },
   openGraph: {
     title: `Advanced Web, App & Portal Development | Black Zero`,
     description: `Discover how Black Zero transforms your digital presence in the USA. Explore our custom web apps, scalable portals, 3D experiences, and Shopify development.`,
-    url: `https://www.blackzero.org/services/advanced-websites`,
+    url: `https://www.blackzero.org/services/web-portal-development`,
     siteName: `Black Zero Technologies`,
     locale: `en_US`,
     type: `website`,
@@ -2638,7 +2638,7 @@ export default function AdvancedWebsitesPage() {
           name: "United States",
         },
         description: "Custom Websites, 3D Experiences and Scalable Portals. We Build Interactive Web and 3D Digital Platforms. From Websites to Advanced Portal Systems. Next-Level Web Development with 3D Innovation.",
-        url: "https://www.blackzero.org/services/advanced-websites",
+        url: "https://www.blackzero.org/services/web-portal-development",
       }
     ]
   };
@@ -2945,13 +2945,13 @@ export const metadata: Metadata = {
     "commercial video production agency",
   ],
   alternates: {
-    canonical: "https://www.blackzero.org/services/creative-design-and-animation-studio",
+    canonical: "https://www.blackzero.org/services/3d-animation-explainer-videos",
   },
   openGraph: {
     title: "3D Animation, B2B Explainer Videos & Motion Studio USA | Black Zero Technologies",
     description:
       "Custom 2D and 3D animation, B2B SaaS explainer videos, interactive 3D avatars, and high-converting motion graphics engineered for US brands.",
-    url: "https://www.blackzero.org/services/creative-design-and-animation-studio",
+    url: "https://www.blackzero.org/services/3d-animation-explainer-videos",
     siteName: "Black Zero Technologies",
     locale: "en_US",
     type: "website",
@@ -2991,7 +2991,7 @@ export default function CreativeDesignPage() {
     },
     description:
       "Custom 2D and 3D animation, B2B SaaS explainer videos, scroll-stopping social ad creatives, commercial anime production, 3D avatar rigging, and video production for US businesses.",
-    url: "https://www.blackzero.org/services/creative-design-and-animation-studio",
+    url: "https://www.blackzero.org/services/3d-animation-explainer-videos",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Animation and Creative Studio Capabilities",
@@ -8416,7 +8416,7 @@ export default function EcommerceSuccessClient() {
             title: 'WEBSITE DESIGN & DEVELOPMENT', 
             description: (
                 <>
-                    Utilizing the power of <a href="/services/creative-design-and-animation-studio" className="text-white underline hover:text-gray-300 transition-colors">creative designing</a> we build an eye-catching online presence of your business making it completely mobile and user friendly, SEO optimized and highly converting. We will help grow your business with a website design that customers love to visit and buy.
+                    Utilizing the power of <a href="/services/3d-animation-explainer-videos" className="text-white underline hover:text-gray-300 transition-colors">creative designing</a> we build an eye-catching online presence of your business making it completely mobile and user friendly, SEO optimized and highly converting. We will help grow your business with a website design that customers love to visit and buy.
                 </>
             )
         },
@@ -8574,10 +8574,10 @@ const FooterSection = () => {
               <p className={`text-light-brown mb-4 font-bold uppercase tracking-wider`}>Services</p>
               <a href={`/services/ai-software-hub`} className={`mb-2 hover:text-light-brown transition-colors`}>AI and Software Hub</a>
               <a href={`/services/data-analytics`} className={`mb-2 hover:text-light-brown transition-colors`}>Data Analytics</a>
-              <a href={`/services/advanced-websites`} className={`mb-2 hover:text-light-brown transition-colors`}>Advanced Website and Portal Systems</a>
+              <a href={`/services/web-portal-development`} className={`mb-2 hover:text-light-brown transition-colors`}>Advanced Website and Portal Systems</a>
               <a href={`/services/hybrid-seo`} className={`mb-2 hover:text-light-brown transition-colors`}>Hybrid SEO Services (Traditional + AI)</a>
               <a href={`/services/marketing`} className={`mb-2 hover:text-light-brown transition-colors`}>Marketing</a>
-              <a href={`/services/creative-design-and-animation-studio`} className={`mb-2 hover:text-light-brown transition-colors`}>Creative Design and Animation Studio</a>
+              <a href={`/services/3d-animation-explainer-videos`} className={`mb-2 hover:text-light-brown transition-colors`}>Creative Design and Animation Studio</a>
             </div>
 
             <div className={`flex flex-col`}>
@@ -8868,10 +8868,10 @@ export default function GlobalNavbar() {
     const servicesItems = [
         { name: "AI and Software Hub", href: "/services/ai-software-hub" },
         { name: "Data Analytics", href: "/services/data-analytics" },
-        { name: "Advanced Website and Portal Systems", href: "/services/advanced-websites" },
+        { name: "Advanced Website and Portal Systems", href: "/services/web-portal-development" },
         { name: "Enterprise Resource Planning (ERP)", href: "/services/custom-erp-development" },
         { name: "Customer Relationship Management (CRM)", href: "/services/custom-crm-development" },
-        { name: "Creative Design and Animation Studio", href: "/services/creative-design-and-animation-studio" },
+        { name: "Creative Design and Animation Studio", href: "/services/3d-animation-explainer-videos" },
          { name: "Hybrid SEO Services", href: "/services/hybrid-seo" },
         { name: "Marketing", href: "/services/marketing" },
        
@@ -9201,10 +9201,10 @@ export default function Navbar() {
     const servicesItems = [
         { name: "AI and Software Hub", href: "/services/ai-software-hub" },
         { name: "Data Analytics", href: "/services/data-analytics" },
-        { name: "Advanced Website and Portal Systems", href: "/services/advanced-websites" },
+        { name: "Advanced Website and Portal Systems", href: "/services/web-portal-development" },
         { name: "Enterprise Resource Planning (ERP)", href: "/services/custom-erp-development" },
         { name: "Customer Relationship Management (CRM)", href: "/services/custom-crm-development" },
-        { name: "Creative Design and Animation Studio", href: "/services/creative-design-and-animation-studio" },
+        { name: "Creative Design and Animation Studio", href: "/services/3d-animation-explainer-videos" },
          { name: "Hybrid SEO Services", href: "/services/hybrid-seo" },
         { name: "Marketing", href: "/services/marketing" },
        
@@ -14631,7 +14631,7 @@ export const blogPostsData: BlogPost[] = [
         As a leading provider of AI chatbot development in the USA, BlackZero Technologies delivers the specialized engineering expertise required to build secure, context-aware solutions.
       </p>
       <p class="mb-6 leading-relaxed">
-        Whether you need custom APIs, secure vector database setups, or advanced conversational agents, our engineering team is ready to elevate your business operations using our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">advanced digital solutions</a>.
+        Whether you need custom APIs, secure vector database setups, or advanced conversational agents, our engineering team is ready to elevate your business operations using our <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">advanced digital solutions</a>.
       </p>
     `,
   },
@@ -15184,7 +15184,7 @@ export const blogPostsData: BlogPost[] = [
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">Traditional Tools vs Modern AI Accessibility</h3>
       <p class="mb-6 leading-relaxed">
-        Static legacy tools are being replaced by dynamic systems engineered by teams dedicated to <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">accessible software development</a> in the United States.
+        Static legacy tools are being replaced by dynamic systems engineered by teams dedicated to <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">accessible software development</a> in the United States.
       </p>
 
       <div class="overflow-x-auto mb-8 mt-4">
@@ -15619,12 +15619,12 @@ export const blogPostsData: BlogPost[] = [
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">How Custom 3D Web Development Drives Business Growth</h3>
       <p class="mb-8 leading-relaxed">
-        Implementing spatial elements requires strong front-end engineering so page speed and Core Web Vitals remain fast. Developers optimize geometry, leverage WebGL shaders, and apply progressive compression within <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">advanced web infrastructures</a> so 3D visuals run smoothly across desktop and mobile devices.
+        Implementing spatial elements requires strong front-end engineering so page speed and Core Web Vitals remain fast. Developers optimize geometry, leverage WebGL shaders, and apply progressive compression within <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">advanced web infrastructures</a> so 3D visuals run smoothly across desktop and mobile devices.
       </p>
 
       <h4 class="text-xl font-semibold mb-2 mt-4">Transform Your Digital Identity Today</h4>
       <p class="mb-6 leading-relaxed">
-        Partner with the Black Zero <a href="/services/creative-design-and-animation-studio" class="text-blue-600 hover:underline font-semibold">creative design and web engineering team</a> to upgrade your web architecture with high-performance 3D digital assets.
+        Partner with the Black Zero <a href="/services/3d-animation-explainer-videos" class="text-blue-600 hover:underline font-semibold">creative design and web engineering team</a> to upgrade your web architecture with high-performance 3D digital assets.
       </p>
     `,
   },
@@ -16051,7 +16051,7 @@ export const blogPostsData: BlogPost[] = [
         In a crowded digital marketplace, flat graphics are no longer enough to capture enterprise buyers. Forward-thinking companies recognize that utilizing high-end 3D animation services in the USA is the fastest way to elevate brand perception and communicate complex product value.
       </p>
       <p class="mb-8 leading-relaxed">
-        A specialized <a href="/services/creative-design-and-animation-studio" class="text-blue-600 hover:underline font-semibold">3D production and animation studio</a> bridges the gap between technical engineering and visual storytelling, helping your brand command immediate authority.
+        A specialized <a href="/services/3d-animation-explainer-videos" class="text-blue-600 hover:underline font-semibold">3D production and animation studio</a> bridges the gap between technical engineering and visual storytelling, helping your brand command immediate authority.
       </p>
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">The Shift from Static Images to Cinematic Product Visualization</h3>
@@ -16096,7 +16096,7 @@ export const blogPostsData: BlogPost[] = [
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">Maximizing ROI with Scroll-Stopping Digital Assets</h3>
       <p class="mb-8 leading-relaxed">
-        Whether your organization needs an <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">interactive hero animation</a>, a technical product explainer, or high-converting paid ad creatives, custom 3D motion assets significantly increase landing page retention and demo conversions.
+        Whether your organization needs an <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">interactive hero animation</a>, a technical product explainer, or high-converting paid ad creatives, custom 3D motion assets significantly increase landing page retention and demo conversions.
       </p>
 
       <h4 class="text-xl font-semibold mb-2 mt-4">Bring Your Digital Vision to Life Today</h4>
@@ -16126,7 +16126,7 @@ export const blogPostsData: BlogPost[] = [
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">The Power of Visual Storytelling to Boost US Brand Engagement</h3>
       <p class="mb-8 leading-relaxed">
-        High-retention short-form video, motion carousels, and executive thought leadership graphics produced by a dedicated <a href="/services/creative-design-and-animation-studio" class="text-blue-600 hover:underline font-semibold">creative studio</a> signal quality to platform algorithms, boosting US brand engagement and organic reach.
+        High-retention short-form video, motion carousels, and executive thought leadership graphics produced by a dedicated <a href="/services/3d-animation-explainer-videos" class="text-blue-600 hover:underline font-semibold">creative studio</a> signal quality to platform algorithms, boosting US brand engagement and organic reach.
       </p>
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">Organic Content vs Paid Advertising Integration</h3>
@@ -16758,7 +16758,7 @@ export const blogPostsData: BlogPost[] = [
     content: `
       <h3 class="text-2xl font-semibold mb-4 mt-6">How Custom Shopify Themes USA Drive Massive Retail Growth</h3>
       <p class="mb-6 leading-relaxed">
-        The digital retail sector across the United States is highly competitive. Relying on bloated, cookie-cutter templates slows down page load times and hurts buyer trust. Investing in <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">custom Shopify themes in the USA</a> gives your brand a fast, conversion-engineered storefront.
+        The digital retail sector across the United States is highly competitive. Relying on bloated, cookie-cutter templates slows down page load times and hurts buyer trust. Investing in <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">custom Shopify themes in the USA</a> gives your brand a fast, conversion-engineered storefront.
       </p>
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">Core Features That Increase E-Commerce Conversion Rates</h3>
@@ -16890,12 +16890,12 @@ export const blogPostsData: BlogPost[] = [
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">Understanding Modern UI Design Trends in the USA</h3>
       <p class="mb-8 leading-relaxed">
-        Companies are moving away from flat, uninspiring layouts toward <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">modern interactive interfaces</a> that guide visual focus and reinforce product quality.
+        Companies are moving away from flat, uninspiring layouts toward <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">modern interactive interfaces</a> that guide visual focus and reinforce product quality.
       </p>
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">Comparing Flat Design and Glassmorphism Aesthetics</h3>
       <p class="mb-6 leading-relaxed">
-        Glassmorphism establishes a clear visual hierarchy that flat design cannot achieve, an area where our <a href="/services/creative-design-and-animation-studio" class="text-blue-600 hover:underline font-semibold">creative design and animation studio</a> excels:
+        Glassmorphism establishes a clear visual hierarchy that flat design cannot achieve, an area where our <a href="/services/3d-animation-explainer-videos" class="text-blue-600 hover:underline font-semibold">creative design and animation studio</a> excels:
       </p>
 
       <div class="overflow-x-auto mb-8 mt-4">
@@ -16959,7 +16959,7 @@ export const blogPostsData: BlogPost[] = [
     content: `
       <h3 class="text-2xl font-semibold mb-4 mt-6">The Sphere Las Vegas: Redefining Visual Impact and Creative Scale</h3>
       <p class="mb-6 leading-relaxed">
-        The Las Vegas skyline has been permanently transformed by a structure that defies traditional architectural norms. The Sphere Las Vegas is a global icon of digital storytelling and immersive engineering. For teams in the IT consulting and <a href="/services/creative-design-and-animation-studio" class="text-blue-600 hover:underline font-semibold">creative services industry</a>, this structure serves as a masterclass in how hardware scale, data throughput, and intentional design converge.
+        The Las Vegas skyline has been permanently transformed by a structure that defies traditional architectural norms. The Sphere Las Vegas is a global icon of digital storytelling and immersive engineering. For teams in the IT consulting and <a href="/services/3d-animation-explainer-videos" class="text-blue-600 hover:underline font-semibold">creative services industry</a>, this structure serves as a masterclass in how hardware scale, data throughput, and intentional design converge.
       </p>
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">The Technological Engine of Immersion</h3>
@@ -17038,7 +17038,7 @@ export const blogPostsData: BlogPost[] = [
         Commercial and residential real estate brokerages across the United States handle thousands of buyer inquiries daily across listing portals, social ads, and web forms. When teams rely on manual spreadsheets, high-intent property buyers are lost to faster competitors.
       </p>
       <p class="mb-8 leading-relaxed">
-        Implementing automated lead tracking in the USA real estate industry pairs <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">advanced property portals</a> with instant CRM routing so every buyer inquiry receives an immediate, personalized response.
+        Implementing automated lead tracking in the USA real estate industry pairs <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">advanced property portals</a> with instant CRM routing so every buyer inquiry receives an immediate, personalized response.
       </p>
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">Comparing Manual Processes and Automated Tracking Systems</h3>
@@ -17582,7 +17582,7 @@ export const blogPostsData: BlogPost[] = [
     content: `
       <h3 class="text-2xl font-semibold mb-4 mt-6">The Value of Custom-Coded Web Platforms for US Enterprise Growth</h3>
       <p class="mb-6 leading-relaxed">
-        As large organizations expand, generic drag-and-drop website builders and plugin-heavy CMS templates quickly become a liability. To operate securely at scale, US enterprises require <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">custom-coded web platforms and portals</a> engineered around their exact workflows.
+        As large organizations expand, generic drag-and-drop website builders and plugin-heavy CMS templates quickly become a liability. To operate securely at scale, US enterprises require <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">custom-coded web platforms and portals</a> engineered around their exact workflows.
       </p>
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">Building Scalable Digital Portals with Next.js and PostgreSQL</h3>
@@ -17714,7 +17714,7 @@ export const blogPostsData: BlogPost[] = [
     content: `
       <h3 class="text-2xl font-semibold mb-4 mt-6">How 3D Animated Web Design and Cinematic Motion Transform US Brands</h3>
       <p class="mb-6 leading-relaxed">
-        Flat, static web pages quickly fade into the background in the competitive United States tech marketplace. Today, enterprise buyers expect an interactive digital experience that communicates innovation the moment the page loads. Combining <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">3D animated web design</a> with <a href="/services/creative-design-and-animation-studio" class="text-blue-600 hover:underline font-semibold">cinematic digital branding</a> turns passive browsing into a high-converting product journey.
+        Flat, static web pages quickly fade into the background in the competitive United States tech marketplace. Today, enterprise buyers expect an interactive digital experience that communicates innovation the moment the page loads. Combining <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">3D animated web design</a> with <a href="/services/3d-animation-explainer-videos" class="text-blue-600 hover:underline font-semibold">cinematic digital branding</a> turns passive browsing into a high-converting product journey.
       </p>
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">Technical Architecture: Next.js, GSAP, Lenis, and Spline 3D</h3>
@@ -17805,7 +17805,7 @@ export const blogPostsData: BlogPost[] = [
       <h3 class="text-2xl font-semibold mb-4 mt-6">Core Pillars of Modern AI Search Algorithms</h3>
       <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
         <li><strong>Intent Modeling Over Keyword Density:</strong> Structuring content architectures to resolve informational, commercial, and transactional queries with zero friction.</li>
-        <li><strong>UX Behavioral Signals as Ranking Inputs:</strong> Optimizing Core Web Vitals (LCP, CLS, INP), scroll depth, and dwell time via <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">high-performance Next.js engineering</a> to prevent pogo-sticking.</li>
+        <li><strong>UX Behavioral Signals as Ranking Inputs:</strong> Optimizing Core Web Vitals (LCP, CLS, INP), scroll depth, and dwell time via <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">high-performance Next.js engineering</a> to prevent pogo-sticking.</li>
         <li><strong>NLP Entity Graphs & Schema Markup:</strong> Mapping clear Knowledge Graph entities and topical clusters verified by our <a href="/services/data-analytics" class="text-blue-600 hover:underline font-semibold">behavioral analytics</a> and <a href="/services/hybrid-seo" class="text-blue-600 hover:underline font-semibold">hybrid SEO services</a>.</li>
       </ul>
 
@@ -17903,7 +17903,7 @@ export const blogPostsData: BlogPost[] = [
       <h3 class="text-2xl font-semibold mb-4 mt-6">Essential Components of a High-Converting Cross-Border Storefront</h3>
       <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
         <li><strong>Three-Phase Market Entry:</strong> Validate regional demand over 3 to 6 months using <a href="/services/data-analytics" class="text-blue-600 hover:underline font-semibold">demand analytics</a>, execute localized soft launches, and scale warehouse fulfillment based on unit economics.</li>
-        <li><strong>Multi-Currency & Local Payment Routing:</strong> Engineer seamless checkout flows across 130+ currencies via <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">custom e-commerce development</a> to boost payment authorization rates.</li>
+        <li><strong>Multi-Currency & Local Payment Routing:</strong> Engineer seamless checkout flows across 130+ currencies via <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">custom e-commerce development</a> to boost payment authorization rates.</li>
         <li><strong>Delivered Duty Paid (DDP) Landed-Cost Calculation:</strong> Calculate customs duties, VAT, and GST transparently at checkout to eliminate delivery refusals and cart abandonment.</li>
       </ul>
 

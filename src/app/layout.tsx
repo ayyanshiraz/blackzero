@@ -156,7 +156,7 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Advanced Website and Portal Systems",
-              url: "https://www.blackzero.org/services/advanced-websites",
+              url: "https://www.blackzero.org/services/web-portal-development",
             },
           },
           {
@@ -188,7 +188,7 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Creative Design and Animation Studio",
-              url: "https://www.blackzero.org/services/creative-design-and-animation-studio",
+              url: "https://www.blackzero.org/services/3d-animation-explainer-videos",
             },
           },
         ],
