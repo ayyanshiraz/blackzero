@@ -17817,7 +17817,7 @@ export const blogPostsData: BlogPost[] = [
   },
   {
     id: 3,
-    slug: "investing-in-digital-marketing-usa-2025",
+    slug: "ai-digital-marketing-roi-us-businesses",
     title: "Why Investing in AI-Driven Digital Marketing Is Essential for US Businesses in 2026",
     date: "April 10, 2026",
     imageUrl: "/Blogs/blog1.webp",
