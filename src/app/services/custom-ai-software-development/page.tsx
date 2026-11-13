@@ -90,13 +90,13 @@ export const metadata: Metadata = {
     "API and module integration services",
   ],
   alternates: {
-    canonical: "https://www.blackzero.org/services/ai-software-hub",
+    canonical: "https://www.blackzero.org/services/custom-ai-software-development",
   },
   openGraph: {
     title: "Custom Software & Enterprise AI Development USA | Black Zero Technologies",
     description:
       "Engineer scalable custom software, private LLM agents, and high-availability cloud architectures for US enterprises. 100% IP ownership.",
-    url: "https://www.blackzero.org/services/ai-software-hub",
+    url: "https://www.blackzero.org/services/custom-ai-software-development",
     siteName: "Black Zero Technologies",
     locale: "en_US",
     type: "website",
@@ -136,7 +136,7 @@ export default function AiSoftwareHubPage() {
     },
     description:
       "Enterprise custom software development, private LLM and RAG pipelines, machine learning engineering, and legacy system integration for US businesses.",
-    url: "https://www.blackzero.org/services/ai-software-hub",
+    url: "https://www.blackzero.org/services/custom-ai-software-development",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "AI and Custom Software Engineering Capabilities",

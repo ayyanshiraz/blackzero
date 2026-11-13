@@ -132,7 +132,7 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "AI and Software Hub",
-              url: "https://www.blackzero.org/services/ai-software-hub",
+              url: "https://www.blackzero.org/services/custom-ai-software-development",
             },
           },
           {

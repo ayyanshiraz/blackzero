@@ -129,7 +129,7 @@ export default function Navbar() {
     };
 
     const servicesItems = [
-        { name: "AI and Software Hub", href: "/services/ai-software-hub" },
+        { name: "AI and Software Hub", href: "/services/custom-ai-software-development" },
         { name: "Data Analytics", href: "/services/data-analytics" },
         { name: "Advanced Website and Portal Systems", href: "/services/web-portal-development" },
         { name: "Enterprise Resource Planning (ERP)", href: "/services/custom-erp-development" },

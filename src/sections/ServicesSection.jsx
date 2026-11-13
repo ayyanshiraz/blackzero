@@ -5,7 +5,7 @@ import { useLenis } from "lenis/react";
 import Link from "next/link";
 
 const services = [
-  { id: `01`, title: `AI and Software Hub`, subtitle: `Intelligent Execution`, desc: `Building Intelligent Systems for Tomorrow. AI-Powered Software, Built for Growth. From Idea to Intelligent Execution.`, cta: `Explore Service`, link: `/services/ai-software-hub`, color: `#00f2fe, #4facfe, #7000ff` },
+  { id: `01`, title: `AI and Software Hub`, subtitle: `Intelligent Execution`, desc: `Building Intelligent Systems for Tomorrow. AI-Powered Software, Built for Growth. From Idea to Intelligent Execution.`, cta: `Explore Service`, link: `/services/custom-ai-software-development`, color: `#00f2fe, #4facfe, #7000ff` },
   { id: `02`, title: `Data Analytics`, subtitle: `Unlock Your Data`, desc: `Unlock the power of your data. We provide comprehensive analytics to help you make informed decisions for sustainable growth.`, cta: `Explore Service`, link: `/services/data-analytics`, color: `#00f2fe, #4facfe, #7000ff` },
   { id: `03`, title: `Advanced Website and Portal systems`, subtitle: `Scalable Platforms`, desc: `Custom Websites, Secure Portal Systems and Interactive 3D Platforms Crafted to Deliver Exceptional Performance, Seamless User Experiences and Unlimited Scalability.`, cta: `Explore Service`, link: `/services/web-portal-development`, color: `#00f2fe, #4facfe, #7000ff` },
   { id: `04`, title: `Hybrid SEO Services`, subtitle: `Traditional + AI`, desc: `Traditional SEO Meets AI-Powered Growth. Rank Higher with Smart SEO and AI. Data-Driven SEO for the Modern Web.`, cta: `Explore Service`, link: `/services/hybrid-seo`, color: `#00f2fe, #4facfe, #7000ff` },
