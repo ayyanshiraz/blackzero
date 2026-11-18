@@ -24,17 +24,18 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     description: post.metaDescription || post.excerpt,
     keywords: post.seoKeywords,
     alternates: {
-      canonical: `/blogs/${slug}`,
+      canonical: `https://www.blackzero.org/blogs/${slug}`,
     },
     openGraph: {
       title: post.seoTitle || post.title,
       description: post.metaDescription || post.excerpt,
-      url: `/blogs/${slug}`,
+      url: `https://www.blackzero.org/blogs/${slug}`,
       type: 'article',
-      publishedTime: post.date,
+      publishedTime: new Date(post.date).toISOString(),
+      authors: ['Black Zero Engineering'],
       images: [
         {
-          url: post.imageUrl,
+          url: `https://www.blackzero.org${post.imageUrl}`,
           alt: post.imgAltText || post.title,
         },
       ],
@@ -62,8 +63,40 @@ export default async function BlogPostPage({ params }: Props) {
     { href: `/blogs/${post.slug}`, label: post.title },
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "image": `https://www.blackzero.org${post.imageUrl}`,
+    "author": {
+      "@type": "Organization",
+      "name": "Black Zero Engineering"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Black Zero Technologies"
+    },
+    "datePublished": new Date(post.date).toISOString(),
+    "dateModified": new Date(post.date).toISOString(),
+    "description": post.metaDescription || post.excerpt,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.blackzero.org/blogs/${slug}`
+    }
+  };
+
+  const optimizedContent = post.content
+    .replace(/<h3/g, '<h2')
+    .replace(/<\/h3>/g, '</h2>')
+    .replace(/<h4/g, '<h3')
+    .replace(/<\/h4>/g, '</h3>');
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <div className="pt-8 bg-white">
         <Breadcrumbs items={breadcrumbItems} />
@@ -83,12 +116,15 @@ export default async function BlogPostPage({ params }: Props) {
             <p className="text-base text-gray-500 font-medium">
               Date: {post.date}
             </p>
+            <p className="text-base text-black font-semibold mt-1">
+              By: Black Zero Engineering
+            </p>
           </div>
 
           <div className="bg-gray-50 rounded-2xl p-6 md:p-8">
             <article
               className="prose prose-lg max-w-none text-gray-800"
-              dangerouslySetInnerHTML={{ __html: post.content }}
+              dangerouslySetInnerHTML={{ __html: optimizedContent }}
             />
 
             <div className="mt-10 text-left border-t border-gray-200 pt-6">
