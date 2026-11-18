@@ -877,100 +877,84 @@ export const blogPostsData: BlogPost[] = [
       </p>
     `,
   },
-  {
+    {
+    // NOTE: slug changed from "free-online-vision-test". Add a 301 redirect from the old URL. It was ranking for consumer intent, so the old query traffic will drop.
+    // NOTE: removed both links to eyesight-zeta.vercel.app (off-brand domain) and replaced the broken /services/custom-ai-software-development link with /services/ai-software-hub. If the tool has a branded URL, add it back in the final section.
+    // NOTE: the body is fully rewritten as an architecture showcase. I included no accuracy or clinical-validation claims beyond what the tool is designed to do, so check the "Validation" section against your actual testing.
     id: 66,
-    slug: "free-online-vision-test",
-    title: "Take a Highly Accurate Free Online Vision Test at Home",
+    slug: "telehealth-computer-vision-ai-vision-testing-platform",
+    title: "Telehealth Computer Vision: Architecture of an AI Vision Testing Platform",
     date: "September 24, 2026",
     imageUrl: "/Blogs/blog66.webp",
-    excerpt: "In the US, routine medical visits can result in high consultation fees and long wait times. Setting up a clinic appointment often falls to the bottom of the priority list due to hectic work schedules.",
-    seoTitle: "Free Online Vision Test USA: AI Eyesight Check",
-    metaDescription: "Evaluate your visual acuity instantly in the USA with this AI-powered free online vision test. Detect blurry text and colorblind signs on your monitor.",
-    focusKeyPhrase: "free online vision test",
-    seoKeyPhrase: "free online vision test USA",
-    imgAltText: "Person in the USA taking a free online vision test on a computer monitor",
-    seoKeywords: ["free online vision test", "check eyesight online USA", "AI vision screening", "online vision test", "at home eye exam"],
+    excerpt: "How do you measure visual acuity reliably on uncontrolled consumer hardware? This engineering breakdown covers screen calibration, adaptive test logic, validation controls, and the compliance design behind a browser-based AI vision testing platform.",
+    seoTitle: "Telehealth Computer Vision: AI Vision Testing Platform",
+    metaDescription: "Architecture of a browser-based AI vision testing platform: screen calibration, Snellen and color vision tests, HIPAA-ready design, and telehealth integration.",
+    focusKeyPhrase: "telehealth computer vision",
+    seoKeyPhrase: "AI vision testing platform",
+    imgAltText: "Architecture diagram of a browser-based AI vision testing platform showing screen calibration, adaptive test engine, scoring service, and telehealth integration API",
+    seoKeywords: ["telehealth computer vision", "AI vision testing platform", "browser-based vision screening software", "computer vision development USA", "health tech software development", "HIPAA compliant app development", "telehealth platform integration"],
     content: `
-      <h3 class="text-2xl font-semibold mb-4 mt-6">Take a Highly Accurate Free Online Vision Test at Home</h3>
       <p class="mb-6 leading-relaxed">
-        In the US, routine medical visits often involve high consultation fees and long wait times. Setting up a clinic appointment falls to the bottom of the priority list due to hectic work schedules and lengthy commutes. A seamless digital alternative is now accessible from your workspace thanks to <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">advanced browser technologies</a>.
-      </p>
-      <p class="mb-6 leading-relaxed">
-        You can use your computer screen or mobile device to launch our responsive digital tool and complete a free online vision test. Without spending a single dollar, this brief assessment eliminates friction and provides immediate insight into your visual performance.
-      </p>
-      <p class="mb-8 leading-relaxed">
-        Visit <a href="https://eyesight-zeta.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">https://eyesight-zeta.vercel.app/</a> to access our web platform and start your evaluation right away.
+        Remote vision screening is a useful test case for browser-based computer vision: it must produce dependable measurements on uncontrolled consumer hardware, handle health-adjacent data responsibly, and plug into existing telehealth and retail workflows. This article walks through the architecture of an AI-assisted vision testing platform we built, and the engineering decisions that apply to any health-tech, wellness, or optical business planning a similar product.
       </p>
 
-      <h3 class="text-2xl font-semibold mb-4 mt-6">Why You Should Check Eyesight Online Today</h3>
+      <h2 class="text-2xl font-semibold mb-4 mt-6">The Engineering Problem: Screening Without Specialized Hardware</h2>
       <p class="mb-6 leading-relaxed">
-        Millions of professionals who spend hours each day staring at monitors suffer from eye strain. Subtle indicators that your optical prescription needs adjustment include frequent headaches, dry eyes, and blurry text. Ignoring small optical changes increases the risk of missing early signs of broader vision issues.
-      </p>
-      <p class="mb-8 leading-relaxed">
-        You can identify visual distortion before discomfort worsens by taking a few minutes during your break to check eyesight online. Quick screening helps determine whether your eyes simply need rest or an updated prescription, protecting both your eyesight and daily productivity.
+        A clinic measures visual acuity with calibrated charts at a fixed distance under controlled lighting. A browser-based test has none of that. Screen size, pixel density, brightness, and viewing distance all vary by user, and each one changes the size of the symbol the eye actually sees. The platform therefore has to solve a measurement problem before it can present a single test: converting what is drawn on the screen into a known visual angle.
       </p>
 
-      <h3 class="text-2xl font-semibold mb-4 mt-6">How Our AI Powered Eyesight Test Online Works</h3>
+      <h2 class="text-2xl font-semibold mb-4 mt-6">System Architecture</h2>
+      <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
+        <li><strong>Client application:</strong> A responsive web app renders the tests, guides the user step by step, and runs entirely in the browser, with no installation required.</li>
+        <li><strong>Calibration module:</strong> Establishes screen scale and viewing distance so test symbols render at the correct angular size.</li>
+        <li><strong>Test engine:</strong> Presents optotypes and color patterns, records responses, and adapts difficulty based on accuracy.</li>
+        <li><strong>Scoring service:</strong> Converts responses into a standardized acuity estimate with a confidence indicator.</li>
+        <li><strong>Results and integration API:</strong> Stores results securely and exposes them to partner systems such as telehealth portals and practice management software.</li>
+      </ul>
       <p class="mb-6 leading-relaxed">
-        Web screening is reliable and straightforward thanks to <a href="/services/data-analytics" class="text-blue-600 hover:underline font-semibold">sophisticated computer vision algorithms</a>. The software automatically instructs you to sit at a specific distance based on your monitor size when you start this AI vision screening.
-      </p>
-      <p class="mb-8 leading-relaxed">
-        To assess sharpness at different distances, the system guides you through an interactive digital Snellen vision test while displaying color patterns to evaluate indicators of color vision deficiency. The calculation engine produces an accurate baseline measurement without requiring extra hardware or lenses because it dynamically calibrates to your screen scale.
+        Our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">advanced web development team</a> builds this kind of client application in Next.js and TypeScript, with performance budgets that keep it usable on older devices.
       </p>
 
-      <h3 class="text-2xl font-semibold mb-4 mt-6">Traditional Clinics vs Taking an Eye Exam Online Free</h3>
+      <h3 class="text-xl font-semibold mb-2 mt-4">Screen Calibration and Viewing Distance</h3>
       <p class="mb-6 leading-relaxed">
-        Convenience, speed, and immediate baseline feedback are the deciding factors between a browser-based evaluation and an in-person visit. The comparison below highlights the differences:
+        Calibration can combine a reference object scaling step with guided distance instructions based on display size. Where camera access is granted, computer vision can estimate face distance from facial landmarks and prompt the user to move closer or farther. Processing on the device keeps images from ever leaving the browser, which simplifies privacy review.
       </p>
 
-      <div class="overflow-x-auto mb-8 mt-4">
-        <table class="min-w-full bg-white border border-gray-200">
-          <thead>
-            <tr class="bg-gray-100 border-b border-gray-200">
-              <th class="py-3 px-4 text-left font-semibold text-gray-700">Feature</th>
-              <th class="py-3 px-4 text-left font-semibold text-gray-700">Traditional Optometrist Visit</th>
-              <th class="py-3 px-4 text-left font-semibold text-gray-700">AI Powered Free Online Vision Test</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b border-gray-200">
-              <td class="py-3 px-4 text-gray-800">Cost</td>
-              <td class="py-3 px-4 text-gray-600">Expensive consultation fees</td>
-              <td class="py-3 px-4 text-gray-600">Completely free of charge</td>
-            </tr>
-            <tr class="border-b border-gray-200">
-              <td class="py-3 px-4 text-gray-800">Convenience</td>
-              <td class="py-3 px-4 text-gray-600">Requires booking and travel</td>
-              <td class="py-3 px-4 text-gray-600">Instant access from home or office</td>
-            </tr>
-            <tr class="border-b border-gray-200">
-              <td class="py-3 px-4 text-gray-800">Time Required</td>
-              <td class="py-3 px-4 text-gray-600">Takes hours including wait time</td>
-              <td class="py-3 px-4 text-gray-600">Results delivered in under five minutes</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 text-gray-800">Technology</td>
-              <td class="py-3 px-4 text-gray-600">Standard manual charts</td>
-              <td class="py-3 px-4 text-gray-600">Adaptive AI machine learning models</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3 class="text-2xl font-semibold mb-4 mt-6">The Future of the At Home Eye Exam in the USA</h3>
+      <h3 class="text-xl font-semibold mb-2 mt-4">Adaptive Test Logic</h3>
       <p class="mb-6 leading-relaxed">
-        Telehealth continues to transform how Americans manage personal wellness. Before scheduling formal appointments or ordering prescription eyewear, completing a baseline evaluation from home is an easy first step.
-      </p>
-      <p class="mb-8 leading-relaxed">
-        By choosing to take an eye exam online free, households can record baseline vision data and track changes over time, taking proactive control of their optical health without financial barriers.
+        Snellen-style acuity testing uses staircase logic: symbol size shrinks after correct responses and grows after errors until the result converges. Color-vision screening uses patterned plates designed to reveal common deficiencies. Both modules log response times and error patterns, which improves scoring and flags unreliable sessions, such as rapid random answers.
       </p>
 
-      <h4 class="text-xl font-semibold mb-2 mt-4">Start Your Free Vision Assessment Right Now</h4>
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Validation and Accuracy Controls</h2>
+      <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
+        <li><strong>Benchmarking:</strong> Compare platform output against clinical chart results across a range of devices and lighting conditions.</li>
+        <li><strong>Device variance handling:</strong> Detect unsupported or unusual displays, and show a warning instead of a misleading result.</li>
+        <li><strong>Confidence and referral thresholds:</strong> Report ranges rather than false precision, and recommend professional examination for borderline or poor results.</li>
+        <li><strong>Session quality checks:</strong> Reject or repeat tests where responses suggest distraction or incorrect setup.</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Compliance, Privacy, and Data Governance</h2>
       <p class="mb-6 leading-relaxed">
-        Stop squinting at your screen and guessing about optical clarity. Take charge of your everyday vision by completing our free online vision test today.
+        Health-adjacent products need compliance decisions at the start of the design, not after launch. Whether a tool is a wellness screening or a regulated medical device depends on its intended use and claims, so involve regulatory counsel early. Where results link to identifiable patients, apply HIPAA-aligned safeguards: encryption in transit and at rest, role-based access, audit logging, and business associate agreements with hosting and analytics providers. Obtain explicit consent for any camera use, follow US state privacy laws, and meet WCAG accessibility standards, which matter especially for a vision product.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Business Applications for Vision-Testing Technology</h2>
+      <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
+        <li><strong>Telehealth platforms:</strong> Pre-visit screening that gives clinicians baseline data before an appointment.</li>
+        <li><strong>Optical retail and eyewear brands:</strong> Qualifying customers and routing them to exams, reducing no-shows and improving booking quality.</li>
+        <li><strong>Employer wellness programs:</strong> Screening for screen-related eye strain across distributed workforces.</li>
+        <li><strong>Insurers and benefit providers:</strong> Low-cost triage that encourages timely professional care.</li>
+      </ul>
+      <p class="mb-6 leading-relaxed">
+        Longitudinal results also become a data asset. Aggregated, de-identified trends feed <a href="/services/data-analytics" class="text-blue-600 hover:underline font-semibold">analytics dashboards</a> that show screening volumes, referral rates, and outcomes by cohort.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Engineer Your Own Computer Vision Platform</h2>
+      <p class="mb-6 leading-relaxed">
+        The same building blocks of calibration, on-device inference, adaptive logic, and secure integration apply to many health-tech and industrial use cases. Black Zero Technologies delivers custom <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">computer vision and AI software</a> for US organizations, with full code ownership and US time-zone overlap.
       </p>
       <p class="mb-6 leading-relaxed">
-        Click <a href="https://eyesight-zeta.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">https://eyesight-zeta.vercel.app/</a> to start the assessment in five minutes, or explore our <a href="/customized-solutions" class="text-blue-600 hover:underline font-semibold">customized healthcare software solutions</a>.
+        <a href="/customized-solutions" class="text-blue-600 hover:underline font-semibold">Get a Custom Software Estimate</a> or <a href="/contact" class="text-blue-600 hover:underline font-semibold">Book a Scoping Call</a> to scope your platform.
       </p>
     `,
   },
@@ -2559,98 +2543,105 @@ export const blogPostsData: BlogPost[] = [
       </p>
     `,
   },
-  {
+    {
+    // NOTE: slug changed from "how-ai-facial-age-estimation-works-webcam". Add a 301 redirect from the old URL.
+    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/ai-software-hub, and also dropped the /privacy-policy link, which pointed at your own policy rather than the topic.
+    // NOTE: I removed claims from the original that a CTO or legal team could challenge: the "1 to 3 year margin of error" figure, the absolute "No" answers on spoofing, and "frames are processed and deleted instantly". Restore them only if you can document them for your own system.
+    // NOTE: I added a biometric-privacy section (Illinois BIPA, Texas, Washington), the main US compliance issue for face-based tools. Have counsel review it before publishing.
     id: 44,
-    slug: "how-ai-facial-age-estimation-works-webcam",
-    title: "How AI Facial Age Estimation Measures Age Through a Webcam",
+    slug: "facial-age-estimation-architecture-age-assurance-usa",
+    title: "Facial Age Estimation Architecture: Building Privacy-First Age Assurance for US Platforms",
     date: "July 10, 2026",
     imageUrl: "/Blogs/blog44.webp",
-    excerpt: "Discover how websites verify user age through a standard webcam using computer vision, anti-spoofing liveness checks, and privacy-first machine learning frameworks.",
-    seoTitle: "How AI Facial Age Estimation Works via Webcam (2026)",
-    metaDescription: "Discover how AI facial age estimation uses standard webcams for biometric liveness checks, zero-storage user privacy, and US digital compliance.",
-    focusKeyPhrase: "AI facial age estimation",
-    seoKeyPhrase: "AI facial age estimation webcam USA",
-    imgAltText: "AI facial age estimation system analyzing structural landmarks and liveness through a standard webcam",
-    seoKeywords: ["AI facial age estimation", "webcam age verification", "liveness checks", "digital safety compliance USA", "machine learning frameworks"],
+    excerpt: "Verifying age without document uploads is a hard engineering problem: threshold decisions, spoof resistance, biometric privacy law, and fairness testing. This guide breaks down the architecture of a webcam age-assurance pipeline for US platforms.",
+    seoTitle: "Facial Age Estimation Architecture for Age Assurance",
+    metaDescription: "Engineering guide to webcam age assurance: face landmark detection, liveness checks, on-device inference, BIPA compliance, and bias testing for US platforms.",
+    focusKeyPhrase: "facial age estimation architecture",
+    seoKeyPhrase: "age assurance computer vision USA",
+    imgAltText: "Facial age estimation architecture diagram showing capture quality gating, liveness detection, age model inference, and a threshold decision engine with ID fallback",
+    seoKeywords: ["facial age estimation architecture", "age assurance computer vision USA", "webcam age verification", "liveness detection development", "biometric privacy compliance BIPA", "computer vision development USA", "age verification software development"],
     content: `
-      <h3 class="text-2xl font-semibold mb-4 mt-6">How AI Facial Age Estimation Measures Age Through a Webcam</h3>
       <p class="mb-6 leading-relaxed">
-        Modern digital platforms rely on <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">computer vision and machine learning frameworks</a> to verify user age through a standard webcam. As US federal and state regulations tighten around age-restricted commerce and online child safety, AI facial age estimation provides an instant, privacy-preserving verification layer.
+        Age-restricted commerce, gaming, and online safety rules are pushing US platforms to verify age without turning every checkout into a document upload. Facial age estimation through a standard webcam is one answer, and it is a demanding engineering problem: the system must make a reliable threshold decision in seconds, resist spoofing, protect biometric data, and perform fairly across users. This article covers the architecture of a webcam age-assurance pipeline and the decisions that determine whether it is deployable in the US.
       </p>
 
-      <h3 class="text-2xl font-semibold mb-4 mt-6">The Core Process of Facial Age Estimation</h3>
+      <h2 class="text-2xl font-semibold mb-4 mt-6">What Age Assurance Actually Requires</h2>
       <p class="mb-6 leading-relaxed">
-        When a user grants camera access, the computer vision pipeline locates key facial landmarks including the pupils, nasal bridge, and jawline contour. Next, biometric liveness detection checks for natural micro-movements to block spoofing attempts using printed photos or pre-recorded videos.
-      </p>
-      <p class="mb-8 leading-relaxed">
-        Finally, a neural network trained on diverse demographic datasets evaluates geometric proportions and skin texture to output an age threshold confirmation in seconds without storing personal identity documents.
+        Most businesses do not need an exact age. They need a defensible answer to one question: is this person above a legal threshold? That reframes the model's job. Rather than reporting a single predicted age, a well-designed system compares an estimate and its uncertainty against a threshold with a safety buffer, and routes borderline cases to a stronger check such as document verification. Designing the fallback path is as important as designing the model.
       </p>
 
-      <h3 class="text-2xl font-semibold mb-4 mt-6">Traditional ID Verification vs AI Facial Age Estimation</h3>
-      <div class="overflow-x-auto mb-8 mt-4">
-        <table class="min-w-full bg-white border border-gray-200">
-          <thead>
-            <tr class="bg-gray-100 border-b border-gray-200">
-              <th class="py-3 px-4 text-left font-semibold text-gray-700">Verification Feature</th>
-              <th class="py-3 px-4 text-left font-semibold text-gray-700">Traditional Government ID Check</th>
-              <th class="py-3 px-4 text-left font-semibold text-gray-700">AI Facial Age Estimation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b border-gray-200">
-              <td class="py-3 px-4 text-gray-800">User Privacy</td>
-              <td class="py-3 px-4 text-gray-600">Requires sensitive personal ID uploads</td>
-              <td class="py-3 px-4 text-gray-600">No personal identity records needed</td>
-            </tr>
-            <tr class="border-b border-gray-200">
-              <td class="py-3 px-4 text-gray-800">Processing Speed</td>
-              <td class="py-3 px-4 text-gray-600">Slow manual review process</td>
-              <td class="py-3 px-4 text-gray-600">Instant real-time verification</td>
-            </tr>
-            <tr class="border-b border-gray-200">
-              <td class="py-3 px-4 text-gray-800">Data Security</td>
-              <td class="py-3 px-4 text-gray-600">High risk of document data breaches</td>
-              <td class="py-3 px-4 text-gray-600">Frames are processed and deleted instantly</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 text-gray-800">Conversion Drop-Off</td>
-              <td class="py-3 px-4 text-gray-600">High user friction at checkout</td>
-              <td class="py-3 px-4 text-gray-600">Seamless browser-based experience</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3 class="text-2xl font-semibold mb-4 mt-6">Enterprise Use Cases Across US Industries</h3>
-      <p class="mb-8 leading-relaxed">
-        In e-commerce, gaming, and telehealth, webcam age estimation restricts minors from age-gated goods and adult spaces while maintaining strict <a href="/privacy-policy" class="text-blue-600 hover:underline font-semibold">digital privacy</a> compliance.
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Pipeline Architecture</h2>
+      <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
+        <li><strong>Capture and quality gating:</strong> The browser requests camera permission, then checks lighting, face size, pose, and blur, and prompts the user to correct problems before analysis.</li>
+        <li><strong>Face detection and landmarking:</strong> A lightweight detector locates the face and key landmarks, which align and crop the image for the downstream model.</li>
+        <li><strong>Liveness detection:</strong> Passive and active checks confirm a live person is present, rather than a photo, a replayed video, or a synthetic stream.</li>
+        <li><strong>Age estimation model:</strong> A neural network trained on diverse, consented data produces an age estimate with an uncertainty measure.</li>
+        <li><strong>Decision engine:</strong> Business rules apply the threshold and buffer, and return a pass, fail, or escalate result to the calling application.</li>
+        <li><strong>Audit layer:</strong> Records the outcome, model version, and confidence, without retaining the image.</li>
+      </ul>
+      <p class="mb-6 leading-relaxed">
+        Our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">computer vision and AI engineering team</a> builds each stage as an independent service, so models can be updated without redeploying the whole system.
       </p>
 
-      <h4 class="text-xl font-semibold mb-2 mt-4">Integrate Custom Biometric Vision with Black Zero</h4>
-      <p class="mb-8 leading-relaxed">
-        Need secure browser-based computer vision or age-gating APIs for your platform? Partner with Black Zero to engineer <a href="/customized-solutions" class="text-blue-600 hover:underline font-semibold">custom computer vision solutions</a> with zero-retention privacy architectures.
+      <h3 class="text-xl font-semibold mb-2 mt-4">Liveness and Spoof Resistance</h3>
+      <p class="mb-6 leading-relaxed">
+        Presentation attacks include printed photos, screen replays, and masks. Injection attacks, where a virtual camera feeds prerecorded or generated video into the browser, are increasingly common. Layer defenses: texture and depth cues, challenge-response movements, device and stream integrity checks, and rate limiting on repeated attempts. No single technique is sufficient, so test the system with a red-team set of attack types and track attack success rates over time.
       </p>
 
-      <h3 class="text-2xl font-semibold mb-6 mt-10 border-t border-gray-200 pt-8">Frequently Asked Questions</h3>
-      
-      <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-100">
-        <h4 class="text-lg font-semibold text-gray-800 mb-2">Does AI facial age estimation store personal data?</h4>
-        <p class="leading-relaxed text-gray-600">No. The system processes the live video frame in memory and deletes it immediately, ensuring no biometric images are stored on servers.</p>
-      </div>
+      <h3 class="text-xl font-semibold mb-2 mt-4">Threshold Decisions and Error Trade-offs</h3>
+      <p class="mb-6 leading-relaxed">
+        Every threshold trades false accepts, where an underage user passes, against false rejects, where an adult is blocked. Setting a challenge age above the legal minimum reduces false accepts and sends more users to fallback verification. Choose the buffer by risk: a gambling or adult-content platform needs a larger margin than a loyalty-program age check.
+      </p>
 
-      <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-100">
-        <h4 class="text-lg font-semibold text-gray-800 mb-2">Can a printed photograph trick AI age estimation?</h4>
-        <p class="leading-relaxed text-gray-600">No. The software uses active and passive liveness checks to detect micro-movements, blocking printed photos and video replays.</p>
-      </div>
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Privacy and Legal Design</h2>
+      <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
+        <li><strong>Biometric privacy laws:</strong> Statutes such as the Illinois Biometric Information Privacy Act and similar laws in Texas and Washington may apply to face-based processing. Obtain legal review of consent, notice, and retention requirements for each state you serve.</li>
+        <li><strong>Data minimization:</strong> Run inference on the device where feasible, process frames in memory, and avoid storing images or face templates.</li>
+        <li><strong>Clear consent:</strong> Explain what is analyzed, why, and what happens to the data, before camera access is requested.</li>
+        <li><strong>Evolving age-verification rules:</strong> State requirements differ and change, so keep the threshold and fallback logic configurable by jurisdiction.</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Fairness Testing and Monitoring</h2>
+      <p class="mb-6 leading-relaxed">
+        Accuracy varies with age range, skin tone, gender presentation, camera quality, and lighting. Evaluate error rates across these groups before launch, publish internal thresholds for acceptable disparity, and monitor production outcomes for drift. Dashboards that track pass rates, escalation rates, and device mix, built with <a href="/services/data-analytics" class="text-blue-600 hover:underline font-semibold">data analytics engineering</a>, surface problems early.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Integration Patterns</h2>
+      <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
+        <li><strong>E-commerce checkout:</strong> A pre-payment check for age-restricted goods that falls back to ID when results are borderline.</li>
+        <li><strong>Gaming and community platforms:</strong> Age gating for content tiers and chat features.</li>
+        <li><strong>Telehealth and regulated services:</strong> Lightweight eligibility checks before onboarding.</li>
+        <li><strong>Delivery model:</strong> A JavaScript SDK or hosted flow built by our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">web platform developers</a>, with webhook results to your backend.</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Build a Privacy-First Computer Vision System</h2>
+      <p class="mb-6 leading-relaxed">
+        Black Zero Technologies engineers custom age-assurance and computer vision systems for US platforms, with privacy-by-design architecture, full code ownership, and US time-zone overlap. We begin with a scoping session on your risk profile, jurisdictions, and fallback flows.
+      </p>
+      <p class="mb-6 leading-relaxed">
+        <a href="/customized-solutions" class="text-blue-600 hover:underline font-semibold">Get a Custom Software Estimate</a> or <a href="/contact" class="text-blue-600 hover:underline font-semibold">Book a Scoping Call</a> to scope your age-assurance project.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-6 mt-10 border-t border-gray-200 pt-8">Frequently Asked Questions</h2>
 
       <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-100">
-        <h4 class="text-lg font-semibold text-gray-800 mb-2">How accurate is age prediction through a standard webcam?</h4>
-        <p class="leading-relaxed text-gray-600">Modern neural networks estimate age within a 1 to 3 year margin of error, making them highly effective for statutory age-threshold gating.</p>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Does facial age estimation have to store images?</h3>
+        <p class="leading-relaxed text-gray-600">No. A privacy-first design processes frames in memory, ideally on the device, and retains only the outcome and audit metadata. Your retention policy and applicable biometric privacy laws should govern the final design.</p>
+      </div>
+
+      <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-100">
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Can a photo or video replay defeat the system?</h3>
+        <p class="leading-relaxed text-gray-600">Basic spoofs should be blocked by liveness checks, but no defense is absolute. Layered liveness, stream integrity checks, and regular red-team testing reduce the risk.</p>
+      </div>
+
+      <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-100">
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">How accurate is webcam age estimation?</h3>
+        <p class="leading-relaxed text-gray-600">Accuracy depends on the model, image quality, and the user's age range, and it is typically weakest near the threshold. For that reason, production systems use a buffer age and route borderline users to document verification.</p>
       </div>
 
       <div class="mb-8 bg-gray-50 p-5 rounded-lg border border-gray-100">
-        <h4 class="text-lg font-semibold text-gray-800 mb-2">Why use AI instead of checking ID documents?</h4>
-        <p class="leading-relaxed text-gray-600">AI provides instant, anonymous age verification without forcing customers to upload sensitive government IDs that create data liability.</p>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Why use AI age estimation instead of ID checks?</h3>
+        <p class="leading-relaxed text-gray-600">It reduces friction and avoids collecting identity documents for most users, which lowers data liability. ID verification remains the right fallback for borderline or high-risk cases.</p>
       </div>
     `,
   },
@@ -3457,41 +3448,82 @@ export const blogPostsData: BlogPost[] = [
       </p>
     `,
   },
-  {
+    {
+    // NOTE: slug changed from "smog-to-sustainable-diamonds-usa". Add a 301 redirect from the old URL.
+    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/ai-software-hub.
+    // NOTE: CVD diamond growth is now framed as a reference case study rather than something Black Zero built. Do not add claims that you built diamond-growth systems unless it is true.
+    // NOTE: I replaced the "immutable ledger" wording with append-only, hash-chained logs, and added a sustainability-claims point referencing the FTC Green Guides. Confirm the legal wording with counsel if you publish environmental claims.
     id: 25,
-    slug: "smog-to-sustainable-diamonds-usa",
-    title: "Smog to Diamonds: The Physics and IoT Tech Behind Eco Gems",
+    slug: "industrial-iot-ai-process-control-manufacturing-architecture",
+    title: "Industrial IoT Telemetry and AI Process Control: Architecture for Precision Manufacturing",
     date: "June 2, 2026",
     imageUrl: "/Blogs/blog25.webp",
-    excerpt: "Innovative clean-tech companies are capturing atmospheric carbon and turning urban smog into lab-grown diamonds using chemical vapor deposition and AI-monitored IoT sensors.",
-    seoTitle: "Smog to Diamonds: Clean-Tech & AI Sensors in the USA",
-    metaDescription: "Discover how advanced IoT sensors, AI analytics, and physics transform atmospheric carbon into sustainable lab-grown diamonds in the USA.",
-    focusKeyPhrase: "sustainable diamonds in the USA",
-    seoKeyPhrase: "lab-grown diamonds AI telemetry USA",
-    imgAltText: "Advanced crystallization chamber transforming atmospheric carbon into sustainable lab-grown diamonds in the USA",
-    seoKeywords: ["Smog to Diamonds", "Sustainable Luxury USA", "lab-grown diamonds in USA", "industrial IoT sensors", "sustainable diamonds in the USA", "carbon transformation"],
+    excerpt: "Precision manufacturing fails in small drifts that surface only at final inspection. Using CVD crystal growth as a case study, this guide covers the sensor, streaming, and machine learning architecture behind real-time process control.",
+    seoTitle: "Industrial IoT & AI Process Control Architecture",
+    metaDescription: "Industrial IoT and AI process control architecture for precision manufacturing, using CVD crystal growth as a case study: sensors, streaming, ML, traceability.",
+    focusKeyPhrase: "industrial IoT AI process control",
+    seoKeyPhrase: "industrial IoT telemetry manufacturing USA",
+    imgAltText: "Industrial IoT architecture diagram showing sensors, edge gateway, streaming pipeline, machine learning anomaly detection, and ERP integration for a precision manufacturing line",
+    seoKeywords: ["industrial IoT AI process control", "industrial IoT telemetry manufacturing USA", "predictive maintenance software development", "manufacturing data analytics", "anomaly detection manufacturing", "IoT software development USA", "manufacturing traceability software"],
     content: `
-      <h3 class="text-2xl font-semibold mb-4 mt-6">Smog to Diamonds: The Physics and Tech Behind Eco Gems</h3>
       <p class="mb-6 leading-relaxed">
-        Clean-tech innovators are capturing atmospheric carbon and transforming urban emissions into high-grade sustainable diamonds in the USA. This process represents a convergence of materials physics, industrial IoT telemetry, and artificial intelligence.
+        Precision manufacturing processes fail in small increments: a pressure drift, a gas-ratio shift, a temperature gradient across a chamber. By the time a defect shows up in final inspection, hours or days of production are already lost. Industrial IoT telemetry combined with AI-driven process control moves detection upstream. Growing lab-grown diamond by chemical vapor deposition (CVD), including the clean-tech producers that source carbon from captured emissions, is a useful case study, because the process is unforgiving and the instrumentation requirements are clear. The architecture below applies equally to semiconductors, advanced materials, pharmaceuticals, and any batch process where yield depends on tight control.
       </p>
 
-      <h3 class="text-2xl font-semibold mb-4 mt-6">The Physics of Chemical Vapor Deposition (CVD)</h3>
-      <p class="mb-8 leading-relaxed">
-        Captured carbon gas is purified and introduced into a vacuum chamber containing a diamond seed crystal. Microwave energy heats the gas into a glowing plasma state, freeing carbon atoms to rain down and bond into a tetrahedral crystal lattice with the exact optical and physical properties of mined stones.
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Case Study: Why CVD Crystal Growth Demands Telemetry</h2>
+      <p class="mb-6 leading-relaxed">
+        In CVD growth, a hydrocarbon and hydrogen gas mixture enters a vacuum chamber that contains a diamond seed. Microwave energy forms a plasma that breaks the gas apart, and carbon atoms deposit onto the seed layer by layer, extending the crystal lattice. Growth runs for days. Quality depends on holding gas ratios, pressure, plasma conditions, and substrate temperature within narrow windows for the entire run. A small excursion can introduce defects that are only visible after cutting and grading, which makes continuous monitoring and early intervention financially significant.
       </p>
 
-      <h3 class="text-2xl font-semibold mb-4 mt-6">The Role of Industrial IoT and AI Telemetry</h3>
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Reference Architecture for Industrial IoT and AI Telemetry</h2>
+      <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
+        <li><strong>Sensing layer:</strong> Temperature, pressure, flow, optical emission, and power sensors sample the process at rates matched to how quickly each variable can drift.</li>
+        <li><strong>Edge gateway:</strong> Local controllers normalize protocols such as OPC UA and MQTT, timestamp readings against a common clock, buffer data during network loss, and run safety-critical logic locally.</li>
+        <li><strong>Ingestion and storage:</strong> A streaming platform feeds a time-series database for recent data and a data lake for long-term history, with each reading tagged by batch, equipment, and recipe.</li>
+        <li><strong>Analytics and models:</strong> Anomaly detection, yield prediction, and drift analysis run on the stream, with models versioned and validated against historical batches.</li>
+        <li><strong>Operator interface:</strong> Live dashboards and alerts give process engineers the context to act, including which variables contributed to a warning.</li>
+      </ul>
       <p class="mb-6 leading-relaxed">
-        Growing a flawless crystal requires millisecond precision. Hundreds of micro-sensors monitor chamber temperature, vacuum pressure, and plasma density in real time, streaming telemetry into central processing pipelines powered by <a href="/services/data-analytics" class="text-blue-600 hover:underline font-semibold">real-time data analytics</a> and machine learning models.
-      </p>
-      <p class="mb-8 leading-relaxed">
-        Furthermore, immutable ledger architectures track carbon provenance from capture to final certification through <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">custom enterprise software</a>.
+        Our <a href="/services/data-analytics" class="text-blue-600 hover:underline font-semibold">data analytics and streaming engineering team</a> builds the ingestion, storage, and dashboard layers for manufacturers that need real-time visibility across multiple lines or sites.
       </p>
 
-      <h4 class="text-xl font-semibold mb-2 mt-4">Engineer Precision IoT and AI Telemetry Systems with Black Zero</h4>
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Machine Learning Models for Process Control</h2>
+      <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
+        <li><strong>Anomaly detection:</strong> Multivariate models learn normal operating signatures and flag combinations of small deviations that single-variable thresholds miss.</li>
+        <li><strong>Virtual metrology:</strong> Models estimate quality outcomes from process data during the run, rather than waiting for end-of-batch inspection.</li>
+        <li><strong>Predictive maintenance:</strong> Trends in power, vacuum performance, and component behavior predict failures before they interrupt a long run.</li>
+        <li><strong>Recipe optimization:</strong> Historical batch data identifies parameter settings associated with higher yield, which engineers validate before changing production recipes.</li>
+      </ul>
       <p class="mb-6 leading-relaxed">
-        From clean-tech manufacturing to industrial automation, Black Zero builds real-time sensor analytics and <a href="/customized-solutions" class="text-blue-600 hover:underline font-semibold">customized software solutions</a> for US enterprises. Contact our engineering team today.
+        Introduce automation in stages. Models first advise operators, then trigger alerts, and only then adjust setpoints within approved limits, with human override and full logging. This approach is typical of our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">industrial AI and custom software work</a>.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Traceability and Provenance</h2>
+      <p class="mb-6 leading-relaxed">
+        Buyers, auditors, and retail partners increasingly ask where a product came from and how it was made. Link every unit to its batch, equipment, recipe version, sensor history, and input source, and store those records in append-only, hash-chained logs so later tampering is detectable. This record supports quality investigations, warranty claims, and customer certification, and it works for any material or component with a regulated or premium supply chain.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Substantiating Sustainability Claims</h2>
+      <p class="mb-6 leading-relaxed">
+        Environmental marketing claims need evidence. Telemetry that measures energy use, gas consumption, and yield per unit gives you the data to quantify impact and withstand scrutiny, and the FTC's Green Guides set expectations for how such claims should be substantiated and worded. Capture these metrics at the batch level from the start, instead of reconstructing them for a sustainability report later.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Integrating With ERP and Production Systems</h2>
+      <p class="mb-6 leading-relaxed">
+        Process data creates value when it reaches planning and finance. Connecting telemetry to a <a href="/services/custom-erp-development" class="text-blue-600 hover:underline font-semibold">custom ERP platform</a> links yield and scrap to actual costs, schedules maintenance windows around production plans, and supports accurate cost-per-unit reporting.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Measuring Return</h2>
+      <p class="mb-6 leading-relaxed">
+        Track yield improvement, scrap and rework reduction, unplanned downtime, energy per unit, and engineer time spent on investigations. Start with one production line or tool, establish baselines before deployment, and expand once the results are documented.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Engineer Precision Telemetry for Your Operation</h2>
+      <p class="mb-6 leading-relaxed">
+        Black Zero Technologies builds industrial IoT pipelines, real-time analytics, and AI process monitoring for US manufacturers and clean-tech companies, with full code ownership and US time-zone overlap. We begin by mapping your process variables, data sources, and the failure modes that cost you the most.
+      </p>
+      <p class="mb-6 leading-relaxed">
+        <a href="/customized-solutions" class="text-blue-600 hover:underline font-semibold">Get a Custom Software Estimate</a> or <a href="/contact" class="text-blue-600 hover:underline font-semibold">Book a Scoping Call</a> to scope your telemetry platform.
       </p>
     `,
   },
@@ -3837,38 +3869,89 @@ export const blogPostsData: BlogPost[] = [
       </p>
     `,
   },
-  {
+    {
+    // NOTE: slug changed from "integrating-custom-ai-legacy-systems". Add a 301 redirect from the old URL.
+    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/ai-software-hub.
     id: 15,
-    slug: "integrating-custom-ai-legacy-systems",
-    title: "Integrating Custom AI into Legacy Business Systems for US Enterprises",
+    slug: "ai-integration-legacy-systems-modernization-usa",
+    title: "AI Integration for Legacy Systems: Modernization Architecture Without a Rewrite",
     date: "May 15, 2026",
     imageUrl: "/Blogs/blog15.webp",
-    excerpt: "Many established US enterprises run critical operations on software built decades ago. Learn how integrating custom AI into legacy systems modernizes infrastructure without costly rip-and-replace downtime.",
-    seoTitle: "Integrating Custom AI into Legacy Systems | US Guide",
-    metaDescription: "Upgrade your US enterprise infrastructure without downtime. Integrating custom AI into legacy systems unlocks predictive analytics and workflow automation.",
-    focusKeyPhrase: "Integrating custom AI into legacy systems",
+    excerpt: "A full rewrite of a legacy platform is slow and risky. This guide covers the API, event-streaming, and strangler-pattern approaches that add custom AI around existing systems while keeping operations stable.",
+    seoTitle: "AI Integration for Legacy Systems: Modernization Guide",
+    metaDescription: "Integrate custom AI with legacy ERP and enterprise systems without a rewrite: API wrappers, change data capture, security controls, and a phased rollout.",
+    focusKeyPhrase: "AI integration for legacy systems",
     seoKeyPhrase: "Legacy system modernization USA",
-    imgAltText: "Engineering team performing legacy system modernization and custom AI integration on US corporate servers",
-    seoKeywords: ["Legacy system modernization USA", "Enterprise AI integration USA", "Integrating custom AI into legacy systems", "Business infrastructure", "API middleware integration", "Business intelligence"],
+    imgAltText: "Legacy system modernization architecture with an API wrapper layer, change data capture stream, and custom AI services connected to an existing enterprise ERP",
+    seoKeywords: ["AI integration for legacy systems", "Legacy system modernization USA", "integrating custom AI into legacy systems", "legacy ERP modernization", "API wrapper integration", "strangler pattern migration", "enterprise AI integration USA"],
     content: `
-      <h3 class="text-2xl font-semibold mb-4 mt-6">Integrating Custom AI into Legacy Business Systems for US Enterprises</h3>
       <p class="mb-6 leading-relaxed">
-        Many established corporations across the United States run core operations on ERP, banking, or logistics software built decades ago. While these legacy platforms hold valuable historical records, they lack modern automation and predictive intelligence.
-      </p>
-      <p class="mb-8 leading-relaxed">
-        Rather than risking a multi-million-dollar rip-and-replace rewrite, integrating custom AI into legacy systems via secure API middleware modernizes your existing infrastructure with zero operational downtime.
+        Core operations at many US enterprises still run on ERP, banking, or logistics software that is a decade or more old. These systems hold years of transaction history and encode business rules nobody fully documented, which makes a full rewrite slow, costly, and risky. Custom AI can be added around a legacy platform instead of in place of it. This guide covers the integration patterns, safeguards, and rollout approach that let you gain automation and predictive capability without disrupting the systems the business depends on.
       </p>
 
-      <h3 class="text-2xl font-semibold mb-4 mt-6">Steps for Seamless AI Integration Without Operational Downtime</h3>
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Why Legacy Systems Resist AI</h2>
       <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
-        <li><strong>Secure API & Middleware Wrapping:</strong> Building encrypted REST and GraphQL connectors that bridge legacy SQL databases with modern <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">AI microservices</a>.</li>
-        <li><strong>Automated Data Ingestion:</strong> Eliminating manual dual-entry between legacy terminals and modern cloud dashboards.</li>
-        <li><strong>Phased Rollout Architecture:</strong> Deploying intelligent modules incrementally so daily enterprise operations continue uninterrupted.</li>
+        <li><strong>No modern interfaces:</strong> Many platforms expose only batch files, database tables, or terminal screens rather than APIs.</li>
+        <li><strong>Embedded business logic:</strong> Pricing, approval, and compliance rules live in stored procedures or custom code that cannot be safely altered.</li>
+        <li><strong>Inconsistent data:</strong> Decades of manual entry leave duplicates, free-text fields, and conflicting formats.</li>
+        <li><strong>Tight coupling and fragility:</strong> A small change can disrupt downstream jobs, so teams avoid touching the core.</li>
+      </ul>
+      <p class="mb-6 leading-relaxed">
+        These constraints shape the integration strategy. The goal is to add capability at the edges, keep the system of record stable, and move logic outward over time.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Integration Patterns That Work</h2>
+      <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
+        <li><strong>API wrapper layer:</strong> A secure service translates legacy interfaces into documented REST or GraphQL endpoints, so AI services never touch the core directly. This anti-corruption layer isolates new code from old schemas.</li>
+        <li><strong>Change data capture:</strong> Database changes stream to a message broker without adding query load, giving AI services a near-real-time copy of operational data.</li>
+        <li><strong>File and queue bridging:</strong> Where integration is file-based, such as EDI or flat-file exports, a queue-backed ingestion service parses, validates, and routes records automatically.</li>
+        <li><strong>Robotic process automation:</strong> Reserve UI automation for systems with no other access path, because it is the most brittle option.</li>
+      </ul>
+      <p class="mb-6 leading-relaxed">
+        Our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">custom AI and software engineering team</a> selects the pattern per system, based on data access, latency needs, and risk tolerance.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">AI Use Cases That Fit Legacy Environments</h2>
+      <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
+        <li><strong>Document intake:</strong> Extracting fields from invoices, purchase orders, and claims, then posting validated records into the legacy system.</li>
+        <li><strong>Forecasting and anomaly detection:</strong> Models trained on historical data flag demand shifts, pricing errors, and unusual transactions.</li>
+        <li><strong>Knowledge access:</strong> Retrieval-augmented assistants answer questions over legacy records and documentation, reducing dependence on a few veteran experts.</li>
+        <li><strong>Workflow triage:</strong> Classification routes exceptions and requests to the right team with context attached.</li>
+      </ul>
+      <p class="mb-6 leading-relaxed">
+        Models depend on dependable inputs, so legacy data usually needs profiling and cleansing first. Our <a href="/services/data-analytics" class="text-blue-600 hover:underline font-semibold">data analytics engineering</a> builds the ETL and quality checks that make historical records usable for training and inference.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Modernize Incrementally With the Strangler Pattern</h2>
+      <p class="mb-6 leading-relaxed">
+        Rather than replacing the platform at once, route specific functions through new services one at a time. Each migrated function, such as invoicing, inventory, or quoting, is rebuilt behind the wrapper, validated against legacy output, and then switched over. Over time the old system shrinks to a data store and finally retires. Where a full replacement is the end goal, a <a href="/services/custom-erp-development" class="text-blue-600 hover:underline font-semibold">custom ERP platform</a> can absorb these functions progressively, so the business never faces a single high-risk cutover.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Security, Compliance, and Risk Controls</h2>
+      <ul class="list-disc pl-8 space-y-2 leading-relaxed text-gray-800 mb-8">
+        <li><strong>Least privilege:</strong> Grant AI services read-only access first, with dedicated service accounts and network segmentation.</li>
+        <li><strong>Data protection:</strong> Mask personal and financial fields before they reach models, and keep sensitive data inside your tenancy.</li>
+        <li><strong>Shadow mode:</strong> Run models alongside human decisions and compare results before any automated action is enabled.</li>
+        <li><strong>Rollback and approvals:</strong> Keep feature flags, versioned models, and human approval for high-impact actions.</li>
+        <li><strong>Audit trails:</strong> Log every input, output, and override to support compliance review.</li>
       </ul>
 
-      <h4 class="text-xl font-semibold mb-2 mt-4">Partner with Black Zero for Enterprise AI Integration</h4>
+      <h2 class="text-2xl font-semibold mb-4 mt-6">A 90-Day Roadmap</h2>
       <p class="mb-6 leading-relaxed">
-        Extend the lifespan and intelligence of your core software assets. Contact Black Zero today to architect <a href="/customized-solutions" class="text-blue-600 hover:underline font-semibold">custom legacy AI integrations</a> for your US enterprise.
+        In weeks one to three, inventory systems, map data flows, and rank use cases by value and feasibility. In weeks four to eight, build the wrapper and ingestion pipelines, then train and validate a model in shadow mode. In weeks nine to twelve, pilot with one team, measure against baseline, and decide on expansion. Treat documentation as a deliverable, since capturing the legacy business rules during this work is itself an asset that reduces future risk.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Cost and ROI Versus a Rewrite</h2>
+      <p class="mb-6 leading-relaxed">
+        A rewrite carries long timelines, parallel-run costs, and the risk of losing undocumented behavior. Incremental integration delivers value in the first release and spreads spend over measurable milestones. Quantify returns through manual hours eliminated, error and rework reduction, faster cycle times, and decisions improved by prediction. Start with one workflow where data is accessible and volume is high, prove the result, and reuse the wrapper, pipelines, and monitoring for each additional use case.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-6">Add AI to Your Core Systems Without Disruption</h2>
+      <p class="mb-6 leading-relaxed">
+        Black Zero Technologies integrates custom AI with legacy ERP, finance, and logistics platforms for US mid-market and enterprise teams, with full code ownership and US time-zone overlap. We begin with a system assessment that maps data access, risks, and the first high-return use case.
+      </p>
+      <p class="mb-6 leading-relaxed">
+        <a href="/customized-solutions" class="text-blue-600 hover:underline font-semibold">Get a Custom Software Estimate</a> or <a href="/contact" class="text-blue-600 hover:underline font-semibold">Book a Scoping Call</a> to assess your legacy integration options.
       </p>
     `,
   },
