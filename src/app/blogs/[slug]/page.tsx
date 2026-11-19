@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { blogPostsData } from "@/data/blogs";
 import BlogPostImage from "@/components/BlogPostImage";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Metadata } from "next";
 
 type Props = {
@@ -73,10 +73,20 @@ export async function generateStaticParams() {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const post = blogPostsData.find((p) => p.slug === slug);
+  const currentIndex = blogPostsData.findIndex((p) => p.slug === slug);
+  const post = currentIndex !== -1 ? blogPostsData[currentIndex] : undefined;
 
   if (!post) {
     notFound();
+  }
+
+  // Pick the next 3 posts circularly so every blog post gets at least 3 incoming internal links
+  const relatedPosts = [];
+  const totalPosts = blogPostsData.length;
+  const relatedCount = Math.min(3, Math.max(0, totalPosts - 1));
+
+  for (let i = 1; i <= relatedCount; i++) {
+    relatedPosts.push(blogPostsData[(currentIndex + i) % totalPosts]);
   }
 
   const canonicalUrl = `${SITE_URL}/blogs/${slug}`;
@@ -176,6 +186,39 @@ export default async function BlogPostPage({ params }: Props) {
               </Link>
             </div>
           </div>
+
+          {relatedPosts.length > 0 && (
+            <section
+              aria-label="Related Insights"
+              className="bg-gray-50 rounded-2xl p-6 md:p-8"
+            >
+              <h2 className="text-2xl font-bold text-black mb-6">
+                More Enterprise Engineering Insights
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {relatedPosts.map((related) => (
+                  <Link
+                    key={related.slug}
+                    href={`/blogs/${related.slug}`}
+                    className="group bg-white border border-gray-200 rounded-xl p-5 flex flex-col justify-between hover:border-black transition-colors"
+                  >
+                    <div>
+                      <p className="text-xs text-gray-500 font-medium mb-2">
+                        {related.date}
+                      </p>
+                      <h3 className="text-base font-bold text-black leading-snug group-hover:underline">
+                        {related.title}
+                      </h3>
+                    </div>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-black">
+                      Read Article
+                      <ArrowRight size={15} />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
       </div>
     </>
