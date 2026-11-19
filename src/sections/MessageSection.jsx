@@ -28,7 +28,7 @@ const MessageSection = () => {
         });
       }
 
-      // Word-by-word scroll animation from light gray to solid black for top text
+      // Word-by-word scroll reveal from faint gray to solid black for top text
       gsap.fromTo(
         firstMsgSplit.words,
         { color: "rgba(0,0,0,0.08)" },
@@ -45,7 +45,7 @@ const MessageSection = () => {
         }
       );
 
-      // Word-by-word scroll animation from light gray to solid black for bottom text
+      // Word-by-word scroll reveal from faint gray to solid black for bottom text
       gsap.fromTo(
         secMsgSplit.words,
         { color: "rgba(0,0,0,0.08)" },
@@ -62,7 +62,7 @@ const MessageSection = () => {
         }
       );
 
-      // Reveal animation for the Scale Up badge
+      // Clip-path reveal animation for the Scale Up badge
       gsap
         .timeline({
           scrollTrigger: {
@@ -100,22 +100,22 @@ const MessageSection = () => {
     <section className="message-content bg-white relative z-10">
       <div className="container mx-auto flex justify-center items-start pt-4 pb-12 md:py-28 relative pointer-events-none">
         <div className="w-full h-full flex flex-col items-center -mt-23 md:mt-0 text-center">
-          {/* Single semantic H1 for SEO while keeping Scale Up centered between both text blocks */}
-          <h1 className="msg-wrapper flex flex-col items-center !gap-2 md:!gap-3">
-            <span className="first-message block text-black/10 !mb-0">
-              Architect custom enterprise <br></br>software and{" "}
+          {/* Single semantic H1 for SEO with Scale Up placed in flex flow between both text blocks */}
+          <h1 className="msg-wrapper flex flex-col items-center">
+            <span className="first-message block text-black/10">
+              Architect custom enterprise software and{" "}
             </span>
 
             <span
               style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
-              className="msg-text-scroll !relative !inset-auto !top-auto !bottom-auto !left-auto !right-auto !translate-y-0 !mx-0 !my-1 md:!my-2 block border-black z-10"
+              className="msg-text-scroll block border-black"
             >
               <span className="bg-black block md:pb-5 pb-3 px-5">
                 <span className="text-white block">Scale Up </span>
               </span>
             </span>
 
-            <span className="second-message block text-black/10 !mt-0">
+            <span className="second-message block text-black/10">
               your operations with <br /> secure AI and custom ERP <br />{" "}
               systems
             </span>
