@@ -73,7 +73,7 @@ export const blogPostsData: BlogPost[] = [
         For the management team of any organization, data privacy and security are among the most critical concerns. Inputting sensitive supply chain data into a public AI tool can pose a significant security risk. In contrast, a private AI assistant operates entirely within your own network and infrastructure.
       </p>
       <p class="mb-8 leading-relaxed">
-        This private AI assistant respects existing user access permissions, ensuring that each employee can only view information they are authorized to access. <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">Enterprise AI integration</a> ensures that the confidential and valuable data of your organization remains within your own servers and stays completely secure.
+        This private AI assistant respects existing user access permissions, ensuring that each employee can only view information they are authorized to access. <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">Enterprise AI integration</a> ensures that the confidential and valuable data of your organization remains within your own servers and stays completely secure.
       </p>
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">Core Architecture: Connecting LLMs to Your Custom ERP</h3>
@@ -782,7 +782,7 @@ export const blogPostsData: BlogPost[] = [
   },
     {
     // NOTE: slug changed from "best-smart-farming-tools-ai-custom-software". Add a 301 redirect from the old URL.
-    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/ai-software-hub.
+    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/custom-ai-software-development.
     // NOTE: I removed unsupported claims from the original: "remarkable accuracy", "eliminate this risk", spotting deficiencies "days before a human inspector", and "minimizing nitrogen runoff". I also removed the "best smart farming tools" framing, which attracts consumer and listicle intent rather than buyers.
     id: 68,
     slug: "agritech-software-architecture-predictive-farming-platform-python",
@@ -851,7 +851,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Delivery:</strong> Dashboards for managers and mobile tools for field crews.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Our <a href="/services/data-analytics" class="text-blue-600 hover:underline font-semibold">data analytics and pipeline engineering team</a> builds the ingestion, storage, and dashboard layers, and our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">custom AI engineers</a> build and validate the models.
+        Our <a href="/services/data-analytics" class="text-blue-600 hover:underline font-semibold">data analytics and pipeline engineering team</a> builds the ingestion, storage, and dashboard layers, and our <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">custom AI engineers</a> build and validate the models.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Why Generic Farm Software Often Falls Short</h2>
@@ -987,7 +987,7 @@ export const blogPostsData: BlogPost[] = [
   },
     {
     // NOTE: slug changed from "free-online-vision-test". Add a 301 redirect from the old URL. It was ranking for consumer intent, so the old query traffic will drop.
-    // NOTE: removed both links to eyesight-zeta.vercel.app (off-brand domain) and replaced the broken /services/custom-ai-software-development link with /services/ai-software-hub. If the tool has a branded URL, add it back in the final section.
+    // NOTE: removed both links to eyesight-zeta.vercel.app (off-brand domain) and replaced the broken /services/custom-ai-software-development link with /services/custom-ai-software-development. If the tool has a branded URL, add it back in the final section.
     // NOTE: the body is fully rewritten as an architecture showcase. I included no accuracy or clinical-validation claims beyond what the tool is designed to do, so check the "Validation" section against your actual testing.
     id: 66,
     slug: "telehealth-computer-vision-ai-vision-testing-platform",
@@ -1059,7 +1059,7 @@ export const blogPostsData: BlogPost[] = [
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Engineer Your Own Computer Vision Platform</h2>
       <p class="mb-6 leading-relaxed">
-        The same building blocks of calibration, on-device inference, adaptive logic, and secure integration apply to many health-tech and industrial use cases. Black Zero Technologies delivers custom <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">computer vision and AI software</a> for US organizations, with full code ownership and US time-zone overlap.
+        The same building blocks of calibration, on-device inference, adaptive logic, and secure integration apply to many health-tech and industrial use cases. Black Zero Technologies delivers custom <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">computer vision and AI software</a> for US organizations, with full code ownership and US time-zone overlap.
       </p>
       <p class="mb-6 leading-relaxed">
         <a href="/customized-solutions" class="text-blue-600 hover:underline font-semibold">Get a Custom Software Estimate</a> or <a href="/contact" class="text-blue-600 hover:underline font-semibold">Book a Scoping Call</a> to scope your platform.
@@ -1861,7 +1861,7 @@ export const blogPostsData: BlogPost[] = [
   },
     {
     // NOTE: slug changed from "ai-for-people-with-disabilities". Add a 301 redirect from the old URL.
-    // NOTE: the original body linked to /services/custom-ai-software-development and /services/web-portal-development. Neither is a live URL in your sitemap. I replaced them with /services/ai-software-hub and /services/advanced-websites.
+    // NOTE: the original body linked to /services/custom-ai-software-development and /services/web-portal-development. Neither is a live URL in your sitemap. I replaced them with /services/custom-ai-software-development and /services/advanced-websites.
     // NOTE: I removed the original claims that AI "ensures" ADA compliance and the exoskeleton row, which is outside your service scope. I added the DOJ Title II rule and a warning about overlay widgets. The rule's compliance dates were extended in April 2026, so the body deliberately gives no dates. Have counsel review it before publishing.
     id: 55,
     slug: "accessible-software-development-wcag-ai-enterprise-platforms",
@@ -1935,7 +1935,7 @@ export const blogPostsData: BlogPost[] = [
         </table>
       </div>
       <p class="mb-6 leading-relaxed">
-        Our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">AI engineering practice</a> designs these features with fallbacks, since models make mistakes that disproportionately affect users who depend on them.
+        Our <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">AI engineering practice</a> designs these features with fallbacks, since models make mistakes that disproportionately affect users who depend on them.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Why Overlays Are Not a Compliance Strategy</h2>
@@ -2447,7 +2447,7 @@ export const blogPostsData: BlogPost[] = [
   },
     {
     // NOTE: slug changed from "how-ai-traffic-enforcement-changes-road-safety". Add a 301 redirect from the old URL.
-    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/ai-software-hub.
+    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/custom-ai-software-development.
     // NOTE: I removed the unsupported claims from the original: "high precision", "reducing congestion and emergency response times", and the "24/7 vs traditional" comparison table. I added a privacy and state-law section. Legality of automated enforcement varies by state, so have counsel review before publishing.
     id: 47,
     slug: "computer-vision-intelligent-transportation-systems-architecture",
@@ -2481,7 +2481,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Integration layer:</strong> APIs deliver confirmed events to records systems, court or citation platforms, and analytics warehouses.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">computer vision and AI engineering team</a> builds the detection, tracking, and recognition models, with performance tested on local camera angles and lighting.
+        Our <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">computer vision and AI engineering team</a> builds the detection, tracking, and recognition models, with performance tested on local camera angles and lighting.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Edge vs. Cloud Processing</h2>
@@ -2706,7 +2706,7 @@ export const blogPostsData: BlogPost[] = [
   },
     {
     // NOTE: slug changed from "how-ai-facial-age-estimation-works-webcam". Add a 301 redirect from the old URL.
-    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/ai-software-hub, and also dropped the /privacy-policy link, which pointed at your own policy rather than the topic.
+    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/custom-ai-software-development, and also dropped the /privacy-policy link, which pointed at your own policy rather than the topic.
     // NOTE: I removed claims from the original that a CTO or legal team could challenge: the "1 to 3 year margin of error" figure, the absolute "No" answers on spoofing, and "frames are processed and deleted instantly". Restore them only if you can document them for your own system.
     // NOTE: I added a biometric-privacy section (Illinois BIPA, Texas, Washington), the main US compliance issue for face-based tools. Have counsel review it before publishing.
     id: 44,
@@ -2741,7 +2741,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Audit layer:</strong> Records the outcome, model version, and confidence, without retaining the image.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">computer vision and AI engineering team</a> builds each stage as an independent service, so models can be updated without redeploying the whole system.
+        Our <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">computer vision and AI engineering team</a> builds each stage as an independent service, so models can be updated without redeploying the whole system.
       </p>
 
       <h3 class="text-xl font-semibold mb-2 mt-4">Liveness and Spoof Resistance</h3>
@@ -3432,7 +3432,7 @@ export const blogPostsData: BlogPost[] = [
   },
     {
     // NOTE: slug changed from "satellite-surveillance-ai-tracking". Add a 301 redirect from the old URL.
-    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/ai-software-hub.
+    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/custom-ai-software-development.
     // NOTE: I reframed "surveillance" as commercial supply chain visibility, which fits a CTO audience and avoids defense-adjacent search intent. I also removed the original claim that detection protects "US maritime supply chains in real time", which depends on data revisit rates you do not control.
     id: 30,
     slug: "geospatial-ai-maritime-supply-chain-visibility-satellite-data",
@@ -3507,7 +3507,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Alerting and interfaces:</strong> Map dashboards, API endpoints, and event streams deliver findings to analysts and downstream systems.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">computer vision and AI engineering team</a> builds the detection and fusion models, and our <a href="/services/data-analytics" class="text-blue-600 hover:underline font-semibold">data analytics engineers</a> build the pipelines and dashboards around them.
+        Our <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">computer vision and AI engineering team</a> builds the detection and fusion models, and our <a href="/services/data-analytics" class="text-blue-600 hover:underline font-semibold">data analytics engineers</a> build the pipelines and dashboards around them.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Commercial Use Cases</h2>
@@ -3699,7 +3699,7 @@ export const blogPostsData: BlogPost[] = [
   },
     {
     // NOTE: slug changed from "smog-to-sustainable-diamonds-usa". Add a 301 redirect from the old URL.
-    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/ai-software-hub.
+    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/custom-ai-software-development.
     // NOTE: CVD diamond growth is now framed as a reference case study rather than something Black Zero built. Do not add claims that you built diamond-growth systems unless it is true.
     // NOTE: I replaced the "immutable ledger" wording with append-only, hash-chained logs, and added a sustainability-claims point referencing the FTC Green Guides. Confirm the legal wording with counsel if you publish environmental claims.
     id: 25,
@@ -3744,7 +3744,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Recipe optimization:</strong> Historical batch data identifies parameter settings associated with higher yield, which engineers validate before changing production recipes.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Introduce automation in stages. Models first advise operators, then trigger alerts, and only then adjust setpoints within approved limits, with human override and full logging. This approach is typical of our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">industrial AI and custom software work</a>.
+        Introduce automation in stages. Models first advise operators, then trigger alerts, and only then adjust setpoints within approved limits, with human override and full logging. This approach is typical of our <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">industrial AI and custom software work</a>.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Traceability and Provenance</h2>
@@ -3846,7 +3846,7 @@ export const blogPostsData: BlogPost[] = [
   },
     {
     // NOTE: slug changed from "ai-brain-self-driving-cars-usa". Add a 301 redirect from the old URL.
-    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/ai-software-hub.
+    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/custom-ai-software-development.
     // NOTE: I did not claim Black Zero builds autonomous vehicles. The post uses AV perception as a reference architecture for fleets, robotics, and inspection systems. I also removed the original "centimeter-level accuracy day or night" claim for LiDAR, which overstated performance in rain, snow, and fog.
     id: 22,
     slug: "sensor-fusion-edge-ai-architecture-autonomous-systems",
@@ -3912,7 +3912,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Health monitoring:</strong> Diagnostics detect sensor degradation and trigger fallback behavior.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">computer vision and AI engineering team</a> applies these patterns to enterprise robotics, inspection, and fleet systems.
+        Our <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">computer vision and AI engineering team</a> applies these patterns to enterprise robotics, inspection, and fleet systems.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Edge AI Constraints: Latency, Power, and Reliability</h2>
@@ -4167,7 +4167,7 @@ export const blogPostsData: BlogPost[] = [
   },
     {
     // NOTE: slug changed from "integrating-custom-ai-legacy-systems". Add a 301 redirect from the old URL.
-    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/ai-software-hub.
+    // NOTE: the original body linked to /services/custom-ai-software-development, which is not a live URL. I replaced it with /services/custom-ai-software-development.
     id: 15,
     slug: "ai-integration-legacy-systems-modernization-usa",
     title: "AI Integration for Legacy Systems: Modernization Architecture Without a Rewrite",
@@ -4204,7 +4204,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Robotic process automation:</strong> Reserve UI automation for systems with no other access path, because it is the most brittle option.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">custom AI and software engineering team</a> selects the pattern per system, based on data access, latency needs, and risk tolerance.
+        Our <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">custom AI and software engineering team</a> selects the pattern per system, based on data access, latency needs, and risk tolerance.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">AI Use Cases That Fit Legacy Environments</h2>
@@ -4391,7 +4391,7 @@ export const blogPostsData: BlogPost[] = [
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Layering Predictive Models on a Governed Foundation</h2>
       <p class="mb-6 leading-relaxed">
-        Once definitions and data quality are stable, forecasting and anomaly detection become practical. Demand forecasts, churn scores, and payment-risk models consume the same curated tables as your dashboards, and their outputs are written back to the warehouse so accuracy can be measured against actuals. Treat model retraining as scheduled pipeline work, with drift alerts, rather than a one-off project. Skipping the foundation and starting with models produces predictions nobody can reconcile with reported figures. Our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">predictive modeling and AI engineering</a> work builds on exactly this base.
+        Once definitions and data quality are stable, forecasting and anomaly detection become practical. Demand forecasts, churn scores, and payment-risk models consume the same curated tables as your dashboards, and their outputs are written back to the warehouse so accuracy can be measured against actuals. Treat model retraining as scheduled pipeline work, with drift alerts, rather than a one-off project. Skipping the foundation and starting with models produces predictions nobody can reconcile with reported figures. Our <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">predictive modeling and AI engineering</a> work builds on exactly this base.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Build vs. Buy: When Off-the-Shelf BI Is Not Enough</h2>
@@ -4683,7 +4683,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Observability layer:</strong> Latency, accuracy drift, cost per inference, and human-override rates are tracked as production metrics, not afterthoughts.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">custom AI and software engineering practice</a> builds each of these layers around your existing stack rather than forcing a platform migration.
+        Our <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">custom AI and software engineering practice</a> builds each of these layers around your existing stack rather than forcing a platform migration.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Where AI Integration Delivers Measurable ROI</h2>
