@@ -318,7 +318,7 @@ export default function CustomERPClient() {
               >
                 <div className="w-full flex items-center justify-center rounded-2xl bg-white">
                    <img 
-                     src="/eeee.png" 
+                     src="/eeee.webp" 
                      alt="ERP Architecture Preview" 
                      className="w-full h-auto object-contain" 
                    />
