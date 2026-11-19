@@ -869,7 +869,7 @@ export const blogPostsData: BlogPost[] = [
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Offline-First Field Tools</h2>
       <p class="mb-6 leading-relaxed">
-        Connectivity in rural areas is unreliable, so field apps must work offline, queue observations such as scouting notes and photos, and synchronize when a signal returns. Conflict rules matter when several crew members update the same field record. Our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">app and web platform developers</a> build offline-capable mobile and web tools that connect field activity to the central platform.
+        Connectivity in rural areas is unreliable, so field apps must work offline, queue observations such as scouting notes and photos, and synchronize when a signal returns. Conflict rules matter when several crew members update the same field record. Our <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">app and web platform developers</a> build offline-capable mobile and web tools that connect field activity to the central platform.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Operations Integration and Data Governance</h2>
@@ -1020,7 +1020,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Results and integration API:</strong> Stores results securely and exposes them to partner systems such as telehealth portals and practice management software.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">advanced web development team</a> builds this kind of client application in Next.js and TypeScript, with performance budgets that keep it usable on older devices.
+        Our <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">advanced web development team</a> builds this kind of client application in Next.js and TypeScript, with performance budgets that keep it usable on older devices.
       </p>
 
       <h3 class="text-xl font-semibold mb-2 mt-4">Screen Calibration and Viewing Distance</h3>
@@ -1861,7 +1861,7 @@ export const blogPostsData: BlogPost[] = [
   },
     {
     // NOTE: slug changed from "ai-for-people-with-disabilities". Add a 301 redirect from the old URL.
-    // NOTE: the original body linked to /services/custom-ai-software-development and /services/web-portal-development. Neither is a live URL in your sitemap. I replaced them with /services/custom-ai-software-development and /services/advanced-websites.
+    // NOTE: the original body linked to /services/custom-ai-software-development and /services/web-portal-development. Neither is a live URL in your sitemap. I replaced them with /services/custom-ai-software-development and /services/web-portal-development.
     // NOTE: I removed the original claims that AI "ensures" ADA compliance and the exoskeleton row, which is outside your service scope. I added the DOJ Title II rule and a warning about overlay widgets. The rule's compliance dates were extended in April 2026, so the body deliberately gives no dates. Have counsel review it before publishing.
     id: 55,
     slug: "accessible-software-development-wcag-ai-enterprise-platforms",
@@ -1897,7 +1897,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Media and documents:</strong> Captions, transcripts, and tagged PDFs for downloadable content.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">advanced web and app development team</a> builds accessible component libraries in Next.js and Flutter, so every new screen inherits compliant behavior instead of being retrofitted.
+        Our <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">advanced web and app development team</a> builds accessible component libraries in Next.js and Flutter, so every new screen inherits compliant behavior instead of being retrofitted.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Where AI Adds Real Accessibility Value</h2>
@@ -2524,7 +2524,7 @@ export const blogPostsData: BlogPost[] = [
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Evidence Integrity and Human Review</h2>
       <p class="mb-6 leading-relaxed">
-        Any system that can lead to a penalty must withstand scrutiny. Sign each evidence package at capture, log every access and decision, and keep a human reviewer in the loop for every confirmed event. Record the model version and confidence behind each detection so errors can be traced and corrected. Build review tools that make accurate decisions fast, with side-by-side clips, plate crops, and clear reason codes. Our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">web platform development team</a> builds these review portals and reporting consoles.
+        Any system that can lead to a penalty must withstand scrutiny. Sign each evidence package at capture, log every access and decision, and keep a human reviewer in the loop for every confirmed event. Record the model version and confidence behind each detection so errors can be traced and corrected. Build review tools that make accurate decisions fast, with side-by-side clips, plate crops, and clear reason codes. Our <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">web platform development team</a> builds these review portals and reporting consoles.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Accuracy, Fairness, and Auditing</h2>
@@ -2772,7 +2772,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>E-commerce checkout:</strong> A pre-payment check for age-restricted goods that falls back to ID when results are borderline.</li>
         <li><strong>Gaming and community platforms:</strong> Age gating for content tiers and chat features.</li>
         <li><strong>Telehealth and regulated services:</strong> Lightweight eligibility checks before onboarding.</li>
-        <li><strong>Delivery model:</strong> A JavaScript SDK or hosted flow built by our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">web platform developers</a>, with webhook results to your backend.</li>
+        <li><strong>Delivery model:</strong> A JavaScript SDK or hosted flow built by our <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">web platform developers</a>, with webhook results to your backend.</li>
       </ul>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Build a Privacy-First Computer Vision System</h2>
@@ -3621,7 +3621,7 @@ export const blogPostsData: BlogPost[] = [
   },
     {
     // NOTE: slug changed from "sphere-las-vegas-digital-design-impact". Add a 301 redirect from the old URL.
-    // NOTE: the original linked to /services/3d-animation-explainer-videos. I used /services/creative-design-and-animation-studio, the URL currently live in your sitemap. If you have already renamed that service URL, swap the link.
+    // NOTE: the original linked to /services/3d-animation-explainer-videos. I used /services/3d-animation-explainer-videos, the URL currently live in your sitemap. If you have already renamed that service URL, swap the link.
     // NOTE: "Sphere" is a third-party trademark. I added a non-affiliation line at the end of the body and removed the original "uncompressed visual telemetry" claim, which I could not verify. Display specs are from public reporting.
     id: 27,
     slug: "immersive-display-engineering-real-time-rendering-pipelines",
@@ -3672,12 +3672,12 @@ export const blogPostsData: BlogPost[] = [
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Bringing Immersive Performance to the Web</h2>
       <p class="mb-6 leading-relaxed">
-        Browser-based 3D has its own constraints: variable devices, limited memory, and unpredictable networks. Production teams set frame-rate and load-time budgets, compress geometry and textures, use level-of-detail switching, and stream assets progressively so the first interaction happens quickly. WebGL and emerging WebGPU capabilities make rich scenes possible, but disciplined asset pipelines decide whether they run smoothly on a mid-range laptop. Our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">advanced web and 3D platform development</a> builds Next.js experiences with these budgets enforced in the build pipeline.
+        Browser-based 3D has its own constraints: variable devices, limited memory, and unpredictable networks. Production teams set frame-rate and load-time budgets, compress geometry and textures, use level-of-detail switching, and stream assets progressively so the first interaction happens quickly. WebGL and emerging WebGPU capabilities make rich scenes possible, but disciplined asset pipelines decide whether they run smoothly on a mid-range laptop. Our <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">advanced web and 3D platform development</a> builds Next.js experiences with these budgets enforced in the build pipeline.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Design and Content Workflow</h2>
       <p class="mb-6 leading-relaxed">
-        Spectacular output starts with disciplined design systems. Spatial UI, motion standards, color management, and content templates keep experiences consistent across displays and devices. Technical artists and engineers should share a pipeline, with agreed resolution, frame-rate, and file-format standards from the first concept. Our <a href="/services/creative-design-and-animation-studio" class="text-blue-600 hover:underline font-semibold">3D animation and creative studio</a> works within that kind of engineering-aware workflow.
+        Spectacular output starts with disciplined design systems. Spatial UI, motion standards, color management, and content templates keep experiences consistent across displays and devices. Technical artists and engineers should share a pipeline, with agreed resolution, frame-rate, and file-format standards from the first concept. Our <a href="/services/3d-animation-explainer-videos" class="text-blue-600 hover:underline font-semibold">3D animation and creative studio</a> works within that kind of engineering-aware workflow.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">When Immersive Investment Pays Back</h2>
@@ -3943,7 +3943,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Inspection and monitoring:</strong> Vision systems on drones and fixed cameras that fuse multiple sensors.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Operators need a control layer on top. Our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">web platform and portal development</a> delivers fleet consoles, alert workflows, and reporting that connect machine data to business decisions.
+        Operators need a control layer on top. Our <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">web platform and portal development</a> delivers fleet consoles, alert workflows, and reporting that connect machine data to business decisions.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Engineer Edge AI for Your Operations</h2>
@@ -4298,7 +4298,7 @@ export const blogPostsData: BlogPost[] = [
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Connecting Streams to ERP and Operational Systems</h2>
       <p class="mb-6 leading-relaxed">
-        Streaming creates value only when it changes what systems do. A <a href="/services/custom-erp-development" class="text-blue-600 hover:underline font-semibold">custom ERP platform</a> can consume inventory and order events directly, reallocating stock, triggering replenishment, and flagging exceptions without manual review. Delivering the results to people matters equally. Executives and operators need live views that load quickly and stay accurate under heavy concurrency, which is a front-end engineering problem as much as a data one. Our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">advanced web and portal development</a> builds these interfaces on Next.js with real-time update channels.
+        Streaming creates value only when it changes what systems do. A <a href="/services/custom-erp-development" class="text-blue-600 hover:underline font-semibold">custom ERP platform</a> can consume inventory and order events directly, reallocating stock, triggering replenishment, and flagging exceptions without manual review. Delivering the results to people matters equally. Executives and operators need live views that load quickly and stay accurate under heavy concurrency, which is a front-end engineering problem as much as a data one. Our <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">advanced web and portal development</a> builds these interfaces on Next.js with real-time update channels.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Engineering Controls for Reliability at Scale</h2>
@@ -4447,7 +4447,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Observability:</strong> Crash reporting, performance traces, and usage analytics feed release decisions and support triage.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">app and portal development team</a> builds Flutter applications on this foundation, with shared backend services that also power your web portal.
+        Our <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">app and portal development team</a> builds Flutter applications on this foundation, with shared backend services that also power your web portal.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Performance Engineering That Users Notice</h2>
@@ -4500,7 +4500,7 @@ export const blogPostsData: BlogPost[] = [
   },
     {
     // NOTE: slug changed from "custom-coded-web-platforms-enterprise". Add a 301 redirect from the old URL.
-    // NOTE: the original body linked to /services/web-portal-development. I used /services/advanced-websites (the live URL in your sitemap). If you have already renamed that service URL, swap the link.
+    // NOTE: the original body linked to /services/web-portal-development. I used /services/web-portal-development (the live URL in your sitemap). If you have already renamed that service URL, swap the link.
     id: 9,
     slug: "enterprise-web-platform-development-nextjs-usa",
     title: "Custom Enterprise Web Platform Development: Next.js Architecture, Security, and ROI",
@@ -4538,7 +4538,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Edge delivery:</strong> A CDN serves static assets and cached pages close to users, which lowers latency across US regions.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">advanced web and portal development team</a> builds client portals, vendor dashboards, and internal operations hubs on this stack.
+        Our <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">advanced web and portal development team</a> builds client portals, vendor dashboards, and internal operations hubs on this stack.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Performance and Search Visibility by Design</h2>
