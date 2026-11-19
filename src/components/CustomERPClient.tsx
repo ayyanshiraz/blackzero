@@ -266,7 +266,7 @@ export default function CustomERPClient() {
             {/* Left Image */}
             <div className="flex-1 w-full relative">
               <div className="rounded-xl overflow-hidden border border-gray-200/60 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] bg-white">
-                <img src="/dddd.png" alt="Enterprise Command Center Dashboard" className="w-full h-auto object-cover block" />
+                <img src="/dddd.webp" alt="Enterprise Command Center Dashboard" className="w-full h-auto object-cover block" />
               </div>
             </div>
 
