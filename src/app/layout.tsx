@@ -79,15 +79,29 @@ const jsonLd = {
       "@type": "Organization",
       "@id": "https://www.blackzero.org/#organization",
       name: "Black Zero Technologies",
+      legalName: "Black Zero Technologies",
       alternateName: "Black Zero",
       url: "https://www.blackzero.org",
+      email: "info@blackzero.org",
+      telephone: "+92-333-1148886",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.blackzero.org/opengraph-image.png",
+        "@id": "https://www.blackzero.org/#logo",
+        url: "https://www.blackzero.org/logo.png",
+        contentUrl: "https://www.blackzero.org/logo.png",
+        caption: "Black Zero Technologies",
       },
       image: "https://www.blackzero.org/opengraph-image.png",
       description:
         "US-aligned enterprise software engineering, private AI development, custom ERP/CRM systems, data analytics, and Hybrid SEO agency.",
+      sameAs: [
+        "https://pk.linkedin.com/company/black-zero-technologies-official",
+        "https://www.instagram.com/blackzerofficial/",
+        "https://www.facebook.com/people/BlackZero-Technologies/61560559093444/",
+        "https://www.quora.com/profile/BlackZero-Technologies",
+        "https://www.reddit.com/user/blackzerofficial/",
+        "https://www.pinterest.com/blackzerofficial/"
+      ],
       address: {
         "@type": "PostalAddress",
         streetAddress: "Gulberg III",
@@ -116,13 +130,16 @@ const jsonLd = {
         "Full-Funnel B2B Performance Marketing",
         "2D/3D Product Animation and SaaS Explainer Videos",
       ],
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "sales and customer support",
-        email: "info@blackzero.org",
-        availableLanguage: ["English"],
-        areaServed: "US",
-      },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: "info@blackzero.org",
+          telephone: "+92-333-1148886",
+          availableLanguage: ["English"],
+          areaServed: "US",
+        },
+      ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Black Zero Enterprise Technology & Digital Growth Services",
@@ -233,8 +250,8 @@ export default function RootLayout({
           <CookieBanner />
         </HideOnDashboard>
         <Analytics />
+        <GoogleAnalytics gaId="G-V4V0EPZTPQ" />
       </body>
-      <GoogleAnalytics gaId="G-V4V0EPZTPQ" />
     </html>
   );
 }

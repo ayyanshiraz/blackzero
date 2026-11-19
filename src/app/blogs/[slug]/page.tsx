@@ -1,41 +1,63 @@
-import React from 'react';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import { blogPostsData } from '@/data/blogs';
-import BlogPostImage from '@/components/BlogPostImage';
-import { ArrowLeft } from 'lucide-react';
-import { Metadata, ResolvingMetadata } from 'next';
+import React from "react";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { blogPostsData } from "@/data/blogs";
+import BlogPostImage from "@/components/BlogPostImage";
+import { ArrowLeft } from "lucide-react";
+import { Metadata } from "next";
 
 type Props = {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
+};
+
+const SITE_URL = "https://www.blackzero.org";
+
+function getFullImageUrl(imageUrl: string): string {
+  if (!imageUrl) return `${SITE_URL}/logo.png`;
+  if (imageUrl.startsWith("http://") || imageUrl.startsWith("https://")) {
+    return imageUrl;
+  }
+  const normalizedPath = imageUrl.startsWith("/") ? imageUrl : `/${imageUrl}`;
+  return `${SITE_URL}${normalizedPath}`;
 }
 
-export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+function getIsoDate(dateStr: string): string {
+  const parsed = new Date(dateStr);
+  return Number.isNaN(parsed.getTime())
+    ? new Date().toISOString()
+    : parsed.toISOString();
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPostsData.find((p) => p.slug === slug);
 
   if (!post) {
-    return { title: 'Blog Post Not Found | Black Zero' };
+    return { title: "Blog Post Not Found | Black Zero" };
   }
+
+  const canonicalUrl = `${SITE_URL}/blogs/${slug}`;
+  const fullImageUrl = getFullImageUrl(post.imageUrl);
+  const isoDate = getIsoDate(post.date);
 
   return {
     title: post.seoTitle || `${post.title} | Black Zero Blog`,
     description: post.metaDescription || post.excerpt,
     keywords: post.seoKeywords,
     alternates: {
-      canonical: `https://www.blackzero.org/blogs/${slug}`,
+      canonical: canonicalUrl,
     },
     openGraph: {
       title: post.seoTitle || post.title,
       description: post.metaDescription || post.excerpt,
-      url: `https://www.blackzero.org/blogs/${slug}`,
-      type: 'article',
-      publishedTime: new Date(post.date).toISOString(),
-      authors: ['Black Zero Engineering'],
+      url: canonicalUrl,
+      type: "article",
+      publishedTime: isoDate,
+      authors: ["Black Zero Engineering"],
       images: [
         {
-          url: `https://www.blackzero.org${post.imageUrl}`,
+          url: fullImageUrl,
           alt: post.imgAltText || post.title,
         },
       ],
@@ -57,39 +79,54 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
+  const canonicalUrl = `${SITE_URL}/blogs/${slug}`;
+  const fullImageUrl = getFullImageUrl(post.imageUrl);
+  const isoDate = getIsoDate(post.date);
+
   const breadcrumbItems = [
-    { href: '/', label: 'Home' },
-    { href: '/blogs', label: 'Blogs' },
+    { href: "/", label: "Home" },
+    { href: "/blogs", label: "Blogs" },
     { href: `/blogs/${post.slug}`, label: post.title },
   ];
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": post.title,
-    "image": `https://www.blackzero.org${post.imageUrl}`,
-    "author": {
+    "@type": "Article",
+    headline: post.title,
+    description: post.metaDescription || post.excerpt,
+    image: [fullImageUrl],
+    url: canonicalUrl,
+    inLanguage: "en-US",
+    datePublished: isoDate,
+    dateModified: isoDate,
+    author: {
       "@type": "Organization",
-      "name": "Black Zero Engineering"
+      name: "Black Zero Engineering",
+      url: SITE_URL,
     },
-    "publisher": {
+    publisher: {
       "@type": "Organization",
-      "name": "Black Zero Technologies"
+      name: "Black Zero Technologies",
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo.png`,
+      },
     },
-    "datePublished": new Date(post.date).toISOString(),
-    "dateModified": new Date(post.date).toISOString(),
-    "description": post.metaDescription || post.excerpt,
-    "mainEntityOfPage": {
+    mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://www.blackzero.org/blogs/${slug}`
-    }
+      "@id": canonicalUrl,
+    },
   };
 
-  const optimizedContent = post.content
-    .replace(/<h3/g, '<h2')
-    .replace(/<\/h3>/g, '</h2>')
-    .replace(/<h4/g, '<h3')
-    .replace(/<\/h4>/g, '</h3>');
+  const hasH2 = /<h2[\s>]/i.test(post.content);
+  const optimizedContent = hasH2
+    ? post.content
+    : post.content
+        .replace(/<h3/g, "<h2")
+        .replace(/<\/h3>/g, "</h2>")
+        .replace(/<h4/g, "<h3")
+        .replace(/<\/h4>/g, "</h3>");
 
   return (
     <>
@@ -104,9 +141,11 @@ export default async function BlogPostPage({ params }: Props) {
 
       <div className="bg-white py-8 md:py-12">
         <div className="container mx-auto px-4 sm:px-6 max-w-5xl flex flex-col gap-6">
-          
           <div className="rounded-2xl overflow-hidden w-full">
-            <BlogPostImage src={post.imageUrl} alt={post.imgAltText || post.title} />
+            <BlogPostImage
+              src={post.imageUrl}
+              alt={post.imgAltText || post.title}
+            />
           </div>
 
           <div className="bg-gray-50 rounded-2xl p-6 md:p-8">
@@ -128,13 +167,15 @@ export default async function BlogPostPage({ params }: Props) {
             />
 
             <div className="mt-10 text-left border-t border-gray-200 pt-6">
-              <Link href="/blogs" className="inline-flex items-center gap-2 text-black font-semibold hover:text-gray-600 transition-colors">
+              <Link
+                href="/blogs"
+                className="inline-flex items-center gap-2 text-black font-semibold hover:text-gray-600 transition-colors"
+              >
                 <ArrowLeft size={18} />
                 Back to Blogs
               </Link>
             </div>
           </div>
-
         </div>
       </div>
     </>
