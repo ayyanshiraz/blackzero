@@ -6,106 +6,120 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const MessageSection = () => {
-  useGSAP(() => {
-    const firstMsgSplit  = SplitText.create(`.first-message`,  { type: `words` });
-    const secMsgSplit    = SplitText.create(`.second-message`, { type: `words` });
-    
-    const pElement = document.querySelector(`.message-content p`);
-    let paragraphSplit;
-
-    if (pElement) {
-      paragraphSplit = SplitText.create(`.message-content p`, {
-        type: `words, lines`,
-        linesClass: `paragraph-line`,
+  useGSAP(
+    () => {
+      const firstMsgSplit = SplitText.create(".first-message", {
+        type: "words",
       });
-    }
-
-    gsap.fromTo(
-      firstMsgSplit.words,
-      { color: `rgba(0,0,0,0.08)` },
-      {
-        color: `rgba(0,0,0,1)`,
-        ease: `power1.inOut`,
-        stagger: 0.8,
-        scrollTrigger: {
-          trigger: `.message-content`,
-          start: `top center`,
-          end: `30% center`,
-          scrub: 0.6,
-        },
-      }
-    );
-
-    gsap.fromTo(
-      secMsgSplit.words,
-      { color: `rgba(0,0,0,0.08)` },
-      {
-        color: `rgba(0,0,0,1)`,
-        ease: `power1.inOut`,
-        stagger: 0.8,
-        scrollTrigger: {
-          trigger: `.second-message`,
-          start: `top center`,
-          end: `bottom center`,
-          scrub: 0.6,
-        },
-      }
-    );
-
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: `.msg-text-scroll`,
-        start: `top 65%`,
-      },
-    }).to(`.msg-text-scroll`, {
-      duration: 0.85,
-      clipPath: `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)`,
-      ease: `circ.inOut`,
-    });
-
-    if (paragraphSplit) {
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: `.message-content p`,
-          start: `top center`,
-        },
-      }).from(paragraphSplit.words, {
-        yPercent: 250,
-        rotate: 2,
-        ease: `power2.out`,
-        duration: 0.8,
-        stagger: 0.008,
+      const secMsgSplit = SplitText.create(".second-message", {
+        type: "words",
       });
-    }
-  }, { dependencies: [], once: true });
+
+      const pElement = document.querySelector(".message-content p");
+      let paragraphSplit;
+
+      if (pElement) {
+        paragraphSplit = SplitText.create(".message-content p", {
+          type: "words, lines",
+          linesClass: "paragraph-line",
+        });
+      }
+
+      // Word-by-word scroll animation from light gray to solid black for top text
+      gsap.fromTo(
+        firstMsgSplit.words,
+        { color: "rgba(0,0,0,0.08)" },
+        {
+          color: "rgba(0,0,0,1)",
+          ease: "power1.inOut",
+          stagger: 0.8,
+          scrollTrigger: {
+            trigger: ".message-content",
+            start: "top center",
+            end: "30% center",
+            scrub: 0.6,
+          },
+        }
+      );
+
+      // Word-by-word scroll animation from light gray to solid black for bottom text
+      gsap.fromTo(
+        secMsgSplit.words,
+        { color: "rgba(0,0,0,0.08)" },
+        {
+          color: "rgba(0,0,0,1)",
+          ease: "power1.inOut",
+          stagger: 0.8,
+          scrollTrigger: {
+            trigger: ".second-message",
+            start: "top center",
+            end: "bottom center",
+            scrub: 0.6,
+          },
+        }
+      );
+
+      // Reveal animation for the Scale Up badge
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".msg-text-scroll",
+            start: "top 65%",
+          },
+        })
+        .to(".msg-text-scroll", {
+          duration: 0.85,
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          ease: "circ.inOut",
+        });
+
+      if (paragraphSplit) {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".message-content p",
+              start: "top center",
+            },
+          })
+          .from(paragraphSplit.words, {
+            yPercent: 250,
+            rotate: 2,
+            ease: "power2.out",
+            duration: 0.8,
+            stagger: 0.008,
+          });
+      }
+    },
+    { dependencies: [], once: true }
+  );
 
   return (
-    <section className={`message-content bg-white relative z-10`}>
-      <div className={`container mx-auto flex justify-center items-start pt-4 pb-12 md:py-28 relative pointer-events-none`}>
-        <div className={`w-full h-full flex flex-col items-center -mt-23 md:mt-0 text-center`}>
-          <div className={`msg-wrapper flex flex-col items-center`}>
-            
-            <h1 className={`first-message text-black/10 mb-2 md:mb-0`}>
-              Architect custom enterprise software and
-            </h1>
+    <section className="message-content bg-white relative z-10">
+      <div className="container mx-auto flex justify-center items-start pt-4 pb-12 md:py-28 relative pointer-events-none">
+        <div className="w-full h-full flex flex-col items-center -mt-23 md:mt-0 text-center">
+          {/* Single semantic H1 for SEO while keeping Scale Up centered between both text blocks */}
+          <h1 className="msg-wrapper flex flex-col items-center !gap-2 md:!gap-3">
+            <span className="first-message block text-black/10 !mb-0">
+              Architect custom enterprise <br></br>software and{" "}
+            </span>
 
-            <div
-              style={{ clipPath: `polygon(0 0, 0 0, 0 100%, 0% 100%)` }}
-              className={`msg-text-scroll border-black mt-8 mb-2 md:mt-0 md:mb-[-190]`}
+            <span
+              style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
+              className="msg-text-scroll !relative !inset-auto !top-auto !bottom-auto !left-auto !right-auto !translate-y-0 !mx-0 !my-1 md:!my-2 block border-black z-10"
             >
-              <div className={`bg-black md:pb-5 pb-3 px-5`}>
-                <h2 className={`text-white`}>Scale Up</h2>
-              </div>
-            </div>
+              <span className="bg-black block md:pb-5 pb-3 px-5">
+                <span className="text-white block">Scale Up </span>
+              </span>
+            </span>
 
-            <span className={`second-message text-black/10 mt-2 md:mt-30 block`}>
-  your operations with <br></br> secure AI and custom ERP <br></br>systems
-</span>
-            
-          </div>
+            <span className="second-message block text-black/10 !mt-0">
+              your operations with <br /> secure AI and custom ERP <br />{" "}
+              systems
+            </span>
+          </h1>
         </div>
       </div>
     </section>
