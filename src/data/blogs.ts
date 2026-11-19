@@ -2391,7 +2391,7 @@ export const blogPostsData: BlogPost[] = [
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">Traditional SEO: The Foundation for Technical Stability</h3>
       <p class="mb-6 leading-relaxed">
-        AI-powered search engines still rely heavily on traditional indexing signals. Large language models and search crawlers prioritize websites with clean code, fast loading speeds, and authoritative backlink profiles. Running regular technical audits with tools like our <a href="/products/seo-auditor" class="text-blue-600 hover:underline font-semibold">SEO auditor</a> ensures your infrastructure meets strict crawlability standards.
+        AI-powered search engines still rely heavily on traditional indexing signals. Large language models and search crawlers prioritize websites with clean code, fast loading speeds, and authoritative backlink profiles. Running regular technical audits with tools like our <a href="https://products.blackzero.org/seo-auditor" class="text-blue-600 hover:underline font-semibold">SEO auditor</a> ensures your infrastructure meets strict crawlability standards.
       </p>
 
       <h3 class="text-2xl font-semibold mb-4 mt-6">Generative Engine Optimization (GEO): Feeding AI Neural Networks</h3>

@@ -72,9 +72,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'weekly' as const,
     priority: 0.9,
   }));
-
-  // Claude's recommendation: Subdomains (products, turnitin) removed from the main domain sitemap to prevent cross-host SEO errors.
-
   return [
     ...staticPages,
     ...projectPages,
