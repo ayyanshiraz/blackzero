@@ -41,6 +41,9 @@ const nextConfig: NextConfig = {
             { source: '/tag/:path*', destination: '/blogs', permanent: true }, 
             { source: '/category/:path*', destination: '/blogs', permanent: true }, 
             { source: "/services/ai-software-hub", destination: "/services/custom-ai-software-development", permanent: true },
+{ source: "/services/advanced-websites", destination: "/services/web-portal-development", permanent: true },
+{ source: "/services/creative-design-and-animation-studio", destination: "/services/3d-animation-explainer-videos", permanent: true },
+
             
             { source: "/blogs/how-to-check-ai-generated-text", destination: "/blogs/detect-ai-content-for-free", permanent: true },
             { source: "/blogs/free-ai-plagiarism-checker-turnitin-alternative", destination: "/blogs/detect-ai-content-for-free", permanent: true },
