@@ -297,7 +297,7 @@ export default function CustomCRMClient() {
               >
                 <div className="w-full flex items-center justify-center rounded-2xl bg-white">
                    <img 
-                     src="/crmsec 1.png" 
+                     src="/crmsec.webp" 
                      alt="CRM Architecture Preview" 
                      className="w-full h-auto object-contain" 
                    />
