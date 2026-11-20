@@ -400,10 +400,9 @@ ${formData.needs}
                 controls
                 muted
                 playsInline
+                src="/custom-build-process.mp4"
                 poster="/video-poster.jpg"
               >
-                <source src="/custom-build-process.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
               </video>
             </div>
             
