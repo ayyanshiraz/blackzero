@@ -62,7 +62,7 @@ const servicesData = [
 
 export const metadata: Metadata = {
   title: `Enterprise AI, Custom Software & B2B Marketing Services | Black Zero`,
-  description: `Explore Black Zero Technologies enterprise services for US businesses: Custom AI & Software Engineering, ERP & CRM Development, Data Analytics, Advanced Next.js Portals, Hybrid SEO, and 2D/3D Animation.`,
+  description: `Explore Black Zero enterprise services for US businesses: Custom AI, ERP and CRM Development, Data Analytics, Next.js Portals, and Hybrid SEO.`,
   keywords: [
     `custom software development company USA`,
     `enterprise AI development services`,

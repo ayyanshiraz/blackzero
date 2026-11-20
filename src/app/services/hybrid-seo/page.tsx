@@ -55,7 +55,7 @@ const hybridSeoData = {
 export const metadata: Metadata = {
   title: "Hybrid SEO, GEO & AEO Services USA | Black Zero Technologies",
   description:
-    "Dominate Google search and AI answer engines with Hybrid SEO services. Technical SEO audits, Generative Engine Optimization (GEO), and semantic content strategy.",
+    "Dominate Google search and AI answer engines with Hybrid SEO, technical audits, Generative Engine Optimization (GEO), and semantic strategy.",
   keywords: [
     "hybrid SEO services USA",
     "Generative Engine Optimization agency",

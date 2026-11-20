@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-// Agar aap Next.js use kar rahe hain to acha hai ke yahan Link import kar lein
-// import Link from 'next/link';
+import Link from 'next/link';
 
 // --- Animated Success Timeline Step Component ---
 const SuccessStep = ({ number, title, description, alignLeft }: { number: string; title: string; description: string | React.ReactNode; alignLeft: boolean; }) => {
@@ -81,7 +80,7 @@ export default function EcommerceSuccessClient() {
             title: 'WEBSITE DESIGN & DEVELOPMENT', 
             description: (
                 <>
-                    Utilizing the power of <a href="/services/3d-animation-explainer-videos" className="text-white underline hover:text-gray-300 transition-colors">creative designing</a> we build an eye-catching online presence of your business making it completely mobile and user friendly, SEO optimized and highly converting. We will help grow your business with a website design that customers love to visit and buy.
+                    Utilizing the power of <Link href="/services/3d-animation-explainer-videos" className="text-blue-400 underline hover:text-blue-300 transition-colors">creative designing</Link> we build an eye-catching online presence of your business making it completely mobile and user friendly, SEO optimized and highly converting. We will help grow your business with a website design that customers love to visit and buy.
                 </>
             )
         },
@@ -151,7 +150,7 @@ export default function EcommerceSuccessClient() {
                             Have no idea about the most lucrative niche or product... Are confused about the <span className="font-bold">BRAND NAME, LOGO DESIGN, PRODUCT PACKAGING, OR OVERALL BRANDING...</span>
                         </p>
                         <h3 className="text-3xl font-extrabold uppercase tracking-tight text-black text-left">
-                            Don&apos;t worry anymore now
+                            Dont worry anymore now
                         </h3>
                     </div>
                 </div>
@@ -188,6 +187,9 @@ export default function EcommerceSuccessClient() {
                     <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
                         Just invest and leave the rest on our experienced, responsible shoulders.
                     </h2>
+                    <p className="mt-6 text-lg text-gray-700">
+                        Explore our <Link href="/services/web-portal-development" className="text-blue-600 underline hover:text-blue-500 transition-colors">web portal development</Link> or <Link href="/contact" className="text-blue-600 underline hover:text-blue-500 transition-colors">contact our team</Link> to get started.
+                    </p>
                 </div>
             </section>
         </div>

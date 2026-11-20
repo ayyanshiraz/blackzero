@@ -103,7 +103,7 @@ const creativeDesignData = {
 export const metadata: Metadata = {
   title: "3D Animation, B2B Explainer Videos & Motion Studio USA | Black Zero",
   description:
-    "Elevate your brand with Black Zero Technologies. Custom 2D/3D animation, B2B SaaS explainer videos, scroll-stopping ad creatives, and commercial video production.",
+    "Elevate your brand with custom 2D and 3D animation, B2B SaaS explainer videos, high-converting ad creatives, and commercial video production.",
   keywords: [
     "3D animation studio USA",
     "B2B explainer video production USA",

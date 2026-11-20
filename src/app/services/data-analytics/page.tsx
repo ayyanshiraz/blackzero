@@ -111,7 +111,7 @@ const dataAnalyticsData = {
 export const metadata: Metadata = {
   title: "Enterprise Data Analytics & BI Consulting USA | Black Zero",
   description:
-    "Transform raw corporate data into real-time executive intelligence. Custom BI dashboards, cloud data warehousing, Python ETL automation, and predictive analytics for US enterprises.",
+    "Transform raw corporate data into real-time executive intelligence with custom BI dashboards, cloud data warehousing, and predictive analytics.",
   keywords: [
     "data analytics consultant USA",
     "data visualization consulting services",

@@ -79,7 +79,7 @@ const aiSoftwareData = {
 export const metadata: Metadata = {
   title: "Custom Software & Enterprise AI Development USA | Black Zero",
   description:
-    "Engineer scalable custom software, private LLM agents, and high-availability cloud architectures for US enterprises. 100% IP ownership with Black Zero Technologies.",
+    "Engineer scalable custom software, private LLM agents, and high-availability cloud architectures for US enterprises with 100% IP ownership.",
   keywords: [
     "custom software development company USA",
     "enterprise AI development services",
