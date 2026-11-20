@@ -3,7 +3,7 @@ import ServiceClientView from "@/components/ServiceClientView";
 
 const aiSoftwareData = {
   title: "AI and Software Hub",
-  slug: "ai-software-hub",
+  slug: "custom-ai-software-development ",
   imageUrl: "/development.webp",
   imgAltText: "Enterprise AI engineering and custom software architecture dashboard by Black Zero Technologies",
   description:

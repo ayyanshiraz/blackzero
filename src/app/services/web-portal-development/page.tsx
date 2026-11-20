@@ -3,7 +3,7 @@ import ServiceClientView from '@/components/ServiceClientView';
 
 const advancedWebsitesData = { 
   title: `Advanced Website and Portal Systems`, 
-  slug: `advanced-websites`,
+  slug: `web-portal-development `,
   imageUrl: `/web.webp`,
   imgAltText: `Advanced website and scalable portal systems for US enterprise clients`,
   description: `Custom Websites, 3D Experiences and Scalable Portals. We Build Interactive Web and 3D Digital Platforms. From Websites to Advanced Portal Systems. Next-Level Web Development with 3D Innovation.`,

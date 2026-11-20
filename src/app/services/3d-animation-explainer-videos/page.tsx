@@ -3,7 +3,7 @@ import ServiceClientView from "@/components/ServiceClientView";
 
 const creativeDesignData = {
   title: "Creative Design and Animation Studio",
-  slug: "creative-design-and-animation-studio",
+  slug: "3d-animation-explainer-videos",
   imageUrl: "/animation.webp",
   imgAltText: "3D character rigging, motion graphics, and commercial animation studio workflow by Black Zero Technologies",
   description:

@@ -4,7 +4,7 @@ import ServicesPageClient from "@/components/ServicesPageClient";
 const servicesData = [
   {
     title: `AI and Software Hub`,
-    slug: `ai-software-hub`,
+    slug: `custom-ai-software-development `,
     imageUrl: `/development.webp`,
     imgAltText: `Enterprise AI software engineering hub for custom LLM agents and scalable backend systems`,
     description: `Deploy private LLM pipelines, Retrieval-Augmented Generation (RAG) workflows, and bespoke enterprise software built in Python, FastAPI, and Node.js. We engineer secure, high-concurrency digital systems tailored to your operational logic with full IP ownership.`,
@@ -18,7 +18,7 @@ const servicesData = [
   },
   {
     title: `Advanced Website and Portal Systems`,
-    slug: `advanced-websites`,
+    slug: `web-portal-development `,
     imageUrl: `/web.webp`,
     imgAltText: `High-concurrency Next.js web application, interactive 3D platform, and enterprise client portal`,
     description: `Architect sub-second, conversion-focused web applications, interactive 3D digital experiences, and secure B2B client portals using Next.js, React, and TypeScript. Built for Core Web Vitals performance, multi-tenant scalability, and API extensibility.`,
@@ -39,7 +39,7 @@ const servicesData = [
   },
   {
     title: `Creative Design and Animation Studio`,
-    slug: `creative-design-and-animation-studio`,
+    slug: `3d-animation-explainer-videos`,
     imageUrl: `/animation.webp`,
     imgAltText: `2D and 3D product animation, motion graphics, and B2B SaaS explainer video production`,
     description: `Distill complex enterprise software and hardware products into high-converting visual stories. Our studio produces photorealistic 3D product renders, 2D motion graphics, B2B SaaS explainer videos, and scroll-stopping social video assets.`,
