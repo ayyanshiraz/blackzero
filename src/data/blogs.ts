@@ -2223,7 +2223,7 @@ export const blogPostsData: BlogPost[] = [
         <li><strong>Output layer:</strong> Text-to-speech and on-screen responses, with confirmation steps for consequential actions.</li>
       </ul>
       <p class="mb-6 leading-relaxed">
-        Our <a href="/services/ai-software-hub" class="text-blue-600 hover:underline font-semibold">custom AI engineering team</a> typically builds the backend in Python with FastAPI, uses an orchestration framework such as LangChain where it helps, and stores memory and embeddings in PostgreSQL with vector search.
+        Our <a href="/services/custom-ai-software-development " class="text-blue-600 hover:underline font-semibold">custom AI engineering team</a> typically builds the backend in Python with FastAPI, uses an orchestration framework such as LangChain where it helps, and stores memory and embeddings in PostgreSQL with vector search.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Cloud APIs, Private Deployment, or Hybrid</h2>
@@ -3572,7 +3572,7 @@ export const blogPostsData: BlogPost[] = [
   },
    {
     // NOTE: slug changed from "glassmorphism-usa-brand-identity-trends". Add a 301 redirect from the old URL.
-    // NOTE: the original body linked to /services/web-portal-development and /services/3d-animation-explainer-videos. Neither is a live URL in your sitemap. I replaced them with /services/advanced-websites and /services/creative-design-and-animation-studio. If you have already renamed those service URLs, swap the links.
+    // NOTE: the original body linked to /services/web-portal-development and /services/3d-animation-explainer-videos. Neither is a live URL in your sitemap. I replaced them with /services/web-portal-development and /services/3d-animation-explainer-videos. If you have already renamed those service URLs, swap the links.
     // NOTE: I removed unsupported claims from the original: "hardware-accelerated", "ultra-fast", and the flat-vs-glass table that implied flat design has a "template feel". The post is now framed around performance, accessibility, and design-system engineering instead of brand identity.
     id: 28,
     slug: "glassmorphism-enterprise-ui-design-system-engineering",
@@ -3638,7 +3638,7 @@ export const blogPostsData: BlogPost[] = [
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Accessibility Requirements for Translucent UI</h2>
       <p class="mb-6 leading-relaxed">
-        WCAG Level AA requires a text contrast ratio of at least 4.5:1 for body text and 3:1 for large text and for the boundaries of interactive components. Translucent surfaces make these ratios dynamic, since the backdrop changes as content scrolls or themes switch. Test contrast against the lightest and darkest backgrounds a surface can sit over, keep borders and focus indicators clearly visible, and never rely on blur alone to distinguish layers. Our <a href="/services/advanced-websites" class="text-blue-600 hover:underline font-semibold">web platform development team</a> builds these checks into component tests and CI, so regressions are caught before release.
+        WCAG Level AA requires a text contrast ratio of at least 4.5:1 for body text and 3:1 for large text and for the boundaries of interactive components. Translucent surfaces make these ratios dynamic, since the backdrop changes as content scrolls or themes switch. Test contrast against the lightest and darkest backgrounds a surface can sit over, keep borders and focus indicators clearly visible, and never rely on blur alone to distinguish layers. Our <a href="/services/web-portal-development" class="text-blue-600 hover:underline font-semibold">web platform development team</a> builds these checks into component tests and CI, so regressions are caught before release.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Performance Budgets and Core Web Vitals</h2>
@@ -3656,7 +3656,7 @@ export const blogPostsData: BlogPost[] = [
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Design and Engineering Working Together</h2>
       <p class="mb-6 leading-relaxed">
-        The best results come when designers and engineers agree on constraints early. Design files should specify fallback states and contrast targets, and engineers should expose tokens that designers can tune without code changes. Our <a href="/services/creative-design-and-animation-studio" class="text-blue-600 hover:underline font-semibold">creative design and animation studio</a> works in that engineering-aware workflow, producing interfaces that hold up in production.
+        The best results come when designers and engineers agree on constraints early. Design files should specify fallback states and contrast targets, and engineers should expose tokens that designers can tune without code changes. Our <a href="/services/3d-animation-explainer-videos" class="text-blue-600 hover:underline font-semibold">creative design and animation studio</a> works in that engineering-aware workflow, producing interfaces that hold up in production.
       </p>
 
       <h2 class="text-2xl font-semibold mb-4 mt-6">Build a High-Quality Interface System</h2>
