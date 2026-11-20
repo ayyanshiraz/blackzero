@@ -33,6 +33,160 @@ export interface BlogPost {
 
 export const blogPostsData: BlogPost[] = [
   {
+    id: 79,
+    slug: "offshore-software-development-company-us-due-diligence",
+    title: "Offshore Software Development Company for US Enterprises: A Due-Diligence Checklist for IP, Security, and Time Zones",
+    date: "November 20, 2026",
+    imageUrl: "/Blogs/blog79.webp",
+    excerpt: "Before signing a contract with an offshore software development company, it is essential to verify six key aspects: the transfer of Intellectual Property (IP), security controls, engineering standards, team continuity, adherence to schedules, and references from verified past clients.",
+    seoTitle: "Offshore Software Development Due-Diligence Checklist",
+    metaDescription: "How US CTOs vet an offshore software development company: IP ownership, security, contract clauses, time-zone overlap, and pilot KPIs in one checklist.",
+    focusKeyPhrase: "offshore software development company",
+    seoKeyPhrase: "offshore software development company",
+    imgAltText: "Due-diligence checklist for vetting an offshore software development company covering IP ownership, security, contracts, and US time-zone overlap",
+    seoKeywords: [
+      "offshore software development company",
+      "offshore vs nearshore development",
+      "software vendor due diligence",
+      "IP ownership in software contracts",
+      "US time-zone overlap"
+    ],
+    content: `
+      <h3 class="text-2xl font-semibold mb-4 mt-6">Offshore Software Development Company for US Enterprises: A Due-Diligence Checklist for IP, Security, and Time Zones</h3>
+      <p class="mb-6 leading-relaxed">
+        Before signing a contract with an offshore software development company, it is essential to verify six key aspects: the transfer of Intellectual Property (IP), security controls, engineering standards, team continuity, adherence to schedules, and references from verified past clients.
+      </p>
+      <p class="mb-8 leading-relaxed">
+        Viewing the choice between offshore vs nearshore development as a risk-management decision rather than merely a price comparison helps safeguard the future plans for your product. Whether your executive team is finalizing a <a href="/blogs/custom-vs-off-the-shelf-software" class="text-blue-600 hover:underline font-semibold">build vs buy analysis for enterprise software</a> or focusing on <a href="/blogs/custom-saas-application-development-usa" class="text-blue-600 hover:underline font-semibold">scalable B2B platform development</a>, a structured vetting process helps avoid costly delivery setbacks.
+      </p>
+
+      <h3 class="text-2xl font-semibold mb-4 mt-6">Why US Enterprises Partner with an Offshore Software Development Company</h3>
+      <p class="mb-6 leading-relaxed">
+        Leaders of U.S. mid-market companies tap into global engineering talent to overcome local hiring delays and accelerate product launches. However, such partnerships falter when organizations overlook ambiguities regarding intellectual property, weak engineering discipline, or sluggish communication and information exchange.
+      </p>
+
+      <h4 class="text-xl font-semibold mb-2 mt-4">Offshore vs Nearshore vs Onshore</h4>
+      <p class="mb-8 leading-relaxed">
+        Onshore teams provide synchronous working hours at a higher cost, whereas nearshore service providers offer regional proximity at a relatively lower cost. When comparing offshore vs nearshore development, one must weigh regional proximity against the broader global talent pool and greater cost savings.
+      </p>
+
+      <h3 class="text-2xl font-semibold mb-4 mt-6">The 6-Point Vendor Due-Diligence Checklist for an Offshore Software Development Company</h3>
+      <p class="mb-6 leading-relaxed">
+        An engineering lead can conduct a comprehensive software vendor due diligence in just one week provided they demand concrete evidence rather than relying on sales promises. Use this software vendor due diligence scorecard during the technical review:
+      </p>
+
+      <div class="overflow-x-auto mb-8 mt-4">
+        <table class="min-w-full bg-white border border-gray-200">
+          <thead>
+            <tr class="bg-gray-100 border-b border-gray-200">
+              <th class="py-3 px-4 text-left font-semibold text-gray-700">Criterion</th>
+              <th class="py-3 px-4 text-left font-semibold text-gray-700">What to Verify</th>
+              <th class="py-3 px-4 text-left font-semibold text-gray-700">Evidence to Request</th>
+              <th class="py-3 px-4 text-left font-semibold text-gray-700">Red Flag</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-200">
+              <td class="py-3 px-4 text-gray-800">Source code and IP ownership</td>
+              <td class="py-3 px-4 text-gray-600">Client-owned repositories from day one</td>
+              <td class="py-3 px-4 text-gray-600">Master agreement IP assignment clause</td>
+              <td class="py-3 px-4 text-gray-600">Vendor hosts code on private servers</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-3 px-4 text-gray-800">Security posture and access controls</td>
+              <td class="py-3 px-4 text-gray-600">Role-based permissions and encrypted secrets</td>
+              <td class="py-3 px-4 text-gray-600">Compliance audit logs and access policies</td>
+              <td class="py-3 px-4 text-gray-600">Shared developer credentials</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-3 px-4 text-gray-800">Engineering process and code review process</td>
+              <td class="py-3 px-4 text-gray-600">Mandatory pull-request approvals and CI/CD</td>
+              <td class="py-3 px-4 text-gray-600">Sample pull request and code review process</td>
+              <td class="py-3 px-4 text-gray-600">Direct commits to main branches</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-3 px-4 text-gray-800">Team continuity and seniority mix</td>
+              <td class="py-3 px-4 text-gray-600">Dedicated senior engineers without silent rotation</td>
+              <td class="py-3 px-4 text-gray-600">Named resumes and retention metrics</td>
+              <td class="py-3 px-4 text-gray-600">Unannounced developer substitutions</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-3 px-4 text-gray-800">Communication cadence and overlap hours</td>
+              <td class="py-3 px-4 text-gray-600">Predictable daily standup windows</td>
+              <td class="py-3 px-4 text-gray-600">Sample sprint calendar and escalation matrix</td>
+              <td class="py-3 px-4 text-gray-600">Ad-hoc messaging without fixed hours</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 text-gray-800">References and delivery history</td>
+              <td class="py-3 px-4 text-gray-600">Proven track record with US enterprises</td>
+              <td class="py-3 px-4 text-gray-600">Direct contact details for two US CTOs</td>
+              <td class="py-3 px-4 text-gray-600">Refusal to share client references</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="text-xl font-semibold mb-2 mt-4">What to Ask in the First Call</h4>
+      <ol class="list-decimal pl-6 mb-8 space-y-2">
+        <li>Which specific engineers will be involved in our sprint on the first day?</li>
+        <li>How do you ensure automated testing is performed before merging code?</li>
+        <li>How do you handle the situation if a senior developer leaves the team during a project?</li>
+        <li>Could we see a modified version of an architecture diagram from a previous project, one that does not contain any sensitive information?</li>
+        <li>How do you document and report sprint blockers that arise during the course of the work?</li>
+      </ol>
+
+      <h3 class="text-2xl font-semibold mb-4 mt-6">IP Ownership, NDAs, and Contract Clauses with an Offshore Software Development Company</h3>
+      <p class="mb-6 leading-relaxed">
+        Robust legal agreements help prevent ownership-related disputes before engineering work even begins. Every agreement with an offshore software development company should include a signed non-disclosure agreement (NDA) executed prior to the process of reviewing or understanding architectural details and a comprehensive statement of work that clearly defines all required deliverables.
+      </p>
+      <p class="mb-6 leading-relaxed">
+        Ensure the agreement contains explicit clauses regarding IP ownership in software contracts, stipulating that all source code is automatically transferred to your corporate GitHub account as soon as it is created. For mission-critical business systems, mandate the use of source code escrow; additionally, establish clear terms for transition and technical support in the event that the contract is terminated. Clarifying matters concerning IP ownership in software contracts from the outset helps avoid future disputes over ownership and control.
+      </p>
+
+      <h4 class="text-xl font-semibold mb-2 mt-4">Governing Law and Enforceability</h4>
+      <p class="mb-8 leading-relaxed">
+        Always draft agreements under the jurisdiction of a U.S. state and include clear provisions for arbitration. Furthermore, before signing any agreement, ensure that a corporate legal advisor reviews the terms regarding the cross-border enforcement of the contract.
+      </p>
+
+      <h3 class="text-2xl font-semibold mb-4 mt-6">Security, Compliance, and US Time-Zone Overlap</h3>
+      <p class="mb-6 leading-relaxed">
+        For enterprise-grade security, it is essential to have Single Sign-On (SSO), Least-Privilege Access, and isolated staging environments. To verify data protection measures, always request a SOC 2 report or ISO 27001 certification issued by an independent third party.
+      </p>
+      <p class="mb-8 leading-relaxed">
+        Additionally, maintaining regular overlapping working hours with US time-zone overlap—typically three to four hours daily—is crucial. This ensures the ability to conduct live sprint planning, review software architecture, and promptly address any blockers that arise during the work process.
+      </p>
+
+      <h3 class="text-2xl font-semibold mb-4 mt-6">Pilot-to-Scale Engagement Model and KPIs</h3>
+      <p class="mb-8 leading-relaxed">
+        Never commit to multi-year retainer agreements right away. Start with a defined four-to-six-week pilot project governed by a robust service-level agreement (SLA). Before scaling up to full engineering squads, monitor metrics such as pull request cycle time, defect escape rate, sprint velocity stability, and the ability to provide prompt responses during US time-zone overlap hours.
+      </p>
+
+      <h3 class="text-2xl font-semibold mb-4 mt-6">Frequently Asked Questions</h3>
+      <h4 class="text-xl font-semibold mb-2 mt-4">Is an offshore software development company safe for regulated US data?</h4>
+      <p class="mb-6 leading-relaxed">
+        Yes, provided that your offshore software development company implements strict Role-Based Access Control, operates under contracts that are legally enforceable under US law, and successfully completes all verification steps included in your security checklist.
+      </p>
+
+      <h4 class="text-xl font-semibold mb-2 mt-4">How can the claims and reputation of a software vendor be verified?</h4>
+      <p class="mb-6 leading-relaxed">
+        Effective software vendor due diligence requires examining concrete evidence rather than relying on verbal assurances. This includes reviewing third-party audit reports, inspecting pull requests (with sensitive information redacted), and conducting direct reference checks with US-based clients.
+      </p>
+
+      <h4 class="text-xl font-semibold mb-2 mt-4">Who owns the code in an offshore software development agreement?</h4>
+      <p class="mb-8 leading-relaxed">
+        Your organization can retain full IP ownership in software contracts, provided the contract explicitly states that all rights to the developed work are immediately transferred to your company and that all code repositories reside within your company cloud environment from the very first code commit.
+      </p>
+
+      <h3 class="text-2xl font-semibold mb-4 mt-6">Ready to Validate Your Engineering Partner?</h3>
+      <p class="mb-6 leading-relaxed">
+        Avoid uncertainty when selecting a partner by starting with a low-risk pilot project with our <a href="/services/custom-ai-software-development" class="text-blue-600 hover:underline font-semibold">custom software development team</a>.
+      </p>
+      <p class="mb-6 leading-relaxed">
+        At BlackZero Technologies, our offshore software development company ensures transparency through availability during US time-zone overlap, verified security controls, and code repositories that remain under client ownership from day one.
+      </p>
+    `,
+  },
+  {
     id: 78,
     slug: "rag-for-erp-data-private-ai-assistant",
     title: "RAG Over Your ERP Data: Building a Private AI Assistant That Queries Inventory, Orders, and Invoices",
