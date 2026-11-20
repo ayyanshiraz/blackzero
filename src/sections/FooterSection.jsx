@@ -9,12 +9,12 @@ const FooterSection = () => {
   });
 
   return (
-    <section 
-      className="footer-section bg-black relative w-full overflow-hidden" 
+    <section
+      className="footer-section bg-black relative w-full overflow-hidden"
       style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
+      data-mobile={isMobile ? "true" : "false"}
     >
       <div className="relative pt-2 md:pt-5 pb-3 flex flex-col justify-between px-5 md:px-10 max-w-[1920px] mx-auto">
-        
         <div className="w-full text-center z-10 my-0">
           <h3 className="general-title text-center text-white text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none">
             BUILDING THE FUTURE
@@ -22,56 +22,176 @@ const FooterSection = () => {
         </div>
 
         <div className="flex justify-center items-center gap-5 relative z-10 md:mt-2 mt-3">
-          <Link aria-label="Facebook" className="social-btn cursor-pointer transition-transform hover:scale-105" href="https://www.facebook.com/profile.php?id=61560559093444" target="_blank">
-            <img src="/images/facebook.svg" alt="Facebook" width={40} height={40} loading="lazy" />
+          <Link
+            aria-label="Facebook"
+            className="social-btn cursor-pointer transition-transform hover:scale-105"
+            href="https://www.facebook.com/profile.php?id=61560559093444"
+            target="_blank"
+          >
+            <img
+              src="/images/facebook.svg"
+              alt="Facebook"
+              width={40}
+              height={40}
+              loading="lazy"
+            />
           </Link>
-          <Link aria-label="Instagram" className="social-btn cursor-pointer transition-transform hover:scale-105" href="https://www.instagram.com/blackzerofficial/" target="_blank">
-            <img src="/images/insta2.svg" alt="Instagram" width={40} height={40} loading="lazy" />
+          <Link
+            aria-label="Instagram"
+            className="social-btn cursor-pointer transition-transform hover:scale-105"
+            href="https://www.instagram.com/blackzerofficial/"
+            target="_blank"
+          >
+            <img
+              src="/images/insta2.svg"
+              alt="Instagram"
+              width={40}
+              height={40}
+              loading="lazy"
+            />
           </Link>
-          <Link aria-label="LinkedIn" className="social-btn cursor-pointer transition-transform hover:scale-105" href="https://www.linkedin.com/company/black-zerofficial/posts/?feedView=all" target="_blank">
-            <img src="/images/linkedin.svg" alt="LinkedIn" width={40} height={40} loading="lazy" />
+          <Link
+            aria-label="LinkedIn"
+            className="social-btn cursor-pointer transition-transform hover:scale-105"
+            href="https://www.linkedin.com/company/black-zerofficial/posts/?feedView=all"
+            target="_blank"
+          >
+            <img
+              src="/images/linkedin.svg"
+              alt="LinkedIn"
+              width={40}
+              height={40}
+              loading="lazy"
+            />
           </Link>
         </div>
 
         <div className="mt-5 md:mt-6 flex gap-10 lg:gap-16 xl:gap-20 md:flex-row flex-col justify-between text-white md:text-lg font-medium">
-          
           <div className="flex items-start md:gap-12 lg:gap-20 gap-10 flex-wrap lg:flex-nowrap flex-1">
-            
             <div className="flex flex-col min-w-[150px]">
-              <p className="text-light-brown mb-4 font-bold uppercase tracking-wider text-sm md:text-base">Quick Links</p>
-              <Link className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max" href="/projects">
+              <p className="text-light-brown mb-4 font-bold uppercase tracking-wider text-sm md:text-base">
+                Quick Links
+              </p>
+              <Link
+                className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max"
+                href="/projects"
+              >
                 Portfolio
               </Link>
-              <Link className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max" href="/blogs">
+              <Link
+                className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max"
+                href="/blogs"
+              >
                 Our Blogs
               </Link>
-              <Link className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max" href="/careers">
+              <Link
+                className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max"
+                href="/careers"
+              >
                 Careers
               </Link>
-              <Link className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max" href="/customized-solutions">
+              <Link
+                className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max"
+                href="/customized-solutions"
+              >
                 Custom Solutions
+              </Link>
+              <Link
+                className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max"
+                href="/ecommerce-success"
+              >
+                Ecommerce Success
+              </Link>
+              <Link
+                className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max"
+                href="/privacy-policy"
+              >
+                Privacy Policy
               </Link>
             </div>
 
-            <div className="flex flex-col min-w-[150px]">
-              <p className="text-light-brown mb-4 font-bold uppercase tracking-wider text-sm md:text-base">Services</p>
-              <li>
-  <Link href="/services/custom-erp-development" className="hover:text-white transition-colors">Custom ERP Development</Link>
-</li>
-<li>
-  <Link href="/services/custom-crm-development" className="hover:text-white transition-colors">Custom CRM Development</Link>
-</li>
+            <div className="flex flex-col min-w-[180px]">
+              <p className="text-light-brown mb-4 font-bold uppercase tracking-wider text-sm md:text-base">
+                Services
+              </p>
+              <ul className="space-y-1.5 text-white/80 text-sm md:text-base">
+                <li>
+                  <Link
+                    href="/services/custom-erp-development"
+                    className="hover:text-light-brown transition-colors"
+                  >
+                    Custom ERP Development
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/custom-crm-development"
+                    className="hover:text-light-brown transition-colors"
+                  >
+                    Custom CRM Development
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/custom-ai-software-development"
+                    className="hover:text-light-brown transition-colors"
+                  >
+                    Custom AI Software
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/data-analytics"
+                    className="hover:text-light-brown transition-colors"
+                  >
+                    Data Analytics
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/web-portal-development"
+                    className="hover:text-light-brown transition-colors"
+                  >
+                    Web Portal Development
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/hybrid-seo"
+                    className="hover:text-light-brown transition-colors"
+                  >
+                    Hybrid SEO &amp; GEO
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/3d-animation-explainer-videos"
+                    className="hover:text-light-brown transition-colors"
+                  >
+                    3D Animation Studio
+                  </Link>
+                </li>
+              </ul>
             </div>
 
             <div className="flex flex-col max-w-[250px]">
-              <p className="text-light-brown mb-4 font-bold uppercase tracking-wider text-sm md:text-base">Contact</p>
-              <p className="mb-2 text-white/80 leading-relaxed text-sm md:text-base">
-                Hotel MayFair 4th floor, 50-52, E - III, Commercial Zone, Gulberg III, 54660, Lahore, Punjab.
+              <p className="text-light-brown mb-4 font-bold uppercase tracking-wider text-sm md:text-base">
+                Contact
               </p>
-              <a href="tel:+923244333267" className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max font-bold">
+              <p className="mb-2 text-white/80 leading-relaxed text-sm md:text-base">
+                Hotel MayFair 4th floor, 50-52, E - III, Commercial Zone, Gulberg
+                III, 54660, Lahore, Punjab.
+              </p>
+              <a
+                href="tel:+923244333267"
+                className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max font-bold"
+              >
                 +92 324 4333267
               </a>
-              <a href="mailto:info@blackzero.org" className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max font-bold">
+              <a
+                href="mailto:info@blackzero.org"
+                className="mb-2 text-white/80 hover:text-light-brown transition-colors w-max font-bold"
+              >
                 info@blackzero.org
               </a>
             </div>
@@ -79,7 +199,8 @@ const FooterSection = () => {
 
           <div className="w-full md:max-w-sm lg:max-w-md xl:max-w-lg mt-8 md:mt-0">
             <p className="text-white/80 leading-relaxed text-sm md:text-base">
-              Subscribe to our newsletter for the latest insights in AI development scalable software and tech industry trends.
+              Subscribe to our newsletter for the latest insights in AI
+              development scalable software and tech industry trends.
             </p>
             <div className="flex justify-between items-center border-b border-white/30 py-3 mt-4 md:mt-6">
               <input
@@ -87,10 +208,16 @@ const FooterSection = () => {
                 placeholder="Enter your work email"
                 className="w-full bg-transparent border-none outline-none text-white placeholder:font-sans placeholder:text-white/40 focus:ring-0"
               />
-              <img src="/images/arrow.svg" alt="arrow" width={24} height={24} loading="lazy" className="cursor-pointer hover:translate-x-1 transition-transform" />
+              <img
+                src="/images/arrow.svg"
+                alt="arrow"
+                width={24}
+                height={24}
+                loading="lazy"
+                className="cursor-pointer hover:translate-x-1 transition-transform"
+              />
             </div>
           </div>
-
         </div>
 
         <div className="w-full text-center border-t border-white/10 pt-3 mt-5 md:mt-6">
@@ -98,7 +225,6 @@ const FooterSection = () => {
             Copyright © 2026 BlackZero Technologies - All Rights Reserved
           </p>
         </div>
-
       </div>
     </section>
   );
