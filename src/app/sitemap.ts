@@ -9,11 +9,11 @@ const servicesData = [
         { slug: 'digital-marketing' } 
     ] 
   },
-  { slug: 'ai-software-hub', subSections: [] },
-  { slug: 'advanced-websites', subSections: [] },
+  { slug: 'custom-ai-software-development', subSections: [] },
+  { slug: 'web-portal-development', subSections: [] },
   { slug: 'data-analytics', subSections: [] },
   { slug: 'hybrid-seo', subSections: [] },
-  { slug: 'creative-design-and-animation-studio', subSections: [] },
+  { slug: '3d-animation-explainer-videos', subSections: [] },
   { slug: 'custom-erp-development', subSections: [] },
   { slug: 'custom-crm-development', subSections: [] },
 ];
