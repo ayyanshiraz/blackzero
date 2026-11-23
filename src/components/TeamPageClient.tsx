@@ -1,8 +1,7 @@
-'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import { OrganogramConnectors } from '@/components/OrganogramConnectors';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import { OrganogramConnectors } from "@/components/OrganogramConnectors";
 
-// --- Interfaces ---
 interface TeamMemberData {
     id: string;
     name: string;
@@ -20,7 +19,6 @@ interface TeamStructure {
     level3: TeamMemberData[];
 }
 
-// --- Organogram Member Component ---
 const OrganogramMember = ({ 
     data, 
     startAnimation 
@@ -28,18 +26,20 @@ const OrganogramMember = ({
     data: TeamMemberData; 
     startAnimation: boolean; 
 }) => {
+    const isYasir = data.id === "org-lead1";
+
     return (
         <div 
             id={data.id} 
-            className={`flex flex-col items-center p-2 w-48 text-center transition-all duration-700 ease-out ${startAnimation ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+            className={`flex flex-col items-center p-2 w-48 text-center transition-all duration-700 ease-out ${startAnimation ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
             style={{ transitionDelay: data.delay }}
         >
             <div id={`${data.id}-shape`} className={`relative rounded-2xl p-2 border-4 ${data.ringColor} ${data.size} flex items-center justify-center bg-white`}>
                 <img 
                     src={data.avatar} 
                     alt={data.imgAltText} 
-                    className="rounded-2xl w-full h-full object-cover bg-gray-200"
-                    onError={(e) => { (e.target as HTMLImageElement).src='https://placehold.co/150x150/d1d5db/4b5563?text=User'; }}
+                    className={`rounded-2xl w-full h-full ${isYasir ? "object-contain bg-[#173f63]" : "object-cover object-top bg-gray-200"}`}
+                    onError={(e) => { (e.target as HTMLImageElement).src = "https://placehold.co/150x150/d1d5db/4b5563?text=User"; }}
                 />
             </div>
             <div className="relative mt-4 text-center bg-white z-10 px-2">
@@ -50,7 +50,6 @@ const OrganogramMember = ({
     );
 };
 
-// --- Main Client Component ---
 export default function TeamPageClient({ teamStructure }: { teamStructure: TeamStructure }) {
     const [isMounted, setIsMounted] = useState(false);
     const [isOrganogramVisible, setIsOrganogramVisible] = useState(false);
@@ -105,21 +104,18 @@ export default function TeamPageClient({ teamStructure }: { teamStructure: TeamS
                         {isMounted && <OrganogramConnectors isReady={isMounted} startAnimation={isOrganogramVisible} />}
                         
                         <div className="relative z-10 space-y-16 md:space-y-24">
-                            {/* LEVEL 1: Top Leadership */}
                             <div className="flex flex-wrap justify-center items-start gap-16 md:gap-64">
                                 {teamStructure.level1.map((member) => (
                                     <OrganogramMember key={member.id} data={member} startAnimation={isOrganogramVisible} />
                                 ))}
                             </div>
 
-                            {/* LEVEL 2: Central Manager */}
                             <div className="flex justify-center">
                                 {teamStructure.level2.map((member) => (
                                     <OrganogramMember key={member.id} data={member} startAnimation={isOrganogramVisible} />
                                 ))}
                             </div>
 
-                            {/* LEVEL 3: Team Leads */}
                             <div className="flex flex-wrap justify-center gap-x-16 md:gap-x-32">
                                 {teamStructure.level3.map((member) => (
                                     <OrganogramMember key={member.id} data={member} startAnimation={isOrganogramVisible} />

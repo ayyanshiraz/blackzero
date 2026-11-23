@@ -42,7 +42,7 @@ const teamStructure = {
       id: "org-lead1",
       name: "YASIR IRSHAD",
       position: "IT Manager",
-      avatar: "/Team/yasir2.webp",
+      avatar: "/Team/yasir.jpeg",
       imgAltText: "Yasir Irshad, IT Manager at Black Zero",
       ringColor: "border-gray-500",
       size: "w-52 h-52",
