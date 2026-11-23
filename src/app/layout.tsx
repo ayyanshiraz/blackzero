@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Custom ERP, CRM, and AI software for US mid-market and enterprise teams. Cut per-seat SaaS fees, own 100% of your code, work in US time zones.",
+    "Custom ERP, CRM, and AI software built for your exact workflows. Eliminate recurring SaaS fees and own 100% of your code. Book a demo.",
   keywords: [
     "custom software development company USA",
     "enterprise AI development services",
