@@ -29,14 +29,14 @@ const projectData = {
 
 export const metadata: Metadata = {
     title: "KB Dispatch Tools Services | Custom Software | Black Zero",
-    description: "Explore the custom software development project for KB Dispatch Tools Services by Black Zero. We engineered a tailored solution for dispatch and logistics management.",
+    description: "Explore the custom software project for KB Dispatch Tools Services by Black Zero. We engineered a tailored dispatch and logistics management system.",
     keywords: ["kb dispatch tools services", "custom software", "software development", "dispatch software", "logistics platform", "Black Zero projects"],
     alternates: {
         canonical: "/projects/kb-dispatch-tools-services",
     },
     openGraph: {
         title: "KB Dispatch Tools Services | Custom Software | Black Zero",
-        description: "Explore the custom software development project for KB Dispatch Tools Services by Black Zero. We engineered a tailored solution for dispatch and logistics management.",
+        description: "Explore the custom software project for KB Dispatch Tools Services by Black Zero. We engineered a tailored dispatch and logistics management system.",
         url: "/projects/kb-dispatch-tools-services",
         siteName: "Black Zero",
         locale: "en_US",

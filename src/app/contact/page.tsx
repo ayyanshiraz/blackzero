@@ -3,7 +3,7 @@ import ContactPageClient from "@/components/ContactPageClient";
 
 export const metadata: Metadata = {
   title: "Contact Black Zero | Get a Custom Software Estimate",
-  description: "Tell us about your ERP, CRM, or AI project and get a scoped estimate from Black Zero Technologies.",
+  description: "Contact Black Zero Technologies to discuss your custom ERP, CRM, AI, or web development project. Share your goals and receive a clear scoped estimate.",
   keywords: ["contact us", "digital marketing agency contact", "IT company Lahore", "web development inquiry", "business analytics consultation", "Black Zero support", "hire software developers"],
   
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Contact Black Zero | Get a Custom Software Estimate",
-    description: "Tell us about your ERP, CRM, or AI project and get a scoped estimate from Black Zero Technologies.",
+    description: "Contact Black Zero Technologies to discuss your custom ERP, CRM, AI, or web development project. Share your goals and receive a clear scoped estimate.",
     url: "https://www.blackzero.org/contact",
     type: "website",
     images: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Contact Black Zero | Get a Custom Software Estimate",
-    description: "Tell us about your ERP, CRM, or AI project and get a scoped estimate from Black Zero Technologies.",
+    description: "Contact Black Zero Technologies to discuss your custom ERP, CRM, AI, or web development project. Share your goals and receive a clear scoped estimate.",
     images: ["/contact4.webp"],
   },
 };
